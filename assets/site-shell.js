@@ -1,18 +1,4 @@
 'use strict';
-// Google Analytics 4 — loaded once for every page that uses the shared site shell.
-(() => {
-  const measurementId='G-14CDXN6DDM';
-  if(document.querySelector(`script[data-learnwithus-ga="${measurementId}"]`))return;
-  window.dataLayer=window.dataLayer||[];
-  window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
-  window.gtag('js',new Date());
-  window.gtag('config',measurementId);
-  const googleTag=document.createElement('script');
-  googleTag.async=true;
-  googleTag.src=`https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  googleTag.dataset.learnwithusGa=measurementId;
-  document.head.prepend(googleTag);
-})();
 
 (() => {
   const header=document.querySelector('.fl-header'),menu=document.getElementById('fl-menu'),toggle=document.querySelector('.fl-menu-toggle');
@@ -23,7 +9,7 @@
   header.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus();}});
   header.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
   const current=location.pathname.split('/').pop()||'index.html';
-  const area=['food.html','catalog.html','mysteries.html','journeys.html','quiz.html'].includes(current)?'food.html':['children.html','kids-quiz.html'].includes(current)?'children.html':current;
+  const area=['food.html','catalog.html','mysteries.html','journeys.html','quiz.html'].includes(current)?'food.html':['children.html','kids-quiz.html','languages.html','hindi.html','telugu.html'].includes(current)?'children.html':current;
   document.querySelectorAll('.fl-menu a,.fl-footer nav a').forEach(a=>{if(new URL(a.href).pathname.split('/').pop()===area)a.setAttribute('aria-current',area===current?'page':'true');else a.removeAttribute('aria-current');});
   function categoryState(){
     const here=new URL(location.href);
@@ -32,6 +18,7 @@
     if(current==='children.html'&&['letters','words','numbers','animals'].includes(mode))selected+='?mode='+mode;
     else if(current==='kids-quiz.html'&&['letters','numbers'].includes(category))selected+='?category='+category;
     else if(current==='catalog.html')selected+='?category='+(['fruit','vegetable'].includes(category)?category:'all');
+    else if(current==='hindi.html'||current==='telugu.html')selected=current;
     else if(current==='food.html'){
       const hash=here.hash.slice(1);
       selected+='#'+(hash==='compare'?'compare':['sources','daily-values','data-reading','macro-energy'].includes(hash)?'sources':'explore');
@@ -44,4 +31,18 @@
   categoryState();window.addEventListener('popstate',categoryState);window.addEventListener('hashchange',categoryState);window.addEventListener('learning-view-change',categoryState);
   if(typeof ResizeObserver==='function')new ResizeObserver(height).observe(header);else window.addEventListener('resize',height);
   height();
+})();
+
+// Shared learning tools are loaded here so every existing and future page gets
+// search, bookmarks, progress, preferences, PWA support and consent controls.
+(() => {
+  if(!document.querySelector('link[rel="manifest"]')){const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='manifest.webmanifest';document.head.append(manifest);}
+  if(!document.querySelector('meta[name="theme-color"]')){const theme=document.createElement('meta');theme.name='theme-color';theme.content='#0b3d2e';document.head.append(theme);}
+  if(document.querySelector('script[data-learnwithus-platform]'))return;
+  const style=document.createElement('link');
+  style.rel='stylesheet';style.href='assets/platform.css?v=20260925';
+  document.head.append(style);
+  const script=document.createElement('script');
+  script.src='assets/platform.js?v=20260925';script.defer=true;
+  script.dataset.learnwithusPlatform='true';document.head.append(script);
 })();

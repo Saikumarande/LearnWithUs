@@ -11,6 +11,7 @@
 
 /* Larger collections keep each card readable on desktop and phones. */
 .kids-learning-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+.languages-choice{background:#f5e8ff;border-color:#d4b6ea;text-decoration:none;color:inherit}
 .animals-choice{background:#e7f5d5;border-color:#b8d79b}
 .learning-grid.alphabet-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
 .learning-grid.picture-words,.learning-grid.number-cards{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}

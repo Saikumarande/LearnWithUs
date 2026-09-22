@@ -111,7 +111,9 @@ function showResult(){
  }else{
   cards.push(adviceCard('Build confidence, one idea at a time','Start with a short food mystery, then come back for another try.',[['Explore a simple color mystery','mysteries.html#carrot-color'],['Try Curious Starter','quiz.html?level=easy']]));
  }
- ui.learning.replaceChildren(...cards);window.renderLearnWithUsScoreCard({container:ui.scoreCard,score,total:current.length,title:names[level]+' complete!',subtitle:ui.resultTitle.textContent,filename:'learnwithus-food-quiz-score.svg',url:'quiz.html?level='+level});ui.resultScore.focus();
+ ui.learning.replaceChildren(...cards);window.renderLearnWithUsScoreCard({container:ui.scoreCard,score,total:current.length,title:names[level]+' complete!',subtitle:ui.resultTitle.textContent,filename:'learnwithus-food-quiz-score.svg',url:'quiz.html?level='+level});
+ window.LearnWithUs?.recordQuiz(names[level]+' food quiz',score,current.length,'quiz.html?level='+level);
+ ui.resultScore.focus();
 }
 document.querySelectorAll('[data-level]').forEach(b=>b.addEventListener('click',()=>start(b.dataset.level)));
 function chooseLevels(){const url=new URL(location.href);url.searchParams.delete('level');history.replaceState(null,'',url);show('levelScreen');document.querySelector('[data-level]').focus();}

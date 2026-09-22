@@ -11,6 +11,8 @@ const types = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
@@ -39,7 +41,16 @@ http.createServer((request, response) => {
   if (file !== root && !file.startsWith(root + path.sep)) return reply(response, 403, 'Forbidden');
 
   fs.stat(file, (error, stats) => {
-    if (error || !stats.isFile()) return reply(response, 404, 'Page not found');
+    if (error || !stats.isFile()) {
+      const notFound = path.join(root, '404.html');
+      response.writeHead(404, {
+        'Content-Type': 'text/html; charset=utf-8',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin'
+      });
+      if (request.method === 'HEAD') return response.end();
+      return fs.createReadStream(notFound).on('error', () => reply(response, 404, 'Page not found')).pipe(response);
+    }
     const headers = {
       'Content-Type': types[path.extname(file).toLowerCase()] || 'application/octet-stream',
       'X-Content-Type-Options': 'nosniff',

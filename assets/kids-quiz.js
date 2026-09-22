@@ -62,6 +62,7 @@
     ui.kidResultTitle.textContent=band==='high'?'Wonderful work, curious learner!':band==='middle'?'You’re getting there, one step at a time.':'Every try is a new beginning.';
     ui.kidResultMessage.textContent='Your grown-up marked '+correct+' of '+total+' '+noun+' as recognised. '+(band==='high'?'Revisit any tricky ones, then explore something new together.':band==='middle'?'You already know some of these. Practise the cards below, say them aloud, and try another round when you feel ready.':'Pick just two or three cards below. Look, listen and say them together. Small, relaxed practice sessions are a good next step.');
     window.renderLearnWithUsScoreCard({container:ui.kidScoreCard,score:correct,total,title:(category==='letters'?'Letter':'Number')+' quiz complete!',subtitle:ui.kidResultTitle.textContent,filename:'learnwithus-kids-quiz-score.svg',url:'kids-quiz.html?category='+category});
+    window.LearnWithUs?.recordQuiz((category==='letters'?'Letter':'Number')+' quiz',correct,total,'kids-quiz.html?category='+category);
     const missed=answers.filter(answer=>!answer.correct);ui.kidReviewTitle.textContent=missed.length?'Let’s practise these together':'Ready for your next discovery?';ui.kidStudyLinks.replaceChildren();
     for(const {value} of missed){
       const letter=category==='letters';

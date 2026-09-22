@@ -7,6 +7,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node scripts/smoke-test.js"
+    "test": "node scripts/smoke-test.js && node scripts/link-check.js && node scripts/feature-test.js && node scripts/server-test.js"
   }
 }
