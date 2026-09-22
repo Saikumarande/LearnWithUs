@@ -1,4 +1,4 @@
-# LearnWithUs
+# LearnWithUs wiki
 
 LearnWithUs is a Node.js website with food discoveries, kids learning activities,
 health guides, quizzes and Google Analytics 4 tracking.
