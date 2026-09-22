@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kids Quizzes — LearnWithUs</title><meta name="description" content="Parent-guided letter and number quizzes: ten random items, one at a time, with encouraging feedback and direct practice links.">
+<link rel="stylesheet" href="assets/learning.css?v=226777a61b48"><link rel="stylesheet" href="assets/kids.css?v=a692bb947692"><link rel="stylesheet" href="assets/site-shell.css?v=a6bfa4455137">
+<script src="assets/kids-data.js?v=2eccb689e1a3" defer></script><script src="assets/kids-audio.js?v=dbd8bd22774f" defer></script><script src="assets/kids-quiz.js?v=6da297cadf53" defer></script><script src="assets/site-shell.js?v=33efcf08efd8" defer></script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/visual-theme.css?v=7e60b75783a7">
+</head><body class="kids-quiz-page" data-area="kids"><a class="skip" href="#main">Skip to the quiz</a>
+<!-- LEARNWITHUS_HEADER_START -->
+<header class="fl-header">
+  <div class="fl-container fl-topbar">
+    <a class="fl-brand" href="index.html"><img class="fl-mark fl-avatar" src="assets/sai-kumar.jpeg" width="38" height="38" alt="">LearnWithUs</a>
+    <button class="fl-menu-toggle" type="button" aria-expanded="false" aria-controls="fl-menu">Menu <span aria-hidden="true">☰</span></button>
+    <nav class="fl-menu" id="fl-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="food.html">Food discoveries</a>
+      <a href="children.html">Kids Corner</a>
+      <a href="health.html">Health guides</a>
+      <a class="fl-contact-link" href="contact.html">Contact me</a>
+    </nav>
+  </div>
+</header>
+<!-- LEARNWITHUS_HEADER_END -->
+<!-- LEARNWITHUS_CATEGORY_START -->
+<nav class="fl-section-nav" aria-label="Kids activities"><div class="fl-container"><a class="fl-section-label" href="children.html">Kids Corner</a><a href="children.html?mode=letters">Letters</a><a href="children.html?mode=words">Picture words</a><a href="children.html?mode=numbers">Numbers</a><a href="children.html?mode=animals">Animals</a><a href="kids-quiz.html?category=letters">Letter quiz</a><a href="kids-quiz.html?category=numbers">Number quiz</a></div></nav>
+<!-- LEARNWITHUS_CATEGORY_END -->
+<main id="main" class="wrap">
+  <div class="kids-quiz-heading"><h1>Kids quizzes</h1><p class="page-deck">A little challenge. A lot to discover.</p><p>Name what you see, then let a grown-up mark your answer. Every round has 10 different items.</p></div>
+  <section id="kidSetup" aria-labelledby="kidSetupTitle">
+    <h2 id="kidSetupTitle" tabindex="-1">Which quiz would you like?</h2>
+    <div class="kids-quiz-links" role="group" aria-label="Quiz category"><button type="button" class="quiz-choice-link" data-kid-category="letters" aria-pressed="false"><strong>Letter quiz</strong><span>Recognise one random letter at a time.</span></button><button type="button" class="quiz-choice-link" data-kid-category="numbers" aria-pressed="false"><strong>Number quiz</strong><span>Recognise numbers from a range you choose.</span></button></div>
+    <div id="kidOptions" class="kid-setup-options" hidden>
+      <h3 id="kidOptionsTitle" tabindex="-1">Make it your own</h3>
+      <label id="kidStyleLabel">Letter style<select id="kidStyle"><option value="upper">Capitals · A B C</option><option value="lower">Small letters · a b c</option><option value="cursive-upper">Cursive capitals · A B C</option><option value="cursive-lower">Cursive small letters · a b c</option></select></label>
+      <label id="kidRangeLabel" hidden>Number range<select id="kidRange"><option value="0-20">0–20 · First steps</option><option value="21-50">21–50 · Keep counting</option><option value="51-100">51–100 · Go further</option><option value="0-100">0–100 · All numbers</option></select></label>
+      <p class="parent-instruction"><strong>For the grown-up:</strong> Listen to the child first. Then choose “Said it correctly” or “Let’s practise.” You can hear the answer after marking it.</p>
+      <button type="button" class="primary-button" id="kidStart">Start the letter quiz →</button>
+    </div>
+    <p class="quiz-crosslink">Looking for food questions? <a href="quiz.html">Choose a food quiz →</a></p>
+  </section>
+  <section id="kidRound" class="kid-round" hidden aria-labelledby="kidPrompt">
+    <div class="kid-round-meta"><span id="kidCategoryName"></span><span id="kidCounter"></span><span id="kidScoreCount"></span></div>
+    <progress id="kidProgress" value="0" max="10" aria-label="Items reviewed"></progress>
+    <p class="kid-prompt-label" id="kidPromptLabel">Which letter is this?</p>
+    <h2 class="kid-prompt" id="kidPrompt" tabindex="-1"></h2>
+    <p class="notice" id="kidCursiveNotice" hidden>Loading the cursive handwriting font…</p>
+    <p class="parent-instruction">Say it aloud to your grown-up. <strong>Grown-up: how did it go?</strong></p>
+    <div class="kid-judge-actions"><button type="button" class="primary-button" data-judge="correct">✓ Said it correctly</button><button type="button" class="soft-button" data-judge="practice">Let’s practise</button></div>
+    <div id="kidFeedback" class="kid-feedback" hidden><p id="kidAnswerStatus" role="status" aria-live="polite"></p><button type="button" id="kidHear" class="soft-button">Hear it together</button><label class="voice-control">Pronunciation<select id="kidAccent"><option value="en-GB">English · Zed</option><option value="en-US">English · Zee</option></select></label></div>
+    <div class="kid-next-row"><button type="button" id="kidNext" class="primary-button" disabled>Next one →</button><button type="button" id="kidChange" class="text-button">Choose another quiz</button></div>
+  </section>
+  <section id="kidResults" class="kid-results" hidden aria-labelledby="kidResultTitle">
+    <p class="eyebrow">Look what you practised!</p><p class="kid-result-score" id="kidResultScore"></p><h2 id="kidResultTitle" tabindex="-1"></h2><p id="kidResultMessage"></p><div id="kidScoreCard"></div>
+    <h3 id="kidReviewTitle">Your next little steps</h3><p class="study-note">Each link opens the exact learning card in a new tab, so your results stay here.</p><div id="kidStudyLinks" class="kid-study-links"></div>
+    <div class="kid-result-actions"><button type="button" class="primary-button" id="kidRetry">Shuffle and try again</button><button type="button" class="soft-button" id="kidChooseAnother">Choose another quiz</button><a class="soft-button" href="children.html">Back to Kids Corner</a></div>
+  </section>
+  <div class="audio-bar kid-quiz-audio" id="kidAudioBar" hidden><p id="kidAudioStatus" role="status" aria-live="polite">Tap “Hear it together” after marking an answer.</p><button type="button" id="kidStopAudio" class="text-button" disabled>Stop sound</button></div>
+  <aside class="grownup-note"><p>Scores reflect the grown-up’s feedback and are a guide for practice. No microphone, account or voice recording is needed. Take a break whenever your child needs one.</p></aside>
+  <noscript><p class="notice">Please enable JavaScript to choose a quiz.</p></noscript>
+</main><script src="assets/score-card.js?v=9b3d6a20ba9a"></script>
+<!-- LEARNWITHUS_FOOTER_START -->
+<footer class="fl-footer">
+  <div class="fl-container">
+    <div class="fl-footer-grid">
+      <div class="fl-footer-about"><a class="fl-footer-brand" href="index.html">LearnWithUs</a><p>A little learning, every day.</p><p>Discover food, practise letters, numbers and animal names, play quizzes together, and get to know your body.</p></div>
+      <nav aria-label="Learning categories"><h3>Choose what to learn</h3><a href="food.html">Food discoveries</a><a href="children.html">Kids Corner</a><a href="health.html">Health guides</a><a href="contact.html">Contact me</a></nav>
+    </div>
+    <p class="fl-fine">© 2026 LearnWithUs · Created by A. Sai Kumar · Nutrient data is educational and should be verified before clinical use.</p>
+  </div>
+</footer>
+<!-- LEARNWITHUS_FOOTER_END -->
+</body></html>
