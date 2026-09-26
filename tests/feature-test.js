@@ -36,12 +36,12 @@ expect(platform.includes('getFullYear()*372')&&platform.includes('new calendar d
 expect(!platform.includes('<h2>Start here</h2>')&&!platform.includes('lw-path-card'),'Removed Start here section is still present');
 expect(platform.includes("learning.setAttribute('aria-current','page')")&&platform.includes("page==='dashboard.html'"),'My learning active state is missing');
 expect(manifest.display==='standalone','PWA manifest should use standalone display');
-expect(read('service-worker.js').includes("CACHE='learnwithus-v1.8.1'"),'Service-worker cache version must match release 1.8.1');
+expect(read('service-worker.js').includes("CACHE='learnwithus-v1.10.0'"),'Service-worker cache version must match release 1.9.0');
 expect(read('robots.txt').includes('Sitemap:'),'robots.txt must advertise the sitemap');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes("path.join(__dirname, 'public')"),'Server must expose only the public folder');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes('404.html'),'Server must use the custom 404 page');
-expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='1.8.1','VERSION must match release 1.8.1');
-expect(packageJson.version==='1.8.1','package.json must be version 1.8.1 for this release');
+expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='1.10.0','VERSION must match release 1.10.0');
+expect(packageJson.version==='1.10.0','package.json must be version 1.10.0 for this release');
 expect(platform.includes('dailyGoalMinutes')&&platform.includes('learningStreak'),'Daily goal and streak state are missing');
 expect(platform.includes('dailyChallenge')&&platform.includes('achievements'),'Daily challenge and achievements are missing');
 expect(platform.includes('mistakes')&&platform.includes('Review quiz mistakes'),'Quiz mistake review is missing');
@@ -94,8 +94,8 @@ expect(read('quiz-hub.html').includes('<h2>English</h2>')&&read('quiz-hub.html')
 expect(read('assets/practice.js').includes('renderLearnWithUsScoreCard')&&read('assets/practice.js').includes('recordQuiz'),'New quizzes must reuse score-card sharing and progress recording');
 expect(!children.includes('kids-skills.html?topic=phonics')&&children.includes('word-bank.html')&&children.includes('letter-tracing.html'),'Kids activities must use separate routes without a duplicate Phonics card');
 expect(read('assets/kids.css').includes('.kids-learning-choices a.choice')&&read('assets/kids.css').includes('text-decoration:none'),'Kids activity card underlines must be removed');
-expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 1.8.1'),'CHANGELOG must document release 1.8.1');
-expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"1.8.1\"'),'package.json release version is missing');
+expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 1.9.0'),'CHANGELOG must document release 1.9.0');
+expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"1.10.0\"'),'package.json release version is missing');
 
 expect(['place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','india.html'].every(file=>fs.existsSync(path.join(root,file))),'v1.7 learning pages are missing');
 expect(!read('children.html').includes('Picture quiz</span>')&&!read('children.html').includes('Letter quiz</a>'),'Kids Corner must not duplicate quiz activities outside Quiz Hub');
@@ -104,7 +104,7 @@ expect(read('quiz-hub.html').includes('quiz-hub-colourful')&&read('quiz-hub.html
 expect(read('assets/early-learning.js').includes('youtube-nocookie.com/embed/')&&read('assets/early-learning.js').includes("document.createElement('iframe')"),'Poems must use click-to-load in-page song embeds');
 expect(read('assets/practice.css').includes('#traceLetterSelect{font-size:1.35rem')&&read('assets/practice.js').includes('id="nextTrace"'),'Tracing selector and Next letter control are missing');
 expect(read('india.html').includes('India map')&&read('india.html').includes('India_-_administrative_map.png')&&read('india.html').includes('data-map-game'),'Interactive India map and activities are missing');
-expect(read('service-worker.js').includes('learnwithus-v1.8.1')&&read('service-worker.js').includes("'./india.html'"),'v1.8.1 offline cache is incomplete');
+expect(read('service-worker.js').includes('learnwithus-v1.10.0')&&read('service-worker.js').includes("'./india.html'"),'v1.9.0 offline cache is incomplete');
 
 expect(read('assets/practice.js').includes("Wrong answer. The correct answer is '+answer+'.'"),'Wrong-answer speech must say the complete feedback sentence');
 expect((read('assets/india-data.js').match(/\"name\":/g)||[]).length===36,'India map must include all 28 states and 8 union territories');
@@ -137,8 +137,8 @@ expect(fs.existsSync(path.join(root,'assets','score-card.css'))&&read('assets/sc
 const scorePages=fs.readdirSync(root).filter(file=>file.endsWith('.html')&&read(file).includes('score-card.js'));
 expect(scorePages.every(file=>read(file).includes('assets/score-card.css')),'Every shared score-card consumer must load the responsive score-card stylesheet');
 expect(read('assets/score-card.css').includes('@media(max-width:720px)')&&read('assets/score-card.css').includes('grid-template-columns:1fr'),'Score-card actions must stack on smaller screens');
-expect(read('service-worker.js').includes("'./assets/score-card.css?v=20260926m'")&&read('service-worker.js').includes("'./assets/children.js?v=20260926m'"),'v1.8.1 offline cache must preload the corrected Kids and score-card assets');
-expect(fs.readFileSync(path.join(projectRoot,'README.md'),'utf8').includes('## Current release: v1.8.1'),'README must document the current release changes');
+expect(read('service-worker.js').includes("'./assets/score-card.css?v=20260926m'")&&read('service-worker.js').includes("'./assets/children.js?v=20260926m'"),'v1.9.0 offline cache must preload the corrected Kids and score-card assets');
+expect(fs.readFileSync(path.join(projectRoot,'README.md'),'utf8').includes('## Current release: v1.9.0'),'README must document the current release changes');
 
 
 expect(fs.existsSync(path.join(root,'multiplication-tables.html'))&&fs.existsSync(path.join(root,'multiplication-tables-quiz.html')),'Multiplication tables feature routes are missing');

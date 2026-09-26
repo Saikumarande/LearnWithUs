@@ -38,7 +38,14 @@ const pages = [
   'telugu.html',
   'privacy.html',
   '404.html',
-  'offline.html'
+  'offline.html',
+  'stories.html',
+  'story.html',
+  'sports.html',
+  'sports-quiz.html',
+  'creativity.html',
+  'life-skills.html',
+  'games.html'
 ];
 
 for (const page of pages) {
@@ -56,7 +63,7 @@ for (const file of ['server.js', 'package.json', 'VERSION']) {
   verify(fs.existsSync(path.join(projectRoot, file)),`Missing ${file}`);
 }
 
-for(const file of ['multiplication-tables.html','multiplication-tables-quiz.html','planets.html','countries-capitals.html','world-quiz.html','india-quiz.html']) verify(fs.existsSync(path.join(root,file)),`${file} must exist`);
+for(const file of ['multiplication-tables.html','life-skills.html','games.html','multiplication-tables-quiz.html','planets.html','countries-capitals.html','world-quiz.html','india-quiz.html','stories.html','story.html','sports.html','sports-quiz.html','creativity.html']) verify(fs.existsSync(path.join(root,file)),`${file} must exist`);
 
 console.log(`Smoke tests passed: ${checks}/${checks} assertions across ${pages.length+6} pages.`);
 

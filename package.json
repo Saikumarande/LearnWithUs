@@ -1,16 +1,18 @@
 {
   "name": "learnwithus-appservice",
-  "version": "1.8.1",
+  "version": "1.10.0",
   "private": true,
   "engines": {
     "node": "24.x"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/smoke-test.js && node tests/link-check.js && node tests/feature-test.js && node tests/release-regression.js && node tests/server-test.js",
+    "test": "node tests/smoke-test.js && node tests/link-check.js && node tests/feature-test.js && node tests/release-regression.js && node tests/v1100-runtime-test.js && node tests/server-test.js",
     "test:smoke": "node tests/smoke-test.js",
     "test:links": "node tests/link-check.js",
     "test:features": "node tests/feature-test.js",
-    "test:server": "node tests/server-test.js"
+    "test:server": "node tests/server-test.js",
+    "test:v190": "node tests/v190-runtime-test.js",
+    "test:v1100": "node tests/v1100-runtime-test.js"
   }
 }

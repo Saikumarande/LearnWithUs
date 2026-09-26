@@ -1,3 +1,9 @@
+## 1.10.0 targeted checks
+- Creativity Studio expanded controls and selectors.
+- Life Skills page routes and practice questions.
+- Learning Games route and interactions.
+- Kids Corner links, quick navigation and service-worker cache coverage.
+
 # LearnWithUs feature testing
 
 ## One-command automated check
@@ -70,3 +76,15 @@ Audio uses the browser and operating-system speech voices. The website intention
 - Shared score-card remains responsive and now includes achievement symbols.
 - Existing Letters first-open, tracing, old/new maths, food/English quizzes, language audio, local progress, PWA/offline, 404 and server checks remain green.
 
+
+
+## v1.9.0 regression additions
+- Stories library contains all seven requested story categories.
+- Every story has exactly four illustrated pages, vocabulary, a moral/lesson and three comprehension questions.
+- Story narration uses browser speech and comprehension uses full correct/wrong spoken feedback.
+- Sports learning contains 12 local illustrated sport/game cards and Sports Quiz contains 10 questions with five choices.
+- Creativity Studio exposes drawing, colouring, dots, crafts, origami, rhythm, dance, story, poem and print functionality.
+- Stories, Sports and Creativity appear in Kids Corner and shared Kids quick navigation.
+- New pages/assets are cached for offline use.
+
+- `tests/v190-runtime-test.js` validates story/sports data integrity, all 40 local illustrations, Creativity controls, shared navigation coverage and offline pre-cache coverage.

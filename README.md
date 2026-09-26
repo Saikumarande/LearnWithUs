@@ -1,24 +1,43 @@
-# LearnWithUs v1.8.1
+
+
+## 1.10.0
+- Expanded Creativity Studio with 20 drawing lessons, drawing score, 30 colouring pages, 20-colour palette, 20 join-the-dots pictures, 10 paper crafts, 10 origami projects, 10 instrument sounds, improved dance poses, 10-option story builder, 10-option poem builder, and printable/shareable creativity sheets.
+- Added Life Skills learning page with 12 topics and quick practice questions.
+- Added Learning Games page with 12 mini-games.
+- Updated Kids Corner, Kids quick navigation, Quiz Hub, offline cache and release tests.
+- Release validation standard: run the full suite twice before packaging a production ZIP.
+
+# LearnWithUs v1.9.0
 
 LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
 
-## Current release: v1.8.1
+### v1.9.0 — Stories, Sports & Creativity
+- Added seven story collections with page-by-page local illustrations, browser read-aloud narration, vocabulary cards, moral/lesson and comprehension questions.
+- Added Sports & Games learning with 12 locally illustrated activities covering equipment, players and game goals.
+- Added a 10-question Sports & Games Quiz with five choices, spoken feedback, progress recording and the shared score card.
+- Added Creativity Studio with drawing practice, interactive colouring, join-the-dots, paper craft and origami instructions, rhythm, dance prompts, story creation, poem building and a printable activity sheet.
+- Added Stories, Sports and Creativity to Kids Corner and the shared scroll-aware Kids quick navigation.
+- Added new routes and assets to the PWA offline cache and sitemap.
+- Preserved existing progress/storage, quizzes, score cards, language learning, Food, Health and server behavior.
 
-This patch release improves multiplication-table readability and makes the Kids learning navigation consistent across every Kids learning and quiz page while preserving the v1.8.0 feature set and saved-progress model.
+## Current release: v1.9.0
 
-### Updated in v1.8.1
+This compatible feature release expands Kids Corner with complete **Stories**, **Sports & Games**, and **Creativity Studio** learning areas while preserving the v1.8.1 progress/storage model, existing quizzes, score cards, navigation, PWA behavior and server structure.
 
-- Changed **Multiplication Tables 1–20** so the selected table is displayed as one vertical fact per row instead of a three-column grid.
-- Standardized every table to **×1 through ×10** for both learning and the table-specific quiz.
-- Kept the existing single 1–20 dropdown, per-fact audio, whole-table audio and automatic selected-table quiz handoff.
-- Added the same compact Kids quick-navigation strip to every Kids learning and Kids quiz page: Kids Corner, Letters, Hindi, Telugu, Phonics, Numbers, Animals, Colours, Shapes, Poems and Quiz Hub.
-- Made that Kids quick navigation a single horizontal row that hides while scrolling down and reappears when scrolling upward, while preserving Food and Health navigation unchanged.
-- Updated offline/PWA cache entries, regression checks, README, changelog and feature-testing notes for the patch.
+### Added in v1.9.0
 
-### Validation for v1.8.1
+- **Stories:** seven requested story categories, each with a four-page illustrated story, page narration, vocabulary cards, a moral/lesson and three comprehension questions with spoken answer feedback.
+- **Sports & Games:** 12 locally illustrated sports/games with equipment, player setup and goal explanations plus read-aloud facts.
+- **Sports & Games Quiz:** ten randomized five-choice questions with the same complete correct/wrong spoken feedback used by existing quizzes, saved quiz progress and responsive score cards.
+- **Creativity Studio:** drawing lessons and canvas, interactive colouring, join-the-dots, paper craft instructions, origami, music/rhythm, dance prompts, story creation, build-your-own poem and a printable activity sheet.
+- **Discoverability:** Stories, Sports and Creativity were added to Kids Corner and the shared scroll-aware Kids quick-navigation strip. Sports Quiz and story comprehension are linked from Quiz Hub.
+- **Offline support:** all new routes, scripts, styles and locally bundled illustration assets are part of the production build and PWA release.
+- **Release discipline:** README, changelog, feature-testing documentation, version metadata, automated tests and production ZIP are updated together.
 
-Final production validation covers **1,289 automated assertions per full run**: 68 smoke checks, 990 link/asset/JavaScript checks, 159 feature checks, 46 v1.8.1 targeted regression checks and 26 server/MIME/404 checks. The complete suite is required to pass twice from the final release tree. An additional **8/8 runtime simulation checks** verify the 1–20 table selector, vertical ×1–×10 rendering, table switching and selected-table quiz handoff.
+### Validation for v1.9.0
+
+Final production validation runs the complete suite twice from the final release tree. Each full run passes **1,649/1,649 assertions**: 83 smoke checks, 1,095 links/assets/JavaScript checks, 164 feature checks, 62 v1.9.0 targeted regression checks, 219 v1.9.0 runtime/data checks, and 26 server/MIME/404 checks. Across the two required runs that is **3,298/3,298 assertions passed**.
 
 ### Release discipline
 
@@ -27,7 +46,7 @@ For every future LearnWithUs code change, update **README.md**, `docs/CHANGELOG.
 ## Project structure
 
 ```text
-LearnWithUs-v1.8.1/
+LearnWithUs-v1.9.0/
 ├── public/                  # Every browser-accessible page and asset
 │   ├── assets/             # CSS, JavaScript, images and fonts
 │   ├── index.html          # Home page

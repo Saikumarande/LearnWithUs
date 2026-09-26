@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.0 — 2026-09-27
+- Expanded Creativity Studio with many more lessons, selectors, scoring and shareable print sheets.
+- Added Life Skills learning page with 12 topics.
+- Added Learning Games page with 12 mini-games.
+- Updated Kids Corner, quick navigation, Quiz Hub and offline cache.
+
+## 1.9.0 — 2026-09-26
+- Added Stories with seven categories, page-by-page local illustrations, narration, vocabulary, lessons and comprehension.
+- Added Sports & Games learning and a 10-question spoken-feedback Sports Quiz.
+- Added Creativity Studio with ten interactive/printable creative activities.
+- Added the new areas to Kids Corner, shared Kids navigation, Quiz Hub, sitemap and offline cache.
+- Preserved existing storage/progress and current learning/quiz models.
+
 ## 1.8.1 — 2026-09-26
 - Changed Multiplication Tables 1–20 to one vertical fact per row and standardized learning/quiz coverage to ×1–×10.
 - Added one consistent compact Kids quick-navigation strip across every Kids learning and quiz page.
