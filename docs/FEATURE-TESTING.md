@@ -25,7 +25,7 @@ Use a private browser window so old local progress does not affect the result.
 | Hindi/Telugu active link | Move between Hindi and Telugu pages | The current language link is outlined and bold in the Kids navigation |
 | PWA installation | Open the deployed HTTPS site in Chrome or Edge | Browser install icon or the site’s Install control appears when browser criteria are met |
 | Offline fallback | Visit once, enable Offline in Developer Tools → Network, then reload a page not cached | The friendly offline page appears |
-| Analytics consent | Clear site data, reload, and choose **Not now** | No `googletagmanager.com` request appears in Network |
+| Analytics consent | Clear site data, reload, and choose **Keep analytics off** | No `googletagmanager.com` request appears in Network |
 | Analytics allowed | Open Privacy, allow analytics, reload | A `gtag/js?id=G-14CDXN6DDM` request appears; Realtime may take a few minutes |
 | Progress reset | My learning → **Clear local learning progress** | Recent items, scores, bookmarks and counts clear after confirmation |
 | Breadcrumbs | Open a food, kids or health detail page | Home and category links appear above the page content |

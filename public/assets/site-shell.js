@@ -7,7 +7,7 @@
   function closeMenu(){menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');height();}
   toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));menu.classList.toggle('is-open',open);height();});
   header.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus();}});
-  header.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
+  header.addEventListener('click',e=>{if(e.target.closest('a')||e.target.closest('.fl-menu-action'))closeMenu();});
   const current=location.pathname.split('/').pop()||'index.html';
   const area=['food.html','catalog.html','mysteries.html','journeys.html','quiz.html'].includes(current)?'food.html':['children.html','kids-quiz.html','languages.html','hindi.html','telugu.html'].includes(current)?'children.html':current;
   document.querySelectorAll('.fl-menu a,.fl-footer nav a').forEach(a=>{if(new URL(a.href).pathname.split('/').pop()===area)a.setAttribute('aria-current',area===current?'page':'true');else a.removeAttribute('aria-current');});

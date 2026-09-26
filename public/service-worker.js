@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='learnwithus-v20260925';
+const CACHE='learnwithus-v1.2.1';
 const CORE=['./','./index.html','./food.html','./children.html','./health.html','./dashboard.html','./hindi.html','./telugu.html','./offline.html','./assets/site-shell.css?v=20260925','./assets/site-shell.js?v=20260925','./assets/platform.css?v=20260925','./assets/platform.js?v=20260925','./assets/languages.css?v=20260925','./assets/languages.js?v=20260925','./assets/favicon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
