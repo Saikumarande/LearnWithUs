@@ -35,6 +35,7 @@
     ui.letterControls.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.style===style)));
     ui.practiceHint.textContent=mode==='animals'?'Look at each picture. Tap the speaker to hear only the animal’s name, then say it together.':mode==='numbers'?'Hear the number name, say it aloud, then explore how many it means.':mode==='words'?'Look at the picture, then hear and say the full phrase: A for Apple.':letterStyle.cursive?'Practise cursive '+(letterStyle.lower?'small letters':'capitals')+', one letter per card. Hear just the letter name.':'All letters from A to Z are here. Hear just the letter name, then say it yourself.';
     ui.fontStatus.hidden=mode!=='letters'||!letterStyle.cursive||cursiveReady;
+    ui.learningGrid.hidden=false;
     ui.learningGrid.className='learning-grid '+(mode==='letters'?'alphabet-grid':mode==='words'?'picture-words':mode==='animals'?'animal-cards':'number-cards');
     ui.learningGrid.innerHTML=cards.map((item,i)=>{
       if(mode==='animals')return '<article id="animal-'+item.id+'" class="learning-card animal-card" tabindex="-1"><img class="animal-picture" src="'+item.image+'" alt="'+item.name+'" width="150" height="150"><h3 class="animal-name">'+item.name+'</h3><button type="button" class="hear-button" data-hear="'+i+'" aria-label="Hear '+item.name+'">'+speaker+'<span>Hear the name</span></button></article>';
@@ -54,9 +55,20 @@
     ui.nextPage.textContent=mode==='numbers'&&page<pages.length-1?'Next '+pages[page+1].length+' numbers →':'Next →';
     ui.finishNote.hidden=page!==pages.length-1;
     ui.finishNote.innerHTML=mode==='letters'?'<strong>From A all the way to Z!</strong><p>Ready to match letters with pictures?</p><button type="button" class="primary-button" data-next-mode="words">Next: A for Apple →</button>':mode==='words'?'<strong>Wonderful exploring!</strong><p>Say your favourite picture words again, or try naming letters with a grown-up.</p>':mode==='animals'?'<strong>You’ve met '+animals.length+' animals!</strong><p>Choose your favourite. Can you remember its name before tapping the speaker?</p>':'<strong>Look how far you’ve counted!</strong><p>Practise a favourite number again, or try a number quiz together.</p>';
-    ui.practiceQuiz.parentElement.hidden=mode==='animals';
-    ui.practiceQuiz.href='kids-quiz.html?category='+(mode==='numbers'?'numbers':'letters')+(mode==='numbers'?'&range='+ui.numberRange.value:'&style='+style);
-    ui.practiceQuiz.textContent=mode==='numbers'?'Try the number quiz →':'Try the letter quiz →';
+    ui.practiceQuiz.parentElement.hidden=false;
+    if(mode==='numbers'){
+      ui.practiceQuiz.href='kids-quiz.html?category=numbers&range='+ui.numberRange.value;
+      ui.practiceQuiz.textContent='Try the number quiz →';
+    }else if(mode==='letters'){
+      ui.practiceQuiz.href='kids-quiz.html?category=letters&style='+style;
+      ui.practiceQuiz.textContent='Try the letter quiz →';
+    }else if(mode==='words'){
+      ui.practiceQuiz.href='spelling-quiz.html';
+      ui.practiceQuiz.textContent='Try the picture spelling quiz →';
+    }else{
+      ui.practiceQuiz.href='early-learning.html?topic=matching';
+      ui.practiceQuiz.textContent='Try the picture matching quiz →';
+    }
   }
   function setURL(choices=false){
     const url=new URL(location.href);['mode','style','letter','number','range','animal'].forEach(key=>url.searchParams.delete(key));
@@ -73,11 +85,17 @@
   }
   function showChoices(changeURL=false){
     audio.stop();ui.practice.hidden=true;ui.choices.hidden=false;document.querySelector('.kids-intro').hidden=false;
-    document.getElementById('kids-quiz-choices').hidden=false;if(changeURL){setURL(true);focus(ui.chooseTitle);}
+    if(changeURL){setURL(true);focus(ui.chooseTitle);}
+  }
+  function ensureModeRendered(){
+    if(ui.practice.hidden)return;
+    const expected=mode==='letters'?letters.length:mode==='words'?letters.length:mode==='animals'?animals.length:Math.min(20,items().length);
+    if(ui.learningGrid.childElementCount!==expected)render();
   }
   function openMode(value,changeURL=true){
-    mode=value;page=0;ui.choices.hidden=true;ui.practice.hidden=false;document.querySelector('.kids-intro').hidden=true;
-    document.getElementById('kids-quiz-choices').hidden=true;render();if(changeURL){setURL();focus(ui.practiceTitle);}
+    mode=value;page=0;if(mode==='letters')style=normalizeLetterStyle(style);
+    ui.choices.hidden=true;ui.practice.hidden=false;ui.learningGrid.hidden=false;ui.learningGrid.replaceChildren();document.querySelector('.kids-intro').hidden=true;
+    render();requestAnimationFrame(ensureModeRendered);if(changeURL){setURL();focus(ui.practiceTitle);}
   }
   function fromURL(){
     const params=new URLSearchParams(location.search),value=params.get('mode');
@@ -99,7 +117,7 @@
   }
   document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>openMode(button.dataset.mode)));
   ui.backChoices.addEventListener('click',()=>showChoices(true));
-  ui.letterControls.addEventListener('click',e=>{const b=e.target.closest('[data-style]');if(!b)return;style=b.dataset.style;render();setURL();});
+  ui.letterControls.addEventListener('click',e=>{const b=e.target.closest('[data-style]');if(!b)return;style=normalizeLetterStyle(b.dataset.style);render();ensureModeRendered();setURL();});
   ui.numberRange.addEventListener('change',()=>{page=0;render();setURL();});
   function changePage(delta){const pages=batches();if(page+delta<0||page+delta>=pages.length)return;page+=delta;render();setURL();focus(ui.practiceTitle);}
   ui.previous.addEventListener('click',()=>changePage(-1));ui.nextPage.addEventListener('click',()=>changePage(1));

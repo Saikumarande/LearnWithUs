@@ -7,10 +7,24 @@
   tools.id='fl-utility-menu';tools.className='fl-utility-menu';tools.setAttribute('aria-label','Website tools');tools.hidden=true;
   toggle.setAttribute('aria-controls',tools.id);toggle.setAttribute('aria-label','Open website tools');toggle.setAttribute('aria-haspopup','true');
   header.querySelector('.fl-topbar').append(tools);
-  const dedicatedKids=['word-bank.html','letter-tracing.html','addition.html','subtraction.html','multiplication.html','division.html','quiz-hub.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html'];
+  const dedicatedKids=['word-bank.html','letter-tracing.html','addition.html','subtraction.html','multiplication.html','division.html','quiz-hub.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','multiplication-tables.html','multiplication-tables-quiz.html','india.html','india-quiz.html','planets.html','countries-capitals.html','world-quiz.html'];
   const pageName=location.pathname.split('/').pop()||'index.html';
-  if(dedicatedKids.includes(pageName)&&!document.querySelector('.fl-section-nav')){
-    const category=document.createElement('nav');category.className='fl-section-nav';category.setAttribute('aria-label','Kids learning categories');category.innerHTML='<div class="fl-container"><a class="fl-section-label" href="children.html">Kids Corner</a><a href="children.html?mode=words">Phonics</a><a href="word-bank.html">Picture Words</a><a href="letter-tracing.html">Letter Tracing</a><a href="addition.html">Addition</a><a href="subtraction.html">Subtraction</a><a href="multiplication.html">Multiplication</a><a href="division.html">Division</a><a href="place-value.html">More Maths</a><a href="india.html">India & Maps</a><a href="quiz-hub.html">Quiz Hub</a></div>';header.after(category);
+  const isKidsPage=document.body.dataset.area==='kids'||['children.html','kids-quiz.html','early-learning.html','kids-skills.html','languages.html','hindi.html','telugu.html',...dedicatedKids].includes(pageName);
+  let kidsQuickNav=null;
+  if(isKidsPage){
+    kidsQuickNav=document.querySelector('.fl-section-nav[aria-label="Kids activities"]');
+    if(!kidsQuickNav){kidsQuickNav=document.createElement('nav');header.after(kidsQuickNav);}
+    kidsQuickNav.classList.add('fl-section-nav','fl-kids-quick-nav');
+    kidsQuickNav.setAttribute('aria-label','Kids activities');
+    kidsQuickNav.innerHTML='<div class="fl-container"><a class="fl-section-label" href="children.html">Kids Corner</a><a href="children.html?mode=letters">Letters</a><a href="hindi.html">Hindi</a><a href="telugu.html">Telugu</a><a href="children.html?mode=words">Phonics</a><a href="children.html?mode=numbers">Numbers</a><a href="children.html?mode=animals">Animals</a><a href="early-learning.html?topic=colours">Colours</a><a href="early-learning.html?topic=shapes">Shapes</a><a href="early-learning.html?topic=poems">Poems</a><a href="quiz-hub.html">Quiz Hub</a></div>';
+    let lastScrollY=window.scrollY,scrollTicking=false;
+    const updateKidsQuickNav=()=>{
+      const y=Math.max(0,window.scrollY),delta=y-lastScrollY;
+      if(y<110||delta<-6)kidsQuickNav.classList.remove('is-scroll-hidden');
+      else if(delta>6)kidsQuickNav.classList.add('is-scroll-hidden');
+      lastScrollY=y;scrollTicking=false;
+    };
+    window.addEventListener('scroll',()=>{if(!scrollTicking){scrollTicking=true;requestAnimationFrame(updateKidsQuickNav);}},{passive:true});
   }
   function height(){document.documentElement.style.setProperty('--fl-header-height',header.getBoundingClientRect().height+'px');}
   function closeMenu(){tools.classList.remove('is-open');tools.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open website tools');height();}
@@ -25,7 +39,7 @@
     const here=new URL(location.href);
     const mode=here.searchParams.get('mode'),category=here.searchParams.get('category');
     let selected=current;
-    if(['counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html'].includes(current))selected='quiz-hub.html';
+    if(['counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','kids-quiz.html','multiplication-tables-quiz.html','india-quiz.html','world-quiz.html'].includes(current))selected='quiz-hub.html';
     else if(current==='children.html'&&['letters','words','numbers','animals'].includes(mode))selected+='?mode='+mode;
     else if(current==='early-learning.html'&&['colours','shapes','matching','poems'].includes(here.searchParams.get('topic')))selected+='?topic='+here.searchParams.get('topic');
     else if(current==='kids-quiz.html'&&['letters','numbers'].includes(category))selected+='?category='+category;

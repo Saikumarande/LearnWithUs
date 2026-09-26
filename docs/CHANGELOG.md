@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.8.1 — 2026-09-26
+- Changed Multiplication Tables 1–20 to one vertical fact per row and standardized learning/quiz coverage to ×1–×10.
+- Added one consistent compact Kids quick-navigation strip across every Kids learning and quiz page.
+- Added scroll-direction behavior: the Kids quick nav hides on downward scrolling and reappears on upward scrolling.
+- Preserved existing Food/Health section navigation and all v1.8.0 learning, quiz, progress, score-card and PWA models.
+- Updated service-worker cache entries, README and regression documentation.
+
+## 1.8.0 — 2026-09-26
+- Aligned Maths learning-journey action buttons consistently across arithmetic and extended maths lessons.
+- Added Multiplication Tables 1–20 learning and a table-specific 10-question quiz with automatic table handoff and selectable table changes.
+- Added review guidance when a table-quiz score is below 8/10.
+- Expanded Time & Calendar with Days of the Week, Months of the Year and Seasons.
+- Added Planets learning/quiz and Countries & Capitals learning/quiz.
+- Reworked India Map Activities into Map Hunt typed answers plus five-choice capital/region interactions.
+- Added a dedicated India States & Capitals quiz with five choices per question, voice feedback and score card.
+- Added achievement symbols to the shared score-card artwork without changing existing score-card behavior.
+- Updated Kids Corner, Quiz Hub, PWA cache, sitemap, README and tests while preserving the existing progress/storage model.
+
+## 1.7.4 — 2026-09-26
+- Fixed the Kids Corner Letters first-open render so A–Z cards appear immediately before any style switch.
+- Rebuilt Kids Corner activity links as larger descriptive tiles with three columns on desktop and responsive two/one-column layouts.
+- Separated India & General Knowledge from World Around Us and kept all existing activities in clearer subject categories.
+- Updated Kids activity search for the new tile/category structure.
+- Added a shared responsive score-card stylesheet to every quiz using the reusable score-card component, preventing oversized or off-screen results.
+- Updated offline cache entries for the changed Kids Corner and score-card assets.
+- Preserved existing quiz scoring, progress storage, URLs, PWA behavior and unrelated learning content.
+- Added dedicated v1.7.4 regression checks for Kids categories, first-open Letters rendering, shared score-card consumers and public/dist parity.
+
+## 1.7.3 — 2026-09-26
+- Replaced the rough India-map presentation with a real labelled India state/UT reference map while retaining an offline local fallback.
+- Moved all 28 state and 8 union-territory choices below the map; selections now update the right-side details panel in place without navigation.
+- Fixed Letter Tracing so a selected letter renders immediately on input/change and Next Letter stays synchronized.
+- Added complete spoken feedback to the four original maths lesson practice blocks and the six newer maths lesson practice blocks.
+- Preserved quiz scoring, progress storage, score cards, PWA behavior, navigation and unrelated learning content.
+
+## 1.7.2 — 2026-09-26
+- Added direct Learn → Practise → Quiz continuation across existing maths lessons and applicable Kids learning activities.
+- Added full 10-question quizzes for Place Value, Odd & Even, Fractions, Time & Calendar, Indian Money and Measurement using the existing score-card and saved-progress model.
+- Restored the complete Kids Quiz Hub inventory across English, Maths, India/languages and Food.
+- Replaced the previous rough India diagram with a locally bundled geographic India outline, real-coordinate state/UT markers, interactive detail cards and map activities.
+- Removed redundant “Back to Kids Corner” actions where a direct quiz or quiz-discovery action is more useful.
+- Kept existing storage, progress, PWA, server and original four-operation learning/quiz behavior intact.
+
 ## 1.7.1 — 2026-09-26
 - Replaced external India map/directory redirects with an internal interactive India learning map and clickable state/UT details.
 - Added map-based find-state, capital and region activities.
@@ -19,8 +62,6 @@
 - Added Place Value, Odd & Even, Fractions, Time & Calendar, Indian Money, and Measurement learning pages.
 - Added India & Maps with all 28 states, 8 union territories, capitals, regions, major languages, national symbols and the official Survey of India political map.
 - Enlarged the letter-tracing selector and updated offline cache/search discovery.
-
-# Changelog
 
 ## 1.6.0 — 2026-09-26
 

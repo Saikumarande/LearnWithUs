@@ -35,3 +35,38 @@ Use a private browser window so old local progress does not affect the result.
 | Reduced motion | Enable “Reduce motion” in the operating system, then reload | Smooth/animated motion is suppressed |
 
 Audio uses the browser and operating-system speech voices. The website intentionally refuses an English or wrong-language fallback. On Windows, install available Hindi or Telugu speech features in **Settings → Time & language → Language & region → Language options**, then restart the browser. Some browser/OS combinations do not expose a Telugu voice to websites; in that case the page keeps sound disabled instead of risking incorrect teaching.
+
+
+## v1.7.4 focused regression checks
+
+- Kids Corner → Letters: first click must render all 26 capital-letter cards immediately; no second style click is required.
+- Switch Capitals → Small letters → Capitals: card count remains 26 and glyph case updates correctly.
+- Kids Corner activity tiles: desktop layout uses up to three tiles per row; tablet/mobile reduces without horizontal overflow.
+- Kids activity search: searches the new descriptive tiles and hides category groups with no matching activities.
+- Category placement: India & Maps appears under India & General Knowledge; Animals/Colours/Shapes remain under World Around Us; Hindi/Telugu remain under Indian Languages.
+- Shared score cards: Food, Letters/Numbers, Picture Matching, Counting, Missing Letters, Picture Spelling and Maths results remain centered and within the viewport.
+- Score-card action buttons: three-column desktop layout and one-column mobile layout.
+- Existing quiz URLs, saved progress, score-card downloads/sharing, PWA cache and custom 404 continue to work.
+
+## v1.8.1 focused regression checks
+
+- Multiplication Tables: select each table 1–20; exactly 10 facts render vertically from ×1 to ×10; the quiz link preserves the selected table.
+- Multiplication Tables Quiz: selected table is preserved and the 10 questions use factors 1 through 10 only.
+- Kids quick navigation: every page with `data-area="kids"` loads the shared shell and receives the same 11-link Kids strip.
+- Scroll behavior: the Kids strip hides after downward scrolling and returns after upward scrolling; it remains visible near the top of the page.
+- Navigation scope: Food and Health section navigation is not replaced by the Kids quick navigation.
+
+## v1.8.0 focused regression checks
+
+- Maths journey buttons: Start Quiz / secondary learning action / Next Topic are equal-width and aligned on desktop and stack on mobile.
+- Multiplication Tables: select each table 1–20; facts update to ×1–×10; quiz link preserves the selected table.
+- Tables Quiz: query-string table auto-selects, dropdown can change the table, ten questions render, spoken correct/wrong feedback is complete, and scores below 8/10 link back to the same table.
+- Time & Calendar: Days, Months and Seasons learning sections render in the existing page; calendar quiz includes the new learning.
+- India Map Hunt: a target marker is shown and typed state/UT answers are checked with spoken feedback.
+- India Capital/Region activities: five choices render and correct/wrong feedback is spoken.
+- India States & Capitals Quiz: ten questions, five capital options, score card and review link work.
+- Planets and Countries & Capitals pages render with direct quiz continuation; both new quiz topics use complete spoken feedback and shared score cards.
+- Kids Corner and Quiz Hub expose all new learning/quiz routes in their correct subject categories.
+- Shared score-card remains responsive and now includes achievement symbols.
+- Existing Letters first-open, tracing, old/new maths, food/English quizzes, language audio, local progress, PWA/offline, 404 and server checks remain green.
+

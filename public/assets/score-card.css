@@ -1,0 +1,7 @@
+/* Shared responsive score-card presentation. */
+.score-card-share{box-sizing:border-box;width:min(100%,780px);max-width:780px;margin:24px auto;padding:clamp(12px,2.5vw,18px);overflow:hidden;border:1px solid #d9dfd8;border-radius:18px;background:#f8f7fa}
+.score-card-share img{box-sizing:border-box;display:block;width:100%;max-width:744px;height:auto;aspect-ratio:1200/630;object-fit:contain;margin:0 auto;border-radius:13px}
+.score-card-actions{box-sizing:border-box;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:744px;margin:14px auto 0!important;align-items:stretch}
+.score-card-actions>a,.score-card-actions>button{box-sizing:border-box;width:100%;min-width:0;white-space:normal;text-align:center}
+.score-share-status{max-width:744px;margin:12px auto 0!important;text-align:center;overflow-wrap:anywhere}
+@media(max-width:720px){.score-card-share{width:100%;padding:12px}.score-card-actions{grid-template-columns:1fr}.score-card-actions>*{width:100%!important}.score-card-share img{border-radius:10px}}

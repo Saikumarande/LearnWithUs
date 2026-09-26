@@ -6,13 +6,13 @@
   <title>Kids Corner — Letters, Numbers & Animals | LearnWithUs</title>
   <meta name="description" content="See all 26 letters together, explore picture words, learn 20 numbers at a time and hear animal names. Try separate parent-guided letter and number quizzes.">
   <link rel="stylesheet" href="assets/learning.css?v=226777a61b48">
-  <link rel="stylesheet" href="assets/kids.css?v=a692bb947692">
+  <link rel="stylesheet" href="assets/kids.css?v=20260926m">
   <script src="assets/kids-data.js?v=2eccb689e1a3" defer></script>
   <script src="assets/kids-audio.js?v=dbd8bd22774f" defer></script>
-  <script src="assets/children.js?v=6aa9d576bd9a" defer></script>
-  <script src="assets/kids-search.js?v=20260926g" defer></script>
-<link rel="stylesheet" href="assets/site-shell.css?v=20260926g"><link rel="stylesheet" href="assets/platform.css?v=20260926g">
-<script src="assets/site-shell.js?v=20260926g" defer></script><script src="assets/platform.js?v=20260926g" data-learnwithus-platform defer></script>
+  <script src="assets/children.js?v=20260926m" defer></script>
+  <script src="assets/kids-search.js?v=20260926m" defer></script>
+<link rel="stylesheet" href="assets/site-shell.css?v=20260926p"><link rel="stylesheet" href="assets/platform.css?v=20260926g">
+<script src="assets/site-shell.js?v=20260926p" defer></script><script src="assets/platform.js?v=20260926g" data-learnwithus-platform defer></script>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/visual-theme.css?v=7e60b75783a7">
 </head>
@@ -47,11 +47,64 @@
       <input class="kids-activity-search" id="kidsActivitySearch" type="search" placeholder="Search letters, colours, matching, rhymes…" autocomplete="off">
       <p class="kids-search-status" id="kidsSearchStatus" role="status" aria-live="polite"></p>
       <div class="kids-category-stack">
-        <section class="kids-category-card kids-category-english"><div class="kids-category-title"><span>🔤</span><div><h3>English &amp; Reading</h3><p>Letters, sounds, words, spelling and poems.</p></div></div><div class="kids-category-links"><button type="button" class="mini-choice" data-mode="letters">Aa Letters</button><button type="button" class="mini-choice" data-mode="words">🍎 Phonics</button><a href="word-bank.html">🖼️ Picture Words</a><a href="letter-tracing.html">✍️ Letter Tracing</a><a href="early-learning.html?topic=poems">🎵 Poems</a></div></section>
-        <section class="kids-category-card kids-category-maths"><div class="kids-category-title"><span>🔢</span><div><h3>Maths &amp; Numbers</h3><p>Count, calculate, measure and understand everyday maths.</p></div></div><div class="kids-category-links"><button type="button" class="mini-choice" data-mode="numbers">123 Numbers</button><a href="addition.html">➕ Addition</a><a href="subtraction.html">➖ Subtraction</a><a href="multiplication.html">✖️ Multiplication</a><a href="division.html">➗ Division</a><a href="place-value.html">🏠 Place value</a><a href="odd-even.html">2️⃣ Odd &amp; even</a><a href="fractions.html">🍕 Fractions</a><a href="time-calendar.html">🕐 Time &amp; calendar</a><a href="indian-money.html">₹ Indian money</a><a href="measurement.html">📏 Measurement</a></div></section>
-        <section class="kids-category-card kids-category-world"><div class="kids-category-title"><span>🌏</span><div><h3>World Around Us</h3><p>Animals, colours, shapes and India.</p></div></div><div class="kids-category-links"><button type="button" class="mini-choice" data-mode="animals">🦁 Animals</button><a href="early-learning.html?topic=colours">🎨 Colours</a><a href="early-learning.html?topic=shapes">🔺 Shapes</a><a href="india.html">🇮🇳 India &amp; Maps</a></div></section>
-        <section class="kids-category-card kids-category-language"><div class="kids-category-title"><span>🗣️</span><div><h3>Indian Languages</h3><p>See and hear letters in Indian scripts.</p></div></div><div class="kids-category-links"><a href="hindi.html">अ Hindi</a><a href="telugu.html">అ Telugu</a></div></section>
-        <section class="kids-category-card kids-category-quiz"><div class="kids-category-title"><span>🏆</span><div><h3>Quiz Hub</h3><p>All quizzes live in one place, so learning pages stay simple.</p></div></div><div class="kids-category-links"><a href="quiz-hub.html">⭐ Open Kids Quiz Hub</a></div></section>
+        <section class="kids-category-card kids-category-english">
+          <div class="kids-category-title"><span aria-hidden="true">🔤</span><div><h3>English &amp; Reading</h3><p>Build letter recognition, sounds, words, handwriting and reading confidence.</p></div></div>
+          <div class="kids-category-links">
+            <button type="button" class="mini-choice kids-activity-card" data-mode="letters"><span class="activity-icon" aria-hidden="true">Aa</span><span class="activity-copy"><strong>Letters</strong><small>Learn A–Z in capitals, small letters and cursive styles.</small></span></button>
+            <button type="button" class="mini-choice kids-activity-card" data-mode="words"><span class="activity-icon" aria-hidden="true">🍎</span><span class="activity-copy"><strong>Phonics</strong><small>Connect each letter with a familiar beginning word and sound.</small></span></button>
+            <a class="kids-activity-card" href="word-bank.html"><span class="activity-icon" aria-hidden="true">🖼️</span><span class="activity-copy"><strong>Picture Words</strong><small>Explore 100 useful words with pictures for early reading practice.</small></span></a>
+            <a class="kids-activity-card" href="letter-tracing.html"><span class="activity-icon" aria-hidden="true">✍️</span><span class="activity-copy"><strong>Letter Tracing</strong><small>Trace one letter at a time with mouse, finger or stylus.</small></span></a>
+            <a class="kids-activity-card" href="early-learning.html?topic=poems"><span class="activity-icon" aria-hidden="true">🎵</span><span class="activity-copy"><strong>Poems</strong><small>Read familiar rhymes in large text and play the song.</small></span></a>
+          </div>
+        </section>
+
+        <section class="kids-category-card kids-category-maths">
+          <div class="kids-category-title"><span aria-hidden="true">🔢</span><div><h3>Maths &amp; Numbers</h3><p>Move from number recognition to arithmetic, time, money and measurement.</p></div></div>
+          <div class="kids-category-links">
+            <button type="button" class="mini-choice kids-activity-card" data-mode="numbers"><span class="activity-icon" aria-hidden="true">123</span><span class="activity-copy"><strong>Numbers</strong><small>Recognise, hear and count numbers from 0 to 100.</small></span></button>
+            <a class="kids-activity-card" href="place-value.html"><span class="activity-icon" aria-hidden="true">🏠</span><span class="activity-copy"><strong>Place Value</strong><small>Understand ones, tens and hundreds.</small></span></a>
+            <a class="kids-activity-card" href="odd-even.html"><span class="activity-icon" aria-hidden="true">2️⃣</span><span class="activity-copy"><strong>Odd &amp; Even</strong><small>Find number pairs and numbers with one left over.</small></span></a>
+            <a class="kids-activity-card" href="addition.html"><span class="activity-icon" aria-hidden="true">➕</span><span class="activity-copy"><strong>Addition</strong><small>Put groups together and practise simple sums.</small></span></a>
+            <a class="kids-activity-card" href="subtraction.html"><span class="activity-icon" aria-hidden="true">➖</span><span class="activity-copy"><strong>Subtraction</strong><small>Take items away and find what remains.</small></span></a>
+            <a class="kids-activity-card" href="multiplication.html"><span class="activity-icon" aria-hidden="true">✖️</span><span class="activity-copy"><strong>Multiplication</strong><small>Learn repeated addition with equal groups.</small></span></a><a class="kids-activity-card" href="multiplication-tables.html"><span class="activity-icon" aria-hidden="true">📚</span><span class="activity-copy"><strong>Times Tables 1–20</strong><small>Choose one table, read ×1 to ×10 and launch its matching quiz.</small></span></a>
+            <a class="kids-activity-card" href="division.html"><span class="activity-icon" aria-hidden="true">➗</span><span class="activity-copy"><strong>Division</strong><small>Share objects equally into groups.</small></span></a>
+            <a class="kids-activity-card" href="fractions.html"><span class="activity-icon" aria-hidden="true">🍕</span><span class="activity-copy"><strong>Fractions</strong><small>Explore wholes, halves and quarters.</small></span></a>
+            <a class="kids-activity-card" href="time-calendar.html"><span class="activity-icon" aria-hidden="true">🕐</span><span class="activity-copy"><strong>Time &amp; Calendar</strong><small>Practise hours, days, weeks and months.</small></span></a>
+            <a class="kids-activity-card" href="indian-money.html"><span class="activity-icon" aria-hidden="true">₹</span><span class="activity-copy"><strong>Indian Money</strong><small>Recognise rupees and work out simple totals.</small></span></a>
+            <a class="kids-activity-card" href="measurement.html"><span class="activity-icon" aria-hidden="true">📏</span><span class="activity-copy"><strong>Measurement</strong><small>Compare length, weight and capacity.</small></span></a>
+          </div>
+        </section>
+
+        <section class="kids-category-card kids-category-world">
+          <div class="kids-category-title"><span aria-hidden="true">🌏</span><div><h3>World Around Us</h3><p>Learn through familiar animals, colours and shapes.</p></div></div>
+          <div class="kids-category-links">
+            <button type="button" class="mini-choice kids-activity-card" data-mode="animals"><span class="activity-icon" aria-hidden="true">🦁</span><span class="activity-copy"><strong>Animals</strong><small>See animal pictures, hear their names and say them aloud.</small></span></button>
+            <a class="kids-activity-card" href="early-learning.html?topic=colours"><span class="activity-icon" aria-hidden="true">🎨</span><span class="activity-copy"><strong>Colours</strong><small>Learn 25 colour names and spot them around you.</small></span></a>
+            <a class="kids-activity-card" href="early-learning.html?topic=shapes"><span class="activity-icon" aria-hidden="true">🔺</span><span class="activity-copy"><strong>Shapes</strong><small>Recognise 15 common shapes by name and symbol.</small></span></a><a class="kids-activity-card" href="planets.html"><span class="activity-icon" aria-hidden="true">🪐</span><span class="activity-copy"><strong>Planets</strong><small>Learn the eight planets in order from the Sun.</small></span></a><a class="kids-activity-card" href="countries-capitals.html"><span class="activity-icon" aria-hidden="true">🌍</span><span class="activity-copy"><strong>Countries &amp; Capitals</strong><small>Explore 48 countries across six regions and remember their capitals.</small></span></a>
+          </div>
+        </section>
+
+        <section class="kids-category-card kids-category-india">
+          <div class="kids-category-title"><span aria-hidden="true">🇮🇳</span><div><h3>India &amp; General Knowledge</h3><p>Explore India separately so states, capitals and national learning are easy to find.</p></div></div>
+          <div class="kids-category-links">
+            <a class="kids-activity-card" href="india.html"><span class="activity-icon" aria-hidden="true">🗺️</span><span class="activity-copy"><strong>India &amp; Maps</strong><small>Explore all states and union territories, capitals, regions and languages.</small></span></a>
+          </div>
+        </section>
+
+        <section class="kids-category-card kids-category-language">
+          <div class="kids-category-title"><span aria-hidden="true">🗣️</span><div><h3>Indian Languages</h3><p>See, hear and practise letters in Indian scripts.</p></div></div>
+          <div class="kids-category-links">
+            <a class="kids-activity-card" href="hindi.html"><span class="activity-icon" aria-hidden="true">अ</span><span class="activity-copy"><strong>Hindi</strong><small>Look at Hindi letters and listen to matching-language pronunciation.</small></span></a>
+            <a class="kids-activity-card" href="telugu.html"><span class="activity-icon" aria-hidden="true">అ</span><span class="activity-copy"><strong>Telugu</strong><small>Look at Telugu letters and listen to matching-language pronunciation.</small></span></a>
+          </div>
+        </section>
+
+        <section class="kids-category-card kids-category-quiz">
+          <div class="kids-category-title"><span aria-hidden="true">🏆</span><div><h3>Quiz Hub</h3><p>When learning is finished, choose the matching challenge from one organised quiz page.</p></div></div>
+          <div class="kids-category-links">
+            <a class="kids-activity-card kids-quiz-tile" href="quiz-hub.html"><span class="activity-icon" aria-hidden="true">⭐</span><span class="activity-copy"><strong>Open Kids Quiz Hub</strong><small>English, Maths, India/languages and Food quizzes are grouped here.</small></span></a>
+          </div>
+        </section>
       </div>
     </section>
     

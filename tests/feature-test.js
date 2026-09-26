@@ -6,8 +6,8 @@ const vm=require('node:vm');
 const projectRoot=path.resolve(__dirname,'..');
 const root=path.join(projectRoot,'public');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const failures=[];
-const expect=(value,message)=>{if(!value)failures.push(message);};
+const failures=[];let checks=0,passed=0;
+const expect=(value,message)=>{checks++;if(!value)failures.push(message);else passed++;};
 
 const children=read('children.html');
 const hindi=read('hindi.html');
@@ -36,12 +36,12 @@ expect(platform.includes('getFullYear()*372')&&platform.includes('new calendar d
 expect(!platform.includes('<h2>Start here</h2>')&&!platform.includes('lw-path-card'),'Removed Start here section is still present');
 expect(platform.includes("learning.setAttribute('aria-current','page')")&&platform.includes("page==='dashboard.html'"),'My learning active state is missing');
 expect(manifest.display==='standalone','PWA manifest should use standalone display');
-expect(read('service-worker.js').includes("CACHE='learnwithus-v1.7.1'"),'Service-worker cache version must match release 1.7.1');
+expect(read('service-worker.js').includes("CACHE='learnwithus-v1.8.1'"),'Service-worker cache version must match release 1.8.1');
 expect(read('robots.txt').includes('Sitemap:'),'robots.txt must advertise the sitemap');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes("path.join(__dirname, 'public')"),'Server must expose only the public folder');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes('404.html'),'Server must use the custom 404 page');
-expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='1.7.1','VERSION must match release 1.7.1');
-expect(packageJson.version==='1.7.1','package.json must be version 1.7.1 for this minor release');
+expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='1.8.1','VERSION must match release 1.8.1');
+expect(packageJson.version==='1.8.1','package.json must be version 1.8.1 for this release');
 expect(platform.includes('dailyGoalMinutes')&&platform.includes('learningStreak'),'Daily goal and streak state are missing');
 expect(platform.includes('dailyChallenge')&&platform.includes('achievements'),'Daily challenge and achievements are missing');
 expect(platform.includes('mistakes')&&platform.includes('Review quiz mistakes'),'Quiz mistake review is missing');
@@ -76,7 +76,7 @@ expect(shellCss.includes('.score-card-actions>a,.score-card-actions>button'),'Sc
 expect(shellCss.includes('.score-card-actions>.score-share')&&shellCss.includes('font-weight:900'),'Share with a friend must receive the strongest score-card emphasis');
 expect(read('dashboard.html').includes('id="lw-fallback-goal"')&&read('assets/dashboard-recovery.js').includes('[5,10,15,20,30]'),'Selectable dashboard goals must work in enhanced and fallback modes');
 expect(read('assets/kids-quiz.js').includes('function saveQuiz')&&read('assets/quiz.js').includes('function saveQuiz'),'Both quiz systems need resilient local progress saving');
-expect(children.includes('id="kidsActivitySearch"')&&read('assets/kids-search.js').includes('kids-learning-choices'),'Kids activity search is missing');
+expect(children.includes('id="kidsActivitySearch"')&&read('assets/kids-search.js').includes('.kids-activity-card')&&read('assets/kids-search.js').includes('.kids-category-card'),'Kids activity search must filter the descriptive activity tiles and category groups');
 expect(read('early-learning.html').includes('topic=colours')&&read('early-learning.html').includes('topic=shapes')&&read('early-learning.html').includes('id="matchingPanel"')&&read('early-learning.html').includes('topic=poems'),'Preschool activity navigation is incomplete');
 expect(read('assets/early-learning.js').includes("['Turquoise','#40e0d0']")&&read('assets/early-learning.js').includes("['Semi-circle','◒']")&&read('assets/early-learning.js').includes('speechSynthesis'),'The 25 colours, 15 shapes or audio support are missing');
 expect(['Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','White','Grey','Light blue','Navy blue','Teal','Lime green','Olive green','Maroon','Violet','Indigo','Gold','Silver','Beige','Cream','Coral','Turquoise'].every(name=>earlyJs.includes("['"+name+"',")),'All 25 named colour cards must be present');
@@ -94,20 +94,63 @@ expect(read('quiz-hub.html').includes('<h2>English</h2>')&&read('quiz-hub.html')
 expect(read('assets/practice.js').includes('renderLearnWithUsScoreCard')&&read('assets/practice.js').includes('recordQuiz'),'New quizzes must reuse score-card sharing and progress recording');
 expect(!children.includes('kids-skills.html?topic=phonics')&&children.includes('word-bank.html')&&children.includes('letter-tracing.html'),'Kids activities must use separate routes without a duplicate Phonics card');
 expect(read('assets/kids.css').includes('.kids-learning-choices a.choice')&&read('assets/kids.css').includes('text-decoration:none'),'Kids activity card underlines must be removed');
-expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 1.7.1'),'CHANGELOG must document release 1.7.1');
-expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"1.7.1\"'),'package.json release version is missing');
+expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 1.8.1'),'CHANGELOG must document release 1.8.1');
+expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"1.8.1\"'),'package.json release version is missing');
 
 expect(['place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','india.html'].every(file=>fs.existsSync(path.join(root,file))),'v1.7 learning pages are missing');
 expect(!read('children.html').includes('Picture quiz</span>')&&!read('children.html').includes('Letter quiz</a>'),'Kids Corner must not duplicate quiz activities outside Quiz Hub');
 expect(read('children.html').includes('English &amp; Reading')&&read('children.html').includes('India &amp; Maps'),'Kids Corner learning categories are incomplete');
-expect(read('quiz-hub.html').includes('quiz-hub-colourful')&&read('quiz-hub.html').includes('🧩 Picture Matching'),'Quiz Hub visual redesign is missing');
+expect(read('quiz-hub.html').includes('quiz-hub-colourful')&&read('quiz-hub.html').includes('Picture Matching')&&read('quiz-hub.html').includes('Measurement'),'Quiz Hub visual redesign is missing');
 expect(read('assets/early-learning.js').includes('youtube-nocookie.com/embed/')&&read('assets/early-learning.js').includes("document.createElement('iframe')"),'Poems must use click-to-load in-page song embeds');
 expect(read('assets/practice.css').includes('#traceLetterSelect{font-size:1.35rem')&&read('assets/practice.js').includes('id="nextTrace"'),'Tracing selector and Next letter control are missing');
-expect(read('india.html').includes('Interactive India map')&&read('india.html').includes('map-marker')&&read('assets/india.js').includes('data-map-game'),'Interactive India map and activities are missing');
-expect(read('service-worker.js').includes('learnwithus-v1.7.1')&&read('service-worker.js').includes("'./india.html'"),'v1.7.1 offline cache is incomplete');
+expect(read('india.html').includes('India map')&&read('india.html').includes('India_-_administrative_map.png')&&read('india.html').includes('data-map-game'),'Interactive India map and activities are missing');
+expect(read('service-worker.js').includes('learnwithus-v1.8.1')&&read('service-worker.js').includes("'./india.html'"),'v1.8.1 offline cache is incomplete');
 
 expect(read('assets/practice.js').includes("Wrong answer. The correct answer is '+answer+'.'"),'Wrong-answer speech must say the complete feedback sentence');
-expect(read('india.html').match(/class="map-marker"/g).length===36,'India map must include all 28 states and 8 union territories as interactive markers');
+expect((read('assets/india-data.js').match(/\"name\":/g)||[]).length===36,'India map must include all 28 states and 8 union territories');
 expect(!Array.from(fs.readdirSync(root)).filter(f=>f.endsWith('.html')).some(f=>/<a\b[^>]*href=["']https?:\/\//i.test(read(f))),'Public HTML must not contain outbound website links');
+expect(['place-value','odd-even','fractions','time-calendar','indian-money','measurement'].every(topic=>read('quiz-hub.html').includes('math-quiz.html?topic='+topic)),'Quiz Hub is missing one or more extended maths quizzes');
+expect(read('math-quiz.html').includes('assets/math-extra-quiz.js')&&read('assets/math-extra-quiz.js').includes('QUESTION_SETS'),'Extended maths quiz engine is not wired');
+expect(['place-value','odd-even','fractions','time-calendar','indian-money','measurement'].every(topic=>read('assets/math-extra-quiz.js').includes('\"'+topic+'\"')),'Extended maths quiz question sets are incomplete');
+expect(['addition.html','subtraction.html','multiplication.html','division.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','letter-tracing.html','word-bank.html'].every(file=>read(file).includes('assets/learning-journey.js')),'Direct learning-to-quiz journey is missing from one or more learning pages');
+expect(!['place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html'].some(file=>read(file).includes('← Back to Kids Corner')),'Extended maths lessons must not end with Back to Kids Corner');
+expect(!read('kids-quiz.html').includes('Back to Kids Corner')&&read('kids-quiz.html').includes('Explore more quizzes'),'Kids quiz result navigation is not quiz-focused');
+expect(read('assets/children.js').includes("ui.practiceQuiz.href='spelling-quiz.html'")&&read('assets/children.js').includes("ui.practiceQuiz.href='early-learning.html?topic=matching'"),'Phonics and Animals must continue directly into their matching quizzes');
+expect(read('india.html').includes('stateSelector')&&!read('india.html').includes('mapPointLayer')&&read('assets/india.js').includes('LEARNWITHUS_INDIA_PLACES'),'India state/UT interaction layer is incomplete');
+
+expect(read('assets/practice.js').includes("select.addEventListener('input',showTraceLetter)")&&read('assets/practice.js').includes("select.addEventListener('change',showTraceLetter)")&&read('assets/practice.js').includes("showTraceLetter();document.getElementById('nextTrace')"),'Tracing must render a selected letter immediately and keep Next letter synchronized');
+expect(read('assets/practice.js').includes("const msg='Wrong answer. The correct answer is '+answer+'.'")&&read('assets/practice.js').includes('speak(msg);next();'),'Original maths lesson practice must speak complete answer feedback');
+expect(read('assets/math-extra.js').includes("const msg=ok?'Correct answer!':'Wrong answer. The correct answer is '+q[2]+'.'")&&read('assets/math-extra.js').includes('speak(msg)'),'Extended maths lesson practice must speak complete answer feedback');
+expect(read('assets/math-extra-quiz.js').includes("const msg=ok?'Correct answer!':'Wrong answer. The correct answer is '+q[2]+'.'")&&read('assets/math-extra-quiz.js').includes('speak(msg)'),'Extended maths quizzes must speak complete answer feedback');
+expect(read('assets/india.js').includes("buildGroup('States'")&&read('assets/india.js').includes("buildGroup('Union territories'")&&read('assets/india.js').includes("setAttribute('aria-pressed'"),'India selector must render states and union territories below the map with in-place selection state');
+
+
+expect(read('children.html').includes('kids-category-india')&&read('children.html').includes('India &amp; General Knowledge'),'India & Maps must have its own clear Kids Corner category');
+expect((read('children.html').match(/class="[^"]*kids-activity-card/g)||[]).length>=20,'Kids Corner must expose the full learning set as descriptive activity tiles');
+expect(read('assets/kids.css').includes('grid-template-columns:repeat(3,minmax(0,1fr))')&&read('assets/kids.css').includes('.activity-copy small'),'Kids Corner tiles must use a three-column desktop layout with descriptions');
+expect(read('assets/children.js').includes('requestAnimationFrame(ensureModeRendered)')&&read('assets/children.js').includes("mode==='letters'?letters.length"),'Letters first-open render guard is missing');
+expect(read('assets/children.js').includes('ui.learningGrid.replaceChildren()')&&read('assets/children.js').includes('ui.learningGrid.hidden=false'),'Letters mode must clear stale content and reveal the learning grid before rendering');
+const childrenLiteralIds=[...childrenJs.matchAll(/getElementById\('([^']+)'\)/g)].map(match=>match[1]);
+expect(childrenLiteralIds.every(id=>children.includes('id=\"'+id+'\"')),'Kids Corner script references a DOM id that no longer exists in children.html');
+expect(!childrenJs.includes("getElementById('kids-quiz-choices')"),'Removed Kids quiz placeholder must not remain in the Kids Corner script');
+expect(fs.existsSync(path.join(root,'assets','score-card.css'))&&read('assets/score-card.css').includes('width:min(100%,780px)')&&read('assets/score-card.css').includes('grid-template-columns:repeat(3,minmax(0,1fr))'),'Shared score-card responsive layout is missing');
+const scorePages=fs.readdirSync(root).filter(file=>file.endsWith('.html')&&read(file).includes('score-card.js'));
+expect(scorePages.every(file=>read(file).includes('assets/score-card.css')),'Every shared score-card consumer must load the responsive score-card stylesheet');
+expect(read('assets/score-card.css').includes('@media(max-width:720px)')&&read('assets/score-card.css').includes('grid-template-columns:1fr'),'Score-card actions must stack on smaller screens');
+expect(read('service-worker.js').includes("'./assets/score-card.css?v=20260926m'")&&read('service-worker.js').includes("'./assets/children.js?v=20260926m'"),'v1.8.1 offline cache must preload the corrected Kids and score-card assets');
+expect(fs.readFileSync(path.join(projectRoot,'README.md'),'utf8').includes('## Current release: v1.8.1'),'README must document the current release changes');
+
+
+expect(fs.existsSync(path.join(root,'multiplication-tables.html'))&&fs.existsSync(path.join(root,'multiplication-tables-quiz.html')),'Multiplication tables feature routes are missing');
+expect(read('assets/tables-quiz.js').includes('score<8')&&read('assets/tables-quiz.js').includes('Wrong answer. The correct answer is '),'Table quiz review and spoken feedback are incomplete');
+expect(read('time-calendar.html').includes('Days of the week')&&read('time-calendar.html').includes('Months of the year')&&read('time-calendar.html').includes('Seasons'),'Days/months/seasons learning is incomplete');
+expect(fs.existsSync(path.join(root,'planets.html'))&&fs.existsSync(path.join(root,'countries-capitals.html'))&&fs.existsSync(path.join(root,'world-quiz.html')),'Planets/countries learning routes are missing');
+expect((read('assets/world-data.js').match(/"country":/g)||[]).length===48,'Countries & Capitals data should contain 48 starter countries');
+expect(read('india.html').includes('Map Hunt')&&read('assets/india.js').includes('mapTargetMarker')&&read('assets/india-quiz.js').includes('slice(0,10)'),'India interactive activities/quiz are incomplete');
+expect(read('assets/score-card.js').includes('★ ★ ★ ★ ★')&&read('assets/score-card.js').includes('🏆'),'Score-card achievement symbols are missing');
+expect(read('assets/practice.css').includes('.topic-quiz-journey .journey-actions')&&read('assets/practice.css').includes('grid-template-columns:repeat(auto-fit,minmax(220px,1fr))'),'Learning journey button alignment rules are missing');
+
+for(const file of fs.readdirSync(root).filter(x=>x.endsWith('.html'))){expect(!/<a\b[^>]*href=["']https?:\/\//i.test(read(file)),'Outbound website link remains in '+file)}
+
 if(failures.length){console.error(failures.join('\n'));process.exit(1);}
-console.log('Feature checks passed: language grids/audio hooks, active states, dashboard history, recommendations, PWA and server files.');
+console.log(`Feature checks passed: ${passed}/${checks} assertions. Language/audio, Kids rendering, score cards, active states, dashboard, PWA and server-file checks are green.`);

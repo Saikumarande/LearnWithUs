@@ -39,3 +39,24 @@
 .kids-category-stack{display:grid;gap:18px}.kids-category-card{border:1px solid #d9dfd1;border-radius:22px;padding:22px}.kids-category-title{display:flex;gap:15px;align-items:flex-start}.kids-category-title>span{font-size:42px}.kids-category-title h3{font-size:24px;margin:0 0 4px}.kids-category-title p{margin:0;color:var(--muted)}.kids-category-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.kids-category-links a,.kids-category-links .mini-choice{border:1px solid rgba(0,0,0,.12);border-radius:999px;background:#fff;padding:10px 14px;text-decoration:none;color:inherit;font:inherit;font-weight:800;cursor:pointer}.kids-category-english{background:#fff4d8}.kids-category-maths{background:#eaf7ff}.kids-category-world{background:#eaf8e8}.kids-category-language{background:#f5ecff}.kids-category-quiz{background:#fff0ef}@media(max-width:540px){.kids-category-card{padding:17px}.kids-category-links>*{width:100%;text-align:left}}
 
 .kids-category-stack{gap:24px}.kids-category-card{background:#fff!important;border:1px solid #d8ddd4;border-left:6px solid #5f3b78;box-shadow:0 5px 18px rgba(42,31,50,.06)}.kids-category-title{padding-bottom:13px;border-bottom:1px solid #ece8ef}.kids-category-title>span{font-size:38px}.kids-category-title h3{font-size:27px;line-height:1.15;color:#392148}.kids-category-title p{font-size:16px;font-weight:650;color:#655b69}.kids-category-links{gap:8px;margin-top:14px}.kids-category-links a,.kids-category-links .mini-choice{background:#fafafa;border-color:#e2e2e2;border-radius:12px;padding:10px 13px;font-weight:700}.kids-category-links a:hover,.kids-category-links .mini-choice:hover{background:#f3eef7;border-color:#cdbbd8}
+
+
+/* v1.7.4: Kids Corner activity tiles */
+.kids-category-stack{gap:28px}
+.kids-category-card{padding:clamp(18px,3vw,27px)}
+.kids-category-title{gap:16px;padding-bottom:15px;margin-bottom:17px}
+.kids-category-title>span{font-size:42px;line-height:1}
+.kids-category-title h3{font-size:clamp(27px,3vw,32px)!important;margin-bottom:6px}
+.kids-category-title p{font-size:17px;line-height:1.5;max-width:780px}
+.kids-category-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:0}
+.kids-category-links .kids-activity-card{box-sizing:border-box;display:flex;align-items:flex-start;gap:12px;width:100%;min-width:0;min-height:116px;border:1px solid #dfdfe2;border-radius:16px;background:#fcfcfc;padding:16px;text-align:left;text-decoration:none;color:inherit;font:inherit;cursor:pointer}
+.kids-category-links .kids-activity-card:hover,.kids-category-links .kids-activity-card:focus-visible{background:#f7f3f9;border-color:#c9b9d2;box-shadow:0 5px 14px rgba(42,31,50,.07);outline:none}
+.kids-category-links .activity-icon{display:grid;place-items:center;flex:0 0 44px;min-height:44px;border-radius:12px;background:#f1eef3;font-size:25px;font-weight:900;line-height:1;color:#4c315b}
+.kids-category-links .activity-copy{display:block;min-width:0}
+.kids-category-links .activity-copy strong{display:block;font-size:18px;line-height:1.25;margin:1px 0 7px;color:#34223e}
+.kids-category-links .activity-copy small{display:block;font-size:14px;line-height:1.45;color:#6a626d;font-weight:550}
+.kids-category-india{border-left-color:#a06a24}
+.kids-category-quiz{border-left-color:#567c47}
+.kids-category-links .kids-quiz-tile{grid-column:span 2}
+@media(max-width:900px){.kids-category-links{grid-template-columns:repeat(2,minmax(0,1fr))}.kids-category-links .kids-quiz-tile{grid-column:auto}}
+@media(max-width:590px){.kids-category-links{grid-template-columns:1fr}.kids-category-links .kids-activity-card{min-height:0;padding:14px}.kids-category-title>span{font-size:35px}}
