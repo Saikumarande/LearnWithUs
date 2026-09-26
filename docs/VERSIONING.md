@@ -1,18 +1,9 @@
 # LearnWithUs versioning
 
-The release number uses `MAJOR.MINOR.PATCH`.
+LearnWithUs uses semantic versioning: `MAJOR.MINOR.PATCH`.
 
-| Change | Example | Next version from 1.0.0 |
-| --- | --- | --- |
-| Bug fix, spelling correction, data correction, small styling fix | Correct a broken Telugu button | `1.0.1` |
-| New backward-compatible feature, page, quiz, language or category | Add mathematics lessons | `1.1.0` |
-| Breaking URL, storage, deployment or architecture change | Replace the current static-page architecture | `2.0.0` |
+- Increase **MAJOR** for a breaking change that requires deployment or content migration work, for example `1.3.0` → `2.0.0`.
+- Increase **MINOR** for a backward-compatible feature, new learning section or meaningful interface improvement, for example `1.3.0` → `1.4.0`.
+- Increase **PATCH** for a backward-compatible correction, content fix or small visual repair, for example `1.3.0` → `1.3.1`.
 
-For every release, update all four locations:
-
-1. `package.json` → `version`
-2. `VERSION`
-3. `docs/CHANGELOG.md`
-4. ZIP filename: `LearnWithUs-vX.Y.Z.zip`
-
-Run `npm test` before creating the ZIP. The feature test fails if `package.json` and `VERSION` are different.
+For every release, update `VERSION`, `package.json`, the service-worker cache name and `docs/CHANGELOG.md`. The ZIP and its top-level folder use the same version, such as `LearnWithUs-v1.3.0.zip`.

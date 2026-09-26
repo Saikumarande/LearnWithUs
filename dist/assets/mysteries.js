@@ -1,0 +1,79 @@
+'use strict';
+(() => {
+const mysteries=[
+{id:'onion-tears',t:'sensation',q:'Why do onions make us cry?',a:'Cutting breaks onion cells that normally keep reactive ingredients apart. The newly mixed chemicals form a volatile sulfur compound that travels through the air and reaches the eyes. Sensory nerves detect the irritation, and the tear glands respond by producing tears to wash it away.'},
+{id:'apple-browning',t:'cooking',q:'Why does a cut apple turn brown?',a:'Cutting damages apple cells and allows oxygen to meet enzymes and phenolic compounds that were previously separated. The enzymes accelerate reactions that form brown-colored products, a process called enzymatic browning. Lemon juice can slow it because acidity reduces enzyme activity and vitamin C can react with early oxidation products.'},
+{id:'carrot-color',t:'color',q:'Why are carrots orange?',a:'Orange carrots accumulate carotenoid pigments, especially beta-carotene, inside their root tissues. These molecules absorb some wavelengths of visible light and reflect the orange tones we see. The body can convert beta-carotene into vitamin A according to its needs, although the conversion is not one-to-one.'},
+{id:'potato-green',t:'safety',q:'Why do potatoes turn green?',a:'Light exposure stimulates chlorophyll formation near the potato’s surface, creating the green color. The same conditions can also be associated with increased glycoalkaloids, naturally occurring defensive compounds that may cause illness at high intake. Discard potatoes that are substantially green, damaged, sprouted or bitter rather than relying only on peeling.'},
+{id:'banana-ripening',t:'ripening',q:'Why do bananas get sweeter as they ripen?',a:'A greener banana stores much of its carbohydrate as starch. During ripening, enzymes break part of that starch into smaller sugars, while cell walls soften and new aroma compounds appear. That combination changes the banana from firm and mildly flavored to soft, fragrant and noticeably sweeter.'},
+{id:'spinach-cooking',t:'cooking',q:'Why does spinach shrink when cooked?',a:'Raw spinach leaves hold a large amount of water within a delicate network of cells and air spaces. Heat damages membranes, softens cell walls and allows water to escape, so the leafy structure collapses. The nutrients have not all vanished—the same mass is simply occupying far less space, with some changes caused by heat and cooking water.'},
+{id:'lemon-sour',t:'sensation',q:'Why is lemon sour?',a:'Lemon juice contains a relatively high concentration of citric acid. Hydrogen ions associated with acidity activate sour-sensing pathways on the tongue, producing the sharp taste. Sugar can balance how sourness feels, but it does not remove the acid itself.'},
+{id:'blueberry-color',t:'color',q:'Why are blueberries blue?',a:'Blueberries contain anthocyanins, a family of pigments whose molecular structure responds to surrounding conditions such as acidity. Their skin also has a pale natural waxy coating called bloom, which changes how light reflects from the surface. Together, pigments, acidity and surface structure create the familiar blue-purple appearance.'},
+{id:'avocado-browning',t:'cooking',q:'Why does avocado turn brown after cutting?',a:'Cutting exposes avocado enzymes and phenolic compounds to oxygen. This starts enzymatic browning and gradually darkens the surface even when the flesh is still safe to eat. Acidic juice, tight wrapping and refrigeration can slow the reaction by changing enzyme conditions or reducing oxygen contact.'},
+{id:'watermelon-water',t:'sensation',q:'Why does watermelon feel refreshing?',a:'Watermelon flesh is about 91% water by mass, giving it a light and juicy texture. It is often eaten chilled, so both its temperature and the release of water during chewing contribute to the refreshing sensation. This water content is different from saying that watermelon supplies a fixed percentage of anyone’s daily hydration needs.'},
+{id:'pineapple-tingle',t:'sensation',q:'Why can fresh pineapple make the mouth feel tingly?',a:'Fresh pineapple contains bromelain, a mixture of protein-digesting enzymes, as well as organic acids. Contact with sensitive tissues can temporarily create tingling or irritation, especially after eating a large amount. Heat reduces enzyme activity, which is one reason cooked or canned pineapple may feel different.'},
+{id:'chili-heat',t:'sensation',q:'Why do chili peppers feel hot?',a:'Capsaicin binds to TRPV1 receptors, which normally help detect potentially damaging heat. The nervous system interprets that signal as burning even though the pepper has not raised the mouth to a burning temperature. Individual sensitivity and repeated exposure can change how intense the sensation feels.'},
+{id:'tomato-color',t:'color',q:'Why are tomatoes red?',a:'As many tomato varieties ripen, green chlorophyll declines and red lycopene accumulates. Lycopene is a carotenoid pigment that changes which wavelengths of light the fruit absorbs and reflects. Yellow and orange tomato varieties have different pigment mixtures, which is why ripe tomatoes are not always red.'},
+{id:'ethylene',t:'ripening',q:'Why do some fruits ripen faster beside bananas?',a:'Bananas release ethylene, a plant hormone that travels as a gas. Climacteric fruits such as apples, pears and some avocados respond to ethylene by accelerating ripening processes, including softening and aroma development. The effect depends on fruit type, maturity, temperature and airflow.'},
+{id:'garlic-aroma',t:'cooking',q:'Why does garlic smell stronger after crushing?',a:'Intact garlic keeps an enzyme and its precursor compounds in separate cell compartments. Crushing brings them together, rapidly producing sulfur-containing compounds including allicin. Those compounds are reactive and volatile, which explains why freshly cut garlic has a much stronger aroma than an unbroken clove.'},
+{id:'grape-color',t:'color',q:'Why are some grapes purple and others green?',a:'Purple and red grapes accumulate anthocyanin pigments in their skins, while green varieties contain much less. Genetics controls much of this pigment pattern, and growing conditions can influence concentration. The flesh of many varieties remains pale even when the skin is deeply colored.'},
+{id:'vegetable-softening',t:'cooking',q:'Why do vegetables soften when cooked?',a:'Heat changes cell membranes and loosens structural components in plant cell walls, including pectin. Water can then move more freely and neighboring cells separate more easily, reducing firmness. Cooking time, temperature, acidity and the vegetable’s original structure determine whether the result is tender or mushy.'},
+{id:'melon-safety',t:'safety',q:'Why should cut melon be refrigerated?',a:'A melon’s rind can carry microbes from soil, handling or storage. Cutting may transfer them from the outside surface to the moist, nutrient-rich flesh, where they can multiply. Refrigeration slows growth but does not sterilize the melon, so clean handling and timely storage still matter.'},
+{id:'fruit-softening',t:'ripening',q:'Why does fruit become softer as it ripens?',a:'Ripening activates enzymes that modify pectin and other components holding plant cells together. As those structures weaken, the tissue becomes easier to bite and chew. At the same time, changes in sugars, acids and aroma compounds create the flavor we associate with ripe fruit.'},
+{id:'cabbage-ph',t:'cooking',q:'Why can red cabbage change color during cooking?',a:'Red cabbage contains anthocyanins whose molecular form changes with pH. Acidic ingredients such as lemon or vinegar can shift the color toward red or pink, while less acidic or alkaline conditions can push it toward blue-green. This color response makes cabbage a useful natural demonstration of acid–base chemistry.'}
+,{id:'tomato-fruit',t:'botany',q:'Is a tomato a fruit or a vegetable?',a:'In plant science, a tomato is a fruit because it grows from a flower and holds seeds. In cooking, people often use it like a vegetable. Both names can be useful because they answer different questions.'},
+{id:'cucumber-fruit',t:'botany',q:'Is a cucumber a fruit?',a:'Yes, in plant science. It grows from a flower and has seeds inside. In the kitchen, it is usually called a vegetable because it is used in salads and savoury meals.'},
+{id:'pepper-fruit',t:'botany',q:'Are bell peppers fruits?',a:'Yes. A bell pepper grows from a flower and carries seeds, so it is a fruit in plant science. Cooks often group it with vegetables because it is not usually sweet.'},
+{id:'strawberry-seeds',t:'botany',q:'Why are strawberry “seeds” on the outside?',a:'The tiny dots are small fruits called achenes. Each one holds a seed. The red part we eat grows from the base of the flower.'},
+{id:'fig-inside',t:'botany',q:'Why does a fig look different inside?',a:'A fig is a group of many tiny flowers and fruits held inside a soft pouch. That is why its inside looks full of little threads and seeds.'},
+{id:'pea-pod',t:'botany',q:'Are peas seeds?',a:'Yes. Each pea is a seed that forms inside a pod. The pod is the fruit of the pea plant.'},
+{id:'corn-kernel',t:'botany',q:'Is a corn kernel a seed?',a:'A corn kernel is both a seed and a type of dry fruit called a grain. Its seed coat and fruit wall are joined closely together.'},
+{id:'beet-color',t:'color',q:'Why are beets deep red?',a:'Beets contain pigments called betalains. These pigments can also stain hands, cutting boards and cooking water.'},
+{id:'purple-cabbage',t:'color',q:'Why is some cabbage purple?',a:'Purple cabbage contains pigments called anthocyanins. The amount and type of pigment help make the leaves look red, purple or blue.'},
+{id:'white-cauliflower',t:'color',q:'Why is cauliflower white?',a:'The pale head is made of tightly packed flower buds. Its leaves often cover it while it grows, so less green chlorophyll forms.'},
+{id:'green-plants',t:'color',q:'Why are many vegetables green?',a:'They contain chlorophyll, a pigment plants use to capture light for making food. Other colors may be present too, but green can hide them.'},
+{id:'eggplant-color',t:'color',q:'Why is eggplant skin purple?',a:'Many eggplants have anthocyanin pigments in their skin. Different varieties can also be white, green or striped.'},
+{id:'pear-ripening',t:'ripening',q:'Why can pears ripen after picking?',a:'Pears keep making and responding to a natural plant gas called ethylene. This helps them soften and build their ripe smell after harvest.'},
+{id:'avocado-ripening',t:'ripening',q:'Why does an avocado soften on the counter?',a:'After picking, the fruit responds to ethylene. Its cell walls change, the flesh becomes softer and its flavour develops.'},
+{id:'mango-aroma',t:'ripening',q:'Why does a ripe mango smell stronger?',a:'As mango ripens, it makes more small aroma compounds that move into the air. The fruit also becomes softer and usually tastes sweeter.'},
+{id:'kiwi-softening',t:'ripening',q:'Why does kiwi become soft as it ripens?',a:'Natural enzymes loosen the material that holds its cells together. This changes a firm kiwi into a softer one.'},
+{id:'bread-potato-crisp',t:'cooking',q:'Why do potatoes become crisp when baked or fried?',a:'Heat removes water from the surface. At the same time, sugars and proteins react and make brown color, smell and flavour. Too much heat can burn the surface.'},
+{id:'beans-soak',t:'cooking',q:'Why are dry beans soaked before cooking?',a:'Soaking lets beans take in water and can shorten cooking time. The beans still need proper cooking before they are eaten.'},
+{id:'pasta-soft',t:'cooking',q:'Why does pasta become soft in hot water?',a:'Water moves into the pasta and heat changes its starch. The starch swells, so the pasta becomes larger and softer.'},
+{id:'popcorn-pop',t:'cooking',q:'Why does popcorn pop?',a:'A kernel holds a little water inside a hard shell. Heat turns the water into steam, pressure rises, and the shell bursts. The hot starch then puffs up.'},
+{id:'toast-brown',t:'cooking',q:'Why does toast turn brown?',a:'Heat starts reactions between some sugars and proteins on the bread’s surface. These reactions make new brown colors, smells and flavours.'},
+{id:'mint-cool',t:'sensation',q:'Why does mint feel cool?',a:'Menthol in mint turns on cold-sensing nerves in the mouth. The mouth feels cool even when its real temperature has not dropped much.'},
+{id:'asparagus-smell',t:'sensation',q:'Why can asparagus change the smell of urine?',a:'The body breaks down some sulfur compounds in asparagus into small, strong-smelling chemicals. Not everyone makes or notices the smell in the same way.'},
+{id:'coriander-taste',t:'sensation',q:'Why does coriander taste soapy to some people?',a:'People can sense its aroma compounds differently. Genes, experience and culture can all affect whether the flavour seems fresh or soapy.'},
+{id:'frozen-grapes',t:'sensation',q:'Why do frozen grapes taste less sweet at first?',a:'Cold temperatures can make taste signals feel weaker. As the grape warms in the mouth, its sweetness and smell may become easier to notice.'},
+{id:'mushroom-wash',t:'safety',q:'Why should mushrooms be kept dry until use?',a:'Extra surface moisture can make mushrooms soften and spoil faster. Store them cool and clean them shortly before cooking.'},
+{id:'sprout-safety',t:'safety',q:'Why do raw sprouts need extra care?',a:'Sprouts grow in warm, damp conditions that can also help harmful bacteria grow. People at higher risk of food poisoning are often advised to avoid raw sprouts.'},
+{id:'rice-cooling',t:'safety',q:'Why should cooked rice be cooled quickly?',a:'Some bacterial spores can survive cooking. If rice stays warm for too long, bacteria can grow and make toxins. Cool it quickly, refrigerate it and reheat it safely.'},
+{id:'wash-produce',t:'safety',q:'Why wash fruit and vegetables?',a:'Rinsing under running water can remove dirt and lower some germs on the surface. Soap is not needed for produce, and washing does not make every food germ-free.'},
+{id:'mold-cut',t:'safety',q:'Can you always cut mold off food?',a:'No. Mold can spread below the surface of soft foods even when you cannot see it. Safety advice depends on the food, so when unsure it is safer to throw it away.'}
+];
+
+const ui=Object.fromEntries(['search','topic','list','count'].map(id=>[id,document.getElementById(id)]));
+function render(){
+ const q=ui.search.value.trim().toLowerCase(),t=ui.topic.value;
+ const rows=mysteries.filter(x=>(t==='all'||x.t===t)&&(x.q+' '+x.a).toLowerCase().includes(q));
+ ui.count.textContent=rows.length+' mysteries';
+ ui.list.innerHTML=rows.map(x=>'<article class="item" id="'+x.id+'"><button aria-expanded="false" aria-controls="'+x.id+'-answer">'+x.q+'<span aria-hidden="true">＋</span></button><div class="answer" id="'+x.id+'-answer">'+x.a+'</div></article>').join('')||'<p>No mysteries match your search.</p>';
+}
+function expand(item,open){
+ item.classList.toggle('open',open);item.querySelector('button').setAttribute('aria-expanded',String(open));item.querySelector('span').textContent=open?'−':'＋';
+}
+function followHash(){
+ let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+ if(!mysteries.some(x=>x.id===id))return;
+ ui.search.value='';ui.topic.value='all';render();
+ const item=document.getElementById(id);expand(item,true);item.querySelector('button').focus({preventScroll:true});item.scrollIntoView?.({block:'start'});
+}
+ui.list.addEventListener('click',e=>{
+ const button=e.target.closest('button');if(!button)return;
+ const item=button.closest('.item'),open=!item.classList.contains('open');expand(item,open);
+ if(open)history.replaceState(null,'','#'+item.id);
+});
+ui.search.addEventListener('input',render);ui.topic.addEventListener('change',render);
+window.addEventListener('hashchange',followHash);render();followHash();
+})();

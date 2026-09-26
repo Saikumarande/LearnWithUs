@@ -1,0 +1,67 @@
+/* Category colours and a shared, readable heading scale. */
+body[data-area=home],body[data-area=contact]{background:#eef8ef}
+body[data-area=food]{--cream:#eaf5e9;--line:#cedfce;background:#eaf5e9}
+body[data-area=kids]{--ink:#2a2140;--green:#57298b;--leaf:#7135a5;--muted:#65566f;--cream:#f7f1ff;--line:#ddd0ed;--lime:#fbe5a5;--purple:#ecdfff;--blue:#e1f1ff;--peach:#fff0ce;background:#f7f1ff}
+body[data-area=health]{--ink:#163b50;--green:#145678;--leaf:#1a6d91;--muted:#536c79;--cream:#edf6fc;--line:#cbdfe9;background:#edf6fc}
+body[data-area] :is(main,.fl-page-hero) h1{font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.16;letter-spacing:-.035em}
+body[data-area] :is(main,.fl-page-hero) h2:not(:where(#kidPrompt)){font-size:clamp(1.6rem,2.8vw,2rem);line-height:1.2;letter-spacing:-.025em}
+body[data-area] main h3:not(:where(.glyph)){font-size:1.3rem;line-height:1.3;letter-spacing:-.015em}
+body[data-area] main h4{font-size:1.125rem;line-height:1.4}
+body[data-area] .section-heading{margin:0 0 10px;font-weight:800}
+body[data-area] .section-subtitle{font-size:1.125rem;line-height:1.5;margin:0 0 22px;color:var(--muted)}
+body[data-area] .page-deck{font-size:1.25rem;line-height:1.45;font-weight:550;margin:12px 0 16px}
+body[data-area] .eyebrow,body[data-area] .kicker{font-size:.875rem;letter-spacing:.07em;line-height:1.5}
+body[data-area] .fl-page-hero{padding:38px 0 42px}
+body[data-area] .fl-page-hero h1{margin:8px 0 12px}
+body[data-area] .fl-page-hero p:not(.page-deck){font-size:1rem;line-height:1.6}
+body[data-area] .fl-page-hero .page-deck{color:#f1ffdf}
+body[data-area=food] .explorer-shell{box-shadow:0 12px 35px #175c2f0c}
+body[data-area=food] .food-columns{gap:0}
+body[data-area=food] .food-columns>div:first-child{padding-right:24px}
+body[data-area=food] .food-columns>div+div{border-left:1px solid rgba(35,122,87,.3);padding-left:24px}
+body[data-area=food] .category-head{align-items:flex-start;flex-wrap:wrap;gap:8px 14px;margin-bottom:18px}
+body[data-area=food] .category-head h3{font-size:1.5rem}
+body[data-area=food] .category-head a{font-size:.9375rem}
+body[data-area=food] .compare{background:#dcefdc}
+body[data-area=food] .panel.dark{background:#124630}
+body[data-area=food] .panel.dark .section-subtitle{color:#d6eccd}
+body[data-area=food] .panel.quiz-card{background:#fffae9}
+body[data-area=food] .panel.quiz-card h2{color:#684415}
+body[data-area=food] .food-card{background:#f3faef}
+body[data-area=food] .card h2,body[data-area=food] .food-card h3{font-size:1.25rem}
+body[data-area=food] .tabs a[aria-current]{background:#0b3d2e;color:#fff;text-decoration:underline;text-underline-offset:4px;outline:2px solid #0b3d2e;outline-offset:2px}
+body[data-area=food] .section-head{align-items:center}
+body[data-area=food] .section-head .section-subtitle{margin-bottom:0}
+body[data-area=food] .mystery button{font-size:1.125rem}
+body[data-area=food] .mystery p{font-size:1rem}
+body[data-area=food] .quiz-invite h3{font-size:1.25rem}
+body[data-area=food] #question{font-size:1.5rem}
+body[data-area=kids] .fl-section-nav{background:#f2e9ff;border-color:#d8c5ec}
+body[data-area=kids] .fl-section-nav a,body[data-area=kids] .fl-section-label{color:#57298b}
+body[data-area] .fl-section-nav a[aria-current]{background:#0b3d2e;color:#fff;border-color:#0b3d2e}
+body[data-area=kids] .fl-section-nav a:hover{background:#e4d5f5}
+body[data-area=kids] .fl-section-nav a[aria-current]{background:#57298b;color:#fff;border-color:#57298b}
+body[data-area=kids] .kids-intro h1 span{color:#7533a8}
+body[data-area=kids] .letters-choice{background:#eadeff;border-color:#c6a9ea}
+body[data-area=kids] .words-choice{background:#fff0c6;border-color:#e8c775}
+body[data-area=kids] .numbers-choice{background:#dff2ff;border-color:#a8d1e8}
+body[data-area=kids] .quiz-choice-link{background:#fff8df;border-color:#dfc68a}
+body[data-area=kids] .quiz-choice-link[aria-pressed=true]{background:#efe0ff;border-color:#7533a8}
+body[data-area=kids] .segments{background:#e9dff3}
+body[data-area=kids] .audio-bar{background:#eee4fa}
+body[data-area=kids] .kid-feedback{background:#eee5fa;border-color:#d2bee8}
+body[data-area=kids] .kid-study-links article{background:#f6efff;border-color:#ddd0ed}
+body[data-area=health] .body-hero{padding-top:38px}
+body[data-area=health] .body-hero .page-deck{color:#1b6587;margin-bottom:15px}
+body[data-area=health] .body-card-category{font-size:.8125rem}
+body[data-area=health] .body-card p{font-size:1rem}
+body[data-area=health] .body-tagline{font-size:1.125rem}
+body[data-area=health] .body-summary h2{font-size:2rem}
+body[data-area=health] .body-section h3{font-size:1.5rem}
+body[data-area=health] .body-video{background:#164e6b}
+body[data-area=health] .body-video .primary-button{background:#dbf1ff;color:#123c54;border-color:#dbf1ff}
+body[data-area=health] .body-video p{color:#e6f2f8}
+body[data-area=health] .body-example{background:#edf6fc}
+body[data-area=health] .body-about h2{font-size:1.25rem}
+@media(max-width:850px){body[data-area=food] .food-columns>div:first-child{padding-right:0;padding-bottom:26px}body[data-area=food] .food-columns>div+div{border-left:0;border-top:1px solid rgba(35,122,87,.3);padding-left:0;padding-top:26px}}
+@media(max-width:540px){body[data-area] .fl-page-hero{padding:30px 0}body[data-area] .page-deck{font-size:1.125rem}body[data-area=food] .panel{padding:24px}body[data-area=health] .body-card h3{font-size:1.25rem}}
