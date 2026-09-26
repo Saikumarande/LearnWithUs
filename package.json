@@ -7,6 +7,10 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node scripts/smoke-test.js && node scripts/link-check.js && node scripts/feature-test.js && node scripts/server-test.js"
+    "test": "node tests/smoke-test.js && node tests/link-check.js && node tests/feature-test.js && node tests/server-test.js",
+    "test:smoke": "node tests/smoke-test.js",
+    "test:links": "node tests/link-check.js",
+    "test:features": "node tests/feature-test.js",
+    "test:server": "node tests/server-test.js"
   }
 }

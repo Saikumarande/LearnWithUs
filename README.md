@@ -1,23 +1,31 @@
-# LearnWithUs
+# LearnWithUs v1.0.0
 
-LearnWithUs is a Node.js website with food discoveries, kids learning activities,
-health guides, quizzes and Google Analytics 4 tracking.
+LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
-## Platform foundation included
+## Project structure
 
-- Global search across Food, Kids, Health, quizzes and core learning pages
-- Device-only bookmarks, recently viewed topics, progress and quiz history
-- Age-based daily recommendations and guided paths for children, parents,
-  students and teachers
-- Separate Hindi and Telugu letter pages in traditional reading rows, with strict matching-language browser speech
-- Installable Progressive Web App with an offline fallback
-- Consent-controlled Google Analytics, privacy choices and local-data reset
-- Custom 404 page, sitemap, robots file and automated local-link checks
+```text
+LearnWithUs-v1.0.0/
+├── public/                  # Every browser-accessible page and asset
+│   ├── assets/             # CSS, JavaScript, images and fonts
+│   ├── index.html          # Home page
+│   ├── *.html              # All other website pages
+│   ├── manifest.webmanifest
+│   ├── service-worker.js
+│   ├── robots.txt
+│   └── sitemap.xml
+├── tests/                   # Automated checks
+├── docs/                    # Testing and release documentation
+├── config/                  # Optional platform-specific configuration
+├── server.js                # Node.js static web server
+├── package.json             # Commands and Node.js version
+├── VERSION                  # Current release number
+└── README.md
+```
 
-No public user profile or backend database is used in this phase. Progress is
-stored in the current browser with `localStorage`.
+Only `public/` is exposed by the Node.js server. Application code, tests and documentation cannot be requested as website files.
 
-## Local verification
+## Run and verify
 
 Requires Node.js 24 LTS.
 
@@ -26,12 +34,20 @@ npm test
 npm start
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.
 
 ## Azure App Service deployment
 
-The application must be deployed from the repository root. The root contains
-`package.json`, `server.js`, the HTML pages and the `assets` directory.
+Deploy the complete project root—not only `public/`. Azure needs `package.json` and `server.js` at the root. The server automatically publishes the contents of `public/`.
 
-Use Azure App Service Deployment Center with GitHub and select the `main` branch.
-Deployment Center creates the workflow under `.github/workflows` automatically.
+For GitHub CI/CD, connect the repository and `main` branch in Azure App Service Deployment Center. Every successful push to `main` can then deploy automatically.
+
+## Versioning rule
+
+LearnWithUs follows Semantic Versioning:
+
+- `1.0.1`: bug fix, content correction or small compatible improvement.
+- `1.1.0`: new compatible feature, page, category or learning activity.
+- `2.0.0`: breaking change to URLs, saved progress, deployment or major architecture.
+
+For future prompts, update `package.json`, `VERSION`, the changelog and the ZIP filename together.

@@ -2,7 +2,8 @@
 
 const fs=require('node:fs');
 const path=require('node:path');
-const root=path.resolve(__dirname,'..');
+const projectRoot=path.resolve(__dirname,'..');
+const root=path.join(projectRoot,'public');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const failures=[];
 const expect=(value,message)=>{if(!value)failures.push(message);};
@@ -14,6 +15,7 @@ const languageJs=read('assets/languages.js');
 const platform=read('assets/platform.js');
 const shell=read('assets/site-shell.js');
 const manifest=JSON.parse(read('manifest.webmanifest'));
+const packageJson=JSON.parse(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8'));
 
 expect(children.includes('hindi.html')&&children.includes('telugu.html'),'Kids navigation must have separate Hindi and Telugu pages');
 expect(hindi.includes('id="languageGrid"')&&telugu.includes('id="languageGrid"')&&hindi.includes('aria-live="polite"')&&telugu.includes('aria-live="polite"'),'Both language pages must provide an accessible grid and live audio status');
@@ -30,7 +32,10 @@ expect(platform.includes("page==='dashboard.html'?' aria-current=\"page\""),'My 
 expect(manifest.display==='standalone','PWA manifest should use standalone display');
 expect(read('service-worker.js').includes("CACHE='learnwithus-v20260925'"),'Service-worker cache version was not updated');
 expect(read('robots.txt').includes('Sitemap:'),'robots.txt must advertise the sitemap');
-expect(read('server.js').includes('404.html'),'Server must use the custom 404 page');
+expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes("path.join(__dirname, 'public')"),'Server must expose only the public folder');
+expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes('404.html'),'Server must use the custom 404 page');
+expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='1.0.0','VERSION must match release 1.0.0');
+expect(packageJson.version===fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim(),'package.json and VERSION must match');
 
 if(failures.length){console.error(failures.join('\n'));process.exit(1);}
 console.log('Feature checks passed: language grids/audio hooks, active states, dashboard history, recommendations, PWA and server files.');

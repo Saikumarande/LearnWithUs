@@ -3,7 +3,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const root = path.resolve(__dirname, '..');
+const projectRoot = path.resolve(__dirname, '..');
+const root = path.join(projectRoot, 'public');
 const pages = [
   'index.html',
   'food.html',
@@ -39,8 +40,8 @@ if (!platform.includes('G-14CDXN6DDM')) {
   throw new Error('Consent-managed Google Analytics measurement ID is missing');
 }
 
-for (const file of ['server.js', 'package.json']) {
-  if (!fs.existsSync(path.join(root, file))) throw new Error(`Missing ${file}`);
+for (const file of ['server.js', 'package.json', 'VERSION']) {
+  if (!fs.existsSync(path.join(projectRoot, file))) throw new Error(`Missing ${file}`);
 }
 
 console.log(`Smoke tests passed for ${pages.length} pages.`);

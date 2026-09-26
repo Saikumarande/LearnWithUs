@@ -4,7 +4,8 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const root = __dirname;
+// Only files inside public/ are exposed by the web server.
+const root = path.join(__dirname, 'public');
 const port = Number(process.env.PORT || 8080);
 const types = {
   '.html': 'text/html; charset=utf-8',
