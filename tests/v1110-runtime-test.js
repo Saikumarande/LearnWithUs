@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),read=f=>fs.readFileSync(path.join(pub,f),'utf8');let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
+const kids=read('children.html'); [['kids-category-stories-imagination','Stories'],['kids-category-sports-games','Sports'],['kids-category-creativity','Creativity']].forEach(([cls,label])=>ok((kids.match(new RegExp(cls,'g'))||[]).length===1,'Duplicate Kids category: '+label));
+ok(kids.includes('kids-roadmap')&&kids.includes('roadmap-step'),'Kids learning roadmap missing');
+['#drawing','#colouring','#dots','#paper-crafts','#origami','#rhythm','#dance','#story-creation','#poem-builder','#printable'].forEach(x=>ok(kids.includes('creativity.html'+x),'Kids Corner missing Creativity sub-link '+x));
+const lifeCtx={window:{}};vm.runInNewContext(read('assets/life-skills-data.js'),lifeCtx);const life=lifeCtx.window.LEARNWITHUS_LIFE_SKILLS||[];ok(life.length===12,'Expected 12 Life Skills topics');life.forEach(t=>{ok(t.practice.length===4,t.name+' must have four practice questions');ok(t.quiz.length===10,t.name+' quiz must have 10 questions')});
+const gameCtx={window:{}};vm.runInNewContext(read('assets/games-data.js'),gameCtx);const games=gameCtx.window.LEARNWITHUS_GAMES||[];ok(games.length===12,'Expected 12 Learning Games');games.forEach(g=>ok(g.examples.length===50,g.name+' must have 50 examples'));
+const gjs=read('assets/games.js');ok(gjs.includes('slice(page*10,page*10+10)')&&gjs.includes('Next 10')===false,'Games pagination logic missing');ok(gjs.includes("games-quiz.html?game="),'Game-to-quiz handoff missing');
+const ljs=read('assets/life-skills.js');ok(ljs.includes("t.summary+' '+t.points.join(' ')")||ljs.includes("t.summary+' '+t.points.join"),'Life Skills full narration missing');
+const hub=read('quiz-hub.html');life.forEach(t=>ok(hub.includes('life-skills-quiz.html?topic='+t.id),'Quiz Hub missing '+t.name+' quiz'));games.forEach(g=>ok(hub.includes('games-quiz.html?game='+g.id),'Quiz Hub missing '+g.name+' quiz'));
+const shell=read('assets/site-shell.js'),css=read('assets/site-shell.css');ok(shell.includes('fl-kids-mega')&&css.includes('.fl-kids-mega'),'Grouped Kids mega navigation missing');ok(shell.includes("delta>6")&&shell.includes("delta<-6"),'Kids scroll-direction logic missing');
+const htmls=fs.readdirSync(pub).filter(f=>f.endsWith('.html'));htmls.forEach(f=>{const h=read(f);ok(h.includes('A little learning, every day.'),f+' missing standard footer');ok(h.includes('Food discoveries')&&h.includes('Health guides')&&h.includes('Contact me'),f+' footer links incomplete')});
+const sw=read('service-worker.js');ok(sw.includes("CACHE='learnwithus-v1.11.0'")&&sw.includes("'./life-skills-quiz.html'")&&sw.includes("'./games-quiz.html'"),'v1.11.0 offline cache incomplete');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v1.11.0 runtime/data checks passed: ${passed}/${checks} assertions.`);

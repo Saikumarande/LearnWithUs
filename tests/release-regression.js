@@ -25,8 +25,8 @@ const india=section(children,'India &amp; General Knowledge');
 const languages=section(children,'Indian Languages');
 const quiz=section(children,'Quiz Hub');
 
-check(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='1.10.0','VERSION is not 1.9.0');
-check(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='1.10.0','package.json is not 1.9.0');
+check(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='1.11.4','VERSION is not 1.11.4');
+check(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='1.11.4','package.json is not 1.11.4');
 check((children.match(/kids-activity-card/g)||[]).length>=23,'Kids Corner does not contain the complete activity tile set');
 check(['data-mode="letters"','data-mode="words"','word-bank.html','letter-tracing.html','topic=poems'].every(x=>english.includes(x)),'English & Reading grouping is incomplete');
 check(['data-mode="numbers"','place-value.html','odd-even.html','addition.html','subtraction.html','multiplication.html','division.html','fractions.html','time-calendar.html','indian-money.html','measurement.html'].every(x=>maths.includes(x)),'Maths & Numbers grouping is incomplete');
@@ -42,12 +42,12 @@ check(childrenJs.includes('ui.learningGrid.replaceChildren()')&&childrenJs.inclu
 check(scoreCss.includes('width:min(100%,780px)')&&scoreCss.includes('max-width:744px'),'Score card is not constrained to the viewport');
 check(scoreCss.includes('grid-template-columns:repeat(3,minmax(0,1fr))')&&scoreCss.includes('@media(max-width:720px)')&&scoreCss.includes('grid-template-columns:1fr'),'Score-card actions are not responsive');
 const scorePages=fs.readdirSync(pub).filter(file=>file.endsWith('.html')&&read(file).includes('score-card.js'));
-check(scorePages.length===11,'Unexpected number of shared score-card consumers');
+check(scorePages.length===13,'Unexpected number of shared score-card consumers');
 check(scorePages.every(file=>read(file).includes('score-card.css?v=20260926m')),'One or more quizzes do not load the shared score-card stylesheet');
-check(sw.includes("CACHE='learnwithus-v1.10.0'")&&sw.includes("'./assets/children.js?v=20260926m'")&&sw.includes("'./assets/kids-search.js?v=20260926m'"),'PWA cache does not include corrected Kids assets');
+check(sw.includes("CACHE='learnwithus-v1.11.4'")&&sw.includes("'./assets/children.js?v=20260926m'")&&sw.includes("'./assets/kids-search.js?v=20260926m'"),'PWA cache does not include corrected Kids assets');
 check(sw.includes("'./assets/score-card.css?v=20260926m'"),'PWA cache does not include score-card CSS');
-check(fs.readFileSync(path.join(root,'README.md'),'utf8').includes('## Current release: v1.9.0'),'README release notes are missing');
-check(fs.readFileSync(path.join(root,'docs','CHANGELOG.md'),'utf8').includes('## 1.9.0 — 2026-09-26'),'Changelog release entry is missing');
+check(fs.readFileSync(path.join(root,'README.md'),'utf8').includes('## Current release: v1.11.4'),'README release notes are missing');
+check(fs.readFileSync(path.join(root,'docs','CHANGELOG.md'),'utf8').includes('## 1.11.4 — 2026-09-27'),'Changelog release entry is missing');
 
 // public and dist must be byte-identical for browser-facing files.
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?walk(path.join(dir,entry.name)).map(x=>path.join(entry.name,x)):[entry.name]);
@@ -81,12 +81,12 @@ check(read('assets/tables-quiz.js').includes('Array.from({length:10}')&&!read('a
 const quickLinks=['Kids Corner','Letters','Hindi','Telugu','Phonics','Numbers','Animals','Colours','Shapes','Poems','Quiz Hub'];
 check(quickLinks.every(label=>siteShell.includes('>'+label+'</a>')),'Shared Kids quick navigation is missing one or more required links');
 check(siteShell.includes("classList.add('fl-section-nav','fl-kids-quick-nav')")&&siteShell.includes("classList.add('is-scroll-hidden')")&&siteShell.includes("classList.remove('is-scroll-hidden')"),'Kids quick-nav injection or scroll-direction behavior is missing');
-check(siteShellCss.includes('.fl-kids-quick-nav .fl-container')&&siteShellCss.includes('flex-wrap:nowrap!important')&&siteShellCss.includes('overflow-x:auto')&&siteShellCss.includes('.fl-kids-quick-nav.is-scroll-hidden'),'Kids quick-nav is not compact, horizontal and hideable');
+check(siteShellCss.includes('.fl-kids-mega')&&siteShellCss.includes('grid-template-columns:repeat(4,minmax(0,1fr))')&&siteShellCss.includes('.fl-kids-quick-nav.is-scroll-hidden'),'Kids quick-nav is not compact, horizontal and hideable');
 const kidsPages=fs.readdirSync(pub).filter(file=>file.endsWith('.html')&&read(file).includes('data-area="kids"'));
 check(kidsPages.length>=35&&kidsPages.every(file=>read(file).includes('assets/site-shell.js')),'One or more Kids pages do not load the current shared quick-nav shell');
-check(sw.includes("CACHE='learnwithus-v1.10.0'")&&sw.includes("'./assets/site-shell.js?v=20260927a'")&&sw.includes("'./assets/tables.js?v=20260926p'")&&sw.includes("'./assets/tables-quiz.js?v=20260926p'"),'v1.8.1 offline cache is missing current quick-nav/table assets');
+check(sw.includes("CACHE='learnwithus-v1.11.4'")&&sw.includes("'./assets/site-shell.js?v=20260927f'")&&sw.includes("'./assets/tables.js?v=20260926p'")&&sw.includes("'./assets/tables-quiz.js?v=20260926p'"),'v1.8.1 offline cache is missing current quick-nav/table assets');
 
-// v1.10.0 Stories, Sports, Creativity, Life Skills & Games
+// v1.11.4 Stories, Sports, Creativity, Life Skills & Games
 check(fs.existsSync(path.join(pub,'stories.html'))&&fs.existsSync(path.join(pub,'story.html')),'Story routes are missing');
 const storyData=read('assets/story-data.js');
 check((storyData.match(/"category":/g)||[]).length===7,'Story library must contain seven requested categories');
@@ -103,7 +103,7 @@ check(read('assets/creativity.js').includes("getContext('2d')")&&read('assets/cr
 check(children.includes('stories.html')&&children.includes('sports.html')&&children.includes('creativity.html'),'Kids Corner does not expose all v1.9.0 learning areas');
 check(siteShell.includes('>Stories</a>')&&siteShell.includes('>Sports</a>')&&siteShell.includes('>Creativity</a>'),'Shared Kids quick navigation does not expose the new learning areas');
 check(read('quiz-hub.html').includes('sports-quiz.html')&&read('quiz-hub.html').includes('stories.html'),'Quiz Hub does not expose Sports Quiz and story comprehension');
-check(sw.includes("CACHE='learnwithus-v1.10.0'")&&sw.includes("'./stories.html'")&&sw.includes("'./sports.html'")&&sw.includes("'./creativity.html'"),'v1.9.0 PWA cache is missing new pages');
+check(sw.includes("CACHE='learnwithus-v1.11.4'")&&sw.includes("'./stories.html'")&&sw.includes("'./sports.html'")&&sw.includes("'./creativity.html'"),'v1.9.0 PWA cache is missing new pages');
 
 
 check(fs.existsSync(path.join(pub,'life-skills.html'))&&read('life-skills.html').includes('Choose a topic'),'Life Skills page is missing');
@@ -113,4 +113,4 @@ check(read('assets/site-shell.js').includes('life-skills.html')&&read('assets/si
 check(read('assets/creativity.js').includes('Drawing score')&&read('assets/creativity.js').includes('colourItems')&&read('assets/creativity.js').includes('Join-the-dots')===false || true,'Creativity expansion script missing');
 check(read('service-worker.js').includes("'./life-skills.html'")&&read('service-worker.js').includes("'./games.html'"),'Offline cache missing Life Skills or Games');
 if(failures.length){console.error(failures.join('\n'));process.exit(1);}
-console.log(`v1.10.0 targeted regression checks passed: ${passed}/${passed} cases.`);
+console.log(`v1.11.4 targeted regression checks passed: ${passed}/${passed} cases.`);

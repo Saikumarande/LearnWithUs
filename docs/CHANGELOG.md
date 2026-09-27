@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.11.4 — 2026-09-27
+- Improved Kids roadmap Start/Finish separation, hover clarity and spacing.
+- Reduced main header height slightly.
+- Fixed expandable Kids navigation so Expand immediately remains visible and moved Collapse to the bottom-right.
+
+## 1.11.3 — 2026-09-27
+- Kept roadmap markers fixed on hover/focus and added subtle highlight feedback.
+- Slightly expanded roadmap spacing while keeping it only on Kids Corner.
+- Added collapsed four-category Kids navigation with Expand/Collapse controls and retained down-hide/up-show scrolling.
+- Reduced shared header height slightly.
+
+## 1.11.2 — 2026-09-27
+- Restored Kids navigation to hide on downward scrolling and reappear on upward scrolling.
+- Compacted the Kids roadmap into a wide 8×5 route layout with smaller marker movement.
+- Grouped all Sports & Games content inside the Sports page and kept one Sports parent tile on Kids Corner.
+
+## 1.11.1 — 2026-09-27
+- Fixed Kids mega-navigation scroll direction to show on downward scrolling and hide on upward scrolling.
+- Standardized Kids Corner cards into equal-height responsive grids.
+- Replaced roadmap boxes with an interactive winding route map while retaining 40 milestones and progress states.
+- Kept Life Skills topics grouped inside the Life Skills page instead of exposing all twelve on Kids Corner.
+
+## 1.11.0 — 2026-09-27
+- Removed duplicate Kids categories, added direct sub-activity links and an animated progress roadmap.
+- Added grouped Kids mega navigation and a consistent site-wide footer.
+- Expanded Learning Games to 50 examples per concept with dedicated quizzes.
+- Expanded Life Skills narration, four-question practice and topic/mixed quizzes.
+- Updated Quiz Hub, sitemap, offline cache and release tests.
+
 ## 1.10.0 — 2026-09-27
 - Expanded Creativity Studio with many more lessons, selectors, scoring and shareable print sheets.
 - Added Life Skills learning page with 12 topics.

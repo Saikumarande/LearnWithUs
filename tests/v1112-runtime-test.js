@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),read=f=>fs.readFileSync(path.join(pub,f),'utf8');let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};const kids=read('children.html'),css=read('assets/kids.css'),shell=read('assets/site-shell.js'),sw=read('service-worker.js');
+ok((kids.match(/class="roadmap-step roadmap-stop"/g)||[]).length===40,'Roadmap must retain 40 route stops');
+ok(kids.includes('viewbox="0 0 1000 600"')&&kids.includes('M80 80 H920 V190 H80 V300 H920 V410 H80 V520 H920'),'Compact 8x5 roadmap route geometry missing');
+ok(css.includes('height:clamp(400px,52vh,500px)'),'Roadmap is not compact enough to fit one section');
+ok(css.includes('transform:scale(1.04)')&&css.includes('box-shadow:0 0 0 4px'),'Roadmap movement is not subtle');
+ok(shell.includes("else if(delta>0)kidsQuickNav.classList.add('is-scroll-hidden')")&&shell.includes("else if(delta<0)kidsQuickNav.classList.remove('is-scroll-hidden')"),'Kids navigation must hide on scroll down and show on scroll up');
+const sports=(kids.match(/<section class="kids-category-card kids-category-sports-games"[\s\S]*?<\/section>/)||[''])[0];
+ok((sports.match(/kids-activity-card/g)||[]).length===1,'Kids Corner Sports & Games must expose one parent tile');
+ok(sports.includes('href="sports.html"')&&sports.includes('Open Sports &amp; Games'),'Sports parent tile must open grouped sports learning page');
+ok((read('assets/sports-data.js').match(/"equipment":/g)||[]).length===12,'All 12 sports must remain inside Sports learning data');
+ok(sw.includes("CACHE='learnwithus-v1.11.2'")&&sw.includes("'./assets/site-shell.js?v=20260927d'")&&sw.includes("'./assets/kids.css?v=20260927d'")&&sw.includes("'./assets/kids-roadmap.js?v=20260927d'"),'v1.11.2 offline cache entries missing');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='1.11.2','VERSION must be 1.11.2');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='1.11.2','package version must be 1.11.2');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v1.11.2 runtime/UI checks passed: ${passed}/${checks} assertions.`);

@@ -11,4 +11,4 @@ const life=read('assets/life-skills.js'); ok((life.match(/\['/g)||[]).length>=12
 const games=read('assets/games.js'); ['Alphabet matching','Memory cards','Sequence games'].forEach(name=>ok(games.includes(name),'Games dataset missing '+name));
 const shell=read('assets/site-shell.js'); ok(shell.includes('Life Skills')&&shell.includes('Games'),'Kids shell missing new navigation labels');
 if(fail.length){console.error(fail.join('\n'));process.exit(1)}
-console.log(`v1.10.0 runtime/data checks passed: ${passed}/${checks} assertions.`);
+console.log(`v1.11.0 runtime/data checks passed: ${passed}/${checks} assertions.`);

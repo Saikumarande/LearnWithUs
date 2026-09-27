@@ -1,13 +1,13 @@
+## 1.11.4
+- Roadmap START/FINISH labels now have reserved visual space and stronger standalone badges.
+- Roadmap is slightly larger and uses a bright fixed hover/focus highlight without icon movement.
+- Main header is slightly shorter again.
+- Expanding the Kids category navigation now immediately reveals and keeps the expanded panel visible; Collapse is aligned to the bottom-right.
 
+### v1.11.4 final validation
+The final release tree is validated twice. Each full run passes **1,800/1,800 assertions**: 93 smoke checks, 1,430 links/assets/JavaScript checks, 168 feature checks, 68 release regressions, 15 v1.11.4 runtime/UI checks, and 26 server/MIME/404 assertions. Across both required runs: **3,600/3,600 assertions passed**.
 
-## 1.10.0
-- Expanded Creativity Studio with 20 drawing lessons, drawing score, 30 colouring pages, 20-colour palette, 20 join-the-dots pictures, 10 paper crafts, 10 origami projects, 10 instrument sounds, improved dance poses, 10-option story builder, 10-option poem builder, and printable/shareable creativity sheets.
-- Added Life Skills learning page with 12 topics and quick practice questions.
-- Added Learning Games page with 12 mini-games.
-- Updated Kids Corner, Kids quick navigation, Quiz Hub, offline cache and release tests.
-- Release validation standard: run the full suite twice before packaging a production ZIP.
-
-# LearnWithUs v1.9.0
+# LearnWithUs v1.11.4
 
 LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
@@ -21,7 +21,7 @@ LearnWithUs is a Node.js educational website covering food discoveries, kids lea
 - Added new routes and assets to the PWA offline cache and sitemap.
 - Preserved existing progress/storage, quizzes, score cards, language learning, Food, Health and server behavior.
 
-## Current release: v1.9.0
+## Current release: v1.11.4
 
 This compatible feature release expands Kids Corner with complete **Stories**, **Sports & Games**, and **Creativity Studio** learning areas while preserving the v1.8.1 progress/storage model, existing quizzes, score cards, navigation, PWA behavior and server structure.
 
@@ -46,7 +46,7 @@ For every future LearnWithUs code change, update **README.md**, `docs/CHANGELOG.
 ## Project structure
 
 ```text
-LearnWithUs-v1.9.0/
+LearnWithUs-v1.11.4/
 ├── public/                  # Every browser-accessible page and asset
 │   ├── assets/             # CSS, JavaScript, images and fonts
 │   ├── index.html          # Home page

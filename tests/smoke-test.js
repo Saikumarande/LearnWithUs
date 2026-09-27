@@ -45,7 +45,9 @@ const pages = [
   'sports-quiz.html',
   'creativity.html',
   'life-skills.html',
-  'games.html'
+  'life-skills-quiz.html',
+  'games.html',
+  'games-quiz.html'
 ];
 
 for (const page of pages) {

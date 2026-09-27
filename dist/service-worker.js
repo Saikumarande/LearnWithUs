@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='learnwithus-v1.10.0';
+const CACHE='learnwithus-v1.11.4';
 const CORE=[
   './404.html',
   './addition.html',
@@ -10,6 +10,7 @@ const CORE=[
   './assets/alphabet/b.svg',
   './assets/alphabet/c.svg',
   './assets/alphabet/credits.js',
+  './assets/alphabet/credits.json',
   './assets/alphabet/d.svg',
   './assets/alphabet/e.svg',
   './assets/alphabet/f.svg',
@@ -41,6 +42,7 @@ const CORE=[
   './assets/animals/chipmunk.svg',
   './assets/animals/cow.svg',
   './assets/animals/credits.js',
+  './assets/animals/credits.json',
   './assets/animals/crocodile.svg',
   './assets/animals/deer.svg',
   './assets/animals/dog.svg',
@@ -110,10 +112,14 @@ const CORE=[
   './assets/favicon.svg',
   './assets/food-data.js',
   './assets/food-data.js?v=add7a51d8576',
+  './assets/games-data.js',
+  './assets/games-data.js?v=20260927b',
+  './assets/games-quiz.js',
+  './assets/games-quiz.js?v=20260927b',
   './assets/games.css',
-  './assets/games.css?v=20260927a',
+  './assets/games.css?v=20260927b',
   './assets/games.js',
-  './assets/games.js?v=20260927a',
+  './assets/games.js?v=20260927b',
   './assets/home.css',
   './assets/home.css?v=9ba64bf912c6',
   './assets/home.js',
@@ -137,6 +143,8 @@ const CORE=[
   './assets/kids-data.js?v=2eccb689e1a3',
   './assets/kids-quiz.js',
   './assets/kids-quiz.js?v=6da297cadf53',
+  './assets/kids-roadmap.js',
+  './assets/kids-roadmap.js?v=20260927f',
   './assets/kids-search.js',
   './assets/kids-search.js?v=20260926m',
   './assets/kids-skills.css',
@@ -145,6 +153,7 @@ const CORE=[
   './assets/kids-skills.js?v=20260926g',
   './assets/kids.css',
   './assets/kids.css?v=20260926m',
+  './assets/kids.css?v=20260927f',
   './assets/kids.css?v=a692bb947692',
   './assets/languages.css',
   './assets/languages.css?v=20260926g',
@@ -155,10 +164,14 @@ const CORE=[
   './assets/learning-journey.js?v=20260926j',
   './assets/learning.css',
   './assets/learning.css?v=226777a61b48',
+  './assets/life-skills-data.js',
+  './assets/life-skills-data.js?v=20260927b',
+  './assets/life-skills-quiz.js',
+  './assets/life-skills-quiz.js?v=20260927b',
   './assets/life-skills.css',
-  './assets/life-skills.css?v=20260927a',
+  './assets/life-skills.css?v=20260927b',
   './assets/life-skills.js',
-  './assets/life-skills.js?v=20260927a',
+  './assets/life-skills.js?v=20260927b',
   './assets/math-extra-quiz.js',
   './assets/math-extra-quiz.js?v=20260926k',
   './assets/math-extra.js',
@@ -181,6 +194,7 @@ const CORE=[
   './assets/practice.css?v=20260926n',
   './assets/practice.css?v=20260926p',
   './assets/practice.css?v=20260927a',
+  './assets/practice.css?v=20260927b',
   './assets/practice.js',
   './assets/practice.js?v=20260926g',
   './assets/practice.js?v=20260926k',
@@ -194,13 +208,9 @@ const CORE=[
   './assets/score-card.js?v=20260926n',
   './assets/score-card.js?v=9b3d6a20ba9a',
   './assets/site-shell.css',
-  './assets/site-shell.css?v=20260926g',
-  './assets/site-shell.css?v=20260926q',
-  './assets/site-shell.css?v=20260927a',
+  './assets/site-shell.css?v=20260927f',
   './assets/site-shell.js',
-  './assets/site-shell.js?v=20260926g',
-  './assets/site-shell.js?v=20260926q',
-  './assets/site-shell.js?v=20260927a',
+  './assets/site-shell.js?v=20260927f',
   './assets/sport-art/athletics.svg',
   './assets/sport-art/badminton.svg',
   './assets/sport-art/basketball.svg',
@@ -282,6 +292,7 @@ const CORE=[
   './early-learning.html',
   './food.html',
   './fractions.html',
+  './games-quiz.html',
   './games.html',
   './health.html',
   './hindi.html',
@@ -294,6 +305,7 @@ const CORE=[
   './kids-skills.html',
   './languages.html',
   './letter-tracing.html',
+  './life-skills-quiz.html',
   './life-skills.html',
   './manifest.webmanifest',
   './math-quiz.html',
@@ -326,7 +338,4 @@ const CORE=[
 ];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',event=>{
-  if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;
-  event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response;}).catch(()=>caches.match(event.request).then(cached=>cached||((event.request.mode==='navigate')?caches.match('./offline.html'):Response.error()))));
-});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response;}).catch(()=>caches.match(event.request).then(cached=>cached||((event.request.mode==='navigate')?caches.match('./offline.html'):Response.error()))));});

@@ -44,3 +44,26 @@ main [id],#journey-detail,#sources,#compare{scroll-margin-top:calc(var(--fl-head
 .fl-kids-quick-nav.is-scroll-hidden{transform:translateY(calc(-100% - var(--fl-header-height)));opacity:0;pointer-events:none}
 @media(max-width:540px){.fl-kids-quick-nav .fl-section-label{flex-basis:auto!important;padding-block:6px!important}}
 @media(prefers-reduced-motion:reduce){.fl-kids-quick-nav{transition:none}}
+
+/* v1.11.0 grouped Kids mega navigation */
+.fl-kids-quick-nav{max-height:360px;overflow:hidden;transition:transform .2s ease,opacity .2s ease}.fl-kids-quick-nav .fl-kids-mega{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px!important;padding-block:10px!important;overflow:visible!important;white-space:normal!important}.fl-kids-mega section{min-width:0;border:1px solid #e0e7df;border-radius:12px;background:#fbfdf9;padding:8px}.fl-kids-mega section>strong{display:block;color:#0b3d2e;margin:0 4px 5px;font-size:13px;text-transform:uppercase;letter-spacing:.04em}.fl-kids-mega section>div{display:flex;flex-wrap:wrap;gap:4px}.fl-kids-mega a{min-height:30px!important;padding:4px 7px!important;font-size:12px!important;border-radius:7px!important}.fl-kids-quick-nav.is-scroll-hidden{transform:translateY(calc(-100% - var(--fl-header-height)));opacity:0;pointer-events:none}@media(max-width:900px){.fl-kids-quick-nav .fl-kids-mega{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.fl-kids-quick-nav .fl-kids-mega{grid-template-columns:1fr}.fl-kids-quick-nav{max-height:430px}}
+
+
+/* v1.11.1 Kids mega-navigation: equal group boxes and requested scroll direction */
+.fl-kids-quick-nav{transition:transform .2s ease,opacity .2s ease!important;overflow:hidden!important}
+.fl-kids-quick-nav .fl-kids-mega{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-rows:1fr;gap:10px!important;overflow:visible!important;white-space:normal!important}
+.fl-kids-mega section{box-sizing:border-box;height:100%;min-height:112px;display:flex;flex-direction:column}
+.fl-kids-mega section>div{align-content:flex-start}
+.fl-kids-quick-nav.is-scroll-hidden{transform:translateY(calc(-100% - var(--fl-header-height)))!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:900px){.fl-kids-quick-nav .fl-kids-mega{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){.fl-kids-quick-nav .fl-kids-mega{grid-template-columns:1fr!important}.fl-kids-mega section{min-height:auto}}
+
+
+/* v1.11.3 compact header and expandable Kids category navigation */
+.fl-topbar{min-height:66px;padding-block:8px;gap:18px}.fl-mark{width:34px;height:34px;border-radius:10px}.fl-menu a{padding:7px 10px}.fl-menu .fl-contact-link{padding:7px 12px}.fl-menu-toggle{min-height:38px;height:38px}
+.fl-kids-quick-nav{max-height:none!important;overflow:hidden!important}.fl-kids-nav-shell{display:block!important;padding-block:6px!important;overflow:visible!important}.fl-kids-nav-summary{display:flex;align-items:center;gap:7px;overflow-x:auto;overscroll-behavior-inline:contain;white-space:nowrap;scrollbar-width:thin}.fl-kids-nav-summary>a{flex:0 0 auto;min-height:34px!important;padding:5px 10px!important;border:1px solid #d6e1d6!important;background:#f8fbf6;font-size:13px!important;font-weight:850;border-radius:9px!important}.fl-kids-nav-summary>a:hover{background:#e5f0df}.fl-kids-nav-expand,.fl-kids-nav-collapse{border:1px solid #9dbb9f;border-radius:9px;background:#0b3d2e;color:#fff;min-height:34px;padding:5px 10px;font:800 12px/1.2 system-ui;cursor:pointer;white-space:nowrap}.fl-kids-nav-expand{flex:0 0 auto;margin-left:auto}.fl-kids-nav-details[hidden]{display:none!important}.fl-kids-nav-details{padding-top:7px}.fl-kids-nav-details .fl-kids-mega{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-rows:1fr;gap:10px!important;padding:0!important}.fl-kids-nav-collapse{display:block;margin:8px auto 1px}.fl-kids-quick-nav.is-scroll-hidden{transform:translateY(calc(-100% - var(--fl-header-height)))!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:950px){.fl-topbar{min-height:62px;padding-block:7px}.fl-kids-nav-details .fl-kids-mega{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:560px){.fl-brand{font-size:18px}.fl-mark{width:31px;height:31px}.fl-menu-toggle{height:36px;min-height:36px}.fl-kids-nav-summary>a{font-size:12px!important;padding-inline:8px!important}.fl-kids-nav-details .fl-kids-mega{grid-template-columns:1fr!important}}
+
+/* v1.11.4: slightly tighter main header, stable expandable Kids nav, right-aligned collapse. */
+.fl-topbar{min-height:60px;padding-block:5px;gap:16px}.fl-mark{width:32px;height:32px;border-radius:9px}.fl-brand{font-size:19px}.fl-menu a{padding:6px 9px}.fl-menu .fl-contact-link{padding:6px 10px}.fl-menu-toggle{min-height:36px;height:36px}.fl-kids-nav-collapse{margin:8px 0 1px auto!important}
+@media(max-width:950px){.fl-topbar{min-height:58px;padding-block:5px}}@media(max-width:560px){.fl-topbar{min-height:56px;padding-block:4px}.fl-mark{width:30px;height:30px}.fl-menu-toggle{height:34px;min-height:34px}}

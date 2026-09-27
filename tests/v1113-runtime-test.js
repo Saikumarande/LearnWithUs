@@ -1,0 +1,18 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),read=f=>fs.readFileSync(path.join(pub,f),'utf8');let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
+const kids=read('children.html'),css=read('assets/kids.css'),shell=read('assets/site-shell.js'),shellCss=read('assets/site-shell.css'),sw=read('service-worker.js');
+ok((kids.match(/class="roadmap-step roadmap-stop"/g)||[]).length===40,'Roadmap must retain 40 route stops');
+ok(kids.includes('M60 66 H940 V183 H60 V300 H940 V417 H60 V534 H940'),'Slightly expanded roadmap route geometry missing');
+ok(css.includes('height:clamp(430px,55vh,530px)'),'Roadmap size was not slightly expanded');
+ok(css.includes('.kids-page .roadmap-stop:hover')&&css.includes('transform:translate(-50%,-50%)!important'),'Roadmap stops must stay fixed on hover');
+ok(css.includes('transform:none!important;border-color:#2f6f4a')&&css.includes('routePulseGlow'),'Roadmap hover/next feedback must use styling rather than movement');
+const htmlFiles=fs.readdirSync(pub).filter(f=>f.endsWith('.html'));const roadmapPages=htmlFiles.filter(f=>read(f).includes('kids-roadmap.js')||read(f).includes('class="kids-roadmap"'));ok(roadmapPages.length===1&&roadmapPages[0]==='children.html','Roadmap must only appear on children.html');
+ok(kids.includes('id="english-learning"')&&kids.includes('id="maths-learning"')&&kids.includes('id="world-india-learning"')&&kids.includes('id="explore-learning"'),'Kids category anchors are missing');
+ok(shell.includes('fl-kids-nav-summary')&&shell.includes('>English</a>')&&shell.includes('>Maths</a>')&&shell.includes('>World &amp; India</a>')&&shell.includes('>Explore</a>'),'Collapsed four-category Kids navigation is missing');
+ok(shell.includes('Expand to view more ↓')&&shell.includes("class=\"fl-kids-nav-collapse\"")&&shell.includes('Collapse ↑'),'Expand/Collapse controls are missing');
+ok(shell.includes("else if(delta>0)kidsQuickNav.classList.add('is-scroll-hidden')")&&shell.includes("else if(delta<0)kidsQuickNav.classList.remove('is-scroll-hidden')"),'Kids navigation must hide on scroll down and show on scroll up');
+ok(shellCss.includes('.fl-kids-nav-details[hidden]{display:none!important}')&&shellCss.includes('.fl-kids-nav-summary'),'Collapsed/expanded navigation CSS is missing');
+ok(shellCss.includes('.fl-topbar{min-height:66px;padding-block:8px'),'Header height was not reduced');
+ok(sw.includes("CACHE='learnwithus-v1.11.3'")&&sw.includes("'./assets/site-shell.js?v=20260927e'")&&sw.includes("'./assets/kids.css?v=20260927e'")&&sw.includes("'./assets/kids-roadmap.js?v=20260927e'"),'v1.11.3 offline cache entries missing');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='1.11.3','VERSION must be 1.11.3');ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='1.11.3','package version must be 1.11.3');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v1.11.3 runtime/UI checks passed: ${passed}/${checks} assertions.`);

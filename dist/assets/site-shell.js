@@ -7,7 +7,7 @@
   tools.id='fl-utility-menu';tools.className='fl-utility-menu';tools.setAttribute('aria-label','Website tools');tools.hidden=true;
   toggle.setAttribute('aria-controls',tools.id);toggle.setAttribute('aria-label','Open website tools');toggle.setAttribute('aria-haspopup','true');
   header.querySelector('.fl-topbar').append(tools);
-  const dedicatedKids=['word-bank.html','letter-tracing.html','addition.html','subtraction.html','multiplication.html','division.html','quiz-hub.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','multiplication-tables.html','multiplication-tables-quiz.html','india.html','india-quiz.html','planets.html','countries-capitals.html','world-quiz.html','stories.html','story.html','sports.html','sports-quiz.html','creativity.html','life-skills.html','games.html'];
+  const dedicatedKids=['word-bank.html','letter-tracing.html','addition.html','subtraction.html','multiplication.html','division.html','quiz-hub.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','multiplication-tables.html','multiplication-tables-quiz.html','india.html','india-quiz.html','planets.html','countries-capitals.html','world-quiz.html','stories.html','story.html','sports.html','sports-quiz.html','creativity.html','life-skills.html','life-skills-quiz.html','games.html','games-quiz.html'];
   const pageName=location.pathname.split('/').pop()||'index.html';
   const isKidsPage=document.body.dataset.area==='kids'||['children.html','kids-quiz.html','early-learning.html','kids-skills.html','languages.html','hindi.html','telugu.html',...dedicatedKids].includes(pageName);
   let kidsQuickNav=null;
@@ -16,12 +16,22 @@
     if(!kidsQuickNav){kidsQuickNav=document.createElement('nav');header.after(kidsQuickNav);}
     kidsQuickNav.classList.add('fl-section-nav','fl-kids-quick-nav');
     kidsQuickNav.setAttribute('aria-label','Kids activities');
-    kidsQuickNav.innerHTML='<div class="fl-container"><a class="fl-section-label" href="children.html">Kids Corner</a><a href="children.html?mode=letters">Letters</a><a href="hindi.html">Hindi</a><a href="telugu.html">Telugu</a><a href="children.html?mode=words">Phonics</a><a href="children.html?mode=numbers">Numbers</a><a href="children.html?mode=animals">Animals</a><a href="early-learning.html?topic=colours">Colours</a><a href="early-learning.html?topic=shapes">Shapes</a><a href="early-learning.html?topic=poems">Poems</a><a href="stories.html">Stories</a><a href="sports.html">Sports</a><a href="creativity.html">Creativity</a><a href="life-skills.html">Life Skills</a><a href="games.html">Games</a><a href="quiz-hub.html">Quiz Hub</a></div>';
+    kidsQuickNav.innerHTML='<div class="fl-container fl-kids-nav-shell"><div class="fl-kids-nav-summary" aria-label="Kids learning categories"><a href="children.html#english-learning">English</a><a href="children.html#maths-learning">Maths</a><a href="children.html#world-india-learning">World &amp; India</a><a href="children.html#explore-learning">Explore</a><button class="fl-kids-nav-expand" type="button" aria-expanded="false" aria-controls="fl-kids-nav-details">Expand to view more ↓</button></div><div class="fl-kids-nav-details" id="fl-kids-nav-details" hidden><div class="fl-kids-mega"><section><strong>English</strong><div><a class="fl-section-label" href="children.html">Kids Corner</a><a href="children.html?mode=letters">Letters</a><a href="children.html?mode=words">Phonics</a><a href="word-bank.html">Words</a><a href="letter-tracing.html">Tracing</a><a href="early-learning.html?topic=poems">Poems</a></div></section><section><strong>Maths</strong><div><a href="children.html?mode=numbers">Numbers</a><a href="addition.html">Addition</a><a href="subtraction.html">Subtraction</a><a href="multiplication.html">Multiplication</a><a href="division.html">Division</a><a href="multiplication-tables.html">Tables</a><a href="fractions.html">Fractions</a><a href="time-calendar.html">Time</a></div></section><section><strong>World &amp; India</strong><div><a href="children.html?mode=animals">Animals</a><a href="early-learning.html?topic=colours">Colours</a><a href="early-learning.html?topic=shapes">Shapes</a><a href="planets.html">Planets</a><a href="countries-capitals.html">Countries</a><a href="india.html">India</a><a href="hindi.html">Hindi</a><a href="telugu.html">Telugu</a></div></section><section><strong>Explore</strong><div><a href="stories.html">Stories</a><a href="sports.html">Sports</a><a href="creativity.html">Creativity</a><a href="life-skills.html">Life Skills</a><a href="games.html">Games</a><a href="quiz-hub.html">Quiz Hub</a></div></section></div><button class="fl-kids-nav-collapse" type="button">Collapse ↑</button></div></div>';
+    const expandKidsNav=kidsQuickNav.querySelector('.fl-kids-nav-expand'),kidsNavDetails=kidsQuickNav.querySelector('.fl-kids-nav-details'),collapseKidsNav=kidsQuickNav.querySelector('.fl-kids-nav-collapse');
     let lastScrollY=window.scrollY,scrollTicking=false;
+    const setKidsNavExpanded=expanded=>{
+      expandKidsNav.setAttribute('aria-expanded',String(expanded));kidsNavDetails.hidden=!expanded;expandKidsNav.textContent=expanded?'Expanded':'Expand to view more ↓';
+      if(expanded){kidsQuickNav.classList.remove('is-scroll-hidden');lastScrollY=window.scrollY;requestAnimationFrame(()=>{kidsQuickNav.classList.remove('is-scroll-hidden');lastScrollY=window.scrollY;height();});}
+      else height();
+    };
+    expandKidsNav.addEventListener('click',()=>setKidsNavExpanded(expandKidsNav.getAttribute('aria-expanded')!=='true'));
+    collapseKidsNav.addEventListener('click',()=>{setKidsNavExpanded(false);expandKidsNav.focus();});
     const updateKidsQuickNav=()=>{
       const y=Math.max(0,window.scrollY),delta=y-lastScrollY;
-      if(y<110||delta<-6)kidsQuickNav.classList.remove('is-scroll-hidden');
-      else if(delta>6)kidsQuickNav.classList.add('is-scroll-hidden');
+      // Requested behavior: scrolling DOWN hides the grouped Kids menu; scrolling UP reveals it.
+      if(y<96)kidsQuickNav.classList.remove('is-scroll-hidden');
+      else if(delta>0)kidsQuickNav.classList.add('is-scroll-hidden');
+      else if(delta<0)kidsQuickNav.classList.remove('is-scroll-hidden');
       lastScrollY=y;scrollTicking=false;
     };
     window.addEventListener('scroll',()=>{if(!scrollTicking){scrollTicking=true;requestAnimationFrame(updateKidsQuickNav);}},{passive:true});
@@ -39,7 +49,7 @@
     const here=new URL(location.href);
     const mode=here.searchParams.get('mode'),category=here.searchParams.get('category');
     let selected=current;
-    if(['counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','kids-quiz.html','multiplication-tables-quiz.html','india-quiz.html','world-quiz.html','sports-quiz.html'].includes(current))selected='quiz-hub.html';
+    if(['counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','math-quiz.html','kids-quiz.html','multiplication-tables-quiz.html','india-quiz.html','world-quiz.html','sports-quiz.html','life-skills-quiz.html','games-quiz.html'].includes(current))selected='quiz-hub.html';
     else if(current==='story.html')selected='stories.html';
     else if(current==='children.html'&&['letters','words','numbers','animals'].includes(mode))selected+='?mode='+mode;
     else if(current==='early-learning.html'&&['colours','shapes','matching','poems'].includes(here.searchParams.get('topic')))selected+='?topic='+here.searchParams.get('topic');
@@ -58,6 +68,8 @@
   categoryState();window.addEventListener('popstate',categoryState);window.addEventListener('hashchange',categoryState);window.addEventListener('learning-view-change',categoryState);
   if(typeof ResizeObserver==='function')new ResizeObserver(height).observe(header);else window.addEventListener('resize',height);
   height();
+  const footer=document.querySelector('.fl-footer');
+  if(footer){footer.innerHTML='<div class="fl-container fl-footer-grid"><div class="fl-footer-about"><a class="fl-footer-brand" href="index.html">LearnWithUs</a><p>A little learning, every day.</p><p>Discover food, practise letters, numbers and animal names, play quizzes together, and get to know your body.</p></div><nav aria-label="Footer learning choices"><h3>Choose what to learn</h3><a href="food.html">Food discoveries</a><a href="children.html">Kids Corner</a><a href="health.html">Health guides</a><a href="contact.html">Contact me</a></nav></div><div class="fl-container"><p class="fl-fine">© 2026 LearnWithUs · Created by A. Sai Kumar · Nutrient data is educational and should be verified before clinical use.</p></div>';}
 })();
 
 // Shared learning tools are loaded here so every existing and future page gets

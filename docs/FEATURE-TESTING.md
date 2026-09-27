@@ -1,3 +1,42 @@
+## 1.11.4 targeted checks
+- START/FINISH roadmap labels are visually separated from the first/last milestone rows.
+- Roadmap hover/focus uses bright styling with no transform movement.
+- Roadmap is slightly expanded but remains exclusive to children.html.
+- Expand immediately reveals the Kids detail menu and Collapse is right-aligned.
+- Main header uses the new compact dimensions.
+
+## 1.11.3 targeted checks
+- Roadmap appears only on children.html and retains 40 stops.
+- Roadmap hover/focus uses no scale/translate movement beyond fixed centering.
+- Roadmap spacing/height is slightly expanded from v1.11.2.
+- Kids navigation is collapsed to four category links by default, expands to detailed groups, and has a bottom Collapse control.
+- Both collapsed/expanded navigation states use down-hide/up-show scrolling.
+- Shared header height is reduced slightly.
+
+## 1.11.2 targeted checks
+- Kids mega-navigation hides on scroll down and shows on scroll up.
+- Compact roadmap retains all 40 stops in an 8×5 route and uses subtle motion.
+- Sports & Games has one parent tile on Kids Corner while all sports remain on sports.html.
+- public/dist parity, PWA version/cache and release metadata are verified.
+
+## 1.11.1 targeted checks
+- Kids grouped navigation shows on downward scroll, hides on upward scroll, and stays visible near the top.
+- Kids activity cards use equal-height responsive grid rules.
+- Kids roadmap contains 40 interactive circular route stops and no legacy boxed stage layout.
+- Kids Corner exposes one Life Skills parent tile while the Life Skills page retains all 12 topics.
+- PWA cache and public/dist parity cover the v1.11.1 assets.
+
+## 1.11.0 targeted checks
+- Final full-suite result: 1,995/1,995 assertions per run; executed twice.
+- No duplicated Kids categories.
+- Kids roadmap links and progress markers.
+- Games: 12 concepts × 50 examples, 10-per-page and quiz handoff.
+- Life Skills: 12 topics, full narration, four practice questions and quiz routes.
+- Quiz Hub coverage for all Life Skills and Games quiz concepts.
+- Grouped Kids mega-nav scroll behavior.
+- Constant footer across all HTML pages.
+- PWA/offline cache coverage for new routes and assets.
+
 ## 1.10.0 targeted checks
 - Creativity Studio expanded controls and selectors.
 - Life Skills page routes and practice questions.
