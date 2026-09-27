@@ -9,7 +9,6 @@ Canonical browser pages:
 - `kids-quiz.html`
 - `life-skills-quiz.html`
 - `math-quiz.html`
-- `missing-letters-quiz.html`
 - `multiplication-tables-quiz.html`
 - `quiz-hub.html`
 - `quiz.html`
@@ -77,3 +76,6 @@ Canonical browser pages:
 ## Compatibility
 - Root HTML files from v1.x remain as lightweight redirect shims only.
 - `route-map.json` records every legacy route and canonical v2.x destination.
+
+## Retired compatibility routes
+- `missing-letters-quiz.html` and `quiz/missing-letters-quiz.html` are compatibility-only redirects to `quiz/spelling-quiz.html`; they are not current quiz pages or visible navigation choices.

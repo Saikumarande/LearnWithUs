@@ -29,5 +29,5 @@ const journey=read('assets/learning-journey.js');
 ['india.html','hindi.html','telugu.html','stories.html','creativity.html','kids-skills.html'].forEach(page=>ok(read(page).includes('learning-journey.js?v=20260927h'),'Learning page missing shared Quiz/Next journey: '+page));
 ok(journey.includes("'india.html':{title:'India & Maps'")&&journey.includes("'stories.html':{title:'Story Comprehension'")&&journey.includes("'creativity.html':{title:'Creativity'"),'Shared journey routes are incomplete');
 ok(read('life-skills.html').includes('Next: Learning Games')&&read('games.html').includes('Next: Quiz Hub'),'Life Skills/Games Next-topic buttons are missing');
-ok(read('service-worker.js').includes("CACHE='learnwithus-v2.1.0'"),'Service worker cache version not updated');
+ok(read('service-worker.js').includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache version not updated');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v2.0.0 UI/runtime checks passed: ${pass}/${checks} assertions.`);

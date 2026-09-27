@@ -1,27 +1,27 @@
-## Current release: v2.1.0
-### v2.1.0 highlights
-- Reworked Numbers into one learning view with exactly four dropdown sets: **1–25, 26–50, 51–75, 76–100**.
-- Each selected set renders all **25 number cards together** with spoken number names and counting/place-value aids; the old internal 20-number pager is removed for Numbers.
-- Number Quiz uses the same four sets and keeps 10-question random practice, spoken feedback, score cards and saved progress.
-- The Numbers completion area keeps the shared **Learn → practise → quiz** interface with **Start Numbers Quiz** and **Next: Place Value** buttons.
-- Added v2.1.0 number-range, UI-source, compatibility and browser-render regression checks; full release validation remains mandatory twice.
+## Current release: v2.1.1
+### v2.1.1 highlights
+- Fixed the Letter/Number quiz deep-link runtime failure by importing the shared `normalizeNumberRange` helper used during quiz startup.
+- A direct `kids-quiz.html?category=letters` or `?category=numbers` link now starts only the requested 10-question quiz and does not show the unrelated category chooser.
+- Removed Missing Letters from Phonics, 100 Picture Words, Quiz Hub, Kids Skills, search/discovery and sitemap. Old Missing Letters URLs silently forward to Picture Spelling so saved links do not break.
+- Added dedicated browser-runtime coverage for Letter/Number deep links plus whole-site checks that Missing Letters is no longer exposed in visible HTML.
 
-### v2.1.0 final validation target
+### v2.1.1 final validation target
 - Smoke/canonical routes: **208** assertions
-- Recursive links/assets/JavaScript syntax: **1,521** assertions
+- Recursive links/assets/JavaScript syntax: **1,496** assertions
 - Whole-site HTML structure/folder audit: **773** assertions
 - Feature regression: **168** assertions
 - Release regression: **68** assertions
 - v1.12 compatibility UI/runtime: **38** assertions
-- v2.0.0 structure/UI compatibility: **161** assertions
+- v2.0.0 structure/UI compatibility: **160** assertions
 - Shared journey/folder regression: **358** assertions
-- v2.1.0 Numbers runtime/source regression: **45** assertions
+- v2.1.0 Numbers regression: **45** assertions
+- v2.1.1 Letter/Picture Words hotfix regression: **120** assertions
 - Server/MIME/custom 404: **42** assertions
-- Core automated suite: **3,382 assertions per run**
-- Rendered Chromium UI + actual Numbers browser runtime: **88 assertions per run**
-- Complete release validation: **3,470 assertions per run**, required twice after final cleanup.
+- Core automated suite: **3,476 assertions per run**
+- Rendered Chromium UI + Numbers runtime + Kids quiz deep-link runtime: **105 assertions per run**
+- Complete release validation: **3,581 assertions per run**, required twice after final cleanup.
 
-# LearnWithUs v2.1.0
+# LearnWithUs v2.1.1
 
 LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
@@ -90,14 +90,13 @@ For every future LearnWithUs code change, update **README.md**, `docs/CHANGELOG.
 ## Project structure
 
 ```text
-LearnWithUs-v2.1.0/
+LearnWithUs-v2.1.1/
 ├── public/
 │   ├── index.html                    # Home page
 │   ├── quiz/                         # Canonical quiz HTML
 │   │   ├── quiz-hub.html
 │   │   ├── kids-quiz.html
 │   │   ├── counting-quiz.html
-│   │   ├── missing-letters-quiz.html
 │   │   ├── spelling-quiz.html
 │   │   ├── math-quiz.html
 │   │   ├── multiplication-tables-quiz.html

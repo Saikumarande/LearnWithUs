@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.1 — 2026-09-27
+- Fixed the Kids Letter/Number quiz startup ReferenceError caused by `normalizeNumberRange` not being imported from the shared Kids data module.
+- Deep-linked Letter and Number quiz buttons now open directly into the requested 10-question quiz instead of showing the generic category chooser.
+- Removed Missing Letters from Phonics/Picture Words journeys, Quiz Hub, Kids Skills, search/discovery and sitemap; legacy Missing Letters URLs now forward to Picture Spelling.
+- Added browser-runtime regression coverage for dedicated Letter/Number quiz deep links and visible-UI checks for the retired Missing Letters option.
+
 ## 2.1.0 — 2026-09-27
 - Rebuilt Numbers learning into four fixed 25-number dropdown sets covering 1 through 100 on one selected-set view.
 - Removed internal Numbers pagination and kept the shared Learn → practise → quiz completion buttons at the bottom of every selected number set.

@@ -59,7 +59,7 @@
     ui.finishNote.hidden=!completedPage;
     const journeyByMode={
       letters:{title:'Letters',copy:'You finished A to Z. Check what you remember, then continue to Phonics.',quiz:'kids-quiz.html?category=letters&style='+style,quizLabel:'Start Letters Quiz',nextMode:'words',nextLabel:'Phonics'},
-      words:{title:'Picture Spelling',copy:'You finished the phonics picture words. Try spelling and missing-letter practice, then continue to Picture Words.',quiz:'spelling-quiz.html',quizLabel:'Start Picture Spelling Quiz',secondary:'missing-letters-quiz.html',secondaryLabel:'Try Missing Letters Quiz',next:'word-bank.html',nextLabel:'Picture Words'},
+      words:{title:'Picture Spelling',copy:'You finished the phonics picture words. Try the picture spelling quiz, then continue to the 100 Picture Words collection.',quiz:'spelling-quiz.html',quizLabel:'Start Picture Spelling Quiz',next:'word-bank.html',nextLabel:'Picture Words'},
       animals:{title:'Picture Matching',copy:'You explored all the animal names. Check your picture matching, then continue to Colours.',quiz:'early-learning.html?topic=matching',quizLabel:'Start Picture Matching Quiz',next:'early-learning.html?topic=colours',nextLabel:'Colours'},
       numbers:{title:'Numbers',copy:'You explored all 25 numbers in this set. Check your number recognition, then continue to Place Value.',quiz:'kids-quiz.html?category=numbers&range='+ui.numberRange.value,quizLabel:'Start Numbers Quiz',next:'place-value.html',nextLabel:'Place Value'}
     };

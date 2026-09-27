@@ -4,12 +4,12 @@
     if(window.LearnWithUs?.recordQuiz){window.LearnWithUs.recordQuiz(title,score,total,url);return;}
     try{const key='learnwithus.platform.v1',state=JSON.parse(localStorage.getItem(key)||'{}')||{};state.quizHistory=Array.isArray(state.quizHistory)?state.quizHistory:[];state.completed=Array.isArray(state.completed)?state.completed:[];state.quizHistory.unshift({title,score,total,url,time:new Date().toISOString()});state.quizHistory=state.quizHistory.slice(0,30);if(!state.completed.includes(url))state.completed.push(url);localStorage.setItem(key,JSON.stringify(state));}catch{}
   }
-  const {letters,ranges,letterName,numberName,lessonLink,letterStyles,normalizeLetterStyle}=window.LEARNWITHUS_KIDS;
+  const {letters,ranges,letterName,numberName,lessonLink,letterStyles,normalizeLetterStyle,normalizeNumberRange}=window.LEARNWITHUS_KIDS;
   const ids=['kidSetup','kidSetupTitle','kidOptions','kidOptionsTitle','kidStyleLabel','kidRangeLabel','kidStyle','kidRange','kidStart','kidRound','kidCategoryName','kidCounter','kidScoreCount','kidProgress','kidPromptLabel','kidPrompt','kidFeedback','kidAnswerStatus','kidHear','kidAccent','kidNext','kidChange','kidResults','kidResultScore','kidResultTitle','kidResultMessage','kidScoreCard','kidReviewTitle','kidStudyLinks','kidRetry','kidChooseAnother','kidAudioBar','kidAudioStatus','kidStopAudio','kidCursiveNotice'];
   const ui=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
   const audio=window.createKidsAudio({status:ui.kidAudioStatus,stopButton:ui.kidStopAudio});
   const judgeButtons=[...document.querySelectorAll('[data-judge]')];
-  let category=null,stage='setup',style='upper',range='1-25',deck=[],answers=[],index=0,fontReady=false;
+  let category=null,stage='setup',style='upper',range='1-25',deck=[],answers=[],index=0,fontReady=false,dedicatedCategory=null;
   function focus(el){el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:'auto'});}
   function score(){return answers.filter(answer=>answer.correct).length;}
   function choose(value,move=true){
@@ -91,13 +91,22 @@
   judgeButtons.forEach(button=>button.addEventListener('click',()=>judge(button.dataset.judge==='correct')));
   ui.kidStart.addEventListener('click',start);ui.kidRetry.addEventListener('click',start);
   ui.kidNext.addEventListener('click',()=>{if(stage!=='round'||answers.length!==index+1)return;if(index===deck.length-1)results();else{index++;renderQuestion();}});
-  ui.kidChange.addEventListener('click',reset);ui.kidChooseAnother.addEventListener('click',reset);
+  ui.kidChange.addEventListener('click',()=>{if(dedicatedCategory){location.href=dedicatedCategory==='letters'?'children.html?mode=letters':'children.html?mode=numbers';return;}reset();});ui.kidChooseAnother.addEventListener('click',()=>{if(dedicatedCategory){location.href='quiz-hub.html';return;}reset();});
   ui.kidHear.addEventListener('click',()=>{if(stage!=='round'||answers.length!==index+1)return;const value=deck[index];audio.speak(category==='letters'?letterName(value,ui.kidAccent.value):numberName(value),String(value),ui.kidAccent.value);});
   ui.kidAccent.addEventListener('change',()=>audio.stop());
   const params=new URLSearchParams(location.search);
   ui.kidStyle.value=normalizeLetterStyle(params.get('style'));
   ui.kidRange.value=normalizeNumberRange(params.get('range'));
-  choose(params.get('category'),false);
+  const requestedCategory=params.get('category');
+  if(['letters','numbers'].includes(requestedCategory)){
+    dedicatedCategory=requestedCategory;choose(requestedCategory,false);
+    const heading=document.querySelector('.kids-quiz-heading h1'),deckText=document.querySelector('.kids-quiz-heading .page-deck'),intro=document.querySelector('.kids-quiz-heading>p:last-child');
+    if(heading)heading.textContent=requestedCategory==='letters'?'Letter quiz':'Number quiz';
+    if(deckText)deckText.textContent=requestedCategory==='letters'?'A focused letter challenge.':'A focused number challenge.';
+    if(intro)intro.textContent=requestedCategory==='letters'?'Recognise 10 letters from the style you just practised.':'Recognise 10 numbers from the selected 25-number set.';
+    ui.kidChange.hidden=true;ui.kidChooseAnother.textContent='Back to Quiz Hub';
+    start();
+  }else choose(requestedCategory,false);
   if(document.fonts){document.fonts.load('40px Playwrite','Aa').then(faces=>{fontReady=faces.length>0;if(fontReady)ui.kidCursiveNotice.hidden=true;else ui.kidCursiveNotice.textContent='The handwriting font could not load. Choose Capitals or Small letters to practise, or reload for cursive.';}).catch(()=>{ui.kidCursiveNotice.textContent='The handwriting font could not load. Choose another letter style or reload for cursive.';});}
   else ui.kidCursiveNotice.textContent='This browser cannot confirm the handwriting font. Choose another letter style if cursive does not appear.';
 })();

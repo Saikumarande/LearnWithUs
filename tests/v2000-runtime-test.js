@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),pub=path.join(root,'public');
 const routeMap=JSON.parse(fs.readFileSync(path.join(root,'route-map.json'),'utf8'));
 const read=f=>fs.readFileSync(path.join(pub,routeMap[f]||f),'utf8');
 let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
-const quizzes=['quiz-hub.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','kids-quiz.html','math-quiz.html','multiplication-tables-quiz.html','india-quiz.html','world-quiz.html','sports-quiz.html','life-skills-quiz.html','games-quiz.html','quiz.html'];
+const quizzes=['quiz-hub.html','counting-quiz.html','spelling-quiz.html','kids-quiz.html','math-quiz.html','multiplication-tables-quiz.html','india-quiz.html','world-quiz.html','sports-quiz.html','life-skills-quiz.html','games-quiz.html','quiz.html'];
 quizzes.forEach(f=>ok(routeMap[f]?.startsWith('quiz/'),f+' is not canonical under quiz/'));
 ['children.html','addition.html','word-bank.html','life-skills.html','games.html','sports.html','stories.html'].forEach(f=>ok(routeMap[f]?.startsWith('learn/kids/'),f+' is not canonical under learn/kids/'));
 ok(routeMap['food.html']==='learn/food/food.html'&&routeMap['health.html']==='learn/health/health.html','Food/Health canonical folders missing');
@@ -23,7 +23,7 @@ const life=read('life-skills.html'),games=read('games.html');
 ok(life.includes('topic-quiz-journey')&&life.includes('Learn → practise → quiz'),'Life Skills journey card missing');
 ok(games.includes('topic-quiz-journey')&&games.includes('Learn → practise → quiz'),'Games journey card missing');
 const shell=read('assets/site-shell.js');ok(shell.includes('v2.0.0 canonical folder routing')&&shell.includes('MutationObserver'),'Canonical route link rewriting missing');
-const sw=read('service-worker.js');ok(sw.includes("CACHE='learnwithus-v2.1.0'"),'Service worker cache version missing');
+const sw=read('service-worker.js');ok(sw.includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache version missing');
 
 for(const [legacy,canonical] of Object.entries(routeMap)){const stub=fs.readFileSync(path.join(pub,legacy),'utf8');ok(stub.includes("location.search+location.hash"),'Legacy redirect does not preserve query/hash: '+legacy);}
 const learningPages=['addition.html','subtraction.html','multiplication.html','division.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','letter-tracing.html','word-bank.html','early-learning.html','india.html','hindi.html','telugu.html','stories.html','sports.html','creativity.html','life-skills.html','games.html','multiplication-tables.html','planets.html','countries-capitals.html','kids-skills.html','story.html'];

@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='learnwithus-v2.1.0';
+const CACHE='learnwithus-v2.1.1';
 const CORE=[
   './404.html',
   './account/dashboard.html',

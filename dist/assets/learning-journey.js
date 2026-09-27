@@ -14,7 +14,7 @@
     'indian-money.html':{title:'Indian Money',quiz:'math-quiz.html?topic=indian-money',next:'measurement.html',nextLabel:'Measurement'},
     'measurement.html':{title:'Measurement',quiz:'math-quiz.html?topic=measurement',next:'children.html?mode=animals',nextLabel:'Animals'},
     'letter-tracing.html':{title:'Letter Tracing',quiz:'kids-quiz.html?category=letters',next:'early-learning.html?topic=poems',nextLabel:'Poems'},
-    'word-bank.html':{title:'Picture Words',quiz:'spelling-quiz.html',secondary:'missing-letters-quiz.html',secondaryLabel:'Missing Letters Quiz',next:'letter-tracing.html',nextLabel:'Letter Tracing'},
+    'word-bank.html':{title:'Picture Words',quiz:'spelling-quiz.html',next:'letter-tracing.html',nextLabel:'Letter Tracing'},
     'india.html':{title:'India & Maps',quiz:'india-quiz.html',quizLabel:'Start State & Capital Quiz →',next:'hindi.html',nextLabel:'Hindi'},
     'hindi.html':{title:'Hindi Letters',quiz:'quiz-hub.html',quizLabel:'Open Quiz Hub →',next:'telugu.html',nextLabel:'Telugu'},
     'telugu.html':{title:'Telugu Letters',quiz:'quiz-hub.html',quizLabel:'Open Quiz Hub →',next:'stories.html',nextLabel:'Stories'},

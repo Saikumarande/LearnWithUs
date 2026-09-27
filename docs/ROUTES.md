@@ -31,7 +31,7 @@ Root legacy HTML files are compatibility redirects. Canonical full pages live in
 - `life-skills.html` → `learn/kids/life-skills.html`
 - `math-quiz.html` → `quiz/math-quiz.html`
 - `measurement.html` → `learn/kids/measurement.html`
-- `missing-letters-quiz.html` → `quiz/missing-letters-quiz.html`
+- `missing-letters-quiz.html` → `quiz/spelling-quiz.html` (retired compatibility forward)
 - `multiplication-tables-quiz.html` → `quiz/multiplication-tables-quiz.html`
 - `multiplication-tables.html` → `learn/kids/multiplication-tables.html`
 - `multiplication.html` → `learn/kids/multiplication.html`

@@ -1,3 +1,13 @@
+## 2.1.1 focused regression
+- Execute the actual `kids-data.js` + `kids-quiz.js` runtime in Chromium for `?category=letters` and `?category=numbers`.
+- Confirm deep-linked quizzes start Question 1 of 10 immediately, preserve the requested number set, and do not visibly expose the unrelated quiz category.
+- Confirm Phonics and 100 Picture Words show only Picture Spelling + Next Topic actions.
+- Confirm Missing Letters is absent from visible public HTML, Quiz Hub, Kids Skills, search/discovery and sitemap while old URLs forward safely to Picture Spelling.
+- Re-run recursive links/assets/JS, HTML/folder, feature, release, route, server/MIME/404 and rendered responsive UI checks twice from the final release tree.
+- **Core matrix:** 3,476 assertions per run.
+- **Browser/runtime matrix:** 105 assertions per run.
+- **Complete final matrix:** 3,581 assertions per run; **7,162 checks across two required final runs**.
+
 ## 2.1.0
 
 - **Numbers data/runtime tests:** execute the shared Kids data module and verify the four 25-number sets, boundaries, legacy-range normalization and number deep links.
@@ -130,7 +140,7 @@ Audio uses the browser and operating-system speech voices. The website intention
 - Kids Corner activity tiles: desktop layout uses up to three tiles per row; tablet/mobile reduces without horizontal overflow.
 - Kids activity search: searches the new descriptive tiles and hides category groups with no matching activities.
 - Category placement: India & Maps appears under India & General Knowledge; Animals/Colours/Shapes remain under World Around Us; Hindi/Telugu remain under Indian Languages.
-- Shared score cards: Food, Letters/Numbers, Picture Matching, Counting, Missing Letters, Picture Spelling and Maths results remain centered and within the viewport.
+- Shared score cards: Food, Letters/Numbers, Picture Matching, Counting, Picture Spelling and Maths results remain centered and within the viewport.
 - Score-card action buttons: three-column desktop layout and one-column mobile layout.
 - Existing quiz URLs, saved progress, score-card downloads/sharing, PWA cache and custom 404 continue to work.
 

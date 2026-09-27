@@ -21,7 +21,7 @@ const earlyJs=read('assets/early-learning.js');
 const childrenJs=read('assets/children.js');
 const manifest=JSON.parse(read('manifest.webmanifest'));
 const packageJson=JSON.parse(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8'));
-const enhancedPages=['index.html','food.html','catalog.html','mysteries.html','journeys.html','quiz.html','children.html','early-learning.html','kids-skills.html','word-bank.html','letter-tracing.html','counting-quiz.html','missing-letters-quiz.html','spelling-quiz.html','addition.html','subtraction.html','multiplication.html','division.html','math-quiz.html','quiz-hub.html','kids-quiz.html','hindi.html','telugu.html','health.html','dashboard.html','contact.html','privacy.html','404.html'];
+const enhancedPages=['index.html','food.html','catalog.html','mysteries.html','journeys.html','quiz.html','children.html','early-learning.html','kids-skills.html','word-bank.html','letter-tracing.html','counting-quiz.html','spelling-quiz.html','addition.html','subtraction.html','multiplication.html','division.html','math-quiz.html','quiz-hub.html','kids-quiz.html','hindi.html','telugu.html','health.html','dashboard.html','contact.html','privacy.html','404.html'];
 const wordContext={window:{}};vm.runInNewContext(read('assets/word-bank.js'),wordContext);
 
 expect(children.includes('hindi.html')&&children.includes('telugu.html'),'Kids navigation must have separate Hindi and Telugu pages');
@@ -37,12 +37,12 @@ expect(platform.includes('getFullYear()*372')&&platform.includes('new calendar d
 expect(!platform.includes('<h2>Start here</h2>')&&!platform.includes('lw-path-card'),'Removed Start here section is still present');
 expect(platform.includes("learning.setAttribute('aria-current','page')")&&platform.includes("page==='dashboard.html'"),'My learning active state is missing');
 expect(manifest.display==='standalone','PWA manifest should use standalone display');
-expect(read('service-worker.js').includes("CACHE='learnwithus-v2.1.0'"),'Service-worker cache version must match release 2.1.0');
+expect(read('service-worker.js').includes("CACHE='learnwithus-v2.1.1'"),'Service-worker cache version must match release 2.1.1');
 expect(read('robots.txt').includes('Sitemap:'),'robots.txt must advertise the sitemap');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes("path.join(__dirname, 'public')"),'Server must expose only the public folder');
 expect(fs.readFileSync(path.join(projectRoot,'server.js'),'utf8').includes('404.html'),'Server must use the custom 404 page');
-expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='2.1.0','VERSION must match release 2.1.0');
-expect(packageJson.version==='2.1.0','package.json must be version 2.1.0 for this release');
+expect(fs.readFileSync(path.join(projectRoot,'VERSION'),'utf8').trim()==='2.1.1','VERSION must match release 2.1.1');
+expect(packageJson.version==='2.1.1','package.json must be version 2.1.1 for this release');
 expect(platform.includes('dailyGoalMinutes')&&platform.includes('learningStreak'),'Daily goal and streak state are missing');
 expect(platform.includes('dailyChallenge')&&platform.includes('achievements'),'Daily challenge and achievements are missing');
 expect(platform.includes('mistakes')&&platform.includes('Review quiz mistakes'),'Quiz mistake review is missing');
@@ -88,15 +88,15 @@ expect(earlyJs.includes('renderLearnWithUsScoreCard')&&earlyJs.includes('next.hi
 expect(wordContext.window.LEARNWITHUS_WORD_BANK.length===100,'Picture Words must contain exactly 100 learning words');
 expect(new Set(wordContext.window.LEARNWITHUS_WORD_BANK.map(item=>item.word.toLowerCase())).size===100,'All 100 Picture Words must be different');
 expect(read('assets/practice.js').includes('Array.from({length:10}')&&read('assets/practice.js').includes('.slice(0,4),pool=shuffle([item.count,...other])'),'Counting quiz must contain 10 questions with exactly five answer choices');
-expect(read('assets/practice.js').includes("['Apple','Cat','Dog','Fish','Sun','Hat','Cup','Cap','Book','Moon']"),'Missing Letters must contain the requested 10 picture-guided questions');
+expect(!read('quiz-hub.html').includes('Missing Letters')&&!read('assets/children.js').includes('missing-letters-quiz.html')&&!read('assets/learning-journey.js').includes('missing-letters-quiz.html'),'Missing Letters must not be exposed in the current learning or quiz journey');
 expect(read('letter-tracing.html').includes('data-activity="tracing"')&&read('assets/practice.js').includes('does not automatically judge handwriting'),'Tracing must explain its guide-based behavior');
 expect(['addition.html','subtraction.html','multiplication.html','division.html'].every(file=>read(file).includes('data-activity=')),'Each maths concept must have a dedicated lesson page');
 expect(read('quiz-hub.html').includes('<h2>English</h2>')&&read('quiz-hub.html').includes('<h2>Maths</h2>')&&read('quiz-hub.html').includes('Telugu Letters'),'Quiz Hub subject groups are incomplete');
 expect(read('assets/practice.js').includes('renderLearnWithUsScoreCard')&&read('assets/practice.js').includes('recordQuiz'),'New quizzes must reuse score-card sharing and progress recording');
 expect(!children.includes('kids-skills.html?topic=phonics')&&children.includes('word-bank.html')&&children.includes('letter-tracing.html'),'Kids activities must use separate routes without a duplicate Phonics card');
 expect(read('assets/kids.css').includes('.kids-learning-choices a.choice')&&read('assets/kids.css').includes('text-decoration:none'),'Kids activity card underlines must be removed');
-expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 2.1.0'),'CHANGELOG must document release 2.1.0');
-expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"2.1.0\"'),'package.json release version is missing');
+expect(fs.readFileSync(path.join(projectRoot,'docs','CHANGELOG.md'),'utf8').includes('## 2.1.1'),'CHANGELOG must document release 2.1.1');
+expect(fs.readFileSync(path.join(projectRoot,'package.json'),'utf8').includes('\"version\": \"2.1.1\"'),'package.json release version is missing');
 
 expect(['place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','india.html'].every(file=>fs.existsSync(path.join(root,file))),'v1.7 learning pages are missing');
 expect(!read('children.html').includes('Picture quiz</span>')&&!read('children.html').includes('Letter quiz</a>'),'Kids Corner must not duplicate quiz activities outside Quiz Hub');
@@ -105,7 +105,7 @@ expect(read('quiz-hub.html').includes('quiz-section-english')&&read('quiz-hub.ht
 expect(read('assets/early-learning.js').includes('youtube-nocookie.com/embed/')&&read('assets/early-learning.js').includes("document.createElement('iframe')"),'Poems must use click-to-load in-page song embeds');
 expect(read('assets/practice.css').includes('#traceLetterSelect{font-size:1.35rem')&&read('assets/practice.js').includes('id="nextTrace"'),'Tracing selector and Next letter control are missing');
 expect(read('india.html').includes('India map')&&read('india.html').includes('India_-_administrative_map.png')&&read('india.html').includes('data-map-game'),'Interactive India map and activities are missing');
-expect(read('service-worker.js').includes('learnwithus-v2.1.0')&&read('service-worker.js').includes("'./india.html'"),'v2.0.0 offline cache is incomplete');
+expect(read('service-worker.js').includes('learnwithus-v2.1.1')&&read('service-worker.js').includes("'./india.html'"),'v2.0.0 offline cache is incomplete');
 
 expect(read('assets/practice.js').includes("Wrong answer. The correct answer is '+answer+'.'"),'Wrong-answer speech must say the complete feedback sentence');
 expect((read('assets/india-data.js').match(/\"name\":/g)||[]).length===36,'India map must include all 28 states and 8 union territories');
@@ -139,7 +139,7 @@ const scorePages=fs.readdirSync(root).filter(file=>file.endsWith('.html')&&read(
 expect(scorePages.every(file=>read(file).includes('assets/score-card.css')),'Every shared score-card consumer must load the responsive score-card stylesheet');
 expect(read('assets/score-card.css').includes('@media(max-width:720px)')&&read('assets/score-card.css').includes('grid-template-columns:1fr'),'Score-card actions must stack on smaller screens');
 expect(read('service-worker.js').includes('./assets/score-card.css')&&read('service-worker.js').includes('./assets/children.js'),'v2.0.0 offline cache must preload the corrected Kids and score-card assets');
-expect(fs.readFileSync(path.join(projectRoot,'README.md'),'utf8').includes('## Current release: v2.1.0'),'README must document the current release changes');
+expect(fs.readFileSync(path.join(projectRoot,'README.md'),'utf8').includes('## Current release: v2.1.1'),'README must document the current release changes');
 
 
 expect(fs.existsSync(path.join(root,'multiplication-tables.html'))&&fs.existsSync(path.join(root,'multiplication-tables-quiz.html')),'Multiplication tables feature routes are missing');

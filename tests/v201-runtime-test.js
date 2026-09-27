@@ -7,9 +7,9 @@ const readLegacy=f=>readRel(routeMap[f]||f);
 let checks=0,passed=0;const failures=[];
 const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
 
-ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.1.0','VERSION is not 2.1.0');
-ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.1.0','package.json is not 2.1.0');
-ok(readRel('service-worker.js').includes("CACHE='learnwithus-v2.1.0'"),'Service worker cache is not v2.1.0');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.1.1','VERSION is not 2.1.1');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.1.1','package.json is not 2.1.1');
+ok(readRel('service-worker.js').includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache is not v2.1.1');
 ok(readRel('service-worker.js').includes("'./assets/learning-journey.css'"),'Shared journey stylesheet is not pre-cached');
 
 const journeyCss=readRel('assets/learning-journey.css');
@@ -43,7 +43,7 @@ Object.values(routeMap).forEach(canonical=>ok(allowed.some(rx=>rx.test(canonical
 
 const children=readRel('assets/children.js');
 ok(children.includes("words:{title:'Picture Spelling'"),'Phonics completion journey missing');
-ok(children.includes("secondary:'missing-letters-quiz.html'"),'Missing Letters action missing from Phonics completion');
+ok(!children.includes('missing-letters-quiz.html')&&!children.includes('Missing Letters'),'Phonics completion still exposes Missing Letters');
 ok(children.includes("next:'word-bank.html',nextLabel:'Picture Words'"),'Phonics next-topic action is wrong');
 ok(children.includes('class="practice-button journey-primary"'),'Children primary journey button missing');
 ok(children.includes('class="practice-button journey-secondary"'),'Children secondary journey buttons missing');
@@ -83,4 +83,4 @@ ok(readLegacy('multiplication-tables.html').includes('Next: Division →'),'Time
 ok(readLegacy('countries-capitals.html').includes('Next: India &amp; Maps →'),'Countries page next-topic label is not standardized');
 
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`v2.1.0 journey/folder checks passed: ${passed}/${checks} assertions across ${canonicalKids.length} canonical Kids HTML pages.`);
+console.log(`v2.1.1 journey/folder checks passed: ${passed}/${checks} assertions across ${canonicalKids.length} canonical Kids HTML pages.`);
