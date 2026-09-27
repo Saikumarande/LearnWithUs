@@ -1,0 +1,33 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),routeMap=JSON.parse(fs.readFileSync(path.join(root,'route-map.json'),'utf8')),read=f=>fs.readFileSync(path.join(pub,routeMap[f]||f),'utf8');
+let checks=0,pass=0;const failures=[];const ok=(v,m)=>{checks++;if(v)pass++;else failures.push(m)};
+const practice=read('assets/practice.css'),kids=read('assets/kids.css'),children=read('children.html'),childrenJs=read('assets/children.js'),platform=read('assets/platform.js'),platformCss=read('assets/platform.css'),hub=read('quiz-hub.html');
+ok(practice.includes('.quiz-section .quiz-grid{display:grid')&&practice.includes('repeat(4,minmax(0,1fr))'),'Quiz Hub topic grids are not aligned as responsive equal-height grids');
+ok(practice.includes('.quiz-section .quiz-card')&&practice.includes('min-height:96px'),'Quiz Hub cards lack a consistent card size');
+ok(hub.includes('quiz-section-life')&&hub.includes('quiz-section-games'),'Quiz Hub Life Skills/Games section classes missing');
+['kids-category-english-reading','kids-category-maths-numbers','kids-category-world-around-us','kids-category-india','kids-category-language','kids-category-stories-imagination','kids-category-sports-games','kids-category-creativity','kids-category-life-skills','kids-category-learning-games','kids-category-quiz-hub'].forEach(c=>ok(kids.includes('.'+c+'{background:'),'Kids category colour missing: '+c));
+ok(kids.includes('.kids-category-card .kids-activity-card')&&kids.includes('background:#fff!important'),'Inner Kids activity cards should keep the shared white style');
+ok(childrenJs.includes("const roadmap=document.querySelector('.kids-roadmap')")&&childrenJs.includes('setRoadmapVisible(false)')&&childrenJs.includes('setRoadmapVisible(true)'),'Roadmap runtime show/hide control missing');
+ok(children.includes('id="finishNote"')&&children.includes('topic-quiz-journey'),'Children completion journey is not a shared button-style journey card');
+ok(childrenJs.includes('ui.finishNote.hidden=!completedPage')&&childrenJs.includes('journeyByMode'),'Quiz journey should only appear on the completed page');
+ok(childrenJs.includes("nextLabel:'Phonics'")&&childrenJs.includes("nextLabel:'Picture Words'")&&childrenJs.includes("nextLabel:'Colours'")&&childrenJs.includes("nextLabel:'Place Value'"),'Completion Next actions are incomplete');
+ok(!platform.includes('View more progress ↓'),'Redundant dashboard View more progress link still exists');
+ok(platform.includes('lw-achievement-card')&&platform.includes('Download achievement')&&platform.includes('Share achievement'),'Interactive achievement prize card actions missing');
+ok(platform.includes('navigator.share')&&platform.includes('navigator.clipboard'),'Achievement share/fallback behavior missing');
+ok(platformCss.includes('.lw-achievement-modal-panel')&&platformCss.includes('.lw-achievement-action'),'Achievement card presentation missing');
+
+const categoryColours=[...kids.matchAll(/\.kids-category-(?:english-reading|maths-numbers|world-around-us|india|language|stories-imagination|sports-games|creativity|life-skills|learning-games|quiz-hub)\{background:(#[0-9a-f]{6})!important\}/g)].map(m=>m[1]);
+ok(categoryColours.length===11&&new Set(categoryColours).size>=10,'Kids main category panels should use clearly different light colours');
+ok(practice.includes('@media(max-width:1050px){.quiz-section .quiz-grid{grid-template-columns:repeat(3')&&practice.includes('@media(max-width:760px){.quiz-section .quiz-grid{grid-template-columns:repeat(2')&&practice.includes('@media(max-width:520px){.quiz-section .quiz-grid{grid-template-columns:1fr'),'Quiz Hub grid responsive breakpoints are incomplete');
+ok((hub.match(/life-skills-quiz\.html\?topic=/g)||[]).length===13,'Life Skills Quiz Hub should contain 12 topic quizzes plus All Life Skills');
+ok((hub.match(/games-quiz\.html\?game=/g)||[]).length===13,'Learning Games Quiz Hub should contain 12 game quizzes plus All Learning Games');
+ok(childrenJs.includes('function showChoices(changeURL=false){\n    audio.stop();setRoadmapVisible(true)')&&childrenJs.includes('function openMode(value,changeURL=true){\n    setRoadmapVisible(false)'),'Roadmap should show on base Kids Corner and hide when a learning mode opens');
+ok(read('dashboard.html').includes('score-card.css?v=20260927h'),'Dashboard should load the shared responsive score-card presentation');
+
+const journey=read('assets/learning-journey.js');
+['india.html','hindi.html','telugu.html','stories.html','creativity.html','kids-skills.html'].forEach(page=>ok(read(page).includes('learning-journey.js?v=20260927h'),'Learning page missing shared Quiz/Next journey: '+page));
+ok(journey.includes("'india.html':{title:'India & Maps'")&&journey.includes("'stories.html':{title:'Story Comprehension'")&&journey.includes("'creativity.html':{title:'Creativity'"),'Shared journey routes are incomplete');
+ok(read('life-skills.html').includes('Next: Learning Games')&&read('games.html').includes('Next: Quiz Hub'),'Life Skills/Games Next-topic buttons are missing');
+ok(read('service-worker.js').includes("CACHE='learnwithus-v2.1.0'"),'Service worker cache version not updated');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v2.0.0 UI/runtime checks passed: ${pass}/${checks} assertions.`);

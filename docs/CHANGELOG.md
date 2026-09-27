@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.1.0 — 2026-09-27
+- Rebuilt Numbers learning into four fixed 25-number dropdown sets covering 1 through 100 on one selected-set view.
+- Removed internal Numbers pagination and kept the shared Learn → practise → quiz completion buttons at the bottom of every selected number set.
+- Updated Number Quiz to use the same four sets while preserving spoken correct/wrong feedback, score cards and progress storage.
+- Added compatibility handling for older number-range links and expanded Numbers-specific release/browser tests.
+
+## 2.0.1 — 2026-09-27
+- Standardized end-of-topic Learn → practise → quiz cards across canonical Kids learning pages with a shared responsive stylesheet.
+- Fixed Phonics/Picture Spelling completion actions so quiz, related quiz and next-topic actions are consistently rendered as aligned buttons.
+- Corrected several next-topic sequences to match the Kids learning roadmap.
+- Re-audited canonical/legacy HTML folder placement and compatibility redirects.
+- Added v2.0.1 structural journey tests plus rendered Chromium desktop/mobile component checks.
+
+## 2.0.0 — 2026-09-27
+- Major folder organization release with canonical quiz/learning/account/info/system folders and legacy redirects.
+- Unified Quiz Hub card layout across every quiz category.
+- Unified topic completion journey buttons for Children learning modes.
+- Added recursive nested-route tests and route-map documentation.
+
+
+## 1.12.0 — 2026-09-27
+- Fixed Quiz Hub alignment for Life Skills and Learning Games.
+- Added distinct light Kids Corner category panels.
+- Hid roadmap in children learning modes while retaining it on the base Kids Corner.
+- Improved completion Quiz/Next actions and extended shared Quiz + Next Topic journeys across remaining Kids learning pages.
+- Upgraded Dashboard achievements to downloadable/shareable prize cards and removed the redundant progress link.
+
+
 ## 1.11.4 — 2026-09-27
 - Improved Kids roadmap Start/Finish separation, hover clarity and spacing.
 - Reduced main header height slightly.

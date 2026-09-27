@@ -89,3 +89,18 @@
   script.src='assets/platform.js?v=20260926g';script.defer=true;
   script.dataset.learnwithusPlatform='true';document.head.append(script);
 })();
+
+// v2.0.0 canonical folder routing. Legacy root files remain compatibility redirects.
+(()=>{
+  const routes={"quiz-hub.html":"quiz/quiz-hub.html","counting-quiz.html":"quiz/counting-quiz.html","missing-letters-quiz.html":"quiz/missing-letters-quiz.html","spelling-quiz.html":"quiz/spelling-quiz.html","kids-quiz.html":"quiz/kids-quiz.html","math-quiz.html":"quiz/math-quiz.html","multiplication-tables-quiz.html":"quiz/multiplication-tables-quiz.html","india-quiz.html":"quiz/india-quiz.html","world-quiz.html":"quiz/world-quiz.html","sports-quiz.html":"quiz/sports-quiz.html","life-skills-quiz.html":"quiz/life-skills-quiz.html","games-quiz.html":"quiz/games-quiz.html","quiz.html":"quiz/quiz.html","children.html":"learn/kids/children.html","early-learning.html":"learn/kids/early-learning.html","word-bank.html":"learn/kids/word-bank.html","letter-tracing.html":"learn/kids/letter-tracing.html","kids-skills.html":"learn/kids/kids-skills.html","addition.html":"learn/kids/addition.html","subtraction.html":"learn/kids/subtraction.html","multiplication.html":"learn/kids/multiplication.html","division.html":"learn/kids/division.html","place-value.html":"learn/kids/place-value.html","odd-even.html":"learn/kids/odd-even.html","fractions.html":"learn/kids/fractions.html","time-calendar.html":"learn/kids/time-calendar.html","indian-money.html":"learn/kids/indian-money.html","measurement.html":"learn/kids/measurement.html","multiplication-tables.html":"learn/kids/multiplication-tables.html","india.html":"learn/kids/india.html","countries-capitals.html":"learn/kids/countries-capitals.html","planets.html":"learn/kids/planets.html","languages.html":"learn/kids/languages.html","hindi.html":"learn/kids/hindi.html","telugu.html":"learn/kids/telugu.html","stories.html":"learn/kids/stories.html","story.html":"learn/kids/story.html","sports.html":"learn/kids/sports.html","creativity.html":"learn/kids/creativity.html","life-skills.html":"learn/kids/life-skills.html","games.html":"learn/kids/games.html","food.html":"learn/food/food.html","catalog.html":"learn/food/catalog.html","mysteries.html":"learn/food/mysteries.html","journeys.html":"learn/food/journeys.html","health.html":"learn/health/health.html","dashboard.html":"account/dashboard.html","contact.html":"info/contact.html","privacy.html":"info/privacy.html","offline.html":"system/offline.html","404.html":"system/404.html"};
+  const rewrite=(a)=>{
+    const raw=a.getAttribute('href');
+    if(!raw||raw.startsWith('#')||/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(raw))return;
+    const match=raw.match(/^([^?#]+)([?#].*)?$/);if(!match)return;
+    const key=match[1].replace(/^\.\//,'');
+    if(routes[key])a.setAttribute('href',routes[key]+(match[2]||''));
+  };
+  const scan=root=>{if(root.matches?.('a[href]'))rewrite(root);root.querySelectorAll?.('a[href]').forEach(rewrite);};
+  scan(document);
+  new MutationObserver(list=>list.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1)scan(n)}))).observe(document.documentElement,{childList:true,subtree:true});
+})();

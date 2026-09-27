@@ -1,8 +1,10 @@
 'use strict';
 (() => {
-  const {letters,animals,ranges,numberName,letterName,letterStyles,normalizeLetterStyle}=window.LEARNWITHUS_KIDS;
+  const {letters,animals,ranges,numberName,letterName,letterStyles,normalizeLetterStyle,normalizeNumberRange}=window.LEARNWITHUS_KIDS;
   const ids=['choices','chooseTitle','practice','practiceTitle','backChoices','letterControls','numberControls','numberRange','accent','learningGrid','practiceHint','fontStatus','previous','nextPage','pageStatus','learningPager','audioStatus','stopAudio','finishNote','cardCount','practiceQuiz'];
   const ui=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
+  const roadmap=document.querySelector('.kids-roadmap');
+  const setRoadmapVisible=visible=>{if(roadmap)roadmap.hidden=!visible;};
   const speaker='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg>';
   const audio=window.createKidsAudio({status:ui.audioStatus,stopButton:ui.stopAudio});
   let mode='letters',style='upper',page=0,cards=[],cursiveReady=false;
@@ -15,10 +17,10 @@
   function batches(){
     const all=items();
     if(mode==='words')return [all];
-    if(mode==='numbers')return Array.from({length:Math.ceil(all.length/20)},(_,i)=>all.slice(i*20,i*20+20));
+    if(mode==='numbers')return [all];
     return [all];
   }
-  function pageForIndex(index){return mode==='numbers'?Math.floor(index/20):0;}
+  function pageForIndex(){return 0;}
   function focus(el){if(!el)return;el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:'auto'});}
   function quantity(n){
     if(n===0)return '<span class="place-value">Zero means none</span>';
@@ -31,7 +33,7 @@
     page=Math.max(0,Math.min(page,pages.length-1));cards=pages[page];
     ui.letterControls.hidden=mode!=='letters';ui.numberControls.hidden=mode!=='numbers';
     ui.practiceTitle.textContent=mode==='letters'?'Let’s learn letters':mode==='words'?'Letters become picture words':mode==='animals'?'Meet the animals':'Let’s learn numbers';
-    ui.cardCount.textContent=mode==='letters'?'All 26 letters':mode==='words'?'All 26 picture words':mode==='animals'?animals.length+' animals together':'20 numbers per page';
+    ui.cardCount.textContent=mode==='letters'?'All 26 letters':mode==='words'?'All 26 picture words':mode==='animals'?animals.length+' animals together':'25 numbers in this set';
     ui.letterControls.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.style===style)));
     ui.practiceHint.textContent=mode==='animals'?'Look at each picture. Tap the speaker to hear only the animal’s name, then say it together.':mode==='numbers'?'Hear the number name, say it aloud, then explore how many it means.':mode==='words'?'Look at the picture, then hear and say the full phrase: A for Apple.':letterStyle.cursive?'Practise cursive '+(letterStyle.lower?'small letters':'capitals')+', one letter per card. Hear just the letter name.':'All letters from A to Z are here. Hear just the letter name, then say it yourself.';
     ui.fontStatus.hidden=mode!=='letters'||!letterStyle.cursive||cursiveReady;
@@ -49,26 +51,25 @@
     }).join('');
     const first=cards[0],last=cards[cards.length-1];
     const span=mode==='numbers'?first+'–'+last:mode==='animals'?first.name+'–'+last.name:first.letter+'–'+last.letter;
-    ui.pageStatus.textContent=span+' · Page '+(page+1)+' of '+pages.length;
+    ui.pageStatus.textContent=mode==='numbers'?span+' · 25 numbers':span+' · Page '+(page+1)+' of '+pages.length;
     ui.learningPager.hidden=pages.length===1;
     ui.previous.disabled=page===0;ui.nextPage.disabled=page===pages.length-1;
-    ui.nextPage.textContent=mode==='numbers'&&page<pages.length-1?'Next '+pages[page+1].length+' numbers →':'Next →';
-    ui.finishNote.hidden=page!==pages.length-1;
-    ui.finishNote.innerHTML=mode==='letters'?'<strong>From A all the way to Z!</strong><p>Ready to match letters with pictures?</p><button type="button" class="primary-button" data-next-mode="words">Next: A for Apple →</button>':mode==='words'?'<strong>Wonderful exploring!</strong><p>Say your favourite picture words again, or try naming letters with a grown-up.</p>':mode==='animals'?'<strong>You’ve met '+animals.length+' animals!</strong><p>Choose your favourite. Can you remember its name before tapping the speaker?</p>':'<strong>Look how far you’ve counted!</strong><p>Practise a favourite number again, or try a number quiz together.</p>';
-    ui.practiceQuiz.parentElement.hidden=false;
-    if(mode==='numbers'){
-      ui.practiceQuiz.href='kids-quiz.html?category=numbers&range='+ui.numberRange.value;
-      ui.practiceQuiz.textContent='Try the number quiz →';
-    }else if(mode==='letters'){
-      ui.practiceQuiz.href='kids-quiz.html?category=letters&style='+style;
-      ui.practiceQuiz.textContent='Try the letter quiz →';
-    }else if(mode==='words'){
-      ui.practiceQuiz.href='spelling-quiz.html';
-      ui.practiceQuiz.textContent='Try the picture spelling quiz →';
-    }else{
-      ui.practiceQuiz.href='early-learning.html?topic=matching';
-      ui.practiceQuiz.textContent='Try the picture matching quiz →';
-    }
+    ui.nextPage.textContent='Next →';
+    const completedPage=page===pages.length-1;
+    ui.finishNote.hidden=!completedPage;
+    const journeyByMode={
+      letters:{title:'Letters',copy:'You finished A to Z. Check what you remember, then continue to Phonics.',quiz:'kids-quiz.html?category=letters&style='+style,quizLabel:'Start Letters Quiz',nextMode:'words',nextLabel:'Phonics'},
+      words:{title:'Picture Spelling',copy:'You finished the phonics picture words. Try spelling and missing-letter practice, then continue to Picture Words.',quiz:'spelling-quiz.html',quizLabel:'Start Picture Spelling Quiz',secondary:'missing-letters-quiz.html',secondaryLabel:'Try Missing Letters Quiz',next:'word-bank.html',nextLabel:'Picture Words'},
+      animals:{title:'Picture Matching',copy:'You explored all the animal names. Check your picture matching, then continue to Colours.',quiz:'early-learning.html?topic=matching',quizLabel:'Start Picture Matching Quiz',next:'early-learning.html?topic=colours',nextLabel:'Colours'},
+      numbers:{title:'Numbers',copy:'You explored all 25 numbers in this set. Check your number recognition, then continue to Place Value.',quiz:'kids-quiz.html?category=numbers&range='+ui.numberRange.value,quizLabel:'Start Numbers Quiz',next:'place-value.html',nextLabel:'Place Value'}
+    };
+    const journey=journeyByMode[mode];
+    if(completedPage&&journey){
+      const secondary=journey.secondary?'<a class="practice-button journey-secondary" href="'+journey.secondary+'">'+journey.secondaryLabel+' →</a>':'';
+      const next=journey.nextMode?'<button type="button" class="practice-button journey-secondary" data-next-mode="'+journey.nextMode+'">Next: '+journey.nextLabel+' →</button>':'<a class="practice-button journey-secondary" href="'+journey.next+'">Next: '+journey.nextLabel+' →</a>';
+      ui.finishNote.innerHTML='<p class="eyebrow">Learn → practise → quiz</p><h2>🎯 Ready for the '+journey.title+' challenge?</h2><p>'+journey.copy+'</p><div class="journey-actions"><a class="practice-button journey-primary" href="'+journey.quiz+'">'+journey.quizLabel+' →</a>'+secondary+next+'</div>';
+    }else ui.finishNote.innerHTML='';
+    ui.practiceQuiz.parentElement.hidden=true;
   }
   function setURL(choices=false){
     const url=new URL(location.href);['mode','style','letter','number','range','animal'].forEach(key=>url.searchParams.delete(key));
@@ -84,16 +85,16 @@
     window.dispatchEvent(new Event('learning-view-change'));
   }
   function showChoices(changeURL=false){
-    audio.stop();ui.practice.hidden=true;ui.choices.hidden=false;document.querySelector('.kids-intro').hidden=false;
+    audio.stop();setRoadmapVisible(true);ui.practice.hidden=true;ui.choices.hidden=false;document.querySelector('.kids-intro').hidden=false;
     if(changeURL){setURL(true);focus(ui.chooseTitle);}
   }
   function ensureModeRendered(){
     if(ui.practice.hidden)return;
-    const expected=mode==='letters'?letters.length:mode==='words'?letters.length:mode==='animals'?animals.length:Math.min(20,items().length);
+    const expected=mode==='letters'?letters.length:mode==='words'?letters.length:mode==='animals'?animals.length:25;
     if(ui.learningGrid.childElementCount!==expected)render();
   }
   function openMode(value,changeURL=true){
-    mode=value;page=0;if(mode==='letters')style=normalizeLetterStyle(style);
+    setRoadmapVisible(false);mode=value;page=0;if(mode==='letters')style=normalizeLetterStyle(style);
     ui.choices.hidden=true;ui.practice.hidden=false;ui.learningGrid.hidden=false;ui.learningGrid.replaceChildren();document.querySelector('.kids-intro').hidden=true;
     render();requestAnimationFrame(ensureModeRendered);if(changeURL){setURL();focus(ui.practiceTitle);}
   }
@@ -101,7 +102,7 @@
     const params=new URLSearchParams(location.search),value=params.get('mode');
     if(!['letters','words','numbers','animals'].includes(value)){showChoices();return;}
     style=normalizeLetterStyle(params.get('style'));
-    ui.numberRange.value=ranges.includes(params.get('range'))?params.get('range'):'0-100';openMode(value,false);
+    ui.numberRange.value=normalizeNumberRange(params.get('range'),params.get('number'));openMode(value,false);
     let target=null;
     if(mode==='numbers'){
       const raw=params.get('number'),n=raw&&/^\d{1,3}$/.test(raw)?Number(raw):null,index=items().indexOf(n);

@@ -1,3 +1,37 @@
+## 2.1.0
+
+- **Numbers data/runtime tests:** execute the shared Kids data module and verify the four 25-number sets, boundaries, legacy-range normalization and number deep links.
+- **Numbers source/UI tests:** verify one dropdown, 25-card rendering contract, no internal number pagination, selected-range quiz handoff and shared Quiz/Next journey buttons.
+- **Rendered browser component tests:** verify the four-option Numbers selector, 25-card grid, journey actions, desktop/mobile no-overflow behavior and existing journey/Quiz Hub layouts.
+- All existing recursive links/assets/JS, HTML/folder, feature, release, canonical-route, server/MIME/404 and compatibility tests remain enabled.
+
+- **Expected final matrix:** 3,382 core assertions + 88 Chromium/browser-runtime assertions = **3,470 checks per run**, executed twice after final cleanup.
+
+## 2.0.1
+
+- **Smoke/canonical route tests:** verify required pages and canonical routes exist.
+- **Recursive link/assets/JS tests:** scan every nested HTML page, local `href`/`src`, JavaScript syntax and JSON manifests.
+- **Feature regressions:** protect speech feedback, quizzes, saved progress, score cards, navigation, PWA and older learning features.
+- **Release regressions:** verify version files, documentation, service-worker cache, public/dist parity and historical release requirements.
+- **v2.0.1 journey/folder tests:** verify every canonical Kids HTML page loads the shared journey stylesheet, all legacy root redirects remain small and preserve query/hash, canonical pages stay in approved folders, and learning sequences contain Quiz + Next actions.
+- **Rendered browser component tests:** use headless Chromium with production HTML/CSS fragments to check equal journey-button widths/heights, mobile stacking/no overflow, and Quiz Hub 4-column desktop / 1-column mobile layout.
+- **Server tests:** verify canonical and compatibility routes, MIME types, HEAD handling and custom 404 behavior.
+
+The final release suite is run twice after final synchronization: **3,337 core assertions + 54 rendered Chromium UI assertions = 3,391 assertions per run**. Across two required final runs that is **6,782 assertions** when all checks pass.
+
+## 2.0.0
+- Verify every canonical route exists in its required folder and every legacy root URL redirects without losing query/hash.
+- Verify Quiz Hub sections all use equal-height 4→3→2→1 responsive cards.
+- Verify Letters, Phonics, Numbers and Animals end with a single Learn → Practise → Quiz card containing real buttons.
+- Verify recursive link/syntax checks scan nested HTML.
+
+## 1.12.0 focused regression
+- Quiz Hub Life Skills/Games use responsive equal-height grids.
+- Kids roadmap is visible only on the base Kids Corner view and hidden in learning modes.
+- End-of-mode Quiz and Next actions render as buttons.
+- Dashboard has no redundant View more progress link; achievements open share/download prize cards.
+- Kids Corner category panels use distinct light backgrounds without changing inner activity cards.
+
 ## 1.11.4 targeted checks
 - START/FINISH roadmap labels are visually separated from the first/last milestone rows.
 - Roadmap hover/focus uses bright styling with no transform movement.
@@ -44,6 +78,13 @@
 - Kids Corner links, quick navigation and service-worker cache coverage.
 
 # LearnWithUs feature testing
+
+## 2.1.0 focused regression
+- Numbers dropdown exposes exactly four sets: 1–25, 26–50, 51–75 and 76–100.
+- Each selected Numbers set contains exactly 25 unique cards and no internal number pager is needed.
+- Number Quiz uses the same four ranges and its next-range recommendation advances through those four sets.
+- Numbers completion keeps Start Numbers Quiz + Next: Place Value actions using shared journey styling.
+- Old number-range/deep-link inputs normalize safely into the new four-set model.
 
 ## One-command automated check
 

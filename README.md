@@ -1,3 +1,51 @@
+## Current release: v2.1.0
+### v2.1.0 highlights
+- Reworked Numbers into one learning view with exactly four dropdown sets: **1–25, 26–50, 51–75, 76–100**.
+- Each selected set renders all **25 number cards together** with spoken number names and counting/place-value aids; the old internal 20-number pager is removed for Numbers.
+- Number Quiz uses the same four sets and keeps 10-question random practice, spoken feedback, score cards and saved progress.
+- The Numbers completion area keeps the shared **Learn → practise → quiz** interface with **Start Numbers Quiz** and **Next: Place Value** buttons.
+- Added v2.1.0 number-range, UI-source, compatibility and browser-render regression checks; full release validation remains mandatory twice.
+
+### v2.1.0 final validation target
+- Smoke/canonical routes: **208** assertions
+- Recursive links/assets/JavaScript syntax: **1,521** assertions
+- Whole-site HTML structure/folder audit: **773** assertions
+- Feature regression: **168** assertions
+- Release regression: **68** assertions
+- v1.12 compatibility UI/runtime: **38** assertions
+- v2.0.0 structure/UI compatibility: **161** assertions
+- Shared journey/folder regression: **358** assertions
+- v2.1.0 Numbers runtime/source regression: **45** assertions
+- Server/MIME/custom 404: **42** assertions
+- Core automated suite: **3,382 assertions per run**
+- Rendered Chromium UI + actual Numbers browser runtime: **88 assertions per run**
+- Complete release validation: **3,470 assertions per run**, required twice after final cleanup.
+
+# LearnWithUs v2.1.0
+
+LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
+
+## 1.12.0
+- Aligned Life Skills and Learning Games quiz cards into equal-height responsive grids.
+- Made Kids Corner category panels visually distinct with light section colours while preserving inner activity-card styling.
+- Restricted the Kids Learning Roadmap to the base Kids Corner view; letter, phonics, number and animal learning modes hide it.
+- Converted end-of-mode quiz links into real buttons and paired them with a clear Next Topic action.
+- Extended shared Quiz + Next Topic journeys to India, languages, Stories, Creativity, Kids Skills, Life Skills and Learning Games where appropriate.
+- Removed the redundant Dashboard “View more progress” link.
+- Achievements are now clickable prize cards with detail, download and share actions.
+- Added v1.12.0 UI/runtime regression coverage and retained full two-run release validation.
+
+### v1.12.0 final validation
+- Smoke: 93 assertions
+- Links/assets/JavaScript syntax: 1,439 assertions
+- Feature regression: 168 assertions
+- Release regression: 68 assertions
+- v1.12.0 UI/runtime: 38 assertions
+- Server/MIME/404: 26 assertions
+- Total: **1,832 automated assertions per complete run**
+- The complete final suite must pass twice before the production ZIP is created.
+
+
 ## 1.11.4
 - Roadmap START/FINISH labels now have reserved visual space and stronger standalone badges.
 - Roadmap is slightly larger and uses a bright fixed hover/focus highlight without icon movement.
@@ -6,10 +54,6 @@
 
 ### v1.11.4 final validation
 The final release tree is validated twice. Each full run passes **1,800/1,800 assertions**: 93 smoke checks, 1,430 links/assets/JavaScript checks, 168 feature checks, 68 release regressions, 15 v1.11.4 runtime/UI checks, and 26 server/MIME/404 assertions. Across both required runs: **3,600/3,600 assertions passed**.
-
-# LearnWithUs v1.11.4
-
-LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
 
 ### v1.9.0 — Stories, Sports & Creativity
@@ -21,7 +65,7 @@ LearnWithUs is a Node.js educational website covering food discoveries, kids lea
 - Added new routes and assets to the PWA offline cache and sitemap.
 - Preserved existing progress/storage, quizzes, score cards, language learning, Food, Health and server behavior.
 
-## Current release: v1.11.4
+## Historical release: v1.11.4
 
 This compatible feature release expands Kids Corner with complete **Stories**, **Sports & Games**, and **Creativity Studio** learning areas while preserving the v1.8.1 progress/storage model, existing quizzes, score cards, navigation, PWA behavior and server structure.
 
@@ -46,23 +90,58 @@ For every future LearnWithUs code change, update **README.md**, `docs/CHANGELOG.
 ## Project structure
 
 ```text
-LearnWithUs-v1.11.4/
-├── public/                  # Every browser-accessible page and asset
-│   ├── assets/             # CSS, JavaScript, images and fonts
-│   ├── index.html          # Home page
-│   ├── *.html              # All other website pages
+LearnWithUs-v2.1.0/
+├── public/
+│   ├── index.html                    # Home page
+│   ├── quiz/                         # Canonical quiz HTML
+│   │   ├── quiz-hub.html
+│   │   ├── kids-quiz.html
+│   │   ├── counting-quiz.html
+│   │   ├── missing-letters-quiz.html
+│   │   ├── spelling-quiz.html
+│   │   ├── math-quiz.html
+│   │   ├── multiplication-tables-quiz.html
+│   │   ├── india-quiz.html
+│   │   ├── world-quiz.html
+│   │   ├── sports-quiz.html
+│   │   ├── life-skills-quiz.html
+│   │   ├── games-quiz.html
+│   │   └── quiz.html
+│   ├── learn/
+│   │   ├── kids/                     # Kids learning/UI pages
+│   │   ├── food/                     # Food learning/UI pages
+│   │   └── health/                   # Health learning/UI pages
+│   ├── account/
+│   │   └── dashboard.html
+│   ├── info/
+│   │   ├── contact.html
+│   │   └── privacy.html
+│   ├── system/
+│   │   ├── 404.html
+│   │   └── offline.html
+│   ├── assets/                       # Shared CSS, JS, images, fonts and local art
+│   ├── *.html                        # Legacy compatibility redirect pages only
 │   ├── manifest.webmanifest
 │   ├── service-worker.js
 │   ├── robots.txt
 │   └── sitemap.xml
-├── tests/                   # Automated checks
-├── docs/                    # Testing and release documentation
-├── config/                  # Optional platform-specific configuration
-├── server.js                # Node.js static web server
-├── package.json             # Commands and Node.js version
-├── VERSION                  # Current release number
+├── docs/
+│   ├── CHANGELOG.md
+│   ├── FEATURE-TESTING.md
+│   ├── FOLDER-STRUCTURE.md
+│   ├── ROUTES.md
+│   └── VERSIONING.md
+├── tests/
+├── config/
+├── route-map.json
+├── server.js
+├── package.json
+├── VERSION
 └── README.md
 ```
+
+Root HTML files other than `index.html` are intentionally tiny compatibility redirects so previously saved v1.x URLs continue to work. Full canonical content lives in the folders above.
+
 
 Only `public/` is exposed by the Node.js server. Application code, tests and documentation cannot be requested as website files.
 

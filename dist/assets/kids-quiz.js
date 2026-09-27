@@ -9,7 +9,7 @@
   const ui=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
   const audio=window.createKidsAudio({status:ui.kidAudioStatus,stopButton:ui.kidStopAudio});
   const judgeButtons=[...document.querySelectorAll('[data-judge]')];
-  let category=null,stage='setup',style='upper',range='0-20',deck=[],answers=[],index=0,fontReady=false;
+  let category=null,stage='setup',style='upper',range='1-25',deck=[],answers=[],index=0,fontReady=false;
   function focus(el){el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:'auto'});}
   function score(){return answers.filter(answer=>answer.correct).length;}
   function choose(value,move=true){
@@ -29,7 +29,7 @@
   function start(){
     if(!category||stage==='round')return;
     style=normalizeLetterStyle(ui.kidStyle.value);
-    range=ranges.includes(ui.kidRange.value)?ui.kidRange.value:'0-20';
+    range=normalizeNumberRange(ui.kidRange.value);
     const [min,max]=range.split('-').map(Number);
     deck=shuffle(category==='letters'?letters.map(item=>item.letter):Array.from({length:max-min+1},(_,i)=>min+i));
     answers=[];index=0;stage='round';ui.kidSetup.hidden=true;ui.kidResults.hidden=true;ui.kidRound.hidden=false;renderQuestion();
@@ -76,7 +76,7 @@
     if(category==='letters'){
       ui.kidStudyLinks.append(studyCard(correct>=8?'Next: letters become picture words':'A friendly place to begin','Look at an apple, hear “A for Apple,” and connect the letter to its picture.',[['Open A for Apple',lessonLink('words','A')],['Practise the alphabet',lessonLink('letters','A',style)]]));
     }else{
-      const next=correct>=8?(range==='0-20'?'21-50':range==='21-50'?'51-100':range):range;
+      const next=correct>=8?(range==='1-25'?'26-50':range==='26-50'?'51-75':range==='51-75'?'76-100':range):range;
       const startNumber=Number(next.split('-')[0]);
       ui.kidStudyLinks.append(studyCard(next!==range?'Next: a new number range':'Keep counting together',next!==range?'Take a look at the next group of numbers before trying another quiz.':'Point to each counting aid and say the number name together.',[['Open '+next.replace('-','–')+' number cards',lessonLink('numbers',startNumber,'upper',next)]]));
     }
@@ -96,7 +96,7 @@
   ui.kidAccent.addEventListener('change',()=>audio.stop());
   const params=new URLSearchParams(location.search);
   ui.kidStyle.value=normalizeLetterStyle(params.get('style'));
-  if(ranges.includes(params.get('range')))ui.kidRange.value=params.get('range');
+  ui.kidRange.value=normalizeNumberRange(params.get('range'));
   choose(params.get('category'),false);
   if(document.fonts){document.fonts.load('40px Playwrite','Aa').then(faces=>{fontReady=faces.length>0;if(fontReady)ui.kidCursiveNotice.hidden=true;else ui.kidCursiveNotice.textContent='The handwriting font could not load. Choose Capitals or Small letters to practise, or reload for cursive.';}).catch(()=>{ui.kidCursiveNotice.textContent='The handwriting font could not load. Choose another letter style or reload for cursive.';});}
   else ui.kidCursiveNotice.textContent='This browser cannot confirm the handwriting font. Choose another letter style if cursive does not appear.';

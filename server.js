@@ -43,7 +43,7 @@ http.createServer((request, response) => {
 
   fs.stat(file, (error, stats) => {
     if (error || !stats.isFile()) {
-      const notFound = path.join(root, '404.html');
+      const notFound = path.join(root, 'system', '404.html');
       response.writeHead(404, {
         'Content-Type': 'text/html; charset=utf-8',
         'X-Content-Type-Options': 'nosniff',
