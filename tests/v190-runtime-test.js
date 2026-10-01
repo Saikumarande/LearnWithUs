@@ -16,9 +16,15 @@ stories.forEach(story=>{
 const sportCtx={window:{}};vm.runInNewContext(read('assets/sports-data.js'),sportCtx);const sports=sportCtx.window.LEARNWITHUS_SPORTS||[];
 ok(sports.length===12,'Expected 12 sports/games');ok(new Set(sports.map(s=>s.name)).size===12,'Sports names must be unique');
 sports.forEach(s=>{ok(!!s.equipment&&!!s.players&&!!s.goal,s.name+' facts incomplete');ok(fs.existsSync(path.join(pub,s.image)),s.name+' local illustration missing')});
-const creativity=read('creativity.html'),creativeJs=read('assets/creativity.js');
+const creativity=read('learn/kids/creativity.html'),creativeJs=read('assets/creativity.js');
+const creativityFixes=read('assets/creativity-fixes.js');
 ['drawingCanvas','colourPalette','dotsSvg','playRhythm','newDanceMove','buildStory','buildPoem','printActivity'].forEach(id=>ok(creativity.includes('id="'+id+'"'),'Creativity UI missing '+id));
 ['pointerdown','data-colourable','hitDot','AudioContext','window.print()'].forEach(token=>ok(creativeJs.includes(token),'Creativity behavior missing '+token));
+ok(!creativityFixes.includes("query('#checkDrawing')"),'Drawing score has a duplicate, unspoken handler');
+ok(creativeJs.includes("speak('Drawing score '+score+' out of one hundred. '+message)"),'Drawing score voice does not read the displayed result');
+['bee','rainbow','farm','elephant','peacock','village','garden'].forEach(name=>ok(creativityFixes.includes(name+': \'<svg'),'Colouring picture is missing its own template: '+name));
+ok(creativityFixes.includes('data-fish-detail')&&creativityFixes.includes('finishDotShape'),'Completed Fish dots lack recognizable details');
+ok(creativityFixes.includes('announceDotStatus'),'Join-the-dots feedback is not spoken from its visible status');
 const shell=read('assets/site-shell.js');['stories.html','story.html','sports.html','sports-quiz.html','creativity.html'].forEach(route=>ok(shell.includes("'"+route+"'"),'Shared shell missing '+route));
 ok(shell.includes("current==='story.html'")&&shell.includes("selected='stories.html'"),'Story reader active navigation state missing');
 const sw=read('service-worker.js');
