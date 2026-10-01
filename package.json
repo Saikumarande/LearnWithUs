@@ -1,13 +1,13 @@
 {
   "name": "learnwithus-appservice",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "private": true,
   "engines": {
     "node": "24.x"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/smoke-test.js && node tests/link-check.js && node tests/html-audit-test.js && node tests/feature-test.js && node tests/release-regression.js && node tests/v120-runtime-test.js && node tests/v2000-runtime-test.js && node tests/v201-runtime-test.js && node tests/v210-runtime-test.js && node tests/v211-runtime-test.js && node tests/kids-study-plan-runtime-test.js && node tests/server-test.js",
+    "test": "node tests/smoke-test.js && node tests/link-check.js && node tests/html-audit-test.js && node tests/feature-test.js && node tests/release-regression.js && node tests/v120-runtime-test.js && node tests/v2000-runtime-test.js && node tests/v201-runtime-test.js && node tests/v210-runtime-test.js && node tests/v211-runtime-test.js && node tests/v220-runtime-test.js && node tests/v214-runtime-test.js && node tests/v220-currency-runtime-test.js && node tests/kids-study-plan-runtime-test.js && node tests/live-html-route-test.js && node tests/server-test.js",
     "test:smoke": "node tests/smoke-test.js",
     "test:links": "node tests/link-check.js",
     "test:features": "node tests/feature-test.js",
@@ -22,10 +22,12 @@
     "test:v120": "node tests/v120-runtime-test.js",
     "test:v2000": "node tests/v2000-runtime-test.js",
     "test:v201": "node tests/v201-runtime-test.js",
-    "test:browser-ui": "node tests/browser-ui-test.js && node tests/numbers-browser-runtime-test.js && node tests/kids-quiz-browser-runtime-test.js",
+    "test:browser-ui": "node tests/browser-ui-test.js && node tests/numbers-browser-runtime-test.js && node tests/kids-quiz-browser-runtime-test.js && node tests/v220-browser-runtime-test.js && node tests/profile-browser-runtime-test.js && node tests/v214-browser-runtime-test.js && node tests/v220-currency-browser-runtime-test.js",
     "test:html-audit": "node tests/html-audit-test.js",
     "test:v210": "node tests/v210-runtime-test.js",
     "test:v211": "node tests/v211-runtime-test.js",
-    "test:study-plan": "node tests/kids-study-plan-runtime-test.js"
+    "test:study-plan": "node tests/kids-study-plan-runtime-test.js",
+    "test:v214": "node tests/v214-runtime-test.js",
+    "test:v220-currency": "node tests/v220-currency-runtime-test.js && node tests/v220-currency-browser-runtime-test.js"
   }
 }

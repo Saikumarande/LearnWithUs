@@ -49,8 +49,10 @@
     if(stage!=='round'||answers.length!==index)return;
     const value=deck[index];answers.push({value,correct});judgeButtons.forEach(button=>button.disabled=true);
     ui.kidScoreCount.textContent='Recognised: '+score();ui.kidProgress.value=answers.length;
-    const name=category==='letters'?value:String(value)+' ('+numberName(value)+')';
-    ui.kidAnswerStatus.textContent=(correct?'You knew this one! ':'Every try helps. This is ')+name+'. '+(correct?'Keep that curiosity going.':'Hear it together, then have another go out loud.');
+    const answerLabel=category==='letters'?String(value):numberName(value),name=category==='letters'?value:String(value)+' ('+answerLabel+')';
+    const message=correct?'Correct answer! It is '+answerLabel+'.':'Wrong answer. The correct answer is '+answerLabel+'.';
+    ui.kidAnswerStatus.textContent=message+' '+(correct?'Keep that curiosity going.':'Hear it together, then have another go out loud.');
+    audio.speak(message,answerLabel,ui.kidAccent.value);
     ui.kidFeedback.hidden=false;ui.kidAudioBar.hidden=false;ui.kidNext.disabled=false;
   }
   function studyCard(title,text,links){

@@ -25,7 +25,7 @@
   "odd-even.html": "learn/kids/odd-even.html",
   "fractions.html": "learn/kids/fractions.html",
   "time-calendar.html": "learn/kids/time-calendar.html",
-  "indian-money.html": "learn/kids/indian-money.html",
+  "indian-money.html": "learn/kids/world-currencies.html",
   "measurement.html": "learn/kids/measurement.html",
   "multiplication-tables.html": "learn/kids/multiplication-tables.html",
   "india.html": "learn/kids/india.html",
@@ -49,5 +49,13 @@
   "contact.html": "info/contact.html",
   "privacy.html": "info/privacy.html",
   "offline.html": "system/offline.html",
-  "404.html": "system/404.html"
+  "404.html": "system/404.html",
+  "phonics-spelling-quiz.html": "quiz/phonics-spelling-quiz.html",
+  "letter-tracing-quiz.html": "quiz/letter-tracing-quiz.html",
+  "language-quiz.html": "quiz/language-quiz.html",
+  "early-learning-quiz.html": "quiz/early-learning-quiz.html",
+  "world-currencies-quiz.html": "quiz/world-currencies-quiz.html",
+  "world-currencies.html": "learn/kids/world-currencies.html",
+  "colours-quiz.html": "quiz/colours-quiz.html",
+  "shapes-quiz.html": "quiz/shapes-quiz.html"
 }

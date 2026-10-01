@@ -7,11 +7,13 @@ Root legacy HTML files are compatibility redirects. Canonical full pages live in
 - `catalog.html` → `learn/food/catalog.html`
 - `children.html` → `learn/kids/children.html`
 - `contact.html` → `info/contact.html`
+- `colours-quiz.html` → `quiz/colours-quiz.html`
 - `counting-quiz.html` → `quiz/counting-quiz.html`
 - `countries-capitals.html` → `learn/kids/countries-capitals.html`
 - `creativity.html` → `learn/kids/creativity.html`
 - `dashboard.html` → `account/dashboard.html`
 - `division.html` → `learn/kids/division.html`
+- `early-learning-quiz.html` → `quiz/early-learning-quiz.html`
 - `early-learning.html` → `learn/kids/early-learning.html`
 - `food.html` → `learn/food/food.html`
 - `fractions.html` → `learn/kids/fractions.html`
@@ -21,11 +23,13 @@ Root legacy HTML files are compatibility redirects. Canonical full pages live in
 - `hindi.html` → `learn/kids/hindi.html`
 - `india-quiz.html` → `quiz/india-quiz.html`
 - `india.html` → `learn/kids/india.html`
-- `indian-money.html` → `learn/kids/indian-money.html`
+- `indian-money.html` → `learn/kids/world-currencies.html` (retired compatibility forward to World Currencies)
 - `journeys.html` → `learn/food/journeys.html`
 - `kids-quiz.html` → `quiz/kids-quiz.html`
 - `kids-skills.html` → `learn/kids/kids-skills.html`
+- `language-quiz.html` → `quiz/language-quiz.html`
 - `languages.html` → `learn/kids/languages.html`
+- `letter-tracing-quiz.html` → `quiz/letter-tracing-quiz.html`
 - `letter-tracing.html` → `learn/kids/letter-tracing.html`
 - `life-skills-quiz.html` → `quiz/life-skills-quiz.html`
 - `life-skills.html` → `learn/kids/life-skills.html`
@@ -38,11 +42,13 @@ Root legacy HTML files are compatibility redirects. Canonical full pages live in
 - `mysteries.html` → `learn/food/mysteries.html`
 - `odd-even.html` → `learn/kids/odd-even.html`
 - `offline.html` → `system/offline.html`
+- `phonics-spelling-quiz.html` → `quiz/phonics-spelling-quiz.html`
 - `place-value.html` → `learn/kids/place-value.html`
 - `planets.html` → `learn/kids/planets.html`
 - `privacy.html` → `info/privacy.html`
 - `quiz-hub.html` → `quiz/quiz-hub.html`
 - `quiz.html` → `quiz/quiz.html`
+- `shapes-quiz.html` → `quiz/shapes-quiz.html`
 - `spelling-quiz.html` → `quiz/spelling-quiz.html`
 - `sports-quiz.html` → `quiz/sports-quiz.html`
 - `sports.html` → `learn/kids/sports.html`
@@ -52,4 +58,6 @@ Root legacy HTML files are compatibility redirects. Canonical full pages live in
 - `telugu.html` → `learn/kids/telugu.html`
 - `time-calendar.html` → `learn/kids/time-calendar.html`
 - `word-bank.html` → `learn/kids/word-bank.html`
+- `world-currencies-quiz.html` → `quiz/world-currencies-quiz.html`
+- `world-currencies.html` → `learn/kids/world-currencies.html`
 - `world-quiz.html` → `quiz/world-quiz.html`

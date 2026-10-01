@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),pub=path.join(root,'public');
+const read=f=>fs.readFileSync(path.join(pub,f),'utf8');
+let checks=0;const failures=[];const ok=(v,m)=>{checks++;if(!v)failures.push(m)};
+const html=read('learn/kids/world-currencies.html'),js=read('assets/world-currencies.js'),css=read('assets/world-learning.css');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.2.0','VERSION is not 2.2.0');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.2.0','package.json is not 2.2.0');
+ok(read('service-worker.js').includes("CACHE='learnwithus-v2.2.0'"),'Service worker cache is not v2.2.0');
+ok(html.includes('class="currency-explorer-layout"'),'World Currencies does not use the in-place explorer layout');
+ok(html.includes('class="currency-selected currency-detail-panel"'),'Selected-country detail panel is missing');
+ok(html.includes('class="currency-country-pane"'),'Scrollable country pane is missing');
+ok(!js.includes('selected.scrollIntoView')&&!js.includes('currencySelected.scrollIntoView'),'Country selection still scrolls the page to the detail panel');
+ok(css.includes('grid-template-areas:"countries detail"'),'Desktop country/details side-by-side layout missing');
+ok(css.includes('position:sticky')&&css.includes('grid-area:detail'),'Selected country panel is not kept visible beside the list');
+ok(css.includes('overflow:auto')&&css.includes('overscroll-behavior:contain'),'Country list is not an internally scrollable panel');
+ok(css.includes('max-height:min(64vh,590px)'),'Country list viewport sizing is missing');
+ok(html.includes('world-learning.css?v=20261002b')&&html.includes('world-currencies.js?v=20261002b'),'World Currencies page is not using the updated assets');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}
+console.log(`v2.2.0 currency viewport regression passed: ${checks}/${checks} assertions.`);

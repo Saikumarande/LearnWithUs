@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.2.0 — 2026-10-02
+- Fixed World Currencies country selection so clicking a country updates details in-place instead of scrolling the page to the top.
+- Reworked World Currencies into a viewport-sized split explorer with an internally scrollable country list and sticky selected-country detail panel, matching the India explorer interaction pattern.
+- Added dedicated source and Chromium regressions for scroll stability, selected-country visibility and responsive explorer sizing.
+- Applied the 23 requested production fixes on top of the user-supplied 2.1.3 codebase.
+- Made Today’s Study Plan and the Kids roadmap base-Kids-Corner-only.
+- Added local learner-name onboarding and personalization across greetings, Dashboard, score cards, achievements and sharing.
+- Split A–Z Phonics, 100 Picture Words, Letter Recognition and Letter Tracing into correctly scoped quizzes and updated Quiz Hub routing.
+- Added complete spoken correct/wrong feedback to updated spelling, Maths, language, Colours/Shapes and currency quizzes.
+- Standardized complete spoken answer feedback across existing Life Skills, Games, Sports, World, India and Story answer flows too.
+- Expanded release validation with a live crawl of every public HTML route plus a Chromium first-visit learner-name persistence check.
+- Added Previous Letter for tracing and Previous Topic actions across shared learning journeys; removed duplicate Time/Measurement CTAs and Review Multiplication.
+- Expanded concept-first Maths explanations and corrected Place Value quiz questions to remain place-value-specific.
+- Replaced Indian Money with World Currencies learning and country-to-currency quiz coverage, while preserving legacy links as redirects.
+- Added dedicated Colours/Shapes quizzes, an eight-planet Solar System overview/animation, and reordered the Kids roadmap so Hindi/Telugu follow Letters/Numbers.
+- Added direct Hindi and Telugu letter quizzes plus extensive v2.2.0 regression coverage.
+
+## 2.1.4 — 2026-10-02
+
+- Removed the leftover “Choose something else” learning-mode control.
+- Upgraded World Currencies to an interactive region/country explorer.
+- Split Colours and Shapes into dedicated visual quizzes with separate Quiz Hub routes.
+- Enlarged and improved Solar System planet artwork/animation fit.
+- Added planet-image identification questions to the Planets Quiz.
+- Release number is 2.1.4 per explicit publishing request, built from the latest v2.2.0 codebase.
+
 ## 2.1.1 — 2026-09-27
 - Fixed the Kids Letter/Number quiz startup ReferenceError caused by `normalizeNumberRange` not being imported from the shared Kids data module.
 - Deep-linked Letter and Number quiz buttons now open directly into the requested 10-question quiz instead of showing the generic category chooser.

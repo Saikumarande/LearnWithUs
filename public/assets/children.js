@@ -1,10 +1,11 @@
 'use strict';
 (() => {
   const {letters,animals,ranges,numberName,letterName,letterStyles,normalizeLetterStyle,normalizeNumberRange}=window.LEARNWITHUS_KIDS;
-  const ids=['choices','chooseTitle','practice','practiceTitle','backChoices','letterControls','numberControls','numberRange','accent','learningGrid','practiceHint','fontStatus','previous','nextPage','pageStatus','learningPager','audioStatus','stopAudio','finishNote','cardCount','practiceQuiz'];
+  const ids=['choices','chooseTitle','practice','practiceTitle','letterControls','numberControls','numberRange','accent','learningGrid','practiceHint','fontStatus','previous','nextPage','pageStatus','learningPager','audioStatus','stopAudio','finishNote','cardCount','practiceQuiz'];
   const ui=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
   const roadmap=document.querySelector('.kids-roadmap');
-  const setRoadmapVisible=visible=>{if(roadmap)roadmap.hidden=!visible;};
+  const studyPlan=document.getElementById('kidsStudyPlan');
+  const setMainOnlyPanelsVisible=visible=>{if(roadmap)roadmap.hidden=!visible;if(studyPlan)studyPlan.hidden=!visible;};
   const speaker='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg>';
   const audio=window.createKidsAudio({status:ui.audioStatus,stopButton:ui.stopAudio});
   let mode='letters',style='upper',page=0,cards=[],cursiveReady=false;
@@ -58,16 +59,17 @@
     const completedPage=page===pages.length-1;
     ui.finishNote.hidden=!completedPage;
     const journeyByMode={
-      letters:{title:'Letters',copy:'You finished A to Z. Check what you remember, then continue to Phonics.',quiz:'kids-quiz.html?category=letters&style='+style,quizLabel:'Start Letters Quiz',nextMode:'words',nextLabel:'Phonics'},
-      words:{title:'Picture Spelling',copy:'You finished the phonics picture words. Try the picture spelling quiz, then continue to the 100 Picture Words collection.',quiz:'spelling-quiz.html',quizLabel:'Start Picture Spelling Quiz',next:'word-bank.html',nextLabel:'Picture Words'},
-      animals:{title:'Picture Matching',copy:'You explored all the animal names. Check your picture matching, then continue to Colours.',quiz:'early-learning.html?topic=matching',quizLabel:'Start Picture Matching Quiz',next:'early-learning.html?topic=colours',nextLabel:'Colours'},
-      numbers:{title:'Numbers',copy:'You explored all 25 numbers in this set. Check your number recognition, then continue to Place Value.',quiz:'kids-quiz.html?category=numbers&range='+ui.numberRange.value,quizLabel:'Start Numbers Quiz',next:'place-value.html',nextLabel:'Place Value'}
+      letters:{title:'Letters',copy:'You finished A to Z. Check letter recognition, then continue to Numbers.',prev:'children.html',prevLabel:'Kids Corner',quiz:'kids-quiz.html?category=letters&style='+style,quizLabel:'Start Letters Quiz',nextMode:'numbers',nextLabel:'Numbers'},
+      words:{title:'A–Z Phonics Spelling',copy:'You finished the 26 A-for-Apple phonics picture words. Check only these A–Z words, then continue to the 100 Picture Words collection.',prev:'telugu.html',prevLabel:'Telugu',quiz:'phonics-spelling-quiz.html',quizLabel:'Start A–Z Phonics Spelling Quiz',next:'word-bank.html',nextLabel:'100 Picture Words'},
+      animals:{title:'Animal Names',copy:'You explored all the animal names. Review them, then continue to Colours.',prev:'measurement.html',prevLabel:'Measurement',quiz:'children.html?mode=animals',quizLabel:'Review Animal Names',next:'early-learning.html?topic=colours',nextLabel:'Colours'},
+      numbers:{title:'Numbers',copy:'You explored all 25 numbers in this set. Check number recognition, then continue to Hindi.',prev:'children.html?mode=letters',prevLabel:'Letters',quiz:'kids-quiz.html?category=numbers&range='+ui.numberRange.value,quizLabel:'Start Numbers Quiz',next:'hindi.html',nextLabel:'Hindi'}
     };
     const journey=journeyByMode[mode];
     if(completedPage&&journey){
+      const previous=journey.prev?'<a class="practice-button journey-secondary journey-previous" href="'+journey.prev+'">← Previous: '+journey.prevLabel+'</a>':'';
       const secondary=journey.secondary?'<a class="practice-button journey-secondary" href="'+journey.secondary+'">'+journey.secondaryLabel+' →</a>':'';
       const next=journey.nextMode?'<button type="button" class="practice-button journey-secondary" data-next-mode="'+journey.nextMode+'">Next: '+journey.nextLabel+' →</button>':'<a class="practice-button journey-secondary" href="'+journey.next+'">Next: '+journey.nextLabel+' →</a>';
-      ui.finishNote.innerHTML='<p class="eyebrow">Learn → practise → quiz</p><h2>🎯 Ready for the '+journey.title+' challenge?</h2><p>'+journey.copy+'</p><div class="journey-actions"><a class="practice-button journey-primary" href="'+journey.quiz+'">'+journey.quizLabel+' →</a>'+secondary+next+'</div>';
+      ui.finishNote.innerHTML='<p class="eyebrow">Learn → practise → quiz</p><h2>🎯 Ready for the '+journey.title+' challenge?</h2><p>'+journey.copy+'</p><div class="journey-actions">'+previous+'<a class="practice-button journey-primary" href="'+journey.quiz+'">'+journey.quizLabel+' →</a>'+secondary+next+'</div>';
     }else ui.finishNote.innerHTML='';
     ui.practiceQuiz.parentElement.hidden=true;
   }
@@ -85,7 +87,7 @@
     window.dispatchEvent(new Event('learning-view-change'));
   }
   function showChoices(changeURL=false){
-    audio.stop();setRoadmapVisible(true);ui.practice.hidden=true;ui.choices.hidden=false;document.querySelector('.kids-intro').hidden=false;
+    audio.stop();setMainOnlyPanelsVisible(true);ui.practice.hidden=true;ui.choices.hidden=false;document.querySelector('.kids-intro').hidden=false;
     if(changeURL){setURL(true);focus(ui.chooseTitle);}
   }
   function ensureModeRendered(){
@@ -94,7 +96,7 @@
     if(ui.learningGrid.childElementCount!==expected)render();
   }
   function openMode(value,changeURL=true){
-    setRoadmapVisible(false);mode=value;page=0;if(mode==='letters')style=normalizeLetterStyle(style);
+    setMainOnlyPanelsVisible(false);mode=value;page=0;if(mode==='letters')style=normalizeLetterStyle(style);
     ui.choices.hidden=true;ui.practice.hidden=false;ui.learningGrid.hidden=false;ui.learningGrid.replaceChildren();document.querySelector('.kids-intro').hidden=true;
     render();requestAnimationFrame(ensureModeRendered);if(changeURL){setURL();focus(ui.practiceTitle);}
   }
@@ -117,7 +119,6 @@
     render();focus(target?document.getElementById(target):ui.practiceTitle);
   }
   document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>openMode(button.dataset.mode)));
-  ui.backChoices.addEventListener('click',()=>showChoices(true));
   ui.letterControls.addEventListener('click',e=>{const b=e.target.closest('[data-style]');if(!b)return;style=normalizeLetterStyle(b.dataset.style);render();ensureModeRendered();setURL();});
   ui.numberRange.addEventListener('change',()=>{page=0;render();setURL();});
   function changePage(delta){const pages=batches();if(page+delta<0||page+delta>=pages.length)return;page+=delta;render();setURL();focus(ui.practiceTitle);}

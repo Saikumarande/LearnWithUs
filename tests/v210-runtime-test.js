@@ -5,9 +5,9 @@ const read=f=>fs.readFileSync(path.join(pub,f),'utf8');
 let checks=0,passed=0;const failures=[];
 const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
 
-ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.1.1','VERSION is not 2.1.1');
-ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.1.1','package.json is not 2.1.1');
-ok(read('service-worker.js').includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache is not v2.1.1');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.2.0','VERSION is not 2.2.0');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.2.0','package.json is not 2.2.0');
+ok(read('service-worker.js').includes("CACHE='learnwithus-v2.2.0'"),'Service worker cache is not v2.1.1');
 
 const ranges=['1-25','26-50','51-75','76-100'];
 const data=read('assets/kids-data.js'),children=read('assets/children.js'),childHtml=read('learn/kids/children.html'),quizHtml=read('quiz/kids-quiz.html'),quizJs=read('assets/kids-quiz.js');
@@ -38,13 +38,13 @@ ok(children.includes("mode==='numbers'?span+' · 25 numbers'"),'Numbers status d
 ok(children.includes("const expected=mode==='letters'?letters.length:mode==='words'?letters.length:mode==='animals'?animals.length:25"),'Numbers rendered-card expectation is not 25');
 ok(children.includes("quiz:'kids-quiz.html?category=numbers&range='+ui.numberRange.value"),'Numbers completion quiz does not preserve selected set');
 ok(children.includes("quizLabel:'Start Numbers Quiz'"),'Numbers completion Start Quiz button missing');
-ok(children.includes("next:'place-value.html',nextLabel:'Place Value'"),'Numbers completion Next: Place Value action missing');
+ok(children.includes("next:'hindi.html',nextLabel:'Hindi'"),'Numbers completion Next: Hindi action missing');
 ok(data.includes("n<=25?'1-25':n<=50?'26-50':n<=75?'51-75':'76-100'"),'numberRange helper does not cover the new four sets');
 ok(data.includes("function normalizeNumberRange"),'Legacy number-range normalization is missing');
 ok(quizJs.includes("range==='1-25'?'26-50':range==='26-50'?'51-75':range==='51-75'?'76-100'"),'Quiz next-range progression does not follow all four sets');
 ok(read('assets/platform.js').includes('Count from 1 to 100 in four sets'),'Platform Numbers description was not updated');
-ok(fs.readFileSync(path.join(root,'README.md'),'utf8').includes('## Current release: v2.1.1'),'README current release missing');
-ok(fs.readFileSync(path.join(root,'docs','CHANGELOG.md'),'utf8').includes('## 2.1.1 — 2026-09-27'),'Changelog v2.1.1 entry missing');
+ok(fs.readFileSync(path.join(root,'README.md'),'utf8').includes('## Current release: v2.2.0'),'README current release missing');
+ok(fs.readFileSync(path.join(root,'docs','CHANGELOG.md'),'utf8').includes('## 2.2.0 — 2026-10-02'),'Changelog v2.1.1 entry missing');
 
 // Pure data contract: each range has exactly 25 integers and together they cover 1..100 once.
 const values=[];
@@ -54,4 +54,4 @@ ok(new Set(values).size===100,'Number sets overlap');
 ok(values[0]===1&&values.at(-1)===100,'Number sets do not cover 1 through 100');
 
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`v2.1.1 Numbers checks passed: ${passed}/${checks} assertions.`);
+console.log(`v2.2.0-compatible Numbers checks passed: ${passed}/${checks} assertions.`);

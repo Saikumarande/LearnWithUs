@@ -16,16 +16,16 @@ ok((hub.match(/class="quiz-section /g)||[]).length===8,'Quiz Hub should have eig
 ok((hub.match(/class="quiz-grid"/g)||[]).length===8,'Every Quiz Hub section must use quiz-grid');
 ok(practice.includes('repeat(4,minmax(0,1fr))')&&practice.includes('@media(max-width:1050px)')&&practice.includes('@media(max-width:760px)')&&practice.includes('@media(max-width:520px)'),'Unified Quiz Hub 4→3→2→1 CSS missing');
 const childrenJs=read('assets/children.js');
-ok(childrenJs.includes('journeyByMode')&&childrenJs.includes('Start Picture Spelling Quiz'),'Children completion journey is not standardized');
+ok(childrenJs.includes('journeyByMode')&&childrenJs.includes('Start A–Z Phonics Spelling Quiz'),'Children completion journey is not standardized');
 ok(!childrenJs.includes('Try the picture spelling quiz →'),'Legacy plain Picture Spelling quiz link remains');
-ok(childrenJs.includes('Start Letters Quiz')&&childrenJs.includes('Start Numbers Quiz')&&childrenJs.includes('Start Picture Matching Quiz'),'Children topic quiz buttons incomplete');
+ok(childrenJs.includes('Start Letters Quiz')&&childrenJs.includes('Start Numbers Quiz')&&childrenJs.includes('Start A–Z Phonics Spelling Quiz'),'Children topic quiz buttons incomplete');
 const life=read('life-skills.html'),games=read('games.html');
 ok(life.includes('topic-quiz-journey')&&life.includes('Learn → practise → quiz'),'Life Skills journey card missing');
 ok(games.includes('topic-quiz-journey')&&games.includes('Learn → practise → quiz'),'Games journey card missing');
 const shell=read('assets/site-shell.js');ok(shell.includes('v2.0.0 canonical folder routing')&&shell.includes('MutationObserver'),'Canonical route link rewriting missing');
-const sw=read('service-worker.js');ok(sw.includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache version missing');
+const sw=read('service-worker.js');ok(sw.includes("CACHE='learnwithus-v2.2.0'"),'Service worker cache version missing');
 
 for(const [legacy,canonical] of Object.entries(routeMap)){const stub=fs.readFileSync(path.join(pub,legacy),'utf8');ok(stub.includes("location.search+location.hash"),'Legacy redirect does not preserve query/hash: '+legacy);}
-const learningPages=['addition.html','subtraction.html','multiplication.html','division.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','indian-money.html','measurement.html','letter-tracing.html','word-bank.html','early-learning.html','india.html','hindi.html','telugu.html','stories.html','sports.html','creativity.html','life-skills.html','games.html','multiplication-tables.html','planets.html','countries-capitals.html','kids-skills.html','story.html'];
+const learningPages=['addition.html','subtraction.html','multiplication.html','division.html','place-value.html','odd-even.html','fractions.html','time-calendar.html','world-currencies.html','measurement.html','letter-tracing.html','word-bank.html','early-learning.html','india.html','hindi.html','telugu.html','stories.html','sports.html','creativity.html','life-skills.html','games.html','multiplication-tables.html','planets.html','countries-capitals.html','kids-skills.html','story.html'];
 learningPages.forEach(f=>{const page=read(f);ok(page.includes('learning-journey.js')||page.includes('topic-quiz-journey')||page.includes('journey-actions'),f+' has no Quiz/Next learning journey');});
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log(`v2.0.0 structure/UI checks passed: ${passed}/${checks} assertions.`);

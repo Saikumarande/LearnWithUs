@@ -1,6 +1,6 @@
 'use strict';
 (() => {
-  const legacy={phonics:'children.html?mode=words',tracing:'letter-tracing.html',counting:'counting-quiz.html',missing:'spelling-quiz.html',spelling:'spelling-quiz.html','add-subtract':'addition.html','multiply-divide':'multiplication.html'};
+  const legacy={phonics:'children.html?mode=words',tracing:'letter-tracing.html',counting:'counting-quiz.html',missing:'phonics-spelling-quiz.html',spelling:'spelling-quiz.html','add-subtract':'addition.html','multiply-divide':'multiplication.html'};
   const oldTopic=new URLSearchParams(location.search).get('topic');if(legacy[oldTopic]){location.replace(legacy[oldTopic]);return;}
   const allowed=['phonics','tracing','counting','spelling','add-subtract','multiply-divide'],params=new URLSearchParams(location.search),topic=allowed.includes(params.get('topic'))?params.get('topic'):'phonics';
   const names={phonics:['Phonics','Hear the beginning sound and say it together.'],tracing:['Letter tracing','Trace a large letter using a mouse, finger or stylus.'],counting:['Counting objects','Count the objects and choose the correct number.'],spelling:['Reading and spelling','Look at the picture and type the word.'],'add-subtract':['Addition and subtraction','Solve simple number questions.'],'multiply-divide':['Multiplication and division','Practise times tables and equal sharing.']};

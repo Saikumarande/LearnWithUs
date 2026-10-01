@@ -4,9 +4,9 @@ const root=path.resolve(__dirname,'..'),pub=path.join(root,'public');
 const read=f=>fs.readFileSync(path.join(pub,f),'utf8');
 const routeMap=JSON.parse(fs.readFileSync(path.join(root,'route-map.json'),'utf8'));
 let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
-ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.1.1','VERSION is not 2.1.1');
-ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.1.1','package.json is not 2.1.1');
-ok(read('service-worker.js').includes("CACHE='learnwithus-v2.1.1'"),'Service worker cache is not v2.1.1');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='2.2.0','VERSION is not 2.2.0');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='2.2.0','package.json is not 2.2.0');
+ok(read('service-worker.js').includes("CACHE='learnwithus-v2.2.0'"),'Service worker cache is not v2.1.1');
 const quizJs=read('assets/kids-quiz.js');
 ok(quizJs.includes('normalizeLetterStyle,normalizeNumberRange'), 'Kids quiz does not import normalizeNumberRange');
 ok(quizJs.includes("if(['letters','numbers'].includes(requestedCategory))"),'Kids quiz does not honor a requested deep-link category');
@@ -23,9 +23,9 @@ ok(!read('sitemap.xml').includes('/quiz/missing-letters-quiz.html'),'Sitemap sti
 ok(routeMap['missing-letters-quiz.html']==='quiz/spelling-quiz.html','Legacy Missing Letters route does not forward to Picture Spelling');
 ok(read('missing-letters-quiz.html').includes("quiz/spelling-quiz.html'+location.search+location.hash"),'Legacy root Missing Letters URL does not preserve query/hash while forwarding');
 ok(read('quiz/missing-letters-quiz.html').includes("spelling-quiz.html'+location.search+location.hash"),'Legacy canonical Missing Letters URL does not forward to Picture Spelling');
-ok(children.includes("words:{title:'Picture Spelling'")&&children.includes("quiz:'spelling-quiz.html'")&&children.includes("next:'word-bank.html',nextLabel:'Picture Words'"),'Phonics Quiz/Next journey is incomplete');
-ok(journey.includes("'word-bank.html':{title:'Picture Words',quiz:'spelling-quiz.html',next:'letter-tracing.html',nextLabel:'Letter Tracing'}"),'100 Picture Words Quiz/Next journey is incomplete');
+ok(children.includes("words:{title:'A–Z Phonics Spelling'")&&children.includes("quiz:'phonics-spelling-quiz.html'")&&children.includes("next:'word-bank.html',nextLabel:'100 Picture Words'"),'A–Z Phonics Quiz/Next journey is incomplete');
+ok(journey.includes("'word-bank.html':{title:'100 Picture Words'")&&journey.includes("quiz:'spelling-quiz.html'")&&journey.includes("next:'letter-tracing.html',nextLabel:'Letter Tracing'"),'100 Picture Words Quiz/Next journey is incomplete');
 const publicHtml=[];const walk=d=>fs.readdirSync(d,{withFileTypes:true}).forEach(e=>e.isDirectory()?walk(path.join(d,e.name)):e.name.endsWith('.html')&&publicHtml.push(path.join(d,e.name)));walk(pub);
 for(const f of publicHtml){const rel=path.relative(pub,f).replace(/\\/g,'/'),html=fs.readFileSync(f,'utf8');if(['missing-letters-quiz.html','quiz/missing-letters-quiz.html'].includes(rel))continue;ok(!/Missing Letters|Missing-letter/i.test(html),rel+' still contains visible Missing Letters UI');}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`v2.1.1 Letter/Picture Words hotfix checks passed: ${passed}/${checks} assertions across ${publicHtml.length} HTML files.`);
+console.log(`v2.2.0-compatible Letter/Picture Words checks passed: ${passed}/${checks} assertions across ${publicHtml.length} HTML files.`);

@@ -1,3 +1,17 @@
+## 2.2.0 requested-fixes regression
+- Verify Today’s Study Plan and the roadmap show only on base Kids Corner and hide for `?mode=` learning views.
+- Verify learner-name onboarding persists in `learnwithus.platform.v1` and appears in greetings, Dashboard and score/share cards.
+- Verify separate A–Z Phonics, 100 Picture Words, Letter Recognition and Letter Tracing quizzes and their Quiz Hub links.
+- Verify full spoken correct/wrong answer sentences in updated spelling, Maths, language, colour/shape and currency quizzes.
+- Verify Place Value relevance, richer concept-first Maths learning, Previous/Next learning journeys, table Stop Audio, and removal of duplicate CTAs.
+- Verify World Currencies covers 195 countries, legacy Indian Money URLs redirect safely, and the currency quiz asks country→currency questions.
+- Verify Colours/Shapes dedicated quizzes, eight-planet visual/orbit animation, roadmap order, and direct Hindi/Telugu quizzes.
+- Re-run recursive link/assets/JavaScript, whole-site HTML/folder, PWA/cache, server/MIME/404, rendered Chromium UI and browser-runtime checks twice from the frozen final release tree.
+- Live-crawl every public HTML page through the real Node server and verify HTTP 200, `text/html`, and an HTML document response.
+- Execute first-visit learner-name capture in Chromium and verify required input, local persistence under `learnwithus.platform.v1`, and API reuse.
+- Verify complete spoken feedback (`Correct answer! It is X.` / `Wrong answer. The correct answer is X.`) across Life Skills, Games, Sports, World, India and Story answer flows as well as the newly changed modules.
+- Frozen v2.2.0 matrix: **4,339 core assertions + 126 Chromium/runtime assertions = 4,465 checks per run**, executed twice for **8,930 checks** when all pass.
+
 ## 2.1.1 focused regression
 - Execute the actual `kids-data.js` + `kids-quiz.js` runtime in Chromium for `?category=letters` and `?category=numbers`.
 - Confirm deep-linked quizzes start Question 1 of 10 immediately, preserve the requested number set, and do not visibly expose the unrelated quiz category.
@@ -114,7 +128,7 @@ Use a private browser window so old local progress does not affect the result.
 | --- | --- | --- |
 | Device-only progress | Visit three lessons, then open **My learning** | Topic count increases and recent items include a title plus a useful description |
 | Food and kids quiz history | Finish one food quiz and one kids quiz | Both attempts appear under **Quiz history** with score and date |
-| Private dashboard | Open Developer Tools → Application → Local Storage | `learnwithus.platform.v1` stores progress on this device; no child name is requested |
+| Learner profile & private dashboard | Open the site in a fresh/private browser, enter a learner name, then inspect Local Storage | The name and learning progress stay inside `learnwithus.platform.v1` on this device and are reused for score cards/dashboard greetings |
 | No leaderboard | Search the site for “leaderboard” and use all quiz pages | No public ranking or child profile appears |
 | Hindi/Telugu pages | Open `/hindi.html` and `/telugu.html` separately | Each URL shows only its own language in the requested row order |
 | Hindi/Telugu audio | Open each language page and check the message above the rows | Hear buttons enable only when the browser exposes the matching `hi-IN` or `te-IN` voice; tapping speaks only the chosen letter |
@@ -178,3 +192,30 @@ Audio uses the browser and operating-system speech voices. The website intention
 - New pages/assets are cached for offline use.
 
 - `tests/v190-runtime-test.js` validates story/sports data integrity, all 40 local illustrations, Creativity controls, shared navigation coverage and offline pre-cache coverage.
+
+## v2.1.4 visual quiz/world-learning checks
+- No “Choose something else” control remains in Kids learning HTML/runtime.
+- Colours Quiz and Shapes Quiz are separate canonical pages and Quiz Hub entries.
+- Each visual quiz renders a large visible clue and only its own topic.
+- World Currencies explorer exposes region filters, flags, selected-country details and practice.
+- Planet animation uses local SVG planet art with larger visible icons and bounded orbits.
+- Planet quiz includes image-identification questions.
+
+### v2.1.4 automated release matrix
+- Core/source/server assertions: **4,490 per run**.
+- Rendered Chromium/runtime assertions: **139 per run**.
+- Combined: **4,629 checks per run**.
+- Required release discipline: run the unchanged final tree twice, then verify public/dist parity, ZIP extraction integrity and SHA-256.
+
+## v2.2.0 World Currencies viewport interaction checks
+- Verify World Currencies uses a side-by-side country list and selected detail panel on desktop.
+- Verify the country list scrolls internally and stays within the viewport.
+- Verify clicking a country updates the selected country/currency detail without changing the document scroll position.
+- Verify clicking a country preserves the current country-list scroll position.
+- Verify the selected detail remains visible on desktop and mobile layouts.
+- Run the dedicated Chromium runtime test at desktop and mobile viewport sizes.
+
+### Final v2.2.0 matrix
+- Core/source/server: **4,502 / 4,502** assertions per run.
+- Chromium/runtime: **151 / 151** assertions per run.
+- Complete: **4,653 / 4,653** checks per run; run twice on the frozen release tree.

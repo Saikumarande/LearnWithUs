@@ -8,6 +8,10 @@
   const reviewBox = document.getElementById('kidsPlanReview');
   if (!root || !ageSelect || !taskList || !progressText) return;
 
+  // The study plan belongs only to the base Kids Corner. Learning modes must never show it.
+  if (new URLSearchParams(location.search).has('mode')) { root.hidden = true; return; }
+  root.hidden = false;
+
   const storeKey = 'learnwithus.platform.v1';
   const plans = {
     preschool: {

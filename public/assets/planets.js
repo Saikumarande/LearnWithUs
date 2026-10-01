@@ -1,0 +1,1 @@
+'use strict';(()=>{const motion=document.getElementById('solarMotion'),button=document.getElementById('togglePlanetMotion');if(!motion||!button)return;button.addEventListener('click',()=>{const paused=motion.classList.toggle('is-paused');button.textContent=paused?'▶ Play animation':'⏸ Pause animation';button.setAttribute('aria-pressed',String(paused));});})();

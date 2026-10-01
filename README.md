@@ -1,27 +1,35 @@
-## Current release: v2.1.1
-### v2.1.1 highlights
-- Fixed the Letter/Number quiz deep-link runtime failure by importing the shared `normalizeNumberRange` helper used during quiz startup.
-- A direct `kids-quiz.html?category=letters` or `?category=numbers` link now starts only the requested 10-question quiz and does not show the unrelated category chooser.
-- Removed Missing Letters from Phonics, 100 Picture Words, Quiz Hub, Kids Skills, search/discovery and sitemap. Old Missing Letters URLs silently forward to Picture Spelling so saved links do not break.
-- Added dedicated browser-runtime coverage for Letter/Number deep links plus whole-site checks that Missing Letters is no longer exposed in visible HTML.
+## Current release: v2.2.0
 
-### v2.1.1 final validation target
-- Smoke/canonical routes: **208** assertions
-- Recursive links/assets/JavaScript syntax: **1,496** assertions
-- Whole-site HTML structure/folder audit: **773** assertions
-- Feature regression: **168** assertions
-- Release regression: **68** assertions
-- v1.12 compatibility UI/runtime: **38** assertions
-- v2.0.0 structure/UI compatibility: **160** assertions
-- Shared journey/folder regression: **358** assertions
-- v2.1.0 Numbers regression: **45** assertions
-- v2.1.1 Letter/Picture Words hotfix regression: **120** assertions
-- Server/MIME/custom 404: **42** assertions
-- Core automated suite: **3,476 assertions per run**
-- Rendered Chromium UI + Numbers runtime + Kids quiz deep-link runtime: **105 assertions per run**
-- Complete release validation: **3,581 assertions per run**, required twice after final cleanup.
+### v2.2.0 — World Currencies in-place explorer fix (2026-10-02)
+- Fixed the World Currencies country click behavior that previously called `scrollIntoView()` and pulled the page upward.
+- The explorer now mirrors the India States & Capitals interaction: countries stay in an internally scrollable viewport-sized panel while selected country/currency details remain visible alongside it.
+- Desktop uses a side-by-side explorer; smaller screens keep the selected detail panel visible above the internally scrolling country list.
+- Country clicks update in place without changing document scroll position or resetting the country-list scroll position.
 
-# LearnWithUs v2.1.1
+### v2.2.0 final validation
+- Core/source/server matrix: **4,502 / 4,502** assertions per run.
+- Chromium/runtime matrix: **151 / 151** assertions per run.
+- Complete frozen-release matrix: **4,653 / 4,653** checks per run, executed twice after final cleanup.
+
+### v2.2.0 baseline highlights
+- Built on the user-supplied `LearnWIthUs-2.1.3.zip` baseline without reverting the two Copilot fixes.
+- Restricted Today’s Study Plan and the Kids Learning Roadmap to the base Kids Corner only; learning modes hide both.
+- Added a first-run learner-name prompt stored inside the existing local LearnWithUs state. The name is reused in Kids greetings, Dashboard messaging, score cards, achievement cards and sharing copy.
+- Split English checks into dedicated Letter Recognition, A–Z Phonics Spelling, 100 Picture Words Spelling and Letter Tracing & Order quizzes, each wired to the matching learning page and Quiz Hub.
+- Standardized spelling, Maths, language, colour/shape and other updated quiz feedback to speak full correct/wrong answer sentences.
+- Added Previous Letter to tracing and Previous Topic actions to the shared Learn → practise → quiz journeys.
+- Reworked Place Value questions to test digit/place/value/composition concepts rather than arithmetic-looking expanded sums, and expanded Odd & Even plus core arithmetic lessons with concept-first explanations and examples.
+- Added Stop Audio to whole-table playback and removed the unnecessary Review Multiplication action.
+- Removed duplicate Time & Calendar and Measurement quiz CTAs so those pages end in one shared journey.
+- Replaced Indian Money as a Maths topic with World Currencies: 195 countries, region/search learning, country→currency practice/quiz and backward-compatible Indian Money redirects.
+- Added dedicated Colours and Shapes quizzes with shared voice feedback and score cards.
+- Added a local eight-planet Solar System overview plus an accessible, pausable orbit teaching animation (conceptual, not to scale).
+- Reordered the Kids roadmap so Hindi and Telugu follow Letters and Numbers, and linked Hindi/Telugu directly to their own letter quizzes.
+
+### v2.2.0 baseline validation
+The release includes dedicated v2.2.0 regressions for every requested fix plus recursive link/syntax, whole-site HTML/folder, live HTTP route crawl, feature/release, server, rendered-browser and runtime suites. The frozen release matrix contains **4,339 core assertions + 126 Chromium/runtime assertions = 4,465 checks per run** and must pass twice without production changes between runs.
+
+# LearnWithUs v2.2.0
 
 LearnWithUs is a Node.js educational website covering food discoveries, kids learning activities, Hindi and Telugu letters, health guides and quizzes.
 
@@ -90,14 +98,19 @@ For every future LearnWithUs code change, update **README.md**, `docs/CHANGELOG.
 ## Project structure
 
 ```text
-LearnWithUs-v2.1.1/
+LearnWithUs-v2.2.0/
 ├── public/
 │   ├── index.html                    # Home page
 │   ├── quiz/                         # Canonical quiz HTML
 │   │   ├── quiz-hub.html
 │   │   ├── kids-quiz.html
 │   │   ├── counting-quiz.html
+│   │   ├── phonics-spelling-quiz.html
 │   │   ├── spelling-quiz.html
+│   │   ├── letter-tracing-quiz.html
+│   │   ├── language-quiz.html
+│   │   ├── early-learning-quiz.html
+│   │   ├── world-currencies-quiz.html
 │   │   ├── math-quiz.html
 │   │   ├── multiplication-tables-quiz.html
 │   │   ├── india-quiz.html
