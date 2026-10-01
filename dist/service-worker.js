@@ -100,6 +100,8 @@ const CORE=[
   './assets/creativity.css?v=20260927a',
   './assets/creativity.js',
   './assets/creativity.js?v=20260927a',
+  './assets/creativity-fixes.js',
+  './assets/creativity-fixes.js?v=20261001a',
   './assets/dashboard-recovery.js',
   './assets/dashboard-recovery.js?v=20260926g',
   './assets/early-learning.css',
