@@ -1,0 +1,24 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),pub=path.join(root,'public'),read=f=>fs.readFileSync(path.join(pub,f),'utf8');
+let checks=0,passed=0;const failures=[];const ok=(v,m)=>{checks++;if(v)passed++;else failures.push(m)};
+const kids=read('learn/kids/children.html'),css=read('assets/kids.css'),js=read('assets/kids-roadmap.js'),childrenJs=read('assets/children.js'),sw=read('service-worker.js');
+ok(fs.readFileSync(path.join(root,'VERSION'),'utf8').trim()==='3.10.0','VERSION is not 2.6.0');
+ok(JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version==='3.10.0','package.json is not 2.6.0');
+ok(sw.includes("CACHE='learnwithus-v3.10.0'"),'Service worker cache is not v2.6.0');
+ok((kids.match(/class="roadmap-step roadmap-stop core-roadmap-step"/g)||[]).length===18,'Core Journey must contain exactly 18 foundation stops');
+ok(kids.includes('Core Learning Journey')&&kids.includes('Recommended next')&&kids.includes('Explore by learning area'),'New learning-journey headings are missing');
+ok((kids.match(/class="journey-card"/g)||[]).length===9,'Nine expandable branch journeys are required after adding Learning Support & Parents');
+ok((kids.match(/class="journey-step"/g)||[]).length===101,'All 101 categorized branch destinations must be present');
+for(const label of ['English &amp; Reading','Maths &amp; Numbers','Languages','Science &amp; Discovery','World &amp; India','Stories, Sports &amp; Creativity','Life Skills','Games &amp; Challenges'])ok(kids.includes(label),`Branch missing: ${label}`);
+for(const code of ['E1','M1','L1','S1','W1','C1','LS1','G1'])ok(kids.includes(`>${code}<`),`Stable branch code missing: ${code}`);
+ok(kids.includes('children.html?mode=letters')&&kids.includes('world-currencies.html')&&kids.includes('quiz-hub.html'),'Existing core/world/quiz routes were lost');
+ok(js.includes("learnwithus.platform.v1")&&js.includes('data-journey-progress-text')&&js.includes('roadmapRecommendedLink'),'Roadmap JS does not reuse existing progress or branch/recommendation UI');
+ok(js.includes("Core Journey complete!")&&js.includes("Open Quiz Hub"),'Completed-core recommendation fallback missing');
+ok(childrenJs.includes("document.querySelector('.kids-roadmap')")&&childrenJs.includes('setMainOnlyPanelsVisible'),'Roadmap main-Kids-only visibility protection is missing');
+ok(css.includes('.journey-branches')&&css.includes('.journey-card')&&css.includes('.journey-step-code'),'Branch journey responsive styling is missing');
+ok(css.includes('grid-template-columns:repeat(2,minmax(0,1fr))')&&css.includes('@media(max-width:900px){.kids-page .journey-branches{grid-template-columns:1fr}'),'Branch journeys do not collapse responsively');
+ok(!kids.includes('Step 40: Quiz Hub'),'Legacy 40-step single numbered road still exists');
+ok(sw.includes("'./assets/kids.css?v=20261014a'")&&sw.includes("'./assets/kids-roadmap.js?v=20261014a'"),'New journey assets are not precached');
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}
+console.log(`v2.6.0 journey architecture checks passed: ${passed}/${checks} assertions.`);

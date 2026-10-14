@@ -10,10 +10,11 @@
   const activityModules = [...document.querySelectorAll('.creative-module')];
   const showSelectedActivity = () => {
     const requestedId = decodeURIComponent(location.hash.slice(1));
-    const selected = activityModules.find(module => module.id === requestedId);
-    activityModules.forEach(module => { module.hidden = Boolean(selected) && module !== selected; });
+    const selected = activityModules.find(module => module.id === requestedId) || activityModules[0];
+    activityModules.forEach(module => { module.hidden = module !== selected; });
   };
   showSelectedActivity();
+  const printButton=document.getElementById('printCreativePage');if(printButton)printButton.onclick=()=>{document.getElementById('printCreativeMessage').textContent='The browser print window will open.';window.print();};
   window.addEventListener('hashchange', showSelectedActivity);
 
   const makeColourable = () => {

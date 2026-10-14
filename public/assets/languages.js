@@ -24,6 +24,7 @@
       [['ष','ṣa'],['स','sa'],['ह','ha'],['क्ष','kṣa'],['त्र','tra'],['ज्ञ','jña'],['श्र','śra']]
     ]}
   };
+  window.LEARNWITHUS_LANGUAGE_LESSONS=lessons;
   const key=document.body.dataset.language;
   const lesson=lessons[key];
   const grid=document.getElementById('languageGrid');

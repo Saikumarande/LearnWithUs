@@ -12,10 +12,10 @@ const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
-function loadPlan(initialState) {
+function loadPlan(initialState, search = '') {
   const elements = new Map();
   const createElement = id => {
-    const element = { id, value: 'all', innerHTML: '', textContent: '', handlers: {} };
+    const element = { id, value: 'all', innerHTML: '', textContent: '', hidden: false, handlers: {} };
     element.addEventListener = (name, handler) => { element.handlers[name] = handler; };
     elements.set(id, element);
     return element;
@@ -35,8 +35,8 @@ function loadPlan(initialState) {
     setItem: (key, value) => { if (key === 'learnwithus.platform.v1') stored = value; }
   };
   const document = { getElementById: id => elements.get(id) || null };
-  vm.runInNewContext(source, { document, localStorage });
-  return { ageSelect, taskList, progressText, reviewBox, title, description, readStored: () => JSON.parse(stored) };
+  vm.runInNewContext(source, { document, localStorage, location: { search }, URLSearchParams });
+  return { root, ageSelect, taskList, progressText, reviewBox, title, description, readStored: () => JSON.parse(stored) };
 }
 
 const initialState = {
@@ -79,6 +79,12 @@ check(savedState.mistakes[0].tag === 'Addition', 'Changing age overwrote quiz mi
 const reloaded = loadPlan(savedState);
 check(reloaded.ageSelect.value === 'all', 'Most recently saved path was not restored after reload');
 check(reloaded.title.textContent === 'Starter learning path', 'Reloaded path content did not match saved choice');
+
+
+const hiddenInMode = loadPlan(initialState, '?mode=words');
+check(hiddenInMode.root.hidden === true, 'Today’s study plan should be hidden inside a learning mode');
+const visibleOnMain = loadPlan(initialState, '');
+check(visibleOnMain.root.hidden === false, 'Today’s study plan should remain visible on the base Kids Corner');
 
 const noMistakes = loadPlan({ preferences: { age: 'all' }, mistakes: [] });
 check(noMistakes.reviewBox.innerHTML === '', 'Empty mistake history should not show stale review links');

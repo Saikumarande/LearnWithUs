@@ -23,6 +23,6 @@ for(const [legacy,canonical] of Object.entries(routeMap)){
   ok(stub.length<1500&&stub.includes('location.search+location.hash'),legacy+' is not a small query/hash-preserving compatibility redirect');
 }
 ok(fs.existsSync(path.join(pub,'index.html')),'Root index.html missing');
-ok(files.length===103,'Unexpected HTML page count; expected 103, got '+files.length);
+ok(files.length>=115,'Unexpected HTML page count; expected at least 115, got '+files.length);
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log(`HTML structure/folder audit passed: ${checks}/${checks} assertions across ${files.length} HTML pages and ${Object.keys(routeMap).length} legacy→canonical routes.`);

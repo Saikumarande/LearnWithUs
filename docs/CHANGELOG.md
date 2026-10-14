@@ -1,4 +1,112 @@
+## v3.9.0 — Navigation, achievements, Planets and 48 real illustrated flags
+
+- Compact (~38px) sticky topic navigation: returns on upward scroll anywhere, full-page visibility, right-aligned Search and Expand.
+- Responsive Quiz Certificates buttons made equal-width with no overlaps.
+- Planets now uses explicit Web Animations play/pause instead of competing CSS media rules, with visible status and reduced-motion initial preference.
+- All 48 taught countries now have distinct bundled Noto Color Emoji flag-illustration PNGs, referenced in both the Countries & Capitals and World Flags selectors. No font binaries distributed. The artwork is stylized, not official government imagery.
+- Existing quiz questions, progress, 18-step Core Journey, and URLs retained.
+
+## 3.8.0 — 2026-10-14
+- Simplified and properly aligned Kids navigation: compact toolbar, expandable nine-branch grid, consistent layout, obsolete links removed.
+- Dashboard quiz results reuse the existing shared score-card artwork and show aligned Download/Try again actions.
+- Packaged national flag illustrations for World Flags lesson, country detail and flag answer choices.
+- Added explicit planet play/pause feedback and running/paused CSS state.
+- Brighter equal-width Countries & Capitals panels and stronger computed-layout/movement browser regression.
+- Bumped offline cache and affected asset keys; preserved old URLs, topics and learner storage.
+
+## v3.6.0 — Learning UX bug fixes
+
+- Added release/footer page version labels.
+- Corrected 100 word bank without Phonics duplication, five-choice quizzes, parent-guided tracing quiz and animal names quiz.
+- Improved country browsing, planet play/pause, poems, Creativity single-activity view and navigation.
+
+## 3.5.0 — 2026-10-14
+- Fixed missing hub CSS and misaligned cards.
+- Reused responsive 3/2/1 topic tiles and added horizontally scrolling branch navigation to lessons.
+- Kept complete content and quiz behavior from v3.4.0.
+
+## 3.4.0 — 2026-10-14
+- Fixed Science card alignment by adopting the existing responsive Kids Corner card grid.
+- Added individual deep-linkable pages for World Explorer topics and v2.7–v3.3 feature activities (23 new activities, matching focused quizzes).
+- Replaced combined World/Everyday/Smart/Parent/Coding/Profiles/Tools landing pages with topic selectors.
+- Applied standardized Learn → Practise three questions → Quiz → Previous/Next flow and shared green/yellow styles.
+- Reclassified learner profiles, motivation and learning tools into Learning Support & Parents branch; all previous URLs preserved.
+- Added v3.4 regression and browser/layout tests.
+
+# v2.7–v3.3 Release Notes
+
+## 3.3.0 — 2026-10-14
+- Learning tools: worksheets, flashcards, assigned homework, search, focus, hints, accessibility and offline status.
+
+## 3.2.0 — 2026-10-14
+- Everyday learning: community helpers, transport, dictionary, listening, conversations and everyday situations.
+
+## 3.1.0 — 2026-10-14
+- World Explorer: schematic clickable continents, five oceans, world flags, famous landmarks and geography challenges.
+
+## 3.0.0 — 2026-10-14
+- Profiles: local child profiles with isolation, migration from existing learner progress, class/age and Hindi/Telugu/English preferences.
+
+## 2.9.0 — 2026-10-14
+- Coding: draggable-style tap-to-add blocks, move/turn/repeat, robot maze, sequencing and graded challenges.
+
+## 2.8.0 — 2026-10-14
+- Motivation: daily and weekly missions, downloadable certificates, favourites, continue learning, parent dashboard reports.
+
+## 2.7.0 — 2026-10-14
+- Smart Learning: Mistakes Notebook, targeted revision, question-level review, mastery and adaptive practice.
+
+## 2.6.0 — 2026-10-14
+### Science & Discovery and Smarter Maths
+- Added independent learning routes and 10-question quizzes to the proper subject branches.
+- Preserved all existing Core Journey stops, legacy routes, previous releases and local progress schema.
+
+## 2.5.0 — Science & Discovery
+- Added independent learning routes and 10-question quizzes to the proper subject branches.
+- Preserved all existing Core Journey stops, legacy routes, previous releases and local progress schema.
+
+## 2.4.0 — 2026-10-14
+### Reading & English Upgrade
+- Added nine new English & Reading learning topics and focused quizzes.
+- Expanded the English branch to E1–E14 without changing the 18-step Core Journey.
+- Added browser speech-recognition Reading Coach with no LearnWithUs audio storage and a typed fallback in its assessment.
+- Added Quiz Hub cards, Kids Corner cards, routing, sitemap and offline-cache coverage.
+- Preserved existing storage, routes, score cards, voice feedback and all previous features.
+
 # Changelog
+
+## 2.3.0 — 2026-10-14
+- Re-architected the Kids roadmap into a stable 18-step Core Learning Journey plus eight expandable subject branches.
+- Kept every existing learning destination and URL available while moving optional/exploration topics out of the globally numbered road.
+- Added stable branch codes, branch progress meters, visited/next state styling and a separate Recommended Next action using the existing local progress store.
+- Preserved base-Kids-only roadmap visibility, existing learning modes, quizzes, voice, score cards, PWA behavior and `learnwithus.platform.v1`.
+- Added v2.3.0 source and Chromium regressions for desktop/mobile journey layout, progress restoration, recommendation behavior and no-overflow rendering.
+
+## 2.2.0 — 2026-10-02
+- Fixed World Currencies country selection so clicking a country updates details in-place instead of scrolling the page to the top.
+- Reworked World Currencies into a viewport-sized split explorer with an internally scrollable country list and sticky selected-country detail panel, matching the India explorer interaction pattern.
+- Added dedicated source and Chromium regressions for scroll stability, selected-country visibility and responsive explorer sizing.
+- Applied the 23 requested production fixes on top of the user-supplied 2.1.3 codebase.
+- Made Today’s Study Plan and the Kids roadmap base-Kids-Corner-only.
+- Added local learner-name onboarding and personalization across greetings, Dashboard, score cards, achievements and sharing.
+- Split A–Z Phonics, 100 Picture Words, Letter Recognition and Letter Tracing into correctly scoped quizzes and updated Quiz Hub routing.
+- Added complete spoken correct/wrong feedback to updated spelling, Maths, language, Colours/Shapes and currency quizzes.
+- Standardized complete spoken answer feedback across existing Life Skills, Games, Sports, World, India and Story answer flows too.
+- Expanded release validation with a live crawl of every public HTML route plus a Chromium first-visit learner-name persistence check.
+- Added Previous Letter for tracing and Previous Topic actions across shared learning journeys; removed duplicate Time/Measurement CTAs and Review Multiplication.
+- Expanded concept-first Maths explanations and corrected Place Value quiz questions to remain place-value-specific.
+- Replaced Indian Money with World Currencies learning and country-to-currency quiz coverage, while preserving legacy links as redirects.
+- Added dedicated Colours/Shapes quizzes, an eight-planet Solar System overview/animation, and reordered the Kids roadmap so Hindi/Telugu follow Letters/Numbers.
+- Added direct Hindi and Telugu letter quizzes plus extensive v2.2.0 regression coverage.
+
+## 2.1.4 — 2026-10-02
+
+- Removed the leftover “Choose something else” learning-mode control.
+- Upgraded World Currencies to an interactive region/country explorer.
+- Split Colours and Shapes into dedicated visual quizzes with separate Quiz Hub routes.
+- Enlarged and improved Solar System planet artwork/animation fit.
+- Added planet-image identification questions to the Planets Quiz.
+- Release number is 2.1.4 per explicit publishing request, built from the latest v2.2.0 codebase.
 
 ## 2.1.1 — 2026-09-27
 - Fixed the Kids Letter/Number quiz startup ReferenceError caused by `normalizeNumberRange` not being imported from the shared Kids data module.

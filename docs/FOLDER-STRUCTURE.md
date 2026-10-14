@@ -79,3 +79,8 @@ Canonical browser pages:
 
 ## Retired compatibility routes
 - `missing-letters-quiz.html` and `quiz/missing-letters-quiz.html` are compatibility-only redirects to `quiz/spelling-quiz.html`; they are not current quiz pages or visible navigation choices.
+
+### v2.4.0 additions
+- `public/learn/kids/english-skills.html` — shared canonical English & Reading learning page.
+- `public/quiz/english-skills-quiz.html` — shared canonical focused quiz page.
+- `public/assets/english-upgrade-data.js`, `english-upgrade.js`, `english-upgrade-quiz.js`, `english-upgrade.css` — shared data, interaction and styling.

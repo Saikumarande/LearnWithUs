@@ -1,3 +1,27 @@
+## 2.3.0 journey-architecture regression
+- Verify exactly 18 Core Journey stops remain in the globally numbered road.
+- Verify eight expandable subject journeys and all 40 existing destination links remain represented.
+- Verify stable branch codes (E/M/L/S/W/C/LS/G), progress counts and Recommended Next reuse `learnwithus.platform.v1`.
+- Verify the journey system remains base-Kids-Corner-only and does not appear in Letters/Numbers/Phonics/Animals modes.
+- Render the production roadmap HTML/CSS/JS in Chromium at desktop and mobile sizes; verify 2-column → 1-column branch layout, no horizontal overflow, restored visited state and correct next recommendation.
+- Run the complete release suite twice after `public/` and `dist/` final synchronization.
+
+**v2.3.0 frozen matrix:** 4,553 core/source/server assertions + 162 Chromium/runtime assertions = **4,715 checks per run**, executed twice.
+
+## 2.2.0 requested-fixes regression
+- Verify Today’s Study Plan and the roadmap show only on base Kids Corner and hide for `?mode=` learning views.
+- Verify learner-name onboarding persists in `learnwithus.platform.v1` and appears in greetings, Dashboard and score/share cards.
+- Verify separate A–Z Phonics, 100 Picture Words, Letter Recognition and Letter Tracing quizzes and their Quiz Hub links.
+- Verify full spoken correct/wrong answer sentences in updated spelling, Maths, language, colour/shape and currency quizzes.
+- Verify Place Value relevance, richer concept-first Maths learning, Previous/Next learning journeys, table Stop Audio, and removal of duplicate CTAs.
+- Verify World Currencies covers 195 countries, legacy Indian Money URLs redirect safely, and the currency quiz asks country→currency questions.
+- Verify Colours/Shapes dedicated quizzes, eight-planet visual/orbit animation, roadmap order, and direct Hindi/Telugu quizzes.
+- Re-run recursive link/assets/JavaScript, whole-site HTML/folder, PWA/cache, server/MIME/404, rendered Chromium UI and browser-runtime checks twice from the frozen final release tree.
+- Live-crawl every public HTML page through the real Node server and verify HTTP 200, `text/html`, and an HTML document response.
+- Execute first-visit learner-name capture in Chromium and verify required input, local persistence under `learnwithus.platform.v1`, and API reuse.
+- Verify complete spoken feedback (`Correct answer! It is X.` / `Wrong answer. The correct answer is X.`) across Life Skills, Games, Sports, World, India and Story answer flows as well as the newly changed modules.
+- Frozen v2.2.0 matrix: **4,339 core assertions + 126 Chromium/runtime assertions = 4,465 checks per run**, executed twice for **8,930 checks** when all pass.
+
 ## 2.1.1 focused regression
 - Execute the actual `kids-data.js` + `kids-quiz.js` runtime in Chromium for `?category=letters` and `?category=numbers`.
 - Confirm deep-linked quizzes start Question 1 of 10 immediately, preserve the requested number set, and do not visibly expose the unrelated quiz category.
@@ -114,7 +138,7 @@ Use a private browser window so old local progress does not affect the result.
 | --- | --- | --- |
 | Device-only progress | Visit three lessons, then open **My learning** | Topic count increases and recent items include a title plus a useful description |
 | Food and kids quiz history | Finish one food quiz and one kids quiz | Both attempts appear under **Quiz history** with score and date |
-| Private dashboard | Open Developer Tools → Application → Local Storage | `learnwithus.platform.v1` stores progress on this device; no child name is requested |
+| Learner profile & private dashboard | Open the site in a fresh/private browser, enter a learner name, then inspect Local Storage | The name and learning progress stay inside `learnwithus.platform.v1` on this device and are reused for score cards/dashboard greetings |
 | No leaderboard | Search the site for “leaderboard” and use all quiz pages | No public ranking or child profile appears |
 | Hindi/Telugu pages | Open `/hindi.html` and `/telugu.html` separately | Each URL shows only its own language in the requested row order |
 | Hindi/Telugu audio | Open each language page and check the message above the rows | Hear buttons enable only when the browser exposes the matching `hi-IN` or `te-IN` voice; tapping speaks only the chosen letter |
@@ -178,3 +202,70 @@ Audio uses the browser and operating-system speech voices. The website intention
 - New pages/assets are cached for offline use.
 
 - `tests/v190-runtime-test.js` validates story/sports data integrity, all 40 local illustrations, Creativity controls, shared navigation coverage and offline pre-cache coverage.
+
+## v2.1.4 visual quiz/world-learning checks
+- No “Choose something else” control remains in Kids learning HTML/runtime.
+- Colours Quiz and Shapes Quiz are separate canonical pages and Quiz Hub entries.
+- Each visual quiz renders a large visible clue and only its own topic.
+- World Currencies explorer exposes region filters, flags, selected-country details and practice.
+- Planet animation uses local SVG planet art with larger visible icons and bounded orbits.
+- Planet quiz includes image-identification questions.
+
+### v2.1.4 automated release matrix
+- Core/source/server assertions: **4,490 per run**.
+- Rendered Chromium/runtime assertions: **139 per run**.
+- Combined: **4,629 checks per run**.
+- Required release discipline: run the unchanged final tree twice, then verify public/dist parity, ZIP extraction integrity and SHA-256.
+
+## v2.2.0 World Currencies viewport interaction checks
+- Verify World Currencies uses a side-by-side country list and selected detail panel on desktop.
+- Verify the country list scrolls internally and stays within the viewport.
+- Verify clicking a country updates the selected country/currency detail without changing the document scroll position.
+- Verify clicking a country preserves the current country-list scroll position.
+- Verify the selected detail remains visible on desktop and mobile layouts.
+- Run the dedicated Chromium runtime test at desktop and mobile viewport sizes.
+
+### Final v2.2.0 matrix
+- Core/source/server: **4,502 / 4,502** assertions per run.
+- Chromium/runtime: **151 / 151** assertions per run.
+- Complete: **4,653 / 4,653** checks per run; run twice on the frozen release tree.
+
+
+## v2.4.0 Reading & English Upgrade
+- English branch E1–E14 renders and preserves prior E1–E5 destinations.
+- All nine new topic deep links render the matching learning activity.
+- All nine Quiz Hub links deep-link to the matching focused quiz.
+- Sight Words, Word Families, Rhymes, Opposites, Sentence Builder, Grammar, Reading Comprehension, Dictation and Reading Coach have runtime assertions.
+- Reading Coach does not store voice recordings in LearnWithUs.
+- Core Learning Journey remains exactly 18 steps.
+
+**v2.4.0 frozen matrix:** 4,698 core/source/server assertions + 248 Chromium/runtime assertions = **4,946 checks per run**, executed twice after final synchronization.
+
+## v3.3 platform upgrade verification
+- Verify the Core Journey remains 18 steps.
+- Confirm seven feature pages, quiz/category links, root redirects and PWA assets.
+- Validate separate child profile data and migration from `learnwithus.platform.v1`.
+- Verify Science, Maths and English quizzes record question-level mistakes and mastery.
+- Confirm previous quiz history remains visible when answer-level information is unavailable.
+- Check worksheet print, flashcard flip, homework, search, focus, accessibility and offline indicators.
+- Coding maze and geography visualizations should work offline after caching on HTTPS.
+
+### Manual verification for the new releases
+- v2.7: Miss a Science quiz answer, return to Smart Learning, confirm question/answer/explanation and revision status.
+- v2.8: Check Daily Mission boxes, reload, confirm they persist. Check Weekly Mission boxes and the downloadable SVG certificate after completing an activity.
+- v2.9: In Coding Lab, add two Move blocks, Run, and confirm the first robot reaches the flag.
+- v3.0: Make a second child profile; verify its fresh progress is separate from the default learner, then switch back.
+- v3.1: Select Africa on the map, filter flags for India and answer a geography question.
+- v3.2: Open Community Helpers, Transport, Dictionary, Listening, Conversations, and Situations and check the practice question in each.
+- v3.3: Generate 10 worksheet questions, flip a flashcard, assign homework, search a lesson, enable focus/large text and check offline status.
+- Open each of the eight branch journeys and confirm the Core road still shows 18 steps.
+- Refresh with Ctrl+F5 after deploying because the prior PWA cache may be present.
+
+### Frozen v3.3.0 validation matrix
+- Core/source/server: 5,947 / 5,947 checks per run.
+- Chromium/browser: 368 / 368 checks per run.
+- Combined: 6,315 / 6,315 per run, twice without production changes.
+
+## v3.4.0 — Standardized layout and focused topic flows
+
+Read `docs/V340-TEST-REPORT.md` for case-by-case visual, functional, route, regression and ZIP audit coverage. New regressions are `tests/v340-runtime-test.js` and `tests/v340-browser-runtime-test.js`. Existing feature suites remain required, not replaced.

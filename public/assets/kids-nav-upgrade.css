@@ -1,0 +1,70 @@
+/* One shared category menu; no old mega-menu duplication. */
+.fl-kids-quick-nav.lwu-category-nav{position:relative;background:#f5f9ec;border-bottom:1px solid #ccdfcd;z-index:15}
+.lwu-category-shell{padding:9px 0}.lwu-category-toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;min-width:0}.lwu-category-home,.lwu-category-toolbar button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 13px;border:1px solid #bcd4bf;border-radius:12px;background:#fff;color:#0b3d2e;font:800 14px system-ui;text-decoration:none;cursor:pointer}.lwu-category-toolbar button{background:#fff0b8;border-color:#d3aa3a}.lwu-category-search-label{display:flex;gap:8px;align-items:center;flex:1;min-width:min(220px,100%);min-height:44px;padding:3px 10px;border:1px solid #cbdccc;border-radius:12px;background:#fff}.lwu-category-search-label input{border:0;outline:0;min-width:0;width:100%;min-height:36px;font:600 15px system-ui;color:#123d28}
+.lwu-category-panel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 0}.lwu-category-panel[hidden],.lwu-category-results[hidden]{display:none!important}.lwu-category-entry{min-width:0;border:1px solid #d6e4d3;border-radius:16px;background:#fff;overflow:hidden}.lwu-category-entry summary{display:flex;align-items:center;gap:10px;padding:13px;cursor:pointer;min-height:70px;color:#14432c}.lwu-category-icon{font-size:27px}.lwu-category-heading{flex:1;min-width:0;display:grid;gap:4px}.lwu-category-heading strong{font-size:15px}.lwu-category-heading small{font-size:12px;color:#667a68}.lwu-category-count{font-size:11px;color:#6b795f}.lwu-category-entry[open]{background:#fbfff8;border-color:#b4d3b3}.lwu-category-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:8px;gap:7px}.lwu-category-steps a,.lwu-category-results a{box-sizing:border-box;display:flex;align-items:center;min-height:42px;padding:9px 11px;border:1px solid #d4e1d2;border-radius:10px;background:#fff;color:#15452c;font:750 13px/1.4 system-ui;text-decoration:none}.lwu-category-steps a:hover,.lwu-category-results a:hover{background:#fff3cb;border-color:#d2ab35}.lwu-category-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:10px 0}.branch-strip-scroll,.creative-subject-row{cursor:ew-resize}
+@media(max-width:1000px){.lwu-category-panel{grid-template-columns:repeat(2,minmax(0,1fr))}.lwu-category-results{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.lwu-category-panel{grid-template-columns:1fr}.lwu-category-results{grid-template-columns:repeat(2,minmax(0,1fr))}.lwu-category-steps{grid-template-columns:1fr}.lwu-category-home{display:none}}
+
+/* v3.8.0: one-row toolbar, left-aligned even card grid, predictable responsive heights */
+.lwu-category-shell{max-width:1180px;margin-inline:auto;padding:7px 0}
+.lwu-category-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(175px,285px) auto;align-items:center;gap:10px;flex-wrap:nowrap;min-height:44px}
+.lwu-category-toolbar-title{font:800 14px/1.2 system-ui,sans-serif;color:#0b3d2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lwu-category-search-label{margin:0;flex:unset;min-width:0;min-height:40px}.lwu-category-search-label input{min-height:34px}
+.lwu-category-toolbar button{white-space:nowrap;min-height:40px;padding:7px 12px}
+.lwu-category-panel{width:100%;align-items:start;justify-content:start;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lwu-category-entry{height:auto;align-self:start}.lwu-category-entry summary{display:grid;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;min-height:94px;gap:8px;padding:10px 12px}
+.lwu-category-icon{font-size:25px;text-align:center}.lwu-category-heading strong{font:800 15px/1.25 system-ui,sans-serif}.lwu-category-heading small{font:500 12px/1.25 system-ui,sans-serif}.lwu-category-count{font-size:12px;font-weight:800;text-align:right;white-space:nowrap}
+@media(max-width:900px){.lwu-category-panel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.lwu-category-shell{padding:5px 0}.lwu-category-toolbar{grid-template-columns:minmax(0,1fr) auto;gap:7px}.lwu-category-toolbar-title{display:none}.lwu-category-toolbar button{font-size:12px;padding:7px 8px}.lwu-category-panel{grid-template-columns:1fr}.lwu-category-entry summary{min-height:74px}.lwu-category-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* v3.8.0: override inherited legacy horizontal quick-nav rules that clipped the new 9-branch grid. */
+.fl-kids-quick-nav.lwu-category-nav{max-height:none!important;overflow:visible!important;white-space:normal!important;will-change:auto}
+.fl-kids-quick-nav.lwu-category-nav .fl-container.lwu-category-shell{display:block!important;width:min(1180px,calc(100% - 32px));overflow:visible!important;white-space:normal!important;max-width:1180px;padding:6px 0!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar{display:grid!important;width:100%;white-space:normal!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel{display:grid!important;white-space:normal!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel[hidden]{display:none!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-results[hidden]{display:none!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-heading{min-width:0;white-space:normal!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-heading strong,.fl-kids-quick-nav.lwu-category-nav .lwu-category-heading small{display:block;white-space:normal!important;overflow-wrap:break-word}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-steps a{display:flex!important;white-space:normal!important;flex:initial;min-height:42px!important}
+/* Only the new expandable branch selector is shown: suppress the obsolete long Kids quick links. */
+body[data-area="kids"]:has(.lwu-category-nav) .fl-section-nav:not(.lwu-category-nav){display:none!important}
+.lwu-category-entry:nth-child(3n+1){background:#f7fcf1}
+.lwu-category-entry:nth-child(3n+2){background:#fffbee}
+.lwu-category-entry:nth-child(3n+3){background:#f5faf9}
+
+/* v3.9: the navigation must reappear from ANY page scroll position.
+   The old relative positioning prevented sticky behavior below the page header. */
+.fl-kids-quick-nav.lwu-category-nav{position:sticky!important;top:var(--fl-header-height,76px)!important;z-index:35!important;box-shadow:0 3px 12px rgba(6,50,24,.08);transition:transform .13s ease,opacity .13s ease!important}
+.fl-kids-quick-nav.lwu-category-nav .fl-container.lwu-category-shell{padding:2px 0!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(120px,170px) auto!important;min-height:33px;height:34px;gap:6px}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar-title{font-size:13px;display:block;min-width:0}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label{min-height:30px;height:30px;box-sizing:border-box;border-radius:9px;padding:0 6px;font-size:12px;gap:4px}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label input{min-height:26px;height:26px;font-size:12px}
+.fl-kids-quick-nav.lwu-category-nav #lwuCategoryToggle{min-height:30px;height:30px;padding:4px 9px;border-radius:9px;font-size:12px;line-height:1.1}
+@media(max-width:620px){
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar{grid-template-columns:minmax(0,1fr) 36px auto!important;gap:4px}
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar-title{font-size:11px}
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label{justify-content:center;width:36px;padding:0 3px;overflow:hidden}
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label input{width:0;min-width:0;opacity:0;position:absolute;pointer-events:none}
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label:focus-within{position:relative;overflow:visible;z-index:4}
+ .fl-kids-quick-nav.lwu-category-nav .lwu-category-search-label:focus-within input{opacity:1;position:absolute;pointer-events:auto;box-shadow:0 3px 12px #1235;right:0;top:31px;width:min(260px,80vw);height:40px;border:1px solid #92b19b;border-radius:9px;background:#fff;padding:8px}
+ .fl-kids-quick-nav.lwu-category-nav #lwuCategoryToggle{font-size:11px;padding:4px 6px}
+}
+@media(prefers-reduced-motion:reduce){.fl-kids-quick-nav.lwu-category-nav{transition:none!important}}
+
+/* v3.10.0 — accessible 60vh category scroller. Keep the toolbar fixed while the
+   independently scrolling nine-branch list is expanded. */
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel:not([hidden]){
+  box-sizing:border-box;max-height:60vh;max-height:60dvh;overflow-y:auto!important;
+  overflow-x:hidden!important;overscroll-behavior-y:contain;scrollbar-width:auto;
+  scrollbar-color:#648f70 #edf5e9;align-content:start;padding:10px 10px 12px 2px!important;
+  scroll-padding-top:12px;
+}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel::-webkit-scrollbar{width:11px}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel::-webkit-scrollbar-thumb{background:#86a991;border:2px solid #f1f7ed;border-radius:12px}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-panel::-webkit-scrollbar-track{background:#f1f7ed}
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-results:not([hidden]){max-height:60dvh;overflow-y:auto;overscroll-behavior:contain}
+/* Slower transition than the former 0.13s snap. Expanded menus never hide. */
+.fl-kids-quick-nav.lwu-category-nav{transition:transform .65s cubic-bezier(.2,.75,.25,1),opacity .65s ease!important}
+.fl-kids-quick-nav.lwu-category-nav:has(#lwuCategoryToggle[aria-expanded="true"]){transform:none!important;opacity:1!important;pointer-events:auto!important}
+@media(prefers-reduced-motion:reduce){.fl-kids-quick-nav.lwu-category-nav{transition:none!important}}
