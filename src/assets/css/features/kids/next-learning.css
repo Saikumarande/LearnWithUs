@@ -1,0 +1,26 @@
+/* Additive Learning Level 2 styles using established LearnWithUs green/yellow palette. */
+.next-page{--leaf:#237a57;--deep:#0b3d2e}
+.next-page .next-lab{margin:22px 0 0;padding:clamp(14px,2.8vw,24px);border-radius:18px;background:linear-gradient(135deg,#f0f8eb,#fff6d9);border:1px solid #cddfcb;overflow:hidden}
+.next-lab h3{margin:0 0 12px;color:var(--deep)}.next-lab .next-lab-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+.next-lab button{font:inherit;font-weight:700;min-height:42px;padding:9px 13px;border-radius:10px;border:1px solid #a6c4a5;background:white;color:#0b3d2e;cursor:pointer}
+.next-lab button:hover{background:#e3f2dd}.next-lab button[aria-pressed=true],.next-lab button.selected{background:#0b3d2e;color:white}
+.next-lab input,.next-lab select{font:inherit;padding:8px 10px;border:1px solid #98b998;border-radius:10px;max-width:100%;background:#fff}
+.next-lab label{display:grid;gap:5px;font-weight:650}.next-lab [role=status]{color:#195337;min-height:1.4em;font-weight:600}
+.next-lab button:focus-visible,.next-page a:focus-visible,.next-lab input:focus-visible,.next-lab select:focus-visible{outline:3px solid #c6932d;outline-offset:2px}
+.next-lab .next-detail,.next-reading{display:block;padding:18px;margin:12px 0;background:#fff;border:1px solid #d5e8d5;border-radius:13px;line-height:1.8}
+.next-page .level2-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.next-page .level2-fact{min-height:112px}.next-page .subject-actions{gap:12px}
+.next-sort-list{padding-left:23px;max-width:750px}.next-sort-list li{display:flex;gap:15px;align-items:center;justify-content:space-between;border-bottom:1px dashed #c7ddc7;padding:6px}.next-sort-list li>span:last-child{flex-shrink:0}
+.next-sudoku{display:grid;grid-template-columns:repeat(4,minmax(43px,64px));width:max-content;max-width:100%;margin:16px 0;border:3px solid #0b3d2e}
+.next-sudoku button{border-radius:0;min-height:55px;font-size:22px;padding:0}.next-sudoku button:disabled{opacity:1;color:#0b3d2e;background:#e6f1df}.next-sudoku button.selected{box-shadow:inset 0 0 0 3px #f0b840}
+.next-sudoku button:nth-child(2),.next-sudoku button:nth-child(6),.next-sudoku button:nth-child(10),.next-sudoku button:nth-child(14){border-right:3px solid #0b3d2e}.next-sudoku button:nth-child(n+5):nth-child(-n+8){border-bottom:3px solid #0b3d2e}
+.next-shapes svg{display:block;width:100%;max-width:600px;height:auto;background:#fff;border:1px solid #d0e5d0;border-radius:12px}.next-shapes [data-piece]{cursor:pointer}
+.next-clock-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.next-clock{background:#fff;border-radius:12px;border:1px solid #d2e4ce;padding:14px;display:grid;gap:6px;min-width:0}.next-clock time{font-weight:800;color:#0b3d2e}.next-clock small{overflow-wrap:anywhere}
+.next-coordinate-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;max-width:670px}.next-coordinate-grid button{font-size:11px;padding:7px 2px;min-height:45px}
+.next-comic-grid,.next-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.next-comic-grid label,.next-art-card{padding:12px;border-radius:12px;border:1px solid #cfe2c7;background:white;min-width:0}.next-comic-grid input{width:100%}
+.next-poster-preview svg,.next-art-preview svg,.next-art-preview img{display:block;width:100%;max-width:700px;height:auto;max-height:230px}.next-form-row{display:grid;gap:12px;max-width:700px}.next-form-row input{width:100%}
+.next-pixel-grid{display:grid;grid-template-columns:repeat(6,minmax(32px,50px));gap:3px;width:max-content;max-width:100%;margin:14px 0}.next-pixel-grid button{aspect-ratio:1;min-height:34px;padding:0;border-radius:4px}.next-pixel-grid button.on{background:#237a57}
+.next-music-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}.next-music-grid button{display:grid;gap:3px;min-height:66px;font-size:12px;padding:7px 2px}
+.next-art-card strong,.next-art-card small{display:block}.next-page .level2-version{color:#92b6a1}
+@media(max-width:800px){.next-clock-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.next-page .level2-fact-grid,.next-clock-grid,.next-gallery,.next-comic-grid{grid-template-columns:1fr}.next-music-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.next-lab .next-lab-controls>button{flex:1}.next-coordinate-grid button{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.next-page *{scroll-behavior:auto!important;transition:none!important}}

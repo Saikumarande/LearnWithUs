@@ -1,0 +1,20 @@
+{
+  "version": "4.0.0",
+  "counts": {
+    "pages": 446,
+    "hyperlinks": 2961,
+    "localHyperlinks": 2960,
+    "staticUrlAttributes": 7965,
+    "internalReferences": 7732,
+    "externalReferences": 4,
+    "legacyLinks": 1950,
+    "fragmentLinks": 141,
+    "missingLocalTargets": 0,
+    "missingFragments": 0,
+    "misbasedSamePageFragments": 0,
+    "uniqueHyperlinkDestinations": 413
+  },
+  "failures": [],
+  "failureCount": 0,
+  "explanation": "Static HTML references and fragments resolved using <base>; includes redirect aliases. JavaScript-generated links and external reachability are separate checks."
+}

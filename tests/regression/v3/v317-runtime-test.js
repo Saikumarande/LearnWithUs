@@ -1,0 +1,15 @@
+'use strict';const fs=require('fs'),path=require('path'),vm=require('vm');const R=path.resolve(__dirname,'../../..'),P=path.join(R,'public'),read=p=>fs.readFileSync(path.join(P,p),'utf8');let n=0;function ok(x,msg){n++;if(!x)throw Error('v3.17 regression: '+msg)};
+const db=JSON.parse(read('assets/next-learning-data.js').split('window.LWU_NEXT_LEARNING=')[1].trim().replace(/;$/,'')),branch=JSON.parse(read('assets/branch-nav-data.js').split('window.LWU_BRANCH_ROUTE_DATA=')[1].trim().replace(/;$/,'')),kids=read('learn/kids/children.html'),hub=read('quiz/quiz-hub.html'),sw=read('service-worker.js');
+const wanted={"english": 4, "games": 5, "world": 5, "creative": 5},targets={"english": 21, "games": 10, "world": 12, "creative": 17};
+ok(Object.keys(db).length===19,'19 new topics');ok(Object.keys(branch).length===9,'nine branches unchanged');ok((kids.match(/class="roadmap-step roadmap-stop core-roadmap-step"/g)||[]).length===18,'18 Core journey preserved');
+for(const [b,total] of Object.entries(targets)){ok(branch[b].length===total,'branch '+b+' is '+total);ok(Object.values(db).filter(t=>t.branch===b).length===wanted[b],b+' new topic count');}
+const codes=new Set();for(const a of Object.values(branch))for(const x of a){ok(!codes.has(x.code),'duplicate journey code '+x.code);codes.add(x.code)}
+for(const t of Object.values(db)){
+ ok(t.questions.length===10,'ten questions '+t.id);ok(t.questions.every(x=>x.options.length===4&&new Set(x.options).size===4&&x.options.includes(x.answer)&&x.explanation.length>=25),'answers/options/explanations '+t.id);
+ ok(kids.includes('data-roadmap-url="'+t.id+'.html"'),'Numbered Kids journey '+t.id);ok(kids.includes('href="'+t.id+'.html"'),'roadmap '+t.id);ok(hub.includes('data-next-topic="'+t.id+'"'),'Quiz Hub '+t.id);
+ ok(branch[t.branch].some(x=>x.href===t.id+'.html'),'branch membership '+t.id);
+ for(const [q,folder] of [[false,'learn/kids/'],[true,'quiz/']]){let name=t.id+(q?'-quiz':'')+'.html';let p=read(folder+name);ok(p.includes('data-next-topic="'+t.id+'"')&&p.includes('data-next-quiz="'+q+'"'),'page '+name);ok(p.includes('assets/next-learning.css')&&p.includes('assets/next-learning-engine.js'),'shared design '+name);ok(p.includes('<base href="'+(q?'../':'../../')+'">'),'assets base '+name);ok(read(name).includes(folder+name),'alias '+name);ok(sw.includes('./'+folder+name)&&sw.includes('./'+name),'offline '+name)}
+}
+for(const asset of ['next-learning-data.js','next-learning-engine.js','next-learning-labs.js','next-learning.css']){ok(sw.includes('./assets/'+asset),'cache '+asset);if(asset.endsWith('.js'))new vm.Script(read('assets/'+asset));}
+ok(sw.includes('learnwithus-v'+require('../../../package.json').version),'cache version');ok(fs.readFileSync(path.join(R,'VERSION'),'utf8').trim()===require('../../../package.json').version,'root release');const dist=path.join(R,'dist');for(const f of fs.readdirSync(path.join(P,'assets')).filter(f=>f.startsWith('next-learning')))ok(read('assets/'+f)===fs.readFileSync(path.join(dist,'assets',f),'utf8'),'dist parity '+f);
+console.log('v3.17 new-topic source QA '+n+'/'+n+' passed, 19 topics and 190 explained questions');

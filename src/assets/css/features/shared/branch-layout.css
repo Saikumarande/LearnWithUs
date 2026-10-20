@@ -1,0 +1,38 @@
+/* v3.5.0 verified Kids Corner component system: same green, cream and yellow palette. */
+:root{--lwu-forest:#0b3d2e;--lwu-leaf:#237a57;--lwu-gold:#edc647;--lwu-cream:#f6f8ee}
+/* Topic hub layout: NOT inline links; an equal-height, responsive grid of click targets. */
+.focused-hub{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;align-items:stretch;margin:18px 0!important}
+.focused-hub-card{box-sizing:border-box;display:flex!important;flex-direction:column;min-width:0;min-height:160px;height:100%;gap:10px;padding:18px!important;border:1px solid #cfe2d4!important;border-radius:18px;background:linear-gradient(145deg,#fff,#f2f9ed)!important;color:#123f2c!important;text-decoration:none;box-shadow:0 5px 15px rgba(11,61,46,.055);overflow-wrap:anywhere;transition:border-color .15s,box-shadow .15s,transform .15s}
+.focused-hub-card>span{display:grid;place-items:center;width:50px;height:50px;min-height:50px;border-radius:13px;background:#fff4c9;font-size:29px;line-height:1}
+.focused-hub-card strong{font-size:19px;color:#133d2e;line-height:1.28}
+.focused-hub-card small{display:block;color:#53665a;line-height:1.5;font-size:14px;font-weight:550}
+.focused-hub-card:hover,.focused-hub-card:focus-visible{background:#fff9df!important;border-color:#d8ad30!important;box-shadow:0 8px 22px rgba(11,61,46,.11);outline:2px solid #e0b841;outline-offset:1px}
+/* Topic strips must always be one horizontal row, never a wrapped column of inline text. */
+.branch-topic-strip{width:100%;box-sizing:border-box;margin:16px 0 20px;padding:12px 12px 5px;border:1px solid #d1e4d4;border-radius:17px;background:linear-gradient(115deg,#f2f9f0,#fff9df);min-width:0;overflow:hidden;box-shadow:0 5px 15px rgba(15,57,34,.045)}
+.branch-strip-heading{font-size:13px;font-weight:900;color:var(--lwu-forest);margin:0 0 6px;letter-spacing:.015em}
+.branch-strip-scroll{display:flex!important;align-items:stretch;gap:9px;max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:thin;scrollbar-color:#91b298 #f5f8ef;padding:6px 1px 13px;scroll-snap-type:x proximity}
+.branch-strip-scroll:focus-visible{outline:2px solid #d7a727;outline-offset:-1px;border-radius:8px}
+.branch-strip-link{flex:0 0 auto;display:flex;align-items:center;box-sizing:border-box;min-height:46px;padding:10px 13px;border:1px solid #cddfcf;border-radius:12px;background:#fff;color:var(--lwu-forest)!important;font-size:14px;font-weight:800;text-decoration:none!important;scroll-snap-align:start}
+.branch-strip-link:hover,.branch-strip-link:focus-visible{border-color:#c29a28;background:#fff4c9;outline:2px solid #ebc85d;outline-offset:1px}
+.branch-strip-link[aria-current=page]{border-color:#bb9227;background:#fff1bc;color:#173d2b!important;box-shadow:inset 0 -3px 0 #d5a525}
+/* In-page focused navigation is the same control when the roadmap cannot determine a unique URL. */
+.focused-topic-nav{display:flex;flex-wrap:nowrap;align-items:stretch;white-space:nowrap;gap:9px;max-width:100%;padding:10px 2px 14px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;border-bottom:1px solid #dce8da}
+.focused-topic-link{box-sizing:border-box;display:flex;align-items:center;flex:0 0 auto;min-height:46px;border:1px solid #cddfcf;border-radius:12px;background:#fff;padding:10px 13px;font-size:14px;color:var(--lwu-forest)!important}
+.focused-topic-link[aria-current=page]{background:#fff1bc;border-color:#bb9227;box-shadow:inset 0 -3px 0 #d5a525}
+/* Reuse the end-of-lesson look and colour. */
+.focused-journey{border:1px solid #d3d9be;background:linear-gradient(120deg,#fffef8,#f8fbe9 65%,#eef7e8)}
+.focused-journey .eyebrow{display:inline-flex;border-radius:999px;background:#fff1bf;color:#5a4a17;padding:7px 11px;font-weight:900}
+.focused-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.focused-button{box-sizing:border-box;min-width:0;text-align:center;overflow-wrap:anywhere}.focused-primary{background:var(--lwu-forest);color:white}
+/* Hide superseded dynamic navigation fully; [hidden] must override its display CSS. */
+.focused-topic-nav[hidden],.english-topic-nav[hidden],.subject-nav[hidden]{display:none!important}
+@media(max-width:900px){.focused-hub{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){.focused-hub{grid-template-columns:1fr!important}.focused-hub-card{min-height:0}.focused-actions{grid-template-columns:1fr}.branch-topic-strip{padding:10px 9px 3px}.branch-strip-link{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.focused-hub-card{transition:none}}
+
+.category-explore-link{margin:14px 0 0}.category-explore-link a{display:inline-flex;align-items:center;min-height:44px;padding:9px 14px;border:1px solid #c9dcca;border-radius:12px;color:#164b32;background:#f4fbf2;text-decoration:none;font-weight:800}.category-explore-link a:hover{background:#fff5cb;border-color:#d0ac32}
+
+/* Unified topic sizes and no duplicate page-level topic strips */
+.branch-strip-link,.focused-topic-link,.creative-subject-row a{box-sizing:border-box;min-height:48px;min-width:140px;max-width:260px;padding:10px 14px;border-radius:12px;font:800 14px/1.3 system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap}.branch-strip-scroll,.creative-subject-row{overscroll-behavior-inline:contain;scrollbar-width:auto;scrollbar-color:#568b65 #e9f2e7}.branch-topic-strip{max-width:100%}.flag-explorer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.flag-menu{max-height:360px;overflow:auto;display:grid;gap:6px;background:#eff7eb;padding:10px;border-radius:16px;border:1px solid #d0e5ce}.flag-choice{background:white;color:#16452d;border:1px solid #d2e4d2;border-radius:10px;text-align:left;padding:10px;cursor:pointer}.flag-choice.selected,.flag-choice:hover{background:#fff2c1;border-color:#c49c2d}.flag-detail{position:sticky;top:100px;align-self:start;min-height:230px;padding:25px;background:linear-gradient(130deg,#f3faef,#fff9e8);border:1px solid #d9e5d0;border-radius:17px;text-align:center}.flag-large{font-size:76px}.flag-detail h3{color:#0b3d2e}@media(max-width:630px){.flag-explorer{grid-template-columns:1fr}.flag-menu{max-height:195px}.flag-detail{position:static;min-height:120px}.flag-large{font-size:54px}}
+
+#flagList[hidden]{display:none!important}.focused-empty,.subject-empty{visibility:hidden}

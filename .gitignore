@@ -5,4 +5,10 @@ Thumbs.db
 .vscode/
 .idea/
 *.zip
-
+# Generated output — edit src/, run npm run build.
+/public/
+/dist/
+/.public-build-stage/
+/.dist-build-stage/
+/.public-build-backup/
+/.dist-build-backup/

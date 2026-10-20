@@ -68,3 +68,9 @@ body[data-area="kids"]:has(.lwu-category-nav) .fl-section-nav:not(.lwu-category-
 .fl-kids-quick-nav.lwu-category-nav{transition:transform .65s cubic-bezier(.2,.75,.25,1),opacity .65s ease!important}
 .fl-kids-quick-nav.lwu-category-nav:has(#lwuCategoryToggle[aria-expanded="true"]){transform:none!important;opacity:1!important;pointer-events:auto!important}
 @media(prefers-reduced-motion:reduce){.fl-kids-quick-nav.lwu-category-nav{transition:none!important}}
+
+/* Quiz Hub shortcut beside category search; consistent in expanded/collapsed states. */
+.fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar{grid-template-columns:minmax(0,1fr) auto minmax(120px,170px) auto!important}
+.fl-kids-quick-nav.lwu-category-nav .lwu-quiz-hub-shortcut{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:30px;height:30px;padding:4px 10px;border:1px solid #abc7b5;border-radius:9px;background:#fff;color:#0b3d2e;text-decoration:none;font:800 12px/1.1 system-ui,sans-serif;white-space:nowrap}
+.fl-kids-quick-nav.lwu-category-nav .lwu-quiz-hub-shortcut:hover,.fl-kids-quick-nav.lwu-category-nav .lwu-quiz-hub-shortcut:focus-visible{background:#e8f4e6;border-color:#4a8560}
+@media(max-width:620px){.fl-kids-quick-nav.lwu-category-nav .lwu-category-toolbar{grid-template-columns:minmax(0,1fr) auto 36px auto!important;gap:4px}.fl-kids-quick-nav.lwu-category-nav .lwu-quiz-hub-shortcut{padding:3px 6px;font-size:11px}}

@@ -1,6 +1,75 @@
 'use strict';
-const CACHE='learnwithus-v3.10.0';
+// UI cleanup refresh: retain the stable v4.0.0 cache name while recaching changed pages and scripts.
+const CACHE='learnwithus-v4.0.0';
 const CORE=[
+  "./area-perimeter-quiz.html",
+  "./area-perimeter.html",
+  "./assets/level2-data.js",
+  "./assets/level2-engine.js",
+  "./assets/level2.css",
+  "./circuits-quiz.html",
+  "./circuits.html",
+  "./coordinates-quiz.html",
+  "./coordinates.html",
+  "./decimals-quiz.html",
+  "./decimals.html",
+  "./food-chains-quiz.html",
+  "./food-chains.html",
+  "./hindi-matras-quiz.html",
+  "./hindi-matras.html",
+  "./hindi-sentences-quiz.html",
+  "./hindi-sentences.html",
+  "./hindi-words-quiz.html",
+  "./hindi-words.html",
+  "./intro-algebra-quiz.html",
+  "./intro-algebra.html",
+  "./learn/kids/area-perimeter.html",
+  "./learn/kids/circuits.html",
+  "./learn/kids/coordinates.html",
+  "./learn/kids/decimals.html",
+  "./learn/kids/food-chains.html",
+  "./learn/kids/hindi-matras.html",
+  "./learn/kids/hindi-sentences.html",
+  "./learn/kids/hindi-words.html",
+  "./learn/kids/intro-algebra.html",
+  "./learn/kids/light-shadows.html",
+  "./learn/kids/percentages.html",
+  "./learn/kids/sound-vibrations.html",
+  "./learn/kids/states-of-matter.html",
+  "./learn/kids/telugu-gunintalu.html",
+  "./learn/kids/telugu-sentences.html",
+  "./learn/kids/telugu-words.html",
+  "./light-shadows-quiz.html",
+  "./light-shadows.html",
+  "./percentages-quiz.html",
+  "./percentages.html",
+  "./quiz/area-perimeter-quiz.html",
+  "./quiz/circuits-quiz.html",
+  "./quiz/coordinates-quiz.html",
+  "./quiz/decimals-quiz.html",
+  "./quiz/food-chains-quiz.html",
+  "./quiz/hindi-matras-quiz.html",
+  "./quiz/hindi-sentences-quiz.html",
+  "./quiz/hindi-words-quiz.html",
+  "./quiz/intro-algebra-quiz.html",
+  "./quiz/light-shadows-quiz.html",
+  "./quiz/percentages-quiz.html",
+  "./quiz/sound-vibrations-quiz.html",
+  "./quiz/states-of-matter-quiz.html",
+  "./quiz/telugu-gunintalu-quiz.html",
+  "./quiz/telugu-sentences-quiz.html",
+  "./quiz/telugu-words-quiz.html",
+  "./sound-vibrations-quiz.html",
+  "./sound-vibrations.html",
+  "./states-of-matter-quiz.html",
+  "./states-of-matter.html",
+  "./telugu-gunintalu-quiz.html",
+  "./telugu-gunintalu.html",
+  "./telugu-sentences-quiz.html",
+  "./telugu-sentences.html",
+  "./telugu-words-quiz.html",
+  "./telugu-words.html",
+
   './assets/country-flags/ar.png',
   './assets/country-flags/au.png',
   './assets/country-flags/br.png',
@@ -767,7 +836,119 @@ const CORE=[
   './assets/release-version.js?v=20261014e',
   './assets/animals-quiz.js?v=20261014d',
   './animals-quiz.html',
-  './quiz/animals-quiz.html',];
+  './quiz/animals-quiz.html',
+  "./punctuation-mastery.html",
+  "./learn/kids/punctuation-mastery.html",
+  "./punctuation-mastery-quiz.html",
+  "./quiz/punctuation-mastery-quiz.html",
+  "./syllables-silent-letters.html",
+  "./learn/kids/syllables-silent-letters.html",
+  "./syllables-silent-letters-quiz.html",
+  "./quiz/syllables-silent-letters-quiz.html",
+  "./paragraph-writing.html",
+  "./learn/kids/paragraph-writing.html",
+  "./paragraph-writing-quiz.html",
+  "./quiz/paragraph-writing-quiz.html",
+  "./reading-fluency-plus.html",
+  "./learn/kids/reading-fluency-plus.html",
+  "./reading-fluency-plus-quiz.html",
+  "./quiz/reading-fluency-plus-quiz.html",
+  "./mini-sudoku.html",
+  "./learn/kids/mini-sudoku.html",
+  "./mini-sudoku-quiz.html",
+  "./quiz/mini-sudoku-quiz.html",
+  "./tangram-maker.html",
+  "./learn/kids/tangram-maker.html",
+  "./tangram-maker-quiz.html",
+  "./quiz/tangram-maker-quiz.html",
+  "./coding-conditions.html",
+  "./learn/kids/coding-conditions.html",
+  "./coding-conditions-quiz.html",
+  "./quiz/coding-conditions-quiz.html",
+  "./logic-escape-room.html",
+  "./learn/kids/logic-escape-room.html",
+  "./logic-escape-room-quiz.html",
+  "./quiz/logic-escape-room-quiz.html",
+  "./pattern-detective.html",
+  "./learn/kids/pattern-detective.html",
+  "./pattern-detective-quiz.html",
+  "./quiz/pattern-detective-quiz.html",
+  "./physical-geography.html",
+  "./learn/kids/physical-geography.html",
+  "./physical-geography-quiz.html",
+  "./quiz/physical-geography-quiz.html",
+  "./world-time-zones.html",
+  "./learn/kids/world-time-zones.html",
+  "./world-time-zones-quiz.html",
+  "./quiz/world-time-zones-quiz.html",
+  "./natural-wonders.html",
+  "./learn/kids/natural-wonders.html",
+  "./natural-wonders-quiz.html",
+  "./quiz/natural-wonders-quiz.html",
+  "./latitude-longitude.html",
+  "./learn/kids/latitude-longitude.html",
+  "./latitude-longitude-quiz.html",
+  "./quiz/latitude-longitude-quiz.html",
+  "./climate-zones.html",
+  "./learn/kids/climate-zones.html",
+  "./climate-zones-quiz.html",
+  "./quiz/climate-zones-quiz.html",
+  "./comic-strip-creator.html",
+  "./learn/kids/comic-strip-creator.html",
+  "./comic-strip-creator-quiz.html",
+  "./quiz/comic-strip-creator-quiz.html",
+  "./flipbook-animation.html",
+  "./learn/kids/flipbook-animation.html",
+  "./flipbook-animation-quiz.html",
+  "./quiz/flipbook-animation-quiz.html",
+  "./digital-poster-maker.html",
+  "./learn/kids/digital-poster-maker.html",
+  "./digital-poster-maker-quiz.html",
+  "./quiz/digital-poster-maker-quiz.html",
+  "./music-composer.html",
+  "./learn/kids/music-composer.html",
+  "./music-composer-quiz.html",
+  "./quiz/music-composer-quiz.html",
+  "./art-gallery.html",
+  "./learn/kids/art-gallery.html",
+  "./art-gallery-quiz.html",
+  "./quiz/art-gallery-quiz.html",
+  "./assets/next-learning-data.js",
+  "./assets/next-learning-engine.js",
+  "./assets/next-learning-labs.js",
+  "./assets/next-learning.css"
+];
+CORE.push('./assets/community-learning.js');
+CORE.push('./assets/community-learning.css');
+CORE.push('./assets/community-topics-data.js');
+CORE.push('./assets/family-tools.js');
+CORE.push('./assets/family-tools.css');
+CORE.push('./learn/food/balanced-plate.html');
+CORE.push('./quiz/balanced-plate-quiz.html');
+CORE.push('./learn/food/food-label-detective.html');
+CORE.push('./quiz/food-label-detective-quiz.html');
+CORE.push('./learn/food/seasonal-foods.html');
+CORE.push('./quiz/seasonal-foods-quiz.html');
+CORE.push('./learn/food/food-storage.html');
+CORE.push('./quiz/food-storage-quiz.html');
+CORE.push('./learn/health/sleep-science.html');
+CORE.push('./quiz/sleep-science-quiz.html');
+CORE.push('./learn/health/heart-and-movement.html');
+CORE.push('./quiz/heart-and-movement-quiz.html');
+CORE.push('./learn/health/dental-health.html');
+CORE.push('./quiz/dental-health-quiz.html');
+CORE.push('./learn/health/germs-prevention.html');
+CORE.push('./quiz/germs-prevention-quiz.html');
+CORE.push('./learn/kids/first-aid-awareness.html');
+CORE.push('./quiz/first-aid-awareness-quiz.html');
+CORE.push('./learn/kids/hazard-detective.html');
+CORE.push('./quiz/hazard-detective-quiz.html');
+CORE.push('./learn/kids/budget-simulator.html');
+CORE.push('./quiz/budget-simulator-quiz.html');
+CORE.push('./learn/kids/choices-consequences.html');
+CORE.push('./quiz/choices-consequences-quiz.html');
+CORE.push('./learn/kids/privacy-scenarios.html');
+CORE.push('./quiz/privacy-scenarios-quiz.html');
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

@@ -1,0 +1,123 @@
+/* Educational summaries. Keep source links beside the claims they support. */
+'use strict';
+window.LEARNWITHUS_BODY = [
+  {
+    id:'heart',name:'Heart',theme:'rose',category:'Circulation',tagline:'The pump behind every heartbeat.',
+    image:'assets/body-heart.jpg',alt:'Labelled anatomical diagram of the heart, including its chambers and major blood vessels.',
+    imageCredit:'National Heart, Lung, and Blood Institute (NHLBI)',imageSource:'https://www.nhlbi.nih.gov/health/heart/anatomy',
+    intro:'Your heart pumps blood through a network of vessels. That blood delivers oxygen and nutrients and carries carbon dioxide back toward the lungs. Valves help it travel in the right direction.',
+    focusTitle:'How a heartbeat becomes a blood supply',
+    facts:[['A coordinated squeeze','Electrical signals guide when the heart muscle contracts and relaxes.'],['One-way movement','Heart valves open and close as pressure changes, helping prevent backward flow.'],['A changing pace','The nervous and hormonal systems help adjust heart rate to the body’s needs.']],
+    functionSources:[['NHLBI: how the heart works','https://www.nhlbi.nih.gov/health/heart'],['NHLBI: how the heart beats','https://www.nhlbi.nih.gov/health/heart/heart-beats']],
+    foodTitle:'Build a heart-friendly eating pattern',
+    foodText:'Choose a variety of vegetables, fruit, whole grains and protein foods such as beans or lentils. Nuts, seeds and unsaturated oils can replace some saturated-fat sources. The pattern across your meals matters more than any single “superfood.”',
+    examples:'Try oatmeal with fruit, or lentils with vegetables and a whole grain. Compare labels to choose less salt and added sugar.',
+    foodSources:[['NHLBI: heart-healthy food choices','https://www.nhlbi.nih.gov/health/heart-healthy-living/healthy-foods']],
+    noteTitle:'Look beyond the food label',note:'Nutrients do not tell the whole story of a meal. Portion size, preparation and the overall eating pattern also matter.',
+    related:[['Compare foods on equal weights','food.html#compare'],['Explore fiber in food','catalog.html?category=all&q=fiber']],
+    video:{id:'MM6pYIWWdNM',title:'How the Heart Works: Your heartbeat',source:'https://www.nhlbi.nih.gov/health/heart/heart-beats',description:'See an animated explanation of the electrical signals and muscle movement behind a heartbeat.'}
+  },
+  {
+    id:'brain',name:'Brain',theme:'lilac',category:'Nervous system',tagline:'Thinking, learning and keeping you coordinated.',
+    image:'assets/body-brain.jpg',alt:'Cross-section of the brain inside the head; the hypothalamus is labelled in this NIDDK illustration.',
+    imageCredit:'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)',imageSource:'https://www.niddk.nih.gov/news/media-library/17538',
+    intro:'The brain and spinal cord form the central nervous system. Networks of nerve cells support thought, memory, movement and essential body functions. Different regions contribute different skills while working together.',
+    focusTitle:'Three parts to get to know',
+    facts:[['Cerebrum','The largest part helps with thinking, learning, language, memory and voluntary movement.'],['Cerebellum','This region helps coordinate fine movements, balance and posture.'],['Brain stem','It links the brain and spinal cord and helps control functions such as breathing and heart rate.']],
+    functionSources:[['NCI: the brain and its main parts','https://www.cancer.gov/publications/dictionaries/cancer-terms/def/brain']],
+    foodTitle:'Support the whole pattern, not a memory-food promise',
+    foodText:'The NHS recommends a balanced diet as part of reducing dementia risk over time. Include varied fruit and vegetables, higher-fiber starches and protein sources. No eating pattern guarantees that dementia will be prevented.',
+    examples:'A practical combination is brown rice or wholegrain bread, beans or eggs, and vegetables, with fruit as part of your day.',
+    foodSources:[['NHS: lifestyle and dementia risk','https://www.nhs.uk/conditions/dementia/about-dementia/prevention/'],['NHS: the Eatwell Guide','https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/the-eatwell-guide/']],
+    noteTitle:'Food is one part of brain health',note:'Regular physical activity, not smoking and managing blood pressure are also part of the NHS guidance. These are long-term habits, not instant boosts to memory.',
+    noteSource:['NHS: habits that can reduce risk','https://www.nhs.uk/conditions/dementia/about-dementia/prevention/'],
+    related:[['Explore fruit and vegetable nutrients','catalog.html?category=all'],['Practise with the Food Quiz','quiz.html']]
+  },
+  {
+    id:'lungs',name:'Lungs',theme:'sky',category:'Breathing',tagline:'Bringing oxygen in and carbon dioxide out.',
+    image:'assets/body-lungs.jpg',alt:'Labelled chest diagram showing the lungs, their surrounding membranes and the diaphragm below them.',
+    imageCredit:'National Heart, Lung, and Blood Institute (NHLBI)',imageSource:'https://www.nhlbi.nih.gov/health/lungs/respiratory-system',
+    intro:'Air travels through branching airways to tiny air sacs, where oxygen enters the blood and carbon dioxide leaves it. Your lungs work with the diaphragm, chest muscles and circulation; breathing is a team effort.',
+    focusTitle:'Follow a breath',
+    facts:[['Make room for air','Breathing muscles change the space in the chest so air can move into the lungs.'],['Exchange gases','At the air sacs, oxygen crosses into nearby blood vessels while carbon dioxide moves the other way.'],['Breathe out','Carbon dioxide leaves with exhaled air. Your brain helps adjust breathing to your body’s needs.']],
+    functionSources:[['NHLBI: how the lungs work','https://www.nhlbi.nih.gov/health/lungs'],['NHLBI: the respiratory system','https://www.nhlbi.nih.gov/health/lungs/respiratory-system']],
+    foodTitle:'Use food for nourishment; protect the air you breathe',
+    foodText:'For general nourishment, choose balanced meals with vegetables, higher-fiber starches and protein foods. NHLBI’s lung-health guidance emphasizes avoiding smoking and secondhand smoke, staying physically active and reducing exposure to polluted air.',
+    examples:'Think of a varied meal—such as a whole grain, lentils and vegetables—as support for overall health, rather than a way to “clean” the lungs.',
+    foodSources:[['NHS: balanced meals','https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/the-eatwell-guide/'],['NHLBI: keeping lungs healthy','https://www.nhlbi.nih.gov/health/lungs/lung-health']],
+    noteTitle:'A useful habit before outdoor activity',note:'Check local air-quality information and reduce exposure when pollution is high. Food does not replace prescribed treatment for a lung condition.',
+    noteSource:['NHLBI: air pollution and lung protection','https://www.nhlbi.nih.gov/health/lungs/lung-health'],
+    related:[['Understand food energy','food.html#macro-energy'],['Explore vitamin and mineral amounts','catalog.html?category=all']],
+    video:{id:'dt3X8BgM9vA',title:'Lungs',source:'https://www.nhlbi.nih.gov/health/lungs/respiratory-system',description:'Follow an animated view of the airways and the process of breathing.'}
+  },
+  {
+    id:'liver',name:'Liver',theme:'amber',category:'Processing and digestion',tagline:'Processing nutrients and making bile.',
+    image:'assets/body-liver.jpg',alt:'Labelled anatomical illustration showing the liver and its position beside the stomach.',
+    imageCredit:'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)',imageSource:'https://www.niddk.nih.gov/news/media-library/23133',
+    intro:'The liver is a large organ in the upper abdomen. It processes nutrients, handles substances in the blood and makes bile, a digestive fluid. It also helps store energy for the body.',
+    focusTitle:'More than one job',
+    facts:[['Nutrient processing','The liver handles nutrients after digestion and helps make them available to the body.'],['Bile production','Bile travels through ducts and helps with fat digestion in the small intestine.'],['Energy storage','The liver helps the body store energy as well as digest food.']],
+    functionSources:[['NCI: what the liver does','https://www.cancer.gov/publications/dictionaries/cancer-terms/def/liver'],['NIDDK: digestion and bile','https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works'],['MedlinePlus: the liver’s roles','https://medlineplus.gov/liverdiseases.html']],
+    foodTitle:'Focus on daily habits, not a cleanse',
+    foodText:'NIDDK links a healthy diet, appropriate portions and a healthy weight with helping prevent metabolic dysfunction-associated steatotic liver disease, also called fatty liver disease. Its dietary guidance includes fruits, vegetables and whole grains, and limiting drinks high in added sugars.',
+    examples:'Choose unsweetened drinks more often and include whole fruit and vegetables in regular meals. A plan for diagnosed liver disease should fit your individual needs.',
+    foodSources:[['NIDDK: food choices and fatty liver disease','https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/eating-diet-nutrition']],
+    noteTitle:'Do “detox” drinks remove toxins?',note:'NCCIH reports that convincing research does not support detox diets for removing toxins. Restrictive cleanses can also have risks.',
+    noteSource:['NCCIH: evidence on detoxes and cleanses','https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know'],
+    related:[['Whole orange versus juice','journeys.html?food=orange#journey-detail'],['Read grams and energy correctly','food.html#macro-energy']]
+  },
+  {
+    id:'kidneys',name:'Kidneys',theme:'mint',category:'Fluid and mineral balance',tagline:'Filtering blood and keeping fluids in balance.',
+    image:'assets/kidneys-niddk.jpg',alt:'Urinary tract diagram showing two kidneys connected through ureters to the bladder and urethra.',
+    imageCredit:'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)',imageSource:'https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work',
+    intro:'Your kidneys filter blood and help balance water, salts and minerals. Needed substances return to the blood, while wastes and extra water become urine. Urine then travels through the ureters to the bladder.',
+    focusTitle:'Follow the filtering process',
+    facts:[['Filter','Tiny units called nephrons filter fluid and small substances from blood.'],['Reclaim','Tubules return most water and useful substances to the circulation.'],['Remove','The remaining wastes and extra water become urine. The bladder stores it before it leaves the body.']],
+    functionSources:[['NIDDK: kidneys and the urinary tract','https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work']],
+    foodTitle:'Hydration and food choices depend on kidney health',
+    foodText:'Enough liquid, mainly water, can help prevent kidney stones. The type of stone matters: sodium, animal protein, calcium or oxalate may need attention. There is no single fruit or vegetable list that suits every kidney condition.',
+    examples:'A practical step is choosing less salty packaged food and discussing your usual drinks and meals with a clinician if you have had stones.',
+    foodSources:[['NIDDK: food, fluids and kidney stones','https://www.niddk.nih.gov/health-information/urologic-diseases/kidney-stones/eating-diet-nutrition']],
+    noteTitle:'More water is not always better',note:'People with chronic kidney disease may need a fluid limit because damaged kidneys may not remove extra fluid. Potassium and other dietary needs can also differ. Follow your own care plan rather than aiming for the highest mineral amount.',
+    noteSource:['NIDDK: fluids and food with kidney disease','https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease'],
+    related:[['Compare food water content','catalog.html?category=all&q=water'],['Understand nutrient amounts and context','food.html#data-reading']],
+    extraTitle:'Does drinking water fix kidney problems?',extra:'Water can help with kidney-stone prevention; it does not cure every kidney problem. The right amount depends on your health. This guide does not set a universal daily water target.'
+  },
+  {
+    id:'stomach',name:'Stomach',theme:'peach',category:'Digestion',tagline:'Mixing your meal before the next stage.',
+    image:'assets/body-stomach.jpg',alt:'Anatomical diagram of the stomach and its connection to the esophagus and small intestine.',
+    imageCredit:'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)',imageSource:'https://www.niddk.nih.gov/news/media-library/18127',
+    intro:'The stomach receives food from the esophagus, mixes it with digestive juices and gradually releases it into the small intestine. It is an important stage of digestion, but most nutrient absorption takes place farther along.',
+    focusTitle:'From a bite to a mixture',
+    facts:[['Receive','A ring of muscle lets swallowed food enter and normally helps stop stomach contents flowing backward.'],['Mix','Stomach muscles mix food with acid and enzymes; protein digestion begins here.'],['Release','The mixture, called chyme, moves gradually into the small intestine for further digestion and absorption.']],
+    functionSources:[['NIDDK: the digestive system','https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works']],
+    foodTitle:'Think about the whole digestive tract',
+    foodText:'Fiber-rich foods such as oats, beans, fruit and vegetables support bowel function farther down the digestive tract. Add fiber gradually, and drink an amount of fluid that fits your health needs.',
+    examples:'Try an apple with its skin or some beans as part of a meal. Fiber does not “coat” or clean the stomach; it takes a different route through digestion.',
+    foodSources:[['NIDDK: fiber, food and bowel function','https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition']],
+    noteTitle:'If you get reflux, notice your own triggers',note:'Some people find particular foods worsen reflux. If symptoms occur when lying down, finishing meals at least three hours before bed may help. Discuss recurring symptoms with a health professional.',
+    noteSource:['NIDDK: eating habits and reflux','https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition'],
+    related:[['Follow an apple’s fiber journey','journeys.html?food=apple#journey-detail'],['Find foods with reported fiber','catalog.html?category=all&q=fiber']]
+  },
+  {
+    id:'eyes',name:'Eyes',theme:'sky',category:'Sight',tagline:'Turning light into the pictures you see.',
+    image:'assets/body-eyes.svg',alt:'A simple eye symbol used to introduce the eyes guide; it is not a detailed anatomy diagram.',imageCredit:'LearnWithUs learning symbol',imageSource:'https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/keep-your-eyes-healthy',
+    intro:'Light enters each eye and is focused onto the retina at the back. The retina changes light into nerve signals. The brain uses those signals to build the picture you see.',
+    focusTitle:'Three simple parts of seeing',facts:[['Focus light','The clear front of the eye and the lens help focus light.'],['Sense light','The retina has cells that react to light and color.'],['Send a message','The optic nerve carries signals from the eye to the brain.']],
+    functionSources:[['National Eye Institute: how the eyes work','https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work']],
+    foodTitle:'Colorful foods can be part of eye-friendly habits',foodText:'The National Eye Institute suggests a balanced diet with plenty of dark leafy greens and fish as one part of caring for your eyes. Carrots, spinach, broccoli, sweet potato and other colorful foods offer nutrients, but no single food gives perfect sight.',examples:'Add spinach or broccoli to a meal, or choose carrot and sweet potato as part of a varied plate.',foodSources:[['National Eye Institute: keep your eyes healthy','https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/keep-your-eyes-healthy']],
+    noteTitle:'Food does not replace eye care',note:'Wear eye protection when needed, take screen breaks and get eye exams as advised. Sudden vision loss or severe eye pain needs urgent medical care.',noteSource:['National Eye Institute: healthy vision','https://www.nei.nih.gov/learn-about-eye-health/healthy-vision'],related:[['Explore vitamin A in foods','catalog.html?category=all&q=vitamin%20a'],['Follow a carrot’s journey','journeys.html?food=carrot#journey-detail']]
+  },
+  {
+    id:'bones',name:'Bones',theme:'amber',category:'Support and movement',tagline:'A strong frame that is always changing.',
+    image:'assets/body-bones.svg',alt:'A simple bone symbol used to introduce the bones guide; it is not a detailed anatomy diagram.',imageCredit:'LearnWithUs learning symbol',imageSource:'https://www.niams.nih.gov/health-topics/bone-health-and-osteoporosis',
+    intro:'Bones support the body, protect organs and work with muscles to help you move. Bone is living tissue. The body keeps removing old bone and building new bone throughout life.',focusTitle:'What bones do',facts:[['Support','Bones give the body shape and provide firm places for muscles to pull.'],['Protect','The skull, ribs and spine help protect important organs.'],['Store and renew','Bones store minerals and their tissue is renewed over time.']],functionSources:[['NIAMS: bone health and osteoporosis','https://www.niams.nih.gov/health-topics/bone-health-and-osteoporosis']],
+    foodTitle:'Calcium, vitamin D and movement work together',foodText:'Calcium helps build and maintain bones. Vitamin D helps the body take in calcium. Dark leafy greens such as kale and broccoli can provide some calcium, while fortified foods may provide calcium or vitamin D. Needs differ by age.',examples:'Try broccoli or kale with a meal, and check labels on fortified foods. Weight-bearing activity also supports bones.',foodSources:[['NIH ODS: calcium fact sheet','https://ods.od.nih.gov/factsheets/Calcium-Consumer/'],['NIH ODS: vitamin D fact sheet','https://ods.od.nih.gov/factsheets/VitaminD-Consumer/']],noteTitle:'More is not always better',note:'Supplements can be harmful in high amounts or interact with medicines. Ask a health professional before using them for a medical need.',noteSource:['NIH ODS: calcium safety','https://ods.od.nih.gov/factsheets/Calcium-Consumer/'],related:[['Find foods with calcium','catalog.html?category=all&q=calcium'],['Compare two foods','food.html#compare']]
+  },
+  {
+    id:'intestines',name:'Intestines',theme:'peach',category:'Digestion and absorption',tagline:'Taking in nutrients and moving fiber onward.',
+    image:'assets/body-intestines.svg',alt:'A simple winding-tube symbol used to introduce the intestines guide; it is not a detailed anatomy diagram.',imageCredit:'LearnWithUs learning symbol',imageSource:'https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works',
+    intro:'The small intestine finishes much of digestion and takes in most nutrients. The large intestine takes in water and turns what remains into stool. Many microbes also live in the large intestine.',focusTitle:'Follow food after the stomach',facts:[['Break down','Digestive juices help split food into smaller parts.'],['Take in','Nutrients cross the wall of the small intestine and enter blood or lymph.'],['Move on','The large intestine takes in water while fiber and waste move toward the rectum.']],functionSources:[['NIDDK: how digestion works','https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works']],
+    foodTitle:'Fiber supports normal bowel function',foodText:'Beans, lentils, fruit, vegetables and whole grains provide fiber. Add fiber slowly and drink an amount of fluid that suits your health. Different plant foods also give gut microbes different kinds of material to use.',examples:'Try lentils with vegetables, or an apple with its skin. Increase fiber a little at a time if your usual diet is low in fiber.',foodSources:[['NIDDK: eating for constipation','https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition']],noteTitle:'Symptoms deserve the right help',note:'Ongoing pain, blood in stool, vomiting, weight loss or a major change in bowel habits should be discussed with a health professional. Food advice is not a diagnosis.',noteSource:['NIDDK: digestive diseases','https://www.niddk.nih.gov/health-information/digestive-diseases'],related:[['Follow a lentil journey','journeys.html?food=lentils#journey-detail'],['Find foods with fiber','catalog.html?category=all&q=fiber']]
+  }
+];

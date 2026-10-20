@@ -1,3 +1,34 @@
+# v4.0.0 Release Quality Audit
+
+## Current release: v4.0.0
+
+Navigation and QA hardening of the v3.20.0 source-first codebase. All existing learning URLs and progress storage keys retained. See `docs/V400-RELEASE-QA.md` for testing and limitations.
+
+# Source-first project structure (v3.20.0)
+
+**Edit files in `src/`, not `public/` or `dist/`.** Run `npm run build` before opening `public/index.html` in Live Server, or before `npm start`. Existing URLs, redirects and learning-progress storage keys have not changed.
+
+Full folder map, build commands, deployment and migration notes: **[docs/SOURCE-STRUCTURE.md](docs/SOURCE-STRUCTURE.md)**.
+
+---
+
+## Previous release: v3.20.0 — Family Learning, Interactive Food & Health, and Life Skills
+
+## Previous release: v3.19.0 — Family Learning, Interactive Food & Health, and Life Skills
+
+## Previous release: v3.18.0 — Family Learning, Interactive Food & Health, and Life Skills
+
+## Previous release: v3.17.0 — Science, Maths and Indian Languages Level 2
+
+Based on complete v3.10.0 production. No existing learning topics or routes removed.
+
+- v3.11.0 Science: States of Matter, Light & Shadows, Sound & Vibrations, Electricity & Circuits, Food Chains (S16–S20).
+- v3.12.0 Maths: Decimals, Percentages, Area & Perimeter, Introduction to Algebra, Coordinates (M22–M26).
+- v3.13.0 Languages: Hindi Matras, Hindi Everyday Words, Hindi Sentences, Telugu Gunintalu, Telugu Everyday Words and Telugu Sentences (L3–L8).
+- Each topic has its own learning HTML and quiz HTML, three explained practice questions, ten explained quiz questions, score-card and local learning progress.
+- Concept simulators cover matter, light, sound, circuits, food chains, decimal tenths, percentages, rectangle area/perimeter, algebra balancing and coordinates. Hindi and Telugu audio uses a matching browser voice only, never an English voice substitute.
+- Original 18 Core learning steps, nine branch identities, all earlier routes, profile storage and achievement systems are retained.
+
 ## Current release: v3.10.0
 
 Expanded category scrolling (60% of viewport), gentler menu auto-hide, flag images in flag/geography quiz questions and answers.
@@ -315,3 +346,26 @@ Read `docs/LEARNING-PAGE-STANDARD.md` **before adding a Kids feature**. All new 
 
 ### v3.8.0 focused fixes
 Compact and aligned category bar, consistent score-card certificates, rendered national flag images, World Flags practice imagery, Planets explicit pause/play with visible status, brighter country cards, and cache-key updates.
+
+
+
+## 3.17.0 additions
+- Punctuation Mastery (english) — dedicated lesson, practice and quiz.
+- Syllables & Silent Letters (english) — dedicated lesson, practice and quiz.
+- Paragraph Writing (english) — dedicated lesson, practice and quiz.
+- Reading Fluency Plus (english) — dedicated lesson, practice and quiz.
+- Kids Sudoku 4×4 (games) — dedicated lesson, practice and quiz.
+- Tangram Puzzle Maker (games) — dedicated lesson, practice and quiz.
+- Visual Coding: If / Else (games) — dedicated lesson, practice and quiz.
+- Logic Escape Room (games) — dedicated lesson, practice and quiz.
+- Pattern Detective (games) — dedicated lesson, practice and quiz.
+- Physical Geography (world) — dedicated lesson, practice and quiz.
+- World Time Zones (world) — dedicated lesson, practice and quiz.
+- Natural Wonders (world) — dedicated lesson, practice and quiz.
+- Latitude & Longitude (world) — dedicated lesson, practice and quiz.
+- Climate Zones (world) — dedicated lesson, practice and quiz.
+- Comic Strip Creator (creative) — dedicated lesson, practice and quiz.
+- Flipbook Animation Lab (creative) — dedicated lesson, practice and quiz.
+- Digital Poster Maker (creative) — dedicated lesson, practice and quiz.
+- Music Beat Composer (creative) — dedicated lesson, practice and quiz.
+- My Art Gallery (creative) — dedicated lesson, practice and quiz.

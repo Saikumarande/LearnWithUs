@@ -1,0 +1,6 @@
+India map reference image
+Source artwork: “States and UTs of India (labelled - en)” by Saravask and KCVelaga, Wikimedia Commons.
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Source page: https://commons.wikimedia.org/wiki/File:States_and_UTs_of_India_(labelled_-_en).svg
+License: https://creativecommons.org/licenses/by-sa/4.0/
+The map is used as a visual learning reference. LearnWithUs state/UT facts are rendered independently in the application.

@@ -1,0 +1,20 @@
+/* Self-contained image assets for authentic-looking national flag illustrations, never rely on emoji rendering alone. */
+.country-flag-image{box-sizing:border-box;display:inline-block;width:58px;height:43px;object-fit:contain;vertical-align:middle;flex-shrink:0;filter:drop-shadow(0 2px 2px rgba(7,46,29,.16))}.flag-menu .flag-choice{display:flex;align-items:center;gap:12px;min-height:58px}.flag-menu .country-flag-image{width:58px;height:43px}.flag-detail .country-flag-hero{display:block;width:min(90%,290px);height:168px;object-fit:contain;margin:0 auto 12px;filter:drop-shadow(0 6px 9px rgba(4,39,28,.16))}.flag-detail h3{font-size:24px}.focused-choices .focused-choice:has(.country-flag-image),.subject-options button:has(.country-flag-image){display:inline-flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}.focused-choices .country-flag-image{width:105px;height:76px}.country-flag-image{border-radius:3px}@media(max-width:630px){.flag-detail .country-flag-hero{height:120px}.focused-choices .country-flag-image{width:82px;height:58px}}/* Flag search form reads as part of the same explorer panel. */
+[data-focus-topic="flags"] .studio-panel:has(#flagSearch) label{display:grid;gap:7px;font-weight:750;color:#15442e;max-width:430px;margin-bottom:12px}
+[data-focus-topic="flags"] #flagSearch{box-sizing:border-box;display:block;width:100%;min-height:44px;border:1px solid #bdd7c2;border-radius:11px;padding:9px 12px;background:#fff;color:#153d29;font:inherit}
+
+/* v3.9: the same country artwork across World Flags and Countries & Capitals */
+.country-choice{display:flex;align-items:center;gap:8px;text-align:left}
+.country-picker-flag{width:45px;height:34px;object-fit:contain;flex-shrink:0}
+.country-selected-flag{display:block;width:min(100%,235px);height:135px;object-fit:contain;margin:0 auto 12px}
+.flag-menu{scrollbar-width:thin}
+.flag-choice .country-flag-image{width:58px;height:43px}
+
+/* v3.10.0 show the pictured flag INSIDE flag-identification questions. */
+[data-focus-topic="flags"] .subject-quiz-panel h2 .country-flag-image,
+[data-focus-topic="geography"] .subject-quiz-panel h2 .country-flag-image{
+  display:inline-block;vertical-align:middle;width:112px;height:78px;max-width:35vw;object-fit:contain;
+  margin:6px 12px;border-radius:4px;filter:drop-shadow(0 3px 5px rgba(12,57,36,.22));
+}
+[data-focus-topic="flags"] .focused-choices .focused-choice img,
+[data-focus-topic="geography"] .focused-choices .focused-choice img{max-width:100%;width:100px;height:70px;object-fit:contain}

@@ -1,0 +1,3134 @@
+{
+  "schemaVersion": 1,
+  "description": "The sole mapping from organized src/ to original public/ URLs. Never change urlPath without migration/redirects.",
+  "files": [
+    {
+      "source": "pages/legacy-urls/other/404.html",
+      "urlPath": "404.html"
+    },
+    {
+      "source": "site-root/VERSION",
+      "urlPath": "VERSION"
+    },
+    {
+      "source": "pages/family/dashboard.html",
+      "urlPath": "account/dashboard.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/adaptive-lesson.html",
+      "urlPath": "adaptive-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/adaptive-quiz.html",
+      "urlPath": "adaptive-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/addition.html",
+      "urlPath": "addition.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/animals-quiz.html",
+      "urlPath": "animals-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/area-perimeter-quiz.html",
+      "urlPath": "area-perimeter-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/area-perimeter.html",
+      "urlPath": "area-perimeter.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/art-gallery-quiz.html",
+      "urlPath": "art-gallery-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/art-gallery.html",
+      "urlPath": "art-gallery.html"
+    },
+    {
+      "source": "assets/licenses/INDIA-MAP-ATTRIBUTION.txt",
+      "urlPath": "assets/INDIA-MAP-ATTRIBUTION.txt"
+    },
+    {
+      "source": "assets/licenses/Playwrite-LICENSE.txt",
+      "urlPath": "assets/Playwrite-LICENSE.txt"
+    },
+    {
+      "source": "assets/images/alphabet/LICENSE.txt",
+      "urlPath": "assets/alphabet/LICENSE.txt"
+    },
+    {
+      "source": "assets/images/alphabet/a.svg",
+      "urlPath": "assets/alphabet/a.svg"
+    },
+    {
+      "source": "assets/images/alphabet/b.svg",
+      "urlPath": "assets/alphabet/b.svg"
+    },
+    {
+      "source": "assets/images/alphabet/c.svg",
+      "urlPath": "assets/alphabet/c.svg"
+    },
+    {
+      "source": "assets/images/alphabet/credits.json",
+      "urlPath": "assets/alphabet/credits.json"
+    },
+    {
+      "source": "assets/images/alphabet/d.svg",
+      "urlPath": "assets/alphabet/d.svg"
+    },
+    {
+      "source": "assets/images/alphabet/e.svg",
+      "urlPath": "assets/alphabet/e.svg"
+    },
+    {
+      "source": "assets/images/alphabet/f.svg",
+      "urlPath": "assets/alphabet/f.svg"
+    },
+    {
+      "source": "assets/images/alphabet/g.svg",
+      "urlPath": "assets/alphabet/g.svg"
+    },
+    {
+      "source": "assets/images/alphabet/h.svg",
+      "urlPath": "assets/alphabet/h.svg"
+    },
+    {
+      "source": "assets/images/alphabet/i.svg",
+      "urlPath": "assets/alphabet/i.svg"
+    },
+    {
+      "source": "assets/images/alphabet/j.svg",
+      "urlPath": "assets/alphabet/j.svg"
+    },
+    {
+      "source": "assets/images/alphabet/k.svg",
+      "urlPath": "assets/alphabet/k.svg"
+    },
+    {
+      "source": "assets/images/alphabet/l.svg",
+      "urlPath": "assets/alphabet/l.svg"
+    },
+    {
+      "source": "assets/images/alphabet/m.svg",
+      "urlPath": "assets/alphabet/m.svg"
+    },
+    {
+      "source": "assets/images/alphabet/n.svg",
+      "urlPath": "assets/alphabet/n.svg"
+    },
+    {
+      "source": "assets/images/alphabet/o.svg",
+      "urlPath": "assets/alphabet/o.svg"
+    },
+    {
+      "source": "assets/images/alphabet/p.svg",
+      "urlPath": "assets/alphabet/p.svg"
+    },
+    {
+      "source": "assets/images/alphabet/q.svg",
+      "urlPath": "assets/alphabet/q.svg"
+    },
+    {
+      "source": "assets/images/alphabet/r.svg",
+      "urlPath": "assets/alphabet/r.svg"
+    },
+    {
+      "source": "assets/images/alphabet/s.svg",
+      "urlPath": "assets/alphabet/s.svg"
+    },
+    {
+      "source": "assets/images/alphabet/t.svg",
+      "urlPath": "assets/alphabet/t.svg"
+    },
+    {
+      "source": "assets/images/alphabet/u.svg",
+      "urlPath": "assets/alphabet/u.svg"
+    },
+    {
+      "source": "assets/images/alphabet/v.svg",
+      "urlPath": "assets/alphabet/v.svg"
+    },
+    {
+      "source": "assets/images/alphabet/w.svg",
+      "urlPath": "assets/alphabet/w.svg"
+    },
+    {
+      "source": "assets/images/alphabet/x.svg",
+      "urlPath": "assets/alphabet/x.svg"
+    },
+    {
+      "source": "assets/images/alphabet/y.svg",
+      "urlPath": "assets/alphabet/y.svg"
+    },
+    {
+      "source": "assets/images/alphabet/z.svg",
+      "urlPath": "assets/alphabet/z.svg"
+    },
+    {
+      "source": "assets/images/animals/LICENSE.txt",
+      "urlPath": "assets/animals/LICENSE.txt"
+    },
+    {
+      "source": "assets/images/animals/bear.svg",
+      "urlPath": "assets/animals/bear.svg"
+    },
+    {
+      "source": "assets/images/animals/camel.svg",
+      "urlPath": "assets/animals/camel.svg"
+    },
+    {
+      "source": "assets/images/animals/cat.svg",
+      "urlPath": "assets/animals/cat.svg"
+    },
+    {
+      "source": "assets/images/animals/chicken.svg",
+      "urlPath": "assets/animals/chicken.svg"
+    },
+    {
+      "source": "assets/images/animals/chipmunk.svg",
+      "urlPath": "assets/animals/chipmunk.svg"
+    },
+    {
+      "source": "assets/images/animals/cow.svg",
+      "urlPath": "assets/animals/cow.svg"
+    },
+    {
+      "source": "assets/images/animals/credits.json",
+      "urlPath": "assets/animals/credits.json"
+    },
+    {
+      "source": "assets/images/animals/crocodile.svg",
+      "urlPath": "assets/animals/crocodile.svg"
+    },
+    {
+      "source": "assets/images/animals/deer.svg",
+      "urlPath": "assets/animals/deer.svg"
+    },
+    {
+      "source": "assets/images/animals/dog.svg",
+      "urlPath": "assets/animals/dog.svg"
+    },
+    {
+      "source": "assets/images/animals/dolphin.svg",
+      "urlPath": "assets/animals/dolphin.svg"
+    },
+    {
+      "source": "assets/images/animals/duck.svg",
+      "urlPath": "assets/animals/duck.svg"
+    },
+    {
+      "source": "assets/images/animals/elephant.svg",
+      "urlPath": "assets/animals/elephant.svg"
+    },
+    {
+      "source": "assets/images/animals/fox.svg",
+      "urlPath": "assets/animals/fox.svg"
+    },
+    {
+      "source": "assets/images/animals/giraffe.svg",
+      "urlPath": "assets/animals/giraffe.svg"
+    },
+    {
+      "source": "assets/images/animals/goat.svg",
+      "urlPath": "assets/animals/goat.svg"
+    },
+    {
+      "source": "assets/images/animals/gorilla.svg",
+      "urlPath": "assets/animals/gorilla.svg"
+    },
+    {
+      "source": "assets/images/animals/hedgehog.svg",
+      "urlPath": "assets/animals/hedgehog.svg"
+    },
+    {
+      "source": "assets/images/animals/hippopotamus.svg",
+      "urlPath": "assets/animals/hippopotamus.svg"
+    },
+    {
+      "source": "assets/images/animals/horse.svg",
+      "urlPath": "assets/animals/horse.svg"
+    },
+    {
+      "source": "assets/images/animals/kangaroo.svg",
+      "urlPath": "assets/animals/kangaroo.svg"
+    },
+    {
+      "source": "assets/images/animals/koala.svg",
+      "urlPath": "assets/animals/koala.svg"
+    },
+    {
+      "source": "assets/images/animals/lion.svg",
+      "urlPath": "assets/animals/lion.svg"
+    },
+    {
+      "source": "assets/images/animals/llama.svg",
+      "urlPath": "assets/animals/llama.svg"
+    },
+    {
+      "source": "assets/images/animals/monkey.svg",
+      "urlPath": "assets/animals/monkey.svg"
+    },
+    {
+      "source": "assets/images/animals/octopus.svg",
+      "urlPath": "assets/animals/octopus.svg"
+    },
+    {
+      "source": "assets/images/animals/otter.svg",
+      "urlPath": "assets/animals/otter.svg"
+    },
+    {
+      "source": "assets/images/animals/owl.svg",
+      "urlPath": "assets/animals/owl.svg"
+    },
+    {
+      "source": "assets/images/animals/panda.svg",
+      "urlPath": "assets/animals/panda.svg"
+    },
+    {
+      "source": "assets/images/animals/penguin.svg",
+      "urlPath": "assets/animals/penguin.svg"
+    },
+    {
+      "source": "assets/images/animals/pig.svg",
+      "urlPath": "assets/animals/pig.svg"
+    },
+    {
+      "source": "assets/images/animals/rabbit.svg",
+      "urlPath": "assets/animals/rabbit.svg"
+    },
+    {
+      "source": "assets/images/animals/rhinoceros.svg",
+      "urlPath": "assets/animals/rhinoceros.svg"
+    },
+    {
+      "source": "assets/images/animals/sheep.svg",
+      "urlPath": "assets/animals/sheep.svg"
+    },
+    {
+      "source": "assets/images/animals/sloth.svg",
+      "urlPath": "assets/animals/sloth.svg"
+    },
+    {
+      "source": "assets/images/animals/snake.svg",
+      "urlPath": "assets/animals/snake.svg"
+    },
+    {
+      "source": "assets/images/animals/tiger.svg",
+      "urlPath": "assets/animals/tiger.svg"
+    },
+    {
+      "source": "assets/images/animals/turtle.svg",
+      "urlPath": "assets/animals/turtle.svg"
+    },
+    {
+      "source": "assets/images/animals/whale.svg",
+      "urlPath": "assets/animals/whale.svg"
+    },
+    {
+      "source": "assets/images/animals/wolf.svg",
+      "urlPath": "assets/animals/wolf.svg"
+    },
+    {
+      "source": "assets/images/animals/zebra.svg",
+      "urlPath": "assets/animals/zebra.svg"
+    },
+    {
+      "source": "assets/js/features/quizzes/animals-quiz.js",
+      "urlPath": "assets/animals-quiz.js"
+    },
+    {
+      "source": "assets/images/health/body-bones.svg",
+      "urlPath": "assets/body-bones.svg"
+    },
+    {
+      "source": "assets/images/health/body-brain.jpg",
+      "urlPath": "assets/body-brain.jpg"
+    },
+    {
+      "source": "assets/data/health/body-data.js",
+      "urlPath": "assets/body-data.js"
+    },
+    {
+      "source": "assets/css/features/health/body-explorer.css",
+      "urlPath": "assets/body-explorer.css"
+    },
+    {
+      "source": "assets/js/features/health/body-explorer.js",
+      "urlPath": "assets/body-explorer.js"
+    },
+    {
+      "source": "assets/images/health/body-eyes.svg",
+      "urlPath": "assets/body-eyes.svg"
+    },
+    {
+      "source": "assets/images/health/body-heart.jpg",
+      "urlPath": "assets/body-heart.jpg"
+    },
+    {
+      "source": "assets/images/health/body-intestines.svg",
+      "urlPath": "assets/body-intestines.svg"
+    },
+    {
+      "source": "assets/images/health/body-liver.jpg",
+      "urlPath": "assets/body-liver.jpg"
+    },
+    {
+      "source": "assets/images/health/body-lungs.jpg",
+      "urlPath": "assets/body-lungs.jpg"
+    },
+    {
+      "source": "assets/images/health/body-stomach.jpg",
+      "urlPath": "assets/body-stomach.jpg"
+    },
+    {
+      "source": "assets/js/features/shared/branch-journey-fix.js",
+      "urlPath": "assets/branch-journey-fix.js"
+    },
+    {
+      "source": "assets/css/features/shared/branch-layout.css",
+      "urlPath": "assets/branch-layout.css"
+    },
+    {
+      "source": "assets/data/kids/branch-nav-data.js",
+      "urlPath": "assets/branch-nav-data.js"
+    },
+    {
+      "source": "assets/js/features/shared/branch-nav.js",
+      "urlPath": "assets/branch-nav.js"
+    },
+    {
+      "source": "assets/js/features/food/catalog.js",
+      "urlPath": "assets/catalog.js"
+    },
+    {
+      "source": "assets/js/features/kids/children.js",
+      "urlPath": "assets/children.js"
+    },
+    {
+      "source": "assets/js/features/kids/coding-lab.js",
+      "urlPath": "assets/coding-lab.js"
+    },
+    {
+      "source": "assets/css/features/kids/community-learning.css",
+      "urlPath": "assets/community-learning.css"
+    },
+    {
+      "source": "assets/js/features/kids/community-learning.js",
+      "urlPath": "assets/community-learning.js"
+    },
+    {
+      "source": "assets/data/kids/community-topics-data.js",
+      "urlPath": "assets/community-topics-data.js"
+    },
+    {
+      "source": "assets/css/features/kids/contact.css",
+      "urlPath": "assets/contact.css"
+    },
+    {
+      "source": "assets/js/features/kids/countries.js",
+      "urlPath": "assets/countries.js"
+    },
+    {
+      "source": "assets/data/kids/country-flag-codes.js",
+      "urlPath": "assets/country-flag-codes.js"
+    },
+    {
+      "source": "assets/images/country-flags/SOURCE.md",
+      "urlPath": "assets/country-flags/SOURCE.md"
+    },
+    {
+      "source": "assets/images/country-flags/ar.png",
+      "urlPath": "assets/country-flags/ar.png"
+    },
+    {
+      "source": "assets/images/country-flags/au.png",
+      "urlPath": "assets/country-flags/au.png"
+    },
+    {
+      "source": "assets/images/country-flags/br.png",
+      "urlPath": "assets/country-flags/br.png"
+    },
+    {
+      "source": "assets/images/country-flags/ca.png",
+      "urlPath": "assets/country-flags/ca.png"
+    },
+    {
+      "source": "assets/images/country-flags/cl.png",
+      "urlPath": "assets/country-flags/cl.png"
+    },
+    {
+      "source": "assets/images/country-flags/cn.png",
+      "urlPath": "assets/country-flags/cn.png"
+    },
+    {
+      "source": "assets/images/country-flags/co.png",
+      "urlPath": "assets/country-flags/co.png"
+    },
+    {
+      "source": "assets/images/country-flags/cr.png",
+      "urlPath": "assets/country-flags/cr.png"
+    },
+    {
+      "source": "assets/images/country-flags/cu.png",
+      "urlPath": "assets/country-flags/cu.png"
+    },
+    {
+      "source": "assets/images/country-flags/de.png",
+      "urlPath": "assets/country-flags/de.png"
+    },
+    {
+      "source": "assets/images/country-flags/do.png",
+      "urlPath": "assets/country-flags/do.png"
+    },
+    {
+      "source": "assets/images/country-flags/ec.png",
+      "urlPath": "assets/country-flags/ec.png"
+    },
+    {
+      "source": "assets/images/country-flags/eg.png",
+      "urlPath": "assets/country-flags/eg.png"
+    },
+    {
+      "source": "assets/images/country-flags/es.png",
+      "urlPath": "assets/country-flags/es.png"
+    },
+    {
+      "source": "assets/images/country-flags/et.png",
+      "urlPath": "assets/country-flags/et.png"
+    },
+    {
+      "source": "assets/images/country-flags/fj.png",
+      "urlPath": "assets/country-flags/fj.png"
+    },
+    {
+      "source": "assets/images/country-flags/fr.png",
+      "urlPath": "assets/country-flags/fr.png"
+    },
+    {
+      "source": "assets/images/country-flags/gb.png",
+      "urlPath": "assets/country-flags/gb.png"
+    },
+    {
+      "source": "assets/images/country-flags/gh.png",
+      "urlPath": "assets/country-flags/gh.png"
+    },
+    {
+      "source": "assets/images/country-flags/gr.png",
+      "urlPath": "assets/country-flags/gr.png"
+    },
+    {
+      "source": "assets/images/country-flags/in.png",
+      "urlPath": "assets/country-flags/in.png"
+    },
+    {
+      "source": "assets/images/country-flags/it.png",
+      "urlPath": "assets/country-flags/it.png"
+    },
+    {
+      "source": "assets/images/country-flags/jm.png",
+      "urlPath": "assets/country-flags/jm.png"
+    },
+    {
+      "source": "assets/images/country-flags/jp.png",
+      "urlPath": "assets/country-flags/jp.png"
+    },
+    {
+      "source": "assets/images/country-flags/ke.png",
+      "urlPath": "assets/country-flags/ke.png"
+    },
+    {
+      "source": "assets/images/country-flags/kr.png",
+      "urlPath": "assets/country-flags/kr.png"
+    },
+    {
+      "source": "assets/images/country-flags/ma.png",
+      "urlPath": "assets/country-flags/ma.png"
+    },
+    {
+      "source": "assets/images/country-flags/mx.png",
+      "urlPath": "assets/country-flags/mx.png"
+    },
+    {
+      "source": "assets/images/country-flags/my.png",
+      "urlPath": "assets/country-flags/my.png"
+    },
+    {
+      "source": "assets/images/country-flags/ng.png",
+      "urlPath": "assets/country-flags/ng.png"
+    },
+    {
+      "source": "assets/images/country-flags/no.png",
+      "urlPath": "assets/country-flags/no.png"
+    },
+    {
+      "source": "assets/images/country-flags/np.png",
+      "urlPath": "assets/country-flags/np.png"
+    },
+    {
+      "source": "assets/images/country-flags/nz.png",
+      "urlPath": "assets/country-flags/nz.png"
+    },
+    {
+      "source": "assets/images/country-flags/pa.png",
+      "urlPath": "assets/country-flags/pa.png"
+    },
+    {
+      "source": "assets/images/country-flags/pe.png",
+      "urlPath": "assets/country-flags/pe.png"
+    },
+    {
+      "source": "assets/images/country-flags/pg.png",
+      "urlPath": "assets/country-flags/pg.png"
+    },
+    {
+      "source": "assets/images/country-flags/pt.png",
+      "urlPath": "assets/country-flags/pt.png"
+    },
+    {
+      "source": "assets/images/country-flags/py.png",
+      "urlPath": "assets/country-flags/py.png"
+    },
+    {
+      "source": "assets/images/country-flags/sb.png",
+      "urlPath": "assets/country-flags/sb.png"
+    },
+    {
+      "source": "assets/images/country-flags/sg.png",
+      "urlPath": "assets/country-flags/sg.png"
+    },
+    {
+      "source": "assets/images/country-flags/th.png",
+      "urlPath": "assets/country-flags/th.png"
+    },
+    {
+      "source": "assets/images/country-flags/to.png",
+      "urlPath": "assets/country-flags/to.png"
+    },
+    {
+      "source": "assets/images/country-flags/tz.png",
+      "urlPath": "assets/country-flags/tz.png"
+    },
+    {
+      "source": "assets/images/country-flags/ug.png",
+      "urlPath": "assets/country-flags/ug.png"
+    },
+    {
+      "source": "assets/images/country-flags/us.png",
+      "urlPath": "assets/country-flags/us.png"
+    },
+    {
+      "source": "assets/images/country-flags/uy.png",
+      "urlPath": "assets/country-flags/uy.png"
+    },
+    {
+      "source": "assets/images/country-flags/vu.png",
+      "urlPath": "assets/country-flags/vu.png"
+    },
+    {
+      "source": "assets/images/country-flags/ws.png",
+      "urlPath": "assets/country-flags/ws.png"
+    },
+    {
+      "source": "assets/images/country-flags/za.png",
+      "urlPath": "assets/country-flags/za.png"
+    },
+    {
+      "source": "assets/js/features/kids/creativity-fixes.js",
+      "urlPath": "assets/creativity-fixes.js"
+    },
+    {
+      "source": "assets/css/features/kids/creativity.css",
+      "urlPath": "assets/creativity.css"
+    },
+    {
+      "source": "assets/js/features/kids/creativity.js",
+      "urlPath": "assets/creativity.js"
+    },
+    {
+      "source": "assets/js/features/family/dashboard-quiz-certificates.js",
+      "urlPath": "assets/dashboard-quiz-certificates.js"
+    },
+    {
+      "source": "assets/js/features/family/dashboard-recovery.js",
+      "urlPath": "assets/dashboard-recovery.js"
+    },
+    {
+      "source": "assets/js/features/kids/early-learning-quiz.js",
+      "urlPath": "assets/early-learning-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/early-learning.css",
+      "urlPath": "assets/early-learning.css"
+    },
+    {
+      "source": "assets/js/features/kids/early-learning.js",
+      "urlPath": "assets/early-learning.js"
+    },
+    {
+      "source": "assets/data/kids/english-upgrade-data.js",
+      "urlPath": "assets/english-upgrade-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/english-upgrade-quiz.js",
+      "urlPath": "assets/english-upgrade-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/english-upgrade.css",
+      "urlPath": "assets/english-upgrade.css"
+    },
+    {
+      "source": "assets/js/features/kids/english-upgrade.js",
+      "urlPath": "assets/english-upgrade.js"
+    },
+    {
+      "source": "assets/js/features/kids/everyday-explorer.js",
+      "urlPath": "assets/everyday-explorer.js"
+    },
+    {
+      "source": "assets/css/features/family/family-tools.css",
+      "urlPath": "assets/family-tools.css"
+    },
+    {
+      "source": "assets/js/features/family/family-tools.js",
+      "urlPath": "assets/family-tools.js"
+    },
+    {
+      "source": "assets/icons/favicon.svg",
+      "urlPath": "assets/favicon.svg"
+    },
+    {
+      "source": "assets/css/features/kids/flag-images.css",
+      "urlPath": "assets/flag-images.css"
+    },
+    {
+      "source": "assets/js/features/kids/flag-quiz-images.js",
+      "urlPath": "assets/flag-quiz-images.js"
+    },
+    {
+      "source": "assets/images/flags/ar.png",
+      "urlPath": "assets/flags/ar.png"
+    },
+    {
+      "source": "assets/images/flags/au.png",
+      "urlPath": "assets/flags/au.png"
+    },
+    {
+      "source": "assets/images/flags/br.png",
+      "urlPath": "assets/flags/br.png"
+    },
+    {
+      "source": "assets/images/flags/ca.png",
+      "urlPath": "assets/flags/ca.png"
+    },
+    {
+      "source": "assets/images/flags/cn.png",
+      "urlPath": "assets/flags/cn.png"
+    },
+    {
+      "source": "assets/images/flags/de.png",
+      "urlPath": "assets/flags/de.png"
+    },
+    {
+      "source": "assets/images/flags/eg.png",
+      "urlPath": "assets/flags/eg.png"
+    },
+    {
+      "source": "assets/images/flags/fr.png",
+      "urlPath": "assets/flags/fr.png"
+    },
+    {
+      "source": "assets/images/flags/gb.png",
+      "urlPath": "assets/flags/gb.png"
+    },
+    {
+      "source": "assets/images/flags/in.png",
+      "urlPath": "assets/flags/in.png"
+    },
+    {
+      "source": "assets/images/flags/it.png",
+      "urlPath": "assets/flags/it.png"
+    },
+    {
+      "source": "assets/images/flags/jp.png",
+      "urlPath": "assets/flags/jp.png"
+    },
+    {
+      "source": "assets/images/flags/ke.png",
+      "urlPath": "assets/flags/ke.png"
+    },
+    {
+      "source": "assets/images/flags/kr.png",
+      "urlPath": "assets/flags/kr.png"
+    },
+    {
+      "source": "assets/images/flags/mx.png",
+      "urlPath": "assets/flags/mx.png"
+    },
+    {
+      "source": "assets/images/flags/nz.png",
+      "urlPath": "assets/flags/nz.png"
+    },
+    {
+      "source": "assets/images/flags/us.png",
+      "urlPath": "assets/flags/us.png"
+    },
+    {
+      "source": "assets/images/flags/za.png",
+      "urlPath": "assets/flags/za.png"
+    },
+    {
+      "source": "assets/data/kids/focused-topics-data.js",
+      "urlPath": "assets/focused-topics-data.js"
+    },
+    {
+      "source": "assets/css/features/kids/focused-topics.css",
+      "urlPath": "assets/focused-topics.css"
+    },
+    {
+      "source": "assets/data/food/food-data.js",
+      "urlPath": "assets/food-data.js"
+    },
+    {
+      "source": "assets/data/kids/games-data.js",
+      "urlPath": "assets/games-data.js"
+    },
+    {
+      "source": "assets/js/features/quizzes/games-quiz.js",
+      "urlPath": "assets/games-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/games.css",
+      "urlPath": "assets/games.css"
+    },
+    {
+      "source": "assets/js/features/kids/games.js",
+      "urlPath": "assets/games.js"
+    },
+    {
+      "source": "assets/css/features/kids/home.css",
+      "urlPath": "assets/home.css"
+    },
+    {
+      "source": "assets/js/core/home.js",
+      "urlPath": "assets/home.js"
+    },
+    {
+      "source": "assets/data/kids/india-data.js",
+      "urlPath": "assets/india-data.js"
+    },
+    {
+      "source": "assets/images/geography/india-map-outline.svg",
+      "urlPath": "assets/india-map-outline.svg"
+    },
+    {
+      "source": "assets/js/features/kids/india-quiz.js",
+      "urlPath": "assets/india-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/india.css",
+      "urlPath": "assets/india.css"
+    },
+    {
+      "source": "assets/js/features/kids/india.js",
+      "urlPath": "assets/india.js"
+    },
+    {
+      "source": "assets/js/features/food/journeys.js",
+      "urlPath": "assets/journeys.js"
+    },
+    {
+      "source": "assets/images/health/kidneys-niddk.jpg",
+      "urlPath": "assets/kidneys-niddk.jpg"
+    },
+    {
+      "source": "assets/js/features/kids/kids-audio.js",
+      "urlPath": "assets/kids-audio.js"
+    },
+    {
+      "source": "assets/data/kids/kids-data.js",
+      "urlPath": "assets/kids-data.js"
+    },
+    {
+      "source": "assets/css/features/kids/kids-nav-upgrade.css",
+      "urlPath": "assets/kids-nav-upgrade.css"
+    },
+    {
+      "source": "assets/js/features/kids/kids-nav-upgrade.js",
+      "urlPath": "assets/kids-nav-upgrade.js"
+    },
+    {
+      "source": "assets/js/features/kids/kids-quiz.js",
+      "urlPath": "assets/kids-quiz.js"
+    },
+    {
+      "source": "assets/js/features/kids/kids-roadmap.js",
+      "urlPath": "assets/kids-roadmap.js"
+    },
+    {
+      "source": "assets/js/features/kids/kids-search.js",
+      "urlPath": "assets/kids-search.js"
+    },
+    {
+      "source": "assets/css/features/kids/kids-skills.css",
+      "urlPath": "assets/kids-skills.css"
+    },
+    {
+      "source": "assets/js/features/kids/kids-skills.js",
+      "urlPath": "assets/kids-skills.js"
+    },
+    {
+      "source": "assets/css/features/family/kids-study-plan.css",
+      "urlPath": "assets/kids-study-plan.css"
+    },
+    {
+      "source": "assets/js/features/family/kids-study-plan.js",
+      "urlPath": "assets/kids-study-plan.js"
+    },
+    {
+      "source": "assets/css/features/kids/kids.css",
+      "urlPath": "assets/kids.css"
+    },
+    {
+      "source": "assets/js/features/kids/language-quiz.js",
+      "urlPath": "assets/language-quiz.js"
+    },
+    {
+      "source": "assets/js/features/kids/language-support.js",
+      "urlPath": "assets/language-support.js"
+    },
+    {
+      "source": "assets/css/features/kids/languages.css",
+      "urlPath": "assets/languages.css"
+    },
+    {
+      "source": "assets/js/features/kids/languages.js",
+      "urlPath": "assets/languages.js"
+    },
+    {
+      "source": "assets/images/general/learning-cover.png",
+      "urlPath": "assets/learning-cover.png"
+    },
+    {
+      "source": "assets/js/core/learning-index.js",
+      "urlPath": "assets/learning-index.js"
+    },
+    {
+      "source": "assets/css/features/shared/learning-journey.css",
+      "urlPath": "assets/learning-journey.css"
+    },
+    {
+      "source": "assets/js/features/shared/learning-journey.js",
+      "urlPath": "assets/learning-journey.js"
+    },
+    {
+      "source": "assets/js/features/kids/learning-tools.js",
+      "urlPath": "assets/learning-tools.js"
+    },
+    {
+      "source": "assets/css/core/learning.css",
+      "urlPath": "assets/learning.css"
+    },
+    {
+      "source": "assets/js/features/kids/letter-tracing-quiz.js",
+      "urlPath": "assets/letter-tracing-quiz.js"
+    },
+    {
+      "source": "assets/data/kids/level2-data.js",
+      "urlPath": "assets/level2-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/level2-engine.js",
+      "urlPath": "assets/level2-engine.js"
+    },
+    {
+      "source": "assets/css/features/kids/level2.css",
+      "urlPath": "assets/level2.css"
+    },
+    {
+      "source": "assets/data/kids/life-skills-data.js",
+      "urlPath": "assets/life-skills-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/life-skills-quiz.js",
+      "urlPath": "assets/life-skills-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/life-skills.css",
+      "urlPath": "assets/life-skills.css"
+    },
+    {
+      "source": "assets/js/features/kids/life-skills.js",
+      "urlPath": "assets/life-skills.js"
+    },
+    {
+      "source": "assets/js/features/kids/math-extra-quiz.js",
+      "urlPath": "assets/math-extra-quiz.js"
+    },
+    {
+      "source": "assets/js/features/kids/math-extra.js",
+      "urlPath": "assets/math-extra.js"
+    },
+    {
+      "source": "assets/js/features/food/mysteries.js",
+      "urlPath": "assets/mysteries.js"
+    },
+    {
+      "source": "assets/data/kids/new-learning-data.js",
+      "urlPath": "assets/new-learning-data.js"
+    },
+    {
+      "source": "assets/css/features/kids/new-learning.css",
+      "urlPath": "assets/new-learning.css"
+    },
+    {
+      "source": "assets/js/features/kids/new-learning.js",
+      "urlPath": "assets/new-learning.js"
+    },
+    {
+      "source": "assets/data/kids/next-learning-data.js",
+      "urlPath": "assets/next-learning-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/next-learning-engine.js",
+      "urlPath": "assets/next-learning-engine.js"
+    },
+    {
+      "source": "assets/js/features/kids/next-learning-labs.js",
+      "urlPath": "assets/next-learning-labs.js"
+    },
+    {
+      "source": "assets/css/features/kids/next-learning.css",
+      "urlPath": "assets/next-learning.css"
+    },
+    {
+      "source": "assets/images/planets/earth.svg",
+      "urlPath": "assets/planets/earth.svg"
+    },
+    {
+      "source": "assets/images/planets/jupiter.svg",
+      "urlPath": "assets/planets/jupiter.svg"
+    },
+    {
+      "source": "assets/images/planets/mars.svg",
+      "urlPath": "assets/planets/mars.svg"
+    },
+    {
+      "source": "assets/images/planets/mercury.svg",
+      "urlPath": "assets/planets/mercury.svg"
+    },
+    {
+      "source": "assets/images/planets/neptune.svg",
+      "urlPath": "assets/planets/neptune.svg"
+    },
+    {
+      "source": "assets/images/planets/saturn.svg",
+      "urlPath": "assets/planets/saturn.svg"
+    },
+    {
+      "source": "assets/images/planets/sun.svg",
+      "urlPath": "assets/planets/sun.svg"
+    },
+    {
+      "source": "assets/images/planets/uranus.svg",
+      "urlPath": "assets/planets/uranus.svg"
+    },
+    {
+      "source": "assets/images/planets/venus.svg",
+      "urlPath": "assets/planets/venus.svg"
+    },
+    {
+      "source": "assets/js/features/kids/planets.js",
+      "urlPath": "assets/planets.js"
+    },
+    {
+      "source": "assets/css/core/platform.css",
+      "urlPath": "assets/platform.css"
+    },
+    {
+      "source": "assets/js/core/platform.js",
+      "urlPath": "assets/platform.js"
+    },
+    {
+      "source": "assets/fonts/playwrite-in-latin-400-normal.woff2",
+      "urlPath": "assets/playwrite-in-latin-400-normal.woff2"
+    },
+    {
+      "source": "assets/css/core/practice.css",
+      "urlPath": "assets/practice.css"
+    },
+    {
+      "source": "assets/js/features/kids/practice.js",
+      "urlPath": "assets/practice.js"
+    },
+    {
+      "source": "assets/js/features/quizzes/quiz.js",
+      "urlPath": "assets/quiz.js"
+    },
+    {
+      "source": "assets/css/core/release-version.css",
+      "urlPath": "assets/release-version.css"
+    },
+    {
+      "source": "assets/js/core/release-version.js",
+      "urlPath": "assets/release-version.js"
+    },
+    {
+      "source": "assets/images/general/sai-kumar.jpeg",
+      "urlPath": "assets/sai-kumar.jpeg"
+    },
+    {
+      "source": "assets/css/features/quizzes/score-card.css",
+      "urlPath": "assets/score-card.css"
+    },
+    {
+      "source": "assets/js/features/quizzes/score-card.js",
+      "urlPath": "assets/score-card.js"
+    },
+    {
+      "source": "assets/css/core/site-shell.css",
+      "urlPath": "assets/site-shell.css"
+    },
+    {
+      "source": "assets/js/core/site-shell.js",
+      "urlPath": "assets/site-shell.js"
+    },
+    {
+      "source": "assets/js/core/smart-core.js",
+      "urlPath": "assets/smart-core.js"
+    },
+    {
+      "source": "assets/js/core/smart-pages.js",
+      "urlPath": "assets/smart-pages.js"
+    },
+    {
+      "source": "assets/images/geography/solar-system-eight-planets.svg",
+      "urlPath": "assets/solar-system-eight-planets.svg"
+    },
+    {
+      "source": "assets/images/sport-art/athletics.svg",
+      "urlPath": "assets/sport-art/athletics.svg"
+    },
+    {
+      "source": "assets/images/sport-art/badminton.svg",
+      "urlPath": "assets/sport-art/badminton.svg"
+    },
+    {
+      "source": "assets/images/sport-art/basketball.svg",
+      "urlPath": "assets/sport-art/basketball.svg"
+    },
+    {
+      "source": "assets/images/sport-art/chess.svg",
+      "urlPath": "assets/sport-art/chess.svg"
+    },
+    {
+      "source": "assets/images/sport-art/cricket.svg",
+      "urlPath": "assets/sport-art/cricket.svg"
+    },
+    {
+      "source": "assets/images/sport-art/football.svg",
+      "urlPath": "assets/sport-art/football.svg"
+    },
+    {
+      "source": "assets/images/sport-art/hockey.svg",
+      "urlPath": "assets/sport-art/hockey.svg"
+    },
+    {
+      "source": "assets/images/sport-art/kabaddi.svg",
+      "urlPath": "assets/sport-art/kabaddi.svg"
+    },
+    {
+      "source": "assets/images/sport-art/kho-kho.svg",
+      "urlPath": "assets/sport-art/kho-kho.svg"
+    },
+    {
+      "source": "assets/images/sport-art/swimming.svg",
+      "urlPath": "assets/sport-art/swimming.svg"
+    },
+    {
+      "source": "assets/images/sport-art/tennis.svg",
+      "urlPath": "assets/sport-art/tennis.svg"
+    },
+    {
+      "source": "assets/images/sport-art/volleyball.svg",
+      "urlPath": "assets/sport-art/volleyball.svg"
+    },
+    {
+      "source": "assets/data/kids/sports-data.js",
+      "urlPath": "assets/sports-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/sports-quiz.js",
+      "urlPath": "assets/sports-quiz.js"
+    },
+    {
+      "source": "assets/css/features/kids/sports.css",
+      "urlPath": "assets/sports.css"
+    },
+    {
+      "source": "assets/js/features/kids/sports.js",
+      "urlPath": "assets/sports.js"
+    },
+    {
+      "source": "assets/css/features/kids/stories.css",
+      "urlPath": "assets/stories.css"
+    },
+    {
+      "source": "assets/images/story-art/birbal-line-1.svg",
+      "urlPath": "assets/story-art/birbal-line-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/birbal-line-2.svg",
+      "urlPath": "assets/story-art/birbal-line-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/birbal-line-3.svg",
+      "urlPath": "assets/story-art/birbal-line-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/birbal-line-4.svg",
+      "urlPath": "assets/story-art/birbal-line-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/clever-rabbit-1.svg",
+      "urlPath": "assets/story-art/clever-rabbit-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/clever-rabbit-2.svg",
+      "urlPath": "assets/story-art/clever-rabbit-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/clever-rabbit-3.svg",
+      "urlPath": "assets/story-art/clever-rabbit-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/clever-rabbit-4.svg",
+      "urlPath": "assets/story-art/clever-rabbit-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/lost-nest-1.svg",
+      "urlPath": "assets/story-art/lost-nest-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/lost-nest-2.svg",
+      "urlPath": "assets/story-art/lost-nest-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/lost-nest-3.svg",
+      "urlPath": "assets/story-art/lost-nest-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/lost-nest-4.svg",
+      "urlPath": "assets/story-art/lost-nest-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/moonlight-boat-1.svg",
+      "urlPath": "assets/story-art/moonlight-boat-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/moonlight-boat-2.svg",
+      "urlPath": "assets/story-art/moonlight-boat-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/moonlight-boat-3.svg",
+      "urlPath": "assets/story-art/moonlight-boat-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/moonlight-boat-4.svg",
+      "urlPath": "assets/story-art/moonlight-boat-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/moving-shadow-1.svg",
+      "urlPath": "assets/story-art/moving-shadow-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/moving-shadow-2.svg",
+      "urlPath": "assets/story-art/moving-shadow-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/moving-shadow-3.svg",
+      "urlPath": "assets/story-art/moving-shadow-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/moving-shadow-4.svg",
+      "urlPath": "assets/story-art/moving-shadow-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/tenali-pot-1.svg",
+      "urlPath": "assets/story-art/tenali-pot-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/tenali-pot-2.svg",
+      "urlPath": "assets/story-art/tenali-pot-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/tenali-pot-3.svg",
+      "urlPath": "assets/story-art/tenali-pot-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/tenali-pot-4.svg",
+      "urlPath": "assets/story-art/tenali-pot-4.svg"
+    },
+    {
+      "source": "assets/images/story-art/two-seeds-1.svg",
+      "urlPath": "assets/story-art/two-seeds-1.svg"
+    },
+    {
+      "source": "assets/images/story-art/two-seeds-2.svg",
+      "urlPath": "assets/story-art/two-seeds-2.svg"
+    },
+    {
+      "source": "assets/images/story-art/two-seeds-3.svg",
+      "urlPath": "assets/story-art/two-seeds-3.svg"
+    },
+    {
+      "source": "assets/images/story-art/two-seeds-4.svg",
+      "urlPath": "assets/story-art/two-seeds-4.svg"
+    },
+    {
+      "source": "assets/data/kids/story-data.js",
+      "urlPath": "assets/story-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/story.js",
+      "urlPath": "assets/story.js"
+    },
+    {
+      "source": "assets/css/features/kids/studio.css",
+      "urlPath": "assets/studio.css"
+    },
+    {
+      "source": "assets/js/features/kids/study-links.js",
+      "urlPath": "assets/study-links.js"
+    },
+    {
+      "source": "assets/js/features/quizzes/tables-quiz.js",
+      "urlPath": "assets/tables-quiz.js"
+    },
+    {
+      "source": "assets/js/features/kids/tables.js",
+      "urlPath": "assets/tables.js"
+    },
+    {
+      "source": "assets/js/features/shared/topic-flow.js",
+      "urlPath": "assets/topic-flow.js"
+    },
+    {
+      "source": "assets/js/features/shared/topic-hub.js",
+      "urlPath": "assets/topic-hub.js"
+    },
+    {
+      "source": "assets/js/features/quizzes/topic-quiz.js",
+      "urlPath": "assets/topic-quiz.js"
+    },
+    {
+      "source": "assets/css/features/quizzes/visual-quiz.css",
+      "urlPath": "assets/visual-quiz.css"
+    },
+    {
+      "source": "assets/css/core/visual-theme.css",
+      "urlPath": "assets/visual-theme.css"
+    },
+    {
+      "source": "assets/js/features/kids/word-bank.js",
+      "urlPath": "assets/word-bank.js"
+    },
+    {
+      "source": "assets/data/kids/world-currencies-data.js",
+      "urlPath": "assets/world-currencies-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/world-currencies-quiz.js",
+      "urlPath": "assets/world-currencies-quiz.js"
+    },
+    {
+      "source": "assets/js/features/kids/world-currencies.js",
+      "urlPath": "assets/world-currencies.js"
+    },
+    {
+      "source": "assets/data/kids/world-data.js",
+      "urlPath": "assets/world-data.js"
+    },
+    {
+      "source": "assets/js/features/kids/world-expansion.js",
+      "urlPath": "assets/world-expansion.js"
+    },
+    {
+      "source": "assets/js/features/kids/world-flags-select.js",
+      "urlPath": "assets/world-flags-select.js"
+    },
+    {
+      "source": "assets/js/features/kids/world-hub.js",
+      "urlPath": "assets/world-hub.js"
+    },
+    {
+      "source": "assets/css/features/kids/world-learning.css",
+      "urlPath": "assets/world-learning.css"
+    },
+    {
+      "source": "assets/js/features/kids/world-quiz.js",
+      "urlPath": "assets/world-quiz.js"
+    },
+    {
+      "source": "pages/legacy-urls/food/balanced-plate.html",
+      "urlPath": "balanced-plate.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/blocks-lesson.html",
+      "urlPath": "blocks-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/blocks-quiz.html",
+      "urlPath": "blocks-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/budget-simulator.html",
+      "urlPath": "budget-simulator.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/catalog.html",
+      "urlPath": "catalog.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/certificates-lesson.html",
+      "urlPath": "certificates-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/certificates-quiz.html",
+      "urlPath": "certificates-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/children.html",
+      "urlPath": "children.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/choices-consequences.html",
+      "urlPath": "choices-consequences.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/circuits-quiz.html",
+      "urlPath": "circuits-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/circuits.html",
+      "urlPath": "circuits.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/climate-zones-quiz.html",
+      "urlPath": "climate-zones-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/climate-zones.html",
+      "urlPath": "climate-zones.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/coding-conditions-quiz.html",
+      "urlPath": "coding-conditions-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/coding-conditions.html",
+      "urlPath": "coding-conditions.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/coding-lab.html",
+      "urlPath": "coding-lab.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/colours-quiz.html",
+      "urlPath": "colours-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/comic-strip-creator-quiz.html",
+      "urlPath": "comic-strip-creator-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/comic-strip-creator.html",
+      "urlPath": "comic-strip-creator.html"
+    },
+    {
+      "source": "pages/legacy-urls/info/contact.html",
+      "urlPath": "contact.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/continents-lesson.html",
+      "urlPath": "continents-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/continents-quiz.html",
+      "urlPath": "continents-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/continue-lesson.html",
+      "urlPath": "continue-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/continue-quiz.html",
+      "urlPath": "continue-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/conversation-lesson.html",
+      "urlPath": "conversation-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/conversation-quiz.html",
+      "urlPath": "conversation-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/coordinates-quiz.html",
+      "urlPath": "coordinates-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/coordinates.html",
+      "urlPath": "coordinates.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/counting-quiz.html",
+      "urlPath": "counting-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/countries-capitals.html",
+      "urlPath": "countries-capitals.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/creativity.html",
+      "urlPath": "creativity.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/daily-lesson.html",
+      "urlPath": "daily-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/daily-quiz.html",
+      "urlPath": "daily-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/family/dashboard.html",
+      "urlPath": "dashboard.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/decimals-quiz.html",
+      "urlPath": "decimals-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/decimals.html",
+      "urlPath": "decimals.html"
+    },
+    {
+      "source": "pages/legacy-urls/health/dental-health.html",
+      "urlPath": "dental-health.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/dictionary-lesson.html",
+      "urlPath": "dictionary-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/dictionary-quiz.html",
+      "urlPath": "dictionary-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/digital-poster-maker-quiz.html",
+      "urlPath": "digital-poster-maker-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/digital-poster-maker.html",
+      "urlPath": "digital-poster-maker.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/division.html",
+      "urlPath": "division.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/early-learning-quiz.html",
+      "urlPath": "early-learning-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/early-learning.html",
+      "urlPath": "early-learning.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/english-skills-quiz.html",
+      "urlPath": "english-skills-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/english-skills.html",
+      "urlPath": "english-skills.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/everyday-explorer.html",
+      "urlPath": "everyday-explorer.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/favorites-lesson.html",
+      "urlPath": "favorites-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/favorites-quiz.html",
+      "urlPath": "favorites-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/first-aid-awareness.html",
+      "urlPath": "first-aid-awareness.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/flags-lesson.html",
+      "urlPath": "flags-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/flags-quiz.html",
+      "urlPath": "flags-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/flashcards-lesson.html",
+      "urlPath": "flashcards-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/flashcards-quiz.html",
+      "urlPath": "flashcards-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/flipbook-animation-quiz.html",
+      "urlPath": "flipbook-animation-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/flipbook-animation.html",
+      "urlPath": "flipbook-animation.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/focus-lesson.html",
+      "urlPath": "focus-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/focus-quiz.html",
+      "urlPath": "focus-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/food-chains-quiz.html",
+      "urlPath": "food-chains-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/food-chains.html",
+      "urlPath": "food-chains.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/food-label-detective.html",
+      "urlPath": "food-label-detective.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/food-storage.html",
+      "urlPath": "food-storage.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/food.html",
+      "urlPath": "food.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/fractions.html",
+      "urlPath": "fractions.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/games/games-quiz.html",
+      "urlPath": "games-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/games/games.html",
+      "urlPath": "games.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/geography-lesson.html",
+      "urlPath": "geography-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/geography-quiz.html",
+      "urlPath": "geography-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/health/germs-prevention.html",
+      "urlPath": "germs-prevention.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/hazard-detective.html",
+      "urlPath": "hazard-detective.html"
+    },
+    {
+      "source": "pages/legacy-urls/health/health.html",
+      "urlPath": "health.html"
+    },
+    {
+      "source": "pages/legacy-urls/health/heart-and-movement.html",
+      "urlPath": "heart-and-movement.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/helpers-lesson.html",
+      "urlPath": "helpers-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/helpers-quiz.html",
+      "urlPath": "helpers-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-matras-quiz.html",
+      "urlPath": "hindi-matras-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-matras.html",
+      "urlPath": "hindi-matras.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-sentences-quiz.html",
+      "urlPath": "hindi-sentences-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-sentences.html",
+      "urlPath": "hindi-sentences.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-words-quiz.html",
+      "urlPath": "hindi-words-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi-words.html",
+      "urlPath": "hindi-words.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/hindi.html",
+      "urlPath": "hindi.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/homework-lesson.html",
+      "urlPath": "homework-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/homework-quiz.html",
+      "urlPath": "homework-quiz.html"
+    },
+    {
+      "source": "pages/home/index.html",
+      "urlPath": "index.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/india-quiz.html",
+      "urlPath": "india-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/india.html",
+      "urlPath": "india.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/indian-money.html",
+      "urlPath": "indian-money.html"
+    },
+    {
+      "source": "pages/info/contact.html",
+      "urlPath": "info/contact.html"
+    },
+    {
+      "source": "pages/info/privacy.html",
+      "urlPath": "info/privacy.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/intro-algebra-quiz.html",
+      "urlPath": "intro-algebra-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/intro-algebra.html",
+      "urlPath": "intro-algebra.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/journeys.html",
+      "urlPath": "journeys.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/kids-quiz.html",
+      "urlPath": "kids-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/kids-skills.html",
+      "urlPath": "kids-skills.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/landmarks-lesson.html",
+      "urlPath": "landmarks-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/landmarks-quiz.html",
+      "urlPath": "landmarks-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/language-quiz.html",
+      "urlPath": "language-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/languages.html",
+      "urlPath": "languages.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/latitude-longitude-quiz.html",
+      "urlPath": "latitude-longitude-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/latitude-longitude.html",
+      "urlPath": "latitude-longitude.html"
+    },
+    {
+      "source": "pages/food/activities/balanced-plate.html",
+      "urlPath": "learn/food/balanced-plate.html"
+    },
+    {
+      "source": "pages/food/explorer/catalog.html",
+      "urlPath": "learn/food/catalog.html"
+    },
+    {
+      "source": "pages/food/activities/food-label-detective.html",
+      "urlPath": "learn/food/food-label-detective.html"
+    },
+    {
+      "source": "pages/food/activities/food-storage.html",
+      "urlPath": "learn/food/food-storage.html"
+    },
+    {
+      "source": "pages/food/food.html",
+      "urlPath": "learn/food/food.html"
+    },
+    {
+      "source": "pages/food/explorer/journeys.html",
+      "urlPath": "learn/food/journeys.html"
+    },
+    {
+      "source": "pages/food/explorer/mysteries.html",
+      "urlPath": "learn/food/mysteries.html"
+    },
+    {
+      "source": "pages/food/activities/seasonal-foods.html",
+      "urlPath": "learn/food/seasonal-foods.html"
+    },
+    {
+      "source": "pages/health/activities/dental-health.html",
+      "urlPath": "learn/health/dental-health.html"
+    },
+    {
+      "source": "pages/health/activities/germs-prevention.html",
+      "urlPath": "learn/health/germs-prevention.html"
+    },
+    {
+      "source": "pages/health/health.html",
+      "urlPath": "learn/health/health.html"
+    },
+    {
+      "source": "pages/health/activities/heart-and-movement.html",
+      "urlPath": "learn/health/heart-and-movement.html"
+    },
+    {
+      "source": "pages/health/activities/sleep-science.html",
+      "urlPath": "learn/health/sleep-science.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/adaptive-lesson.html",
+      "urlPath": "learn/kids/adaptive-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/addition.html",
+      "urlPath": "learn/kids/addition.html"
+    },
+    {
+      "source": "pages/kids/maths/area-perimeter.html",
+      "urlPath": "learn/kids/area-perimeter.html"
+    },
+    {
+      "source": "pages/kids/creativity/art-gallery.html",
+      "urlPath": "learn/kids/art-gallery.html"
+    },
+    {
+      "source": "pages/kids/maths/blocks-lesson.html",
+      "urlPath": "learn/kids/blocks-lesson.html"
+    },
+    {
+      "source": "pages/kids/life-skills/budget-simulator.html",
+      "urlPath": "learn/kids/budget-simulator.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/certificates-lesson.html",
+      "urlPath": "learn/kids/certificates-lesson.html"
+    },
+    {
+      "source": "pages/kids/early-learning/children.html",
+      "urlPath": "learn/kids/children.html"
+    },
+    {
+      "source": "pages/kids/life-skills/choices-consequences.html",
+      "urlPath": "learn/kids/choices-consequences.html"
+    },
+    {
+      "source": "pages/kids/science/circuits.html",
+      "urlPath": "learn/kids/circuits.html"
+    },
+    {
+      "source": "pages/kids/geography/climate-zones.html",
+      "urlPath": "learn/kids/climate-zones.html"
+    },
+    {
+      "source": "pages/kids/creativity/coding-conditions.html",
+      "urlPath": "learn/kids/coding-conditions.html"
+    },
+    {
+      "source": "pages/kids/creativity/coding-lab.html",
+      "urlPath": "learn/kids/coding-lab.html"
+    },
+    {
+      "source": "pages/kids/creativity/comic-strip-creator.html",
+      "urlPath": "learn/kids/comic-strip-creator.html"
+    },
+    {
+      "source": "pages/kids/geography/continents-lesson.html",
+      "urlPath": "learn/kids/continents-lesson.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/continue-lesson.html",
+      "urlPath": "learn/kids/continue-lesson.html"
+    },
+    {
+      "source": "pages/kids/english/conversation-lesson.html",
+      "urlPath": "learn/kids/conversation-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/coordinates.html",
+      "urlPath": "learn/kids/coordinates.html"
+    },
+    {
+      "source": "pages/kids/geography/countries-capitals.html",
+      "urlPath": "learn/kids/countries-capitals.html"
+    },
+    {
+      "source": "pages/kids/creativity/creativity.html",
+      "urlPath": "learn/kids/creativity.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/daily-lesson.html",
+      "urlPath": "learn/kids/daily-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/decimals.html",
+      "urlPath": "learn/kids/decimals.html"
+    },
+    {
+      "source": "pages/kids/english/dictionary-lesson.html",
+      "urlPath": "learn/kids/dictionary-lesson.html"
+    },
+    {
+      "source": "pages/kids/creativity/digital-poster-maker.html",
+      "urlPath": "learn/kids/digital-poster-maker.html"
+    },
+    {
+      "source": "pages/kids/maths/division.html",
+      "urlPath": "learn/kids/division.html"
+    },
+    {
+      "source": "pages/kids/early-learning/early-learning.html",
+      "urlPath": "learn/kids/early-learning.html"
+    },
+    {
+      "source": "pages/kids/english/english-skills.html",
+      "urlPath": "learn/kids/english-skills.html"
+    },
+    {
+      "source": "pages/kids/life-skills/everyday-explorer.html",
+      "urlPath": "learn/kids/everyday-explorer.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/favorites-lesson.html",
+      "urlPath": "learn/kids/favorites-lesson.html"
+    },
+    {
+      "source": "pages/kids/life-skills/first-aid-awareness.html",
+      "urlPath": "learn/kids/first-aid-awareness.html"
+    },
+    {
+      "source": "pages/kids/geography/flags-lesson.html",
+      "urlPath": "learn/kids/flags-lesson.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/flashcards-lesson.html",
+      "urlPath": "learn/kids/flashcards-lesson.html"
+    },
+    {
+      "source": "pages/kids/creativity/flipbook-animation.html",
+      "urlPath": "learn/kids/flipbook-animation.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/focus-lesson.html",
+      "urlPath": "learn/kids/focus-lesson.html"
+    },
+    {
+      "source": "pages/kids/science/food-chains.html",
+      "urlPath": "learn/kids/food-chains.html"
+    },
+    {
+      "source": "pages/kids/maths/fractions.html",
+      "urlPath": "learn/kids/fractions.html"
+    },
+    {
+      "source": "pages/kids/games/games.html",
+      "urlPath": "learn/kids/games.html"
+    },
+    {
+      "source": "pages/kids/geography/geography-lesson.html",
+      "urlPath": "learn/kids/geography-lesson.html"
+    },
+    {
+      "source": "pages/kids/life-skills/hazard-detective.html",
+      "urlPath": "learn/kids/hazard-detective.html"
+    },
+    {
+      "source": "pages/kids/life-skills/helpers-lesson.html",
+      "urlPath": "learn/kids/helpers-lesson.html"
+    },
+    {
+      "source": "pages/kids/languages/hindi-matras.html",
+      "urlPath": "learn/kids/hindi-matras.html"
+    },
+    {
+      "source": "pages/kids/languages/hindi-sentences.html",
+      "urlPath": "learn/kids/hindi-sentences.html"
+    },
+    {
+      "source": "pages/kids/languages/hindi-words.html",
+      "urlPath": "learn/kids/hindi-words.html"
+    },
+    {
+      "source": "pages/kids/languages/hindi.html",
+      "urlPath": "learn/kids/hindi.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/homework-lesson.html",
+      "urlPath": "learn/kids/homework-lesson.html"
+    },
+    {
+      "source": "pages/kids/geography/india.html",
+      "urlPath": "learn/kids/india.html"
+    },
+    {
+      "source": "pages/kids/maths/indian-money.html",
+      "urlPath": "learn/kids/indian-money.html"
+    },
+    {
+      "source": "pages/kids/maths/intro-algebra.html",
+      "urlPath": "learn/kids/intro-algebra.html"
+    },
+    {
+      "source": "pages/kids/early-learning/kids-skills.html",
+      "urlPath": "learn/kids/kids-skills.html"
+    },
+    {
+      "source": "pages/kids/geography/landmarks-lesson.html",
+      "urlPath": "learn/kids/landmarks-lesson.html"
+    },
+    {
+      "source": "pages/kids/languages/languages.html",
+      "urlPath": "learn/kids/languages.html"
+    },
+    {
+      "source": "pages/kids/geography/latitude-longitude.html",
+      "urlPath": "learn/kids/latitude-longitude.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/learner-profiles.html",
+      "urlPath": "learn/kids/learner-profiles.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/learning-tools.html",
+      "urlPath": "learn/kids/learning-tools.html"
+    },
+    {
+      "source": "pages/kids/early-learning/letter-tracing.html",
+      "urlPath": "learn/kids/letter-tracing.html"
+    },
+    {
+      "source": "pages/kids/life-skills/life-skills.html",
+      "urlPath": "learn/kids/life-skills.html"
+    },
+    {
+      "source": "pages/kids/science/light-shadows.html",
+      "urlPath": "learn/kids/light-shadows.html"
+    },
+    {
+      "source": "pages/kids/english/listening-lesson.html",
+      "urlPath": "learn/kids/listening-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/logic-escape-room.html",
+      "urlPath": "learn/kids/logic-escape-room.html"
+    },
+    {
+      "source": "pages/kids/games/logic-lesson.html",
+      "urlPath": "learn/kids/logic-lesson.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/mastery-lesson.html",
+      "urlPath": "learn/kids/mastery-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/measurement.html",
+      "urlPath": "learn/kids/measurement.html"
+    },
+    {
+      "source": "pages/kids/maths/mini-sudoku.html",
+      "urlPath": "learn/kids/mini-sudoku.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/mistakes-lesson.html",
+      "urlPath": "learn/kids/mistakes-lesson.html"
+    },
+    {
+      "source": "pages/kids/maths/multiplication-tables.html",
+      "urlPath": "learn/kids/multiplication-tables.html"
+    },
+    {
+      "source": "pages/kids/maths/multiplication.html",
+      "urlPath": "learn/kids/multiplication.html"
+    },
+    {
+      "source": "pages/kids/creativity/music-composer.html",
+      "urlPath": "learn/kids/music-composer.html"
+    },
+    {
+      "source": "pages/kids/geography/natural-wonders.html",
+      "urlPath": "learn/kids/natural-wonders.html"
+    },
+    {
+      "source": "pages/kids/maths/odd-even.html",
+      "urlPath": "learn/kids/odd-even.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/offline-lesson.html",
+      "urlPath": "learn/kids/offline-lesson.html"
+    },
+    {
+      "source": "pages/kids/english/paragraph-writing.html",
+      "urlPath": "learn/kids/paragraph-writing.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/parent-dashboard.html",
+      "urlPath": "learn/kids/parent-dashboard.html"
+    },
+    {
+      "source": "pages/kids/maths/pattern-detective.html",
+      "urlPath": "learn/kids/pattern-detective.html"
+    },
+    {
+      "source": "pages/kids/maths/percentages.html",
+      "urlPath": "learn/kids/percentages.html"
+    },
+    {
+      "source": "pages/kids/geography/physical-geography.html",
+      "urlPath": "learn/kids/physical-geography.html"
+    },
+    {
+      "source": "pages/kids/maths/place-value.html",
+      "urlPath": "learn/kids/place-value.html"
+    },
+    {
+      "source": "pages/kids/science/planets.html",
+      "urlPath": "learn/kids/planets.html"
+    },
+    {
+      "source": "pages/kids/life-skills/privacy-scenarios.html",
+      "urlPath": "learn/kids/privacy-scenarios.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/profiles-lesson.html",
+      "urlPath": "learn/kids/profiles-lesson.html"
+    },
+    {
+      "source": "pages/kids/english/punctuation-mastery.html",
+      "urlPath": "learn/kids/punctuation-mastery.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quiz-review-lesson.html",
+      "urlPath": "learn/kids/quiz-review-lesson.html"
+    },
+    {
+      "source": "pages/kids/english/reading-fluency-plus.html",
+      "urlPath": "learn/kids/reading-fluency-plus.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/report-lesson.html",
+      "urlPath": "learn/kids/report-lesson.html"
+    },
+    {
+      "source": "pages/kids/science/science-discovery.html",
+      "urlPath": "learn/kids/science-discovery.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/search-lesson.html",
+      "urlPath": "learn/kids/search-lesson.html"
+    },
+    {
+      "source": "pages/kids/life-skills/situations-lesson.html",
+      "urlPath": "learn/kids/situations-lesson.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/smart-learning.html",
+      "urlPath": "learn/kids/smart-learning.html"
+    },
+    {
+      "source": "pages/kids/maths/smarter-maths.html",
+      "urlPath": "learn/kids/smarter-maths.html"
+    },
+    {
+      "source": "pages/kids/science/sound-vibrations.html",
+      "urlPath": "learn/kids/sound-vibrations.html"
+    },
+    {
+      "source": "pages/kids/early-learning/sports.html",
+      "urlPath": "learn/kids/sports.html"
+    },
+    {
+      "source": "pages/kids/science/states-of-matter.html",
+      "urlPath": "learn/kids/states-of-matter.html"
+    },
+    {
+      "source": "pages/kids/creativity/stories.html",
+      "urlPath": "learn/kids/stories.html"
+    },
+    {
+      "source": "pages/kids/creativity/story.html",
+      "urlPath": "learn/kids/story.html"
+    },
+    {
+      "source": "pages/kids/maths/subtraction.html",
+      "urlPath": "learn/kids/subtraction.html"
+    },
+    {
+      "source": "pages/kids/english/syllables-silent-letters.html",
+      "urlPath": "learn/kids/syllables-silent-letters.html"
+    },
+    {
+      "source": "pages/kids/maths/tangram-maker.html",
+      "urlPath": "learn/kids/tangram-maker.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/targeted-lesson.html",
+      "urlPath": "learn/kids/targeted-lesson.html"
+    },
+    {
+      "source": "pages/kids/languages/telugu-gunintalu.html",
+      "urlPath": "learn/kids/telugu-gunintalu.html"
+    },
+    {
+      "source": "pages/kids/languages/telugu-sentences.html",
+      "urlPath": "learn/kids/telugu-sentences.html"
+    },
+    {
+      "source": "pages/kids/languages/telugu-words.html",
+      "urlPath": "learn/kids/telugu-words.html"
+    },
+    {
+      "source": "pages/kids/languages/telugu.html",
+      "urlPath": "learn/kids/telugu.html"
+    },
+    {
+      "source": "pages/kids/maths/time-calendar.html",
+      "urlPath": "learn/kids/time-calendar.html"
+    },
+    {
+      "source": "pages/kids/life-skills/transport-lesson.html",
+      "urlPath": "learn/kids/transport-lesson.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/weekly-lesson.html",
+      "urlPath": "learn/kids/weekly-lesson.html"
+    },
+    {
+      "source": "pages/kids/english/word-bank.html",
+      "urlPath": "learn/kids/word-bank.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/worksheets-lesson.html",
+      "urlPath": "learn/kids/worksheets-lesson.html"
+    },
+    {
+      "source": "pages/kids/geography/world-currencies.html",
+      "urlPath": "learn/kids/world-currencies.html"
+    },
+    {
+      "source": "pages/kids/geography/world-explorer.html",
+      "urlPath": "learn/kids/world-explorer.html"
+    },
+    {
+      "source": "pages/kids/geography/world-time-zones.html",
+      "urlPath": "learn/kids/world-time-zones.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/learning-tools/learner-profiles.html",
+      "urlPath": "learner-profiles.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/learning-tools/learning-tools.html",
+      "urlPath": "learning-tools.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/letter-tracing-quiz.html",
+      "urlPath": "letter-tracing-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/letter-tracing.html",
+      "urlPath": "letter-tracing.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/life-skills-quiz.html",
+      "urlPath": "life-skills-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/life-skills.html",
+      "urlPath": "life-skills.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/light-shadows-quiz.html",
+      "urlPath": "light-shadows-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/light-shadows.html",
+      "urlPath": "light-shadows.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/listening-lesson.html",
+      "urlPath": "listening-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/listening-quiz.html",
+      "urlPath": "listening-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/logic-escape-room-quiz.html",
+      "urlPath": "logic-escape-room-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/logic-escape-room.html",
+      "urlPath": "logic-escape-room.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/logic-lesson.html",
+      "urlPath": "logic-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/logic-quiz.html",
+      "urlPath": "logic-quiz.html"
+    },
+    {
+      "source": "pwa/manifest.webmanifest",
+      "urlPath": "manifest.webmanifest"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/mastery-lesson.html",
+      "urlPath": "mastery-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/mastery-quiz.html",
+      "urlPath": "mastery-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/math-quiz.html",
+      "urlPath": "math-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/measurement.html",
+      "urlPath": "measurement.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/mini-sudoku-quiz.html",
+      "urlPath": "mini-sudoku-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/mini-sudoku.html",
+      "urlPath": "mini-sudoku.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/missing-letters-quiz.html",
+      "urlPath": "missing-letters-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/mistakes-lesson.html",
+      "urlPath": "mistakes-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/mistakes-quiz.html",
+      "urlPath": "mistakes-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/multiplication-tables-quiz.html",
+      "urlPath": "multiplication-tables-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/multiplication-tables.html",
+      "urlPath": "multiplication-tables.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/multiplication.html",
+      "urlPath": "multiplication.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/music-composer-quiz.html",
+      "urlPath": "music-composer-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/music-composer.html",
+      "urlPath": "music-composer.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/mysteries.html",
+      "urlPath": "mysteries.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/natural-wonders-quiz.html",
+      "urlPath": "natural-wonders-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/natural-wonders.html",
+      "urlPath": "natural-wonders.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/odd-even.html",
+      "urlPath": "odd-even.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/offline-lesson.html",
+      "urlPath": "offline-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/offline-quiz.html",
+      "urlPath": "offline-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/other/offline.html",
+      "urlPath": "offline.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/paragraph-writing-quiz.html",
+      "urlPath": "paragraph-writing-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/paragraph-writing.html",
+      "urlPath": "paragraph-writing.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/learning-tools/parent-dashboard.html",
+      "urlPath": "parent-dashboard.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/pattern-detective-quiz.html",
+      "urlPath": "pattern-detective-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/pattern-detective.html",
+      "urlPath": "pattern-detective.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/percentages-quiz.html",
+      "urlPath": "percentages-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/percentages.html",
+      "urlPath": "percentages.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/phonics-spelling-quiz.html",
+      "urlPath": "phonics-spelling-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/physical-geography-quiz.html",
+      "urlPath": "physical-geography-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/physical-geography.html",
+      "urlPath": "physical-geography.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/place-value.html",
+      "urlPath": "place-value.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/planets.html",
+      "urlPath": "planets.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/life-skills/privacy-scenarios.html",
+      "urlPath": "privacy-scenarios.html"
+    },
+    {
+      "source": "pages/legacy-urls/info/privacy.html",
+      "urlPath": "privacy.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/profiles-lesson.html",
+      "urlPath": "profiles-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/profiles-quiz.html",
+      "urlPath": "profiles-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/punctuation-mastery-quiz.html",
+      "urlPath": "punctuation-mastery-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/punctuation-mastery.html",
+      "urlPath": "punctuation-mastery.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/adaptive-quiz.html",
+      "urlPath": "quiz/adaptive-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/animals-quiz.html",
+      "urlPath": "quiz/animals-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/area-perimeter-quiz.html",
+      "urlPath": "quiz/area-perimeter-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/art-gallery-quiz.html",
+      "urlPath": "quiz/art-gallery-quiz.html"
+    },
+    {
+      "source": "pages/food/quizzes/balanced-plate-quiz.html",
+      "urlPath": "quiz/balanced-plate-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/blocks-quiz.html",
+      "urlPath": "quiz/blocks-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/budget-simulator-quiz.html",
+      "urlPath": "quiz/budget-simulator-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/certificates-quiz.html",
+      "urlPath": "quiz/certificates-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/choices-consequences-quiz.html",
+      "urlPath": "quiz/choices-consequences-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/circuits-quiz.html",
+      "urlPath": "quiz/circuits-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/climate-zones-quiz.html",
+      "urlPath": "quiz/climate-zones-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/coding-conditions-quiz.html",
+      "urlPath": "quiz/coding-conditions-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/colours-quiz.html",
+      "urlPath": "quiz/colours-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/comic-strip-creator-quiz.html",
+      "urlPath": "quiz/comic-strip-creator-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/continents-quiz.html",
+      "urlPath": "quiz/continents-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/continue-quiz.html",
+      "urlPath": "quiz/continue-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/conversation-quiz.html",
+      "urlPath": "quiz/conversation-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/coordinates-quiz.html",
+      "urlPath": "quiz/coordinates-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/counting-quiz.html",
+      "urlPath": "quiz/counting-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/daily-quiz.html",
+      "urlPath": "quiz/daily-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/decimals-quiz.html",
+      "urlPath": "quiz/decimals-quiz.html"
+    },
+    {
+      "source": "pages/health/quizzes/dental-health-quiz.html",
+      "urlPath": "quiz/dental-health-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/dictionary-quiz.html",
+      "urlPath": "quiz/dictionary-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/digital-poster-maker-quiz.html",
+      "urlPath": "quiz/digital-poster-maker-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/early-learning-quiz.html",
+      "urlPath": "quiz/early-learning-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/english-skills-quiz.html",
+      "urlPath": "quiz/english-skills-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/favorites-quiz.html",
+      "urlPath": "quiz/favorites-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/first-aid-awareness-quiz.html",
+      "urlPath": "quiz/first-aid-awareness-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/flags-quiz.html",
+      "urlPath": "quiz/flags-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/flashcards-quiz.html",
+      "urlPath": "quiz/flashcards-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/flipbook-animation-quiz.html",
+      "urlPath": "quiz/flipbook-animation-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/focus-quiz.html",
+      "urlPath": "quiz/focus-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/food-chains-quiz.html",
+      "urlPath": "quiz/food-chains-quiz.html"
+    },
+    {
+      "source": "pages/food/quizzes/food-label-detective-quiz.html",
+      "urlPath": "quiz/food-label-detective-quiz.html"
+    },
+    {
+      "source": "pages/food/quizzes/food-storage-quiz.html",
+      "urlPath": "quiz/food-storage-quiz.html"
+    },
+    {
+      "source": "pages/kids/games/quizzes/games-quiz.html",
+      "urlPath": "quiz/games-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/geography-quiz.html",
+      "urlPath": "quiz/geography-quiz.html"
+    },
+    {
+      "source": "pages/health/quizzes/germs-prevention-quiz.html",
+      "urlPath": "quiz/germs-prevention-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/hazard-detective-quiz.html",
+      "urlPath": "quiz/hazard-detective-quiz.html"
+    },
+    {
+      "source": "pages/health/quizzes/heart-and-movement-quiz.html",
+      "urlPath": "quiz/heart-and-movement-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/helpers-quiz.html",
+      "urlPath": "quiz/helpers-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/hindi-matras-quiz.html",
+      "urlPath": "quiz/hindi-matras-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/hindi-sentences-quiz.html",
+      "urlPath": "quiz/hindi-sentences-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/hindi-words-quiz.html",
+      "urlPath": "quiz/hindi-words-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/homework-quiz.html",
+      "urlPath": "quiz/homework-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/india-quiz.html",
+      "urlPath": "quiz/india-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/intro-algebra-quiz.html",
+      "urlPath": "quiz/intro-algebra-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/kids-quiz.html",
+      "urlPath": "quiz/kids-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/landmarks-quiz.html",
+      "urlPath": "quiz/landmarks-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/language-quiz.html",
+      "urlPath": "quiz/language-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/latitude-longitude-quiz.html",
+      "urlPath": "quiz/latitude-longitude-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/letter-tracing-quiz.html",
+      "urlPath": "quiz/letter-tracing-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/life-skills-quiz.html",
+      "urlPath": "quiz/life-skills-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/light-shadows-quiz.html",
+      "urlPath": "quiz/light-shadows-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/listening-quiz.html",
+      "urlPath": "quiz/listening-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/logic-escape-room-quiz.html",
+      "urlPath": "quiz/logic-escape-room-quiz.html"
+    },
+    {
+      "source": "pages/kids/games/quizzes/logic-quiz.html",
+      "urlPath": "quiz/logic-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/mastery-quiz.html",
+      "urlPath": "quiz/mastery-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/math-quiz.html",
+      "urlPath": "quiz/math-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/mini-sudoku-quiz.html",
+      "urlPath": "quiz/mini-sudoku-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/missing-letters-quiz.html",
+      "urlPath": "quiz/missing-letters-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/mistakes-quiz.html",
+      "urlPath": "quiz/mistakes-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/multiplication-tables-quiz.html",
+      "urlPath": "quiz/multiplication-tables-quiz.html"
+    },
+    {
+      "source": "pages/kids/creativity/quizzes/music-composer-quiz.html",
+      "urlPath": "quiz/music-composer-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/natural-wonders-quiz.html",
+      "urlPath": "quiz/natural-wonders-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/offline-quiz.html",
+      "urlPath": "quiz/offline-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/paragraph-writing-quiz.html",
+      "urlPath": "quiz/paragraph-writing-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/pattern-detective-quiz.html",
+      "urlPath": "quiz/pattern-detective-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/percentages-quiz.html",
+      "urlPath": "quiz/percentages-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/phonics-spelling-quiz.html",
+      "urlPath": "quiz/phonics-spelling-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/physical-geography-quiz.html",
+      "urlPath": "quiz/physical-geography-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/privacy-scenarios-quiz.html",
+      "urlPath": "quiz/privacy-scenarios-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/profiles-quiz.html",
+      "urlPath": "quiz/profiles-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/punctuation-mastery-quiz.html",
+      "urlPath": "quiz/punctuation-mastery-quiz.html"
+    },
+    {
+      "source": "pages/quizzes/quiz-hub.html",
+      "urlPath": "quiz/quiz-hub.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/quiz-review-quiz.html",
+      "urlPath": "quiz/quiz-review-quiz.html"
+    },
+    {
+      "source": "pages/quizzes/quiz.html",
+      "urlPath": "quiz/quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/reading-fluency-plus-quiz.html",
+      "urlPath": "quiz/reading-fluency-plus-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/report-quiz.html",
+      "urlPath": "quiz/report-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/science-discovery-quiz.html",
+      "urlPath": "quiz/science-discovery-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/search-quiz.html",
+      "urlPath": "quiz/search-quiz.html"
+    },
+    {
+      "source": "pages/food/quizzes/seasonal-foods-quiz.html",
+      "urlPath": "quiz/seasonal-foods-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/shapes-quiz.html",
+      "urlPath": "quiz/shapes-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/situations-quiz.html",
+      "urlPath": "quiz/situations-quiz.html"
+    },
+    {
+      "source": "pages/health/quizzes/sleep-science-quiz.html",
+      "urlPath": "quiz/sleep-science-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/smarter-maths-quiz.html",
+      "urlPath": "quiz/smarter-maths-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/sound-vibrations-quiz.html",
+      "urlPath": "quiz/sound-vibrations-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/spelling-quiz.html",
+      "urlPath": "quiz/spelling-quiz.html"
+    },
+    {
+      "source": "pages/kids/early-learning/quizzes/sports-quiz.html",
+      "urlPath": "quiz/sports-quiz.html"
+    },
+    {
+      "source": "pages/kids/science/quizzes/states-of-matter-quiz.html",
+      "urlPath": "quiz/states-of-matter-quiz.html"
+    },
+    {
+      "source": "pages/kids/english/quizzes/syllables-silent-letters-quiz.html",
+      "urlPath": "quiz/syllables-silent-letters-quiz.html"
+    },
+    {
+      "source": "pages/kids/maths/quizzes/tangram-maker-quiz.html",
+      "urlPath": "quiz/tangram-maker-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/targeted-quiz.html",
+      "urlPath": "quiz/targeted-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/telugu-gunintalu-quiz.html",
+      "urlPath": "quiz/telugu-gunintalu-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/telugu-sentences-quiz.html",
+      "urlPath": "quiz/telugu-sentences-quiz.html"
+    },
+    {
+      "source": "pages/kids/languages/quizzes/telugu-words-quiz.html",
+      "urlPath": "quiz/telugu-words-quiz.html"
+    },
+    {
+      "source": "pages/kids/life-skills/quizzes/transport-quiz.html",
+      "urlPath": "quiz/transport-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/weekly-quiz.html",
+      "urlPath": "quiz/weekly-quiz.html"
+    },
+    {
+      "source": "pages/kids/learning-tools/quizzes/worksheets-quiz.html",
+      "urlPath": "quiz/worksheets-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/world-currencies-quiz.html",
+      "urlPath": "quiz/world-currencies-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/world-quiz.html",
+      "urlPath": "quiz/world-quiz.html"
+    },
+    {
+      "source": "pages/kids/geography/quizzes/world-time-zones-quiz.html",
+      "urlPath": "quiz/world-time-zones-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/quiz-hub.html",
+      "urlPath": "quiz-hub.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/quiz-review-lesson.html",
+      "urlPath": "quiz-review-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/quiz-review-quiz.html",
+      "urlPath": "quiz-review-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/quiz.html",
+      "urlPath": "quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/reading-fluency-plus-quiz.html",
+      "urlPath": "reading-fluency-plus-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/reading-fluency-plus.html",
+      "urlPath": "reading-fluency-plus.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/report-lesson.html",
+      "urlPath": "report-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/report-quiz.html",
+      "urlPath": "report-quiz.html"
+    },
+    {
+      "source": "site-root/robots.txt",
+      "urlPath": "robots.txt"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/science-discovery-quiz.html",
+      "urlPath": "science-discovery-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/science-discovery.html",
+      "urlPath": "science-discovery.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/search-lesson.html",
+      "urlPath": "search-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/search-quiz.html",
+      "urlPath": "search-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/food/seasonal-foods.html",
+      "urlPath": "seasonal-foods.html"
+    },
+    {
+      "source": "pwa/service-worker.js",
+      "urlPath": "service-worker.js"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/shapes-quiz.html",
+      "urlPath": "shapes-quiz.html"
+    },
+    {
+      "source": "site-root/sitemap.xml",
+      "urlPath": "sitemap.xml"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/situations-lesson.html",
+      "urlPath": "situations-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/situations-quiz.html",
+      "urlPath": "situations-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/health/sleep-science.html",
+      "urlPath": "sleep-science.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/learning-tools/smart-learning.html",
+      "urlPath": "smart-learning.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/smarter-maths-quiz.html",
+      "urlPath": "smarter-maths-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/smarter-maths.html",
+      "urlPath": "smarter-maths.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/sound-vibrations-quiz.html",
+      "urlPath": "sound-vibrations-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/sound-vibrations.html",
+      "urlPath": "sound-vibrations.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/spelling-quiz.html",
+      "urlPath": "spelling-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/sports-quiz.html",
+      "urlPath": "sports-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/early-learning/sports.html",
+      "urlPath": "sports.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/states-of-matter-quiz.html",
+      "urlPath": "states-of-matter-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/science/states-of-matter.html",
+      "urlPath": "states-of-matter.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/stories.html",
+      "urlPath": "stories.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/creativity/story.html",
+      "urlPath": "story.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/subtraction.html",
+      "urlPath": "subtraction.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/syllables-silent-letters-quiz.html",
+      "urlPath": "syllables-silent-letters-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/syllables-silent-letters.html",
+      "urlPath": "syllables-silent-letters.html"
+    },
+    {
+      "source": "pages/system/404.html",
+      "urlPath": "system/404.html"
+    },
+    {
+      "source": "pages/system/offline.html",
+      "urlPath": "system/offline.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/tangram-maker-quiz.html",
+      "urlPath": "tangram-maker-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/tangram-maker.html",
+      "urlPath": "tangram-maker.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/targeted-lesson.html",
+      "urlPath": "targeted-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/targeted-quiz.html",
+      "urlPath": "targeted-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-gunintalu-quiz.html",
+      "urlPath": "telugu-gunintalu-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-gunintalu.html",
+      "urlPath": "telugu-gunintalu.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-sentences-quiz.html",
+      "urlPath": "telugu-sentences-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-sentences.html",
+      "urlPath": "telugu-sentences.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-words-quiz.html",
+      "urlPath": "telugu-words-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu-words.html",
+      "urlPath": "telugu-words.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/languages/telugu.html",
+      "urlPath": "telugu.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/maths/time-calendar.html",
+      "urlPath": "time-calendar.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/transport-lesson.html",
+      "urlPath": "transport-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/transport-quiz.html",
+      "urlPath": "transport-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/weekly-lesson.html",
+      "urlPath": "weekly-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/weekly-quiz.html",
+      "urlPath": "weekly-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/english/word-bank.html",
+      "urlPath": "word-bank.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/worksheets-lesson.html",
+      "urlPath": "worksheets-lesson.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/worksheets-quiz.html",
+      "urlPath": "worksheets-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/world-currencies-quiz.html",
+      "urlPath": "world-currencies-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/world-currencies.html",
+      "urlPath": "world-currencies.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/world-explorer.html",
+      "urlPath": "world-explorer.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/other/world-quiz.html",
+      "urlPath": "world-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/world-time-zones-quiz.html",
+      "urlPath": "world-time-zones-quiz.html"
+    },
+    {
+      "source": "pages/legacy-urls/kids/geography/world-time-zones.html",
+      "urlPath": "world-time-zones.html"
+    }
+  ]
+}
